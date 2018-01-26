@@ -1,0 +1,80 @@
+// Techmo Tribune TTS API
+// version: 1.1.0
+// authors: Dawid Skurzok, Paweł Jaciów
+// date:    2018-01-25
+
+syntax = "proto3";
+
+package techmo.tribune;
+
+// Service that implements Techmo TTS API
+service TTS
+{
+    // Return speech using given text and optional configuration.
+    rpc Synthesize(SynthesizeRequest) returns (stream SynthesizeResponse);
+}
+
+// `SynthesizeRequest` is the top-level message sent by the client for
+// the `Synthesize` method. It contains a text to be synthesized and a configuration.
+message SynthesizeRequest
+{
+    // Text to be synthesized.
+    string text = 1;
+
+    // Configuration.
+    SynthesizeConfig config = 2;
+}
+
+// Provides information to the synthesizer that specifies how to process the request.
+message SynthesizeConfig
+{
+    // Desired sampling frequency in hertz of synthesized audio.
+    int32 sample_rate_hertz = 1;
+}
+
+// `SynthesizeResponse` is the only message returned to the client by
+// `Synthesize`. A series of one or more `SynthesizeResponse`
+// messages are streamed back to the client.
+message SynthesizeResponse
+{
+    // Audio data corresponding to a portion of the text
+    // that is currently being processed.
+    AudioData audio = 1;
+
+    // If set, specifies the error for the operation.
+    Error error = 2;
+}
+
+// Audio data corresponding to a portion of the text
+// that is currently being processed.
+message AudioData
+{
+    // Sampling frequency in Hertz.
+    int32 sample_rate_hertz = 1;
+
+    // Audio data bytes encoded by default as 16bit PCM.
+    bytes content = 2;
+
+    // Last message flag. If set to true, no more data will be sent.
+    bool end_of_stream = 3;
+}
+
+// Indicates the type of the error for the operation.
+enum ErrorCode
+{
+    UNKNOWN = 0;            // Unknown error
+    LICENCE = 1;            // Licence related error
+    TEXT_NORMALIZATION = 2; // Error during text normalization
+    TRANSCRIPTION = 3;      // Error during orthographic to phonetic transcription
+    SYNTHESIS = 4;          // Error during speech synthesis
+}
+
+// Received error details.
+message Error
+{
+    // Error code.
+    ErrorCode code = 1;
+
+    // Error description.
+    string description = 2;
+}
