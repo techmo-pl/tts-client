@@ -16,6 +16,12 @@ Dependencies are:
 - OpenSSL   provided as `ssl_pkg`  
 - DL        provided as `dl_pkg`  
 
+To regenerate sources from `.proto`, run:
+```
+./make_proto.sh
+```
+This might be required when using other gRPC or Protocol Buffers version.
+
 Build:
 ```
 mkdir build && cd build && cmake .. && make -j 4

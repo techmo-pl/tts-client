@@ -1,8 +1,8 @@
 project(libtribune_client)
 
 add_library(${PROJECT_NAME}
-        TTS.grpc.pb.cc TTS.grpc.pb.h
-        TTS.pb.cc TTS.pb.h
+        tribune_tts.grpc.pb.cc tribune_tts.grpc.pb.h
+        tribune_tts.pb.cc tribune_tts.pb.h
         tribune_client.cpp tribune_client.h
         VERSION.h
         )

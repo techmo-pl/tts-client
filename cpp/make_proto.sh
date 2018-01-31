@@ -12,10 +12,10 @@ if [ ! -x ${PROTOC} ]; then
 fi
 
 echo "Generating tribune C++ protobuf/grpc sources..."
-path_i="proto"
-path_o="cpp/libtribune-client"
+path_i="../proto"
+path_o="libtribune-client"
 ${PROTOC}   -I${path_i} \
             ${PLUGIN} \
             --cpp_out=${path_o} \
             --grpc_out=${path_o} \
-            ${path_i}/TTS.proto
+            ${path_i}/tribune_tts.proto
