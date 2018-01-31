@@ -4,16 +4,22 @@ Contents:
 - `libtribune-client`     Library implementing communication with Techmo Tribune TTS gRPC service.
 - `tribune-client`        Example of program using the library.
 
+This project uses cmake build.
+
+Dependencies are:  
+- Boost     provided as `boost_pkg`  
+    Default location: `/opt/boost_1.60.0`  
+    If not installed, from parent directory run `sudo ./tools/install_boost.sh`  
+- gRPC      provided as `grpc_pkg`  
+    Default location: `/opt/grpc_v1.7.2`  
+    If not installed, from parent directory run `sudo ./tools/install_grpc.sh`  
+- OpenSSL   provided as `ssl_pkg`  
+- DL        provided as `dl_pkg`  
+
 Build:
 ```
 mkdir build && cd build && cmake .. && make -j 4
 ```
-
-Required dependencies are:  
-- Boost     provided as `boost_pkg`  
-- gRPC      provided as `grpc_pkg`  
-- OpenSSL   provided as `ssl_pkg`
-- DL        provided as `dl_pkg`
 
 Run:
 ```
