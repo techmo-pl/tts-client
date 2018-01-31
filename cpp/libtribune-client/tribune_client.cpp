@@ -1,7 +1,7 @@
 #include <grpc++/grpc++.h>
 #include <google/protobuf/text_format.h>
 
-#include "TTS.grpc.pb.h"
+#include "tribune_tts.grpc.pb.h"
 #include "tribune_client.h"
 
 
