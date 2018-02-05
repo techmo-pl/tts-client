@@ -1,6 +1,7 @@
 project(tribune_client)
 
 add_executable(${PROJECT_NAME}
+        wave-utils.cpp wave-utils.h
         main.cpp
         )
 

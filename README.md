@@ -6,21 +6,7 @@ Contents:
 - `cpp`     Tribune TTS gRPC client C++ implementation.  
 - `tools`   Utilities. Scripts for dependencies installation.  
 
-Required steps:
-- Install Boost:
-```
-./tools/install_boost.sh
-```
-- Install gRPC:
-```
-./tools/install_grpc.sh
-```
-
-To regenerate sources from `.proto`, run:
-```
-./proto/make_proto.sh
-```
-This might be required when using other gRPC or Protocol Buffers version.
+Language-specific build instructions can be found in their respective directories.
 
 
 # Techmo TTS Service API
