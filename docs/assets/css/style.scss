@@ -9,11 +9,4 @@
 #project_title { font-size: 36px; }
 #project_tagline { font-size: 20px; }
 h2 { padding-bottom: 0px; border-bottom: 1px solid #212121; background: none; }
-table { display: block; }
-
-@media screen and (max-width: 480px) {
-  .inner { max-width: none; }
-}
-@media screen and (max-width: 320px) {
-  .inner { max-width: none; }
-}
+table { overflow-x: auto; display: block; border: none; padding: 1px; }
