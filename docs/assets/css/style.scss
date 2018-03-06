@@ -9,3 +9,10 @@
 #project_title { font-size: 36px; }
 #project_tagline { font-size: 20px; }
 h2 { padding-bottom: 0px; border-bottom: 1px solid #212121; background: none; }
+
+@media screen and (max-width: 480px) { body
+  .inner { max-width: 100%; }
+}
+@media screen and (max-width: 320px) { body
+  .inner { max-width: 100%; }
+}
