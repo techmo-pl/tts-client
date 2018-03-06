@@ -34,13 +34,15 @@ Service that implements Techmo Text-To-Speech (TTS) API.
 Service's `Synthesize` method accepts `SynthesizeRequest` object which contains whole phrase to be synthesized.
 You have to put the phrase as a string in `text` field of `SynthesizeRequest`. The string has to be in orthographic form. In that string you can use several special tags which can be interpreted. Tags have to be in from `<tag>something special</tag>` and can occur in any place in text. Currently interpreted tags are:
 
-- cardinal    (cardinal number)      `<cardinal>7</cardinal>`    -> `siedem`
-- signed      (number with sign)     `<signed>-15</signed>`      -> `minus piętnaście`
-- ordinal     (ordinal number)       `<ordinal>1</ordinal>`      -> `pierwszy`
-- fraction    (fractional number)    `<fraction>3/4</fraction>`  -> `trzy czwarte`
-- postal      (postal code)          `<postal>30-020</postal>`   -> `trzydzieści zero dwadzieścia`
-- time        (time)                 `<time>22:00</time>`        -> `dwudziesta druga`
-- date        (date)                 `<date>12/05/2001</date>`   -> `dwunasty maja dwa tysiące jeden`
+| Tag | Description | Example (input) | Example (output) |
+| --- | ----------- | --------------- | ---------------- |
+| **cardinal** | *cardinal number* | `<cardinal>7</cardinal>` | *siedem* |
+| **signed** | *number with sign* | `<signed>-15</signed>` | *minus piętnaście* |
+| **ordinal** | *ordinal number* | `<ordinal>1</ordinal>` | *pierwszy* |
+| **fraction** | *fractional number* | `<fraction>3/4</fraction>` | *trzy czwarte* |
+| **postal** | *postal code* | `<postal>30-020</postal>` | *trzydzieści zero dwadzieścia* |
+| **time** | *time* | `<time>22:00</time>` | *dwudziesta druga* |
+| **date** | *date* | `<date>12/05/2001</date>` | *dwunasty maja dwa tysiące jeden* |
 
 Note: when interpreting tags only nominal case is supported at the moment.
 
