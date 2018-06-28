@@ -44,7 +44,9 @@ Options:
   --session-id arg                      Session ID to be passed to the service.
                                         If not specified, the service will 
                                         generate a default session ID itself.
-  --sample-rate-hertz arg (=44100)      Sample rate in Hz of synthesized audio.
+  --sample-rate-hertz arg (=0)          Sample rate in Hz of synthesized audio.
+                                        Set to 0 (default) to use voice's
+                                        original sample rate.
 ```
 
 In input text you can use several special tags which can be interpreted. Tags have to be in from `<tag>something special</tag>` and can occur in any place in text. Currently interpreted tags are:
