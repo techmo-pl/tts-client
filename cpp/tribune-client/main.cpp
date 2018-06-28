@@ -22,8 +22,8 @@ po::options_description CreateOptionsDescription(void) {
              "Text to be synthesized (in polish).")
             ("session-id", po::value<std::string>()->default_value(""),
              "Session ID to be passed to the service. If not specified, the service will generate a default session ID itself.")
-            ("sample-rate-hertz", po::value<unsigned int>()->default_value(44100),
-             "Sample rate in Hz of synthesized audio.");
+            ("sample-rate-hertz", po::value<unsigned int>()->default_value(0),
+             "Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.");
     return optionsDescription;
 }
 
