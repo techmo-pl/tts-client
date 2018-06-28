@@ -6,7 +6,7 @@ namespace techmo { namespace tribune {
 
 struct TribuneClientConfig {
     std::string session_id = "";            // Session ID to be passed to the service. If not specified, the service will generate a default session ID itself.
-    unsigned int sample_rate_hertz = 44100; // Sample rate in Hz of synthesized audio.
+    unsigned int sample_rate_hertz = 0;     // Sample rate in Hz of synthesized audio. If set to 0, the service will use voice's original sample rate.
 };
 
 class TribuneClient {
