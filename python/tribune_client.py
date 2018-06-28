@@ -19,8 +19,8 @@ def main():
                   help="A file with text to be synthesized (in polish).", type=str) 
     parser.add_argument("-o", "--out-path", dest="out_path", default="TechmoTTS.wav",
                    help="Path to output wave file with synthesized audio content.", type=str)
-    parser.add_argument("-f", "--sample_rate", dest="sample_rate", default=44100,
-                  help="Sample rate in Hz of synthesized audio.", type=int)
+    parser.add_argument("-f", "--sample_rate", dest="sample_rate", default=0,
+                  help="Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.", type=int)
     # Parse and validate options
     args = parser.parse_args()
 
