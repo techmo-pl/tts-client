@@ -60,9 +60,9 @@ int main(int argc, const char *const argv[]) {
 
         techmo::tribune::TribuneClient tribune_client{ userOptions["service-address"].as<std::string>() };
 
-        const auto audio_bytes = tribune_client.Synthesize(config, userOptions["text"].as<std::string>());
+        const auto audio_data = tribune_client.Synthesize(config, userOptions["text"].as<std::string>());
 
-        WriteWaveFile(userOptions["out-path"].as<std::string>(), sample_rate_hertz, audio_bytes);
+        WriteWaveFile(userOptions["out-path"].as<std::string>(), audio_data.sample_rate_hertz, audio_data.audio_bytes);
     }
     catch (const std::exception &e) {
         std::cerr << e.what() << std::endl;
