@@ -64,7 +64,7 @@ std::string grpc_status_to_string(const grpc::Status& status) {
 }
 
 
-std::string TribuneClient::Synthesize(const TribuneClientConfig& config, const std::string& text) {
+TribuneAudioData TribuneClient::Synthesize(const TribuneClientConfig& config, const std::string& text) {
     grpc::ClientContext context;
     if (not config.session_id.empty()) {
         context.AddMetadata("session_id", config.session_id);
@@ -77,6 +77,7 @@ std::string TribuneClient::Synthesize(const TribuneClientConfig& config, const s
     auto reader = stub->Synthesize(&context, request);
 
     std::string received_audio_bytes = "";
+    unsigned int received_sample_rate_hertz = 0;
     SynthesizeResponse response;
     while (reader->Read(&response)) {
         if (error_response(response)) {
@@ -84,8 +85,17 @@ std::string TribuneClient::Synthesize(const TribuneClientConfig& config, const s
         }
 
         const auto& audio = response.audio();
+        if (received_sample_rate_hertz == 0) {
+            if (audio.sample_rate_hertz() == 0) {
+                throw std::runtime_error{"Received audio's sample rate 0."};
+            }
+            received_sample_rate_hertz = audio.sample_rate_hertz();
+        }
+        else if (audio.sample_rate_hertz() != received_sample_rate_hertz) {
+            throw std::runtime_error{"Received audio's sample rate does not match previously received."};
+        }
 
-        if (audio.sample_rate_hertz() != config.sample_rate_hertz) {
+        if (config.sample_rate_hertz != 0 and received_sample_rate_hertz != config.sample_rate_hertz) {
             throw std::runtime_error{"Received audio's sample rate does not match requested."};
         }
 
@@ -102,7 +112,7 @@ std::string TribuneClient::Synthesize(const TribuneClientConfig& config, const s
         std::cerr << "Synthesize RPC failed with status " << grpc_status_to_string(status) << std::endl;
     }
 
-    return received_audio_bytes;
+    return TribuneAudioData{ received_sample_rate_hertz, received_audio_bytes };
 }
 
 }}
