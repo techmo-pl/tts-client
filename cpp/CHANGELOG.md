@@ -1,5 +1,9 @@
 # Tribune TTS gRPC C++ client Changelog
 
+## [1.1.0] - 2018-07-02
+### Changed
+- `Synthesize` method to return a structure with received both sample rate and audio bytes.
+
 ## [1.0.1] - 2018-01-31
 ### Added
 - Separate file for wave utilities.

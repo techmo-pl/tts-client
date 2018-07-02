@@ -9,12 +9,17 @@ struct TribuneClientConfig {
     unsigned int sample_rate_hertz = 0;     // Sample rate in Hz of synthesized audio. If set to 0, the service will use voice's original sample rate.
 };
 
+struct TribuneAudioData {
+    unsigned int sample_rate_hertz = 0;     // Sample rate in Hz of received audio data.
+    std::string audio_bytes = "";           // Received audio data.
+};
+
 class TribuneClient {
 public:
     TribuneClient(const std::string& service_address) : service_address_{ service_address } {}
 
     // Returns synthesized audio bytes.
-    std::string Synthesize(const TribuneClientConfig& config, const std::string& text);
+    TribuneAudioData Synthesize(const TribuneClientConfig& config, const std::string& text);
 
 private:
     TribuneClient(); // Disable default constructor.
