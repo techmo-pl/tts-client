@@ -1,11 +1,8 @@
-import tribune_tts_pb2
-import tribune_tts_pb2_grpc
-import grpc
-import os
-from wave_saver import WaveSaver
 from argparse import ArgumentParser
 import codecs
 from VERSION import TRIBUNE_CLIENT_VERSION
+from call_synthesize import call_synthesize
+
 
 def main():
     print("Tribune TTS gRPC client " + TRIBUNE_CLIENT_VERSION)
@@ -31,41 +28,14 @@ def main():
     # Input text determination
     input_text = ""
     if len(args.inputfile) > 0:
-        with codecs.open(args.inputfile, encoding='utf-8', mode="r") as fread:  
-            input_text = fread.read()
-    elif len(args.text) > 0:
-        input_text = args.text  
+        with codecs.open(args.inputfile, encoding='utf-8', mode="r") as fread:
+            args.text = fread.read()
+    # elif len(args.text) > 0:
+    #     input_text = args.text
     else:
         raise RuntimeError("Empty input string for synthesis.")
-                    
-    # Output file determination
-    wavefilename = os.path.join(args.out_path)
-    
-    # Establish GRPC channel
-    channel = grpc.insecure_channel(args.service)
-    stub = tribune_tts_pb2_grpc.TTSStub(channel)
 
-    # Synthesis request
-    config = tribune_tts_pb2.SynthesizeConfig(sample_rate_hertz=int(args.sample_rate))
-    request = tribune_tts_pb2.SynthesizeRequest(text=input_text, config=config)
-    ws = WaveSaver()
-    try:
-        for response in stub.Synthesize(request):
-            if response.HasField('error'):
-                print("Error [" + str(response.error.code) + "]: " + response.error.description)
-                break
-            else:
-                if ws._framerate:
-                    if ws._framerate != response.audio.sample_rate_hertz:
-                        raise RuntimeError("Sample rate does not match previously received.")
-                else:
-                    ws.setFrameRate(response.audio.sample_rate_hertz)
-                ws.append(response.audio.content)
-                if response.audio.end_of_stream:
-                    ws.save(wavefilename)
-    except grpc.RpcError as e:
-        print("[Server-side error] Received following RPC error from the TTS service:", str(e))
-    ws.clear()
+    call_synthesize(args)
 
 
 if __name__ == '__main__':
