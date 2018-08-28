@@ -3,20 +3,19 @@ import tribune_tts_pb2_grpc
 import grpc
 import os
 from wave_saver import WaveSaver
-#from argparse import ArgumentParser
 
 
-def call_synthesize(args):
+def call_synthesize(service, text, out_path, sample_rate):
     # Output file determination
-    wavefilename = os.path.join(args.out_path)
+    wavefilename = os.path.join(out_path)
 
     # Establish GRPC channel
-    channel = grpc.insecure_channel(args.service)
+    channel = grpc.insecure_channel(service)
     stub = tribune_tts_pb2_grpc.TTSStub(channel)
 
     # Synthesis request
-    config = tribune_tts_pb2.SynthesizeConfig(sample_rate_hertz=int(args.sample_rate))
-    request = tribune_tts_pb2.SynthesizeRequest(text=args.text, config=config)
+    config = tribune_tts_pb2.SynthesizeConfig(sample_rate_hertz=int(sample_rate))
+    request = tribune_tts_pb2.SynthesizeRequest(text=text, config=config)
     ws = WaveSaver()
     try:
         for response in stub.Synthesize(request):

@@ -18,6 +18,7 @@ def main():
                    help="Path to output wave file with synthesized audio content.", type=str)
     parser.add_argument("-f", "--sample_rate", dest="sample_rate", default=0,
                   help="Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.", type=int)
+    
     # Parse and validate options
     args = parser.parse_args()
 
@@ -30,12 +31,10 @@ def main():
     if len(args.inputfile) > 0:
         with codecs.open(args.inputfile, encoding='utf-8', mode="r") as fread:
             args.text = fread.read()
-    # elif len(args.text) > 0:
-    #     input_text = args.text
     else:
         raise RuntimeError("Empty input string for synthesis.")
 
-    call_synthesize(args)
+    call_synthesize(args.service, args.text, args.out_path, args.sample_rate)
 
 
 if __name__ == '__main__':

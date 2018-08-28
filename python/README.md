@@ -50,3 +50,16 @@ time        time                "<time>22:00</time>"        -> "dwudziesta druga
 date        date                "<date>12/05/2001</date>"   -> "dwunasty maja dwa tysiące jeden"
 
 Note: when interpreting tags only nominal case is supported at the moment.
+
+Module:
+
+You can use the client as a module for Python3. Install the package to your environment:
+```
+pip install -e ./python/.
+```
+This package provides a module `call_synthesize` with a function with the same name, which runs the client. Here is an example how to use it as a module:
+```
+from call_synthesize import call_synthesize
+call_synthesize(service, text, out_path, sample_rate)
+```
+Function parameters are described in usage section above.
