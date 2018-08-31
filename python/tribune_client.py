@@ -30,11 +30,13 @@ def main():
     input_text = ""
     if len(args.inputfile) > 0:
         with codecs.open(args.inputfile, encoding='utf-8', mode="r") as fread:
-            args.text = fread.read()
+            input_text = fread.read()
+    elif len(args.text) > 0:
+        input_text = args.text
     else:
         raise RuntimeError("Empty input string for synthesis.")
 
-    call_synthesize(args.service, args.text, args.out_path, args.sample_rate)
+    call_synthesize(args.service, input_text, args.out_path, args.sample_rate)
 
 
 if __name__ == '__main__':
