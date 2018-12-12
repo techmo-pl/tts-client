@@ -1,5 +1,9 @@
 # Tribune TTS gRPC C++ client Changelog
 
+## [1.2.0] - 2018-12-12
+### Added
+- Support for setting gRPC deadline (how long the client is willing to wait for a reply from the server).
+
 ## [1.1.0] - 2018-07-02
 ### Changed
 - `Synthesize` method to return a structure with received both sample rate and audio bytes.
