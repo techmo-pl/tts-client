@@ -65,14 +65,17 @@ std::string grpc_status_to_string(const grpc::Status& status) {
 
 
 TribuneAudioData TribuneClient::Synthesize(const TribuneClientConfig& config, const std::string& text) {
+    const SynthesizeRequest request = build_request(config, text);
+
+    auto stub = TTS::NewStub(grpc::CreateChannel(service_address_, grpc::InsecureChannelCredentials()));
+
     grpc::ClientContext context;
     if (not config.session_id.empty()) {
         context.AddMetadata("session_id", config.session_id);
     }
-
-    const SynthesizeRequest request = build_request(config, text);
-
-    auto stub = TTS::NewStub(grpc::CreateChannel(service_address_, grpc::InsecureChannelCredentials()));
+    if (config.grpc_timeout > 0) {
+        context.set_deadline(std::chrono::system_clock::now() + std::chrono::milliseconds{ config.grpc_timeout });
+    }
 
     auto reader = stub->Synthesize(&context, request);
 
