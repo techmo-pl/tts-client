@@ -5,20 +5,28 @@ import os
 from wave_saver import WaveSaver
 
 
-def call_synthesize(service, text, out_path, sample_rate):
+def call_synthesize(args, text):
     # Output file determination
-    wavefilename = os.path.join(out_path)
+    wavefilename = os.path.join(args.out_path)
 
     # Establish GRPC channel
-    channel = grpc.insecure_channel(service)
+    channel = grpc.insecure_channel(args.service)
     stub = tribune_tts_pb2_grpc.TTSStub(channel)
 
     # Synthesis request
-    config = tribune_tts_pb2.SynthesizeConfig(sample_rate_hertz=int(sample_rate))
+    config = tribune_tts_pb2.SynthesizeConfig(sample_rate_hertz=int(args.sample_rate))
     request = tribune_tts_pb2.SynthesizeRequest(text=text, config=config)
     ws = WaveSaver()
+
+    timeout=None
+    if args.grpc_timeout > 0:
+        timeout = args.grpc_timeout / 1000 # milliseconds to seconds
+    metadata = []
+    if args.session_id:
+        metadata = [('session_id', args.session_id)]
+
     try:
-        for response in stub.Synthesize(request):
+        for response in stub.Synthesize(request, timeout=timeout, metadata=metadata):
             if response.HasField('error'):
                 print("Error [" + str(response.error.code) + "]: " + response.error.description)
                 break

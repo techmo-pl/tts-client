@@ -21,14 +21,24 @@ python tribune_client.py -s "192.168.1.1:4321" -f 44100 -t "Polski tekst do synt
 
 Usage:
 ```
-usage: tribune_client.py [-h] -s SERVICE [-t TEXT] [-i INPUTFILE]
-                         [-o OUT_PATH] [-f SAMPLE_RATE]
+usage: tribune_client.py [-h] -s SERVICE [--session-id SESSION_ID]
+                         [--grpc-timeout GRPC_TIMEOUT] [-t TEXT]
+                         [-i INPUTFILE] [-o OUT_PATH] [-f SAMPLE_RATE]
 
 optional arguments:
   -h, --help            show this help message and exit
   -s SERVICE, --service-address SERVICE
                         IP address and port (address:port) of a service the
                         client will connect to.
+  --session-id SESSION_ID
+                        Session ID to be passed to the service. If not
+                        specified, the service will generate a default session
+                        ID itself.
+  --grpc-timeout GRPC_TIMEOUT
+                        Timeout in milliseconds used to set gRPC deadline -
+                        how long the client is willing to wait for a reply
+                        from the server. If not specified, the service will
+                        set the deadline to a very large number.
   -t TEXT, --text TEXT  Text to be synthesized (in polish).
   -i INPUTFILE, --input_text_file INPUTFILE
                         A file with text to be synthesized (in polish).
@@ -36,7 +46,8 @@ optional arguments:
                         Path to output wave file with synthesized audio
                         content.
   -f SAMPLE_RATE, --sample_rate SAMPLE_RATE
-                        Sample rate in Hz of synthesized audio.
+                        Sample rate in Hz of synthesized audio. Set to 0
+                        (default) to use voice's original sample rate.
 ```
 
 In input text you can use several special tags which can be interpreted. Tags have to be in from `<tag>something special</tag>` and can occur in any place in text. Currently interpreted tags are:

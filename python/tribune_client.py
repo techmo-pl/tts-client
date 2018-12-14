@@ -10,6 +10,10 @@ def main():
     parser = ArgumentParser()
     parser.add_argument("-s", "--service-address", dest="service", required=True,
                   help="IP address and port (address:port) of a service the client will connect to.", type=str)
+    parser.add_argument("--session-id", dest="session_id", default="",
+                  help="Session ID to be passed to the service. If not specified, the service will generate a default session ID itself.", type=str)
+    parser.add_argument("--grpc-timeout", dest="grpc_timeout", default=0,
+                  help="Timeout in milliseconds used to set gRPC deadline - how long the client is willing to wait for a reply from the server. If not specified, the service will set the deadline to a very large number.", type=int)
     parser.add_argument("-t", "--text", dest="text", default="Techmo Trybun: Syntezator mowy polskiej.",
                   help="Text to be synthesized (in polish).", type=str)
     parser.add_argument("-i", "--input_text_file", dest="inputfile", default="",
@@ -36,7 +40,7 @@ def main():
     else:
         raise RuntimeError("Empty input string for synthesis.")
 
-    call_synthesize(args.service, input_text, args.out_path, args.sample_rate)
+    call_synthesize(args, input_text)
 
 
 if __name__ == '__main__':

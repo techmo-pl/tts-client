@@ -44,8 +44,14 @@ Options:
   --session-id arg                      Session ID to be passed to the service.
                                         If not specified, the service will 
                                         generate a default session ID itself.
+  --grpc-timeout arg (=0)               Timeout in milliseconds used to set 
+                                        gRPC deadline - how long the client is 
+                                        willing to wait for a reply from the 
+                                        server. If not specified, the service 
+                                        will set the deadline to a very large 
+                                        number.
   --sample-rate-hertz arg (=0)          Sample rate in Hz of synthesized audio.
-                                        Set to 0 (default) to use voice's
+                                        Set to 0 (default) to use voice's 
                                         original sample rate.
 ```
 
