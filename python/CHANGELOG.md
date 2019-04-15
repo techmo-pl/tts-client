@@ -1,5 +1,9 @@
 # Tribune TTS gRPC Python client Changelog
 
+## [1.2.1] - 2019-04-19
+### Fixed
+- Multithreading buffer access collision
+
 ## [1.2.0] - 2018-12-12
 ### Added
 - Support for setting gRPC deadline (how long the client is willing to wait for a reply from the server).
