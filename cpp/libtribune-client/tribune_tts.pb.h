@@ -297,11 +297,18 @@ class SynthesizeConfig : public ::google::protobuf::Message /* @@protoc_insertio
   ::google::protobuf::int32 sample_rate_hertz() const;
   void set_sample_rate_hertz(::google::protobuf::int32 value);
 
+  // bool use_opus = 2;
+  void clear_use_opus();
+  static const int kUseOpusFieldNumber = 2;
+  bool use_opus() const;
+  void set_use_opus(bool value);
+
   // @@protoc_insertion_point(class_scope:techmo.tribune.SynthesizeConfig)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::int32 sample_rate_hertz_;
+  bool use_opus_;
   mutable int _cached_size_;
   friend struct protobuf_tribune_5ftts_2eproto::TableStruct;
 };
@@ -767,6 +774,20 @@ inline void SynthesizeConfig::set_sample_rate_hertz(::google::protobuf::int32 va
   
   sample_rate_hertz_ = value;
   // @@protoc_insertion_point(field_set:techmo.tribune.SynthesizeConfig.sample_rate_hertz)
+}
+
+// bool use_opus = 2;
+inline void SynthesizeConfig::clear_use_opus() {
+  use_opus_ = false;
+}
+inline bool SynthesizeConfig::use_opus() const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.SynthesizeConfig.use_opus)
+  return use_opus_;
+}
+inline void SynthesizeConfig::set_use_opus(bool value) {
+  
+  use_opus_ = value;
+  // @@protoc_insertion_point(field_set:techmo.tribune.SynthesizeConfig.use_opus)
 }
 
 // -------------------------------------------------------------------

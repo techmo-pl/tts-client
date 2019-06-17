@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tribune_tts.proto',
   package='techmo.tribune',
   syntax='proto3',
-  serialized_pb=_b('\n\x11tribune_tts.proto\x12\x0etechmo.tribune\"S\n\x11SynthesizeRequest\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x30\n\x06\x63onfig\x18\x02 \x01(\x0b\x32 .techmo.tribune.SynthesizeConfig\"-\n\x10SynthesizeConfig\x12\x19\n\x11sample_rate_hertz\x18\x01 \x01(\x05\"d\n\x12SynthesizeResponse\x12(\n\x05\x61udio\x18\x01 \x01(\x0b\x32\x19.techmo.tribune.AudioData\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x15.techmo.tribune.Error\"N\n\tAudioData\x12\x19\n\x11sample_rate_hertz\x18\x01 \x01(\x05\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\x12\x15\n\rend_of_stream\x18\x03 \x01(\x08\"E\n\x05\x45rror\x12\'\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x19.techmo.tribune.ErrorCode\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t*_\n\tErrorCode\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07LICENCE\x10\x01\x12\x16\n\x12TEXT_NORMALIZATION\x10\x02\x12\x11\n\rTRANSCRIPTION\x10\x03\x12\r\n\tSYNTHESIS\x10\x04\x32\\\n\x03TTS\x12U\n\nSynthesize\x12!.techmo.tribune.SynthesizeRequest\x1a\".techmo.tribune.SynthesizeResponse0\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x11tribune_tts.proto\x12\x0etechmo.tribune\"S\n\x11SynthesizeRequest\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x30\n\x06\x63onfig\x18\x02 \x01(\x0b\x32 .techmo.tribune.SynthesizeConfig\"?\n\x10SynthesizeConfig\x12\x19\n\x11sample_rate_hertz\x18\x01 \x01(\x05\x12\x10\n\x08use_opus\x18\x02 \x01(\x08\"d\n\x12SynthesizeResponse\x12(\n\x05\x61udio\x18\x01 \x01(\x0b\x32\x19.techmo.tribune.AudioData\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x15.techmo.tribune.Error\"N\n\tAudioData\x12\x19\n\x11sample_rate_hertz\x18\x01 \x01(\x05\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\x12\x15\n\rend_of_stream\x18\x03 \x01(\x08\"E\n\x05\x45rror\x12\'\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x19.techmo.tribune.ErrorCode\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t*_\n\tErrorCode\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07LICENCE\x10\x01\x12\x16\n\x12TEXT_NORMALIZATION\x10\x02\x12\x11\n\rTRANSCRIPTION\x10\x03\x12\r\n\tSYNTHESIS\x10\x04\x32\\\n\x03TTS\x12U\n\nSynthesize\x12!.techmo.tribune.SynthesizeRequest\x1a\".techmo.tribune.SynthesizeResponse0\x01\x62\x06proto3')
 )
 
 _ERRORCODE = _descriptor.EnumDescriptor(
@@ -52,8 +52,8 @@ _ERRORCODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=422,
-  serialized_end=517,
+  serialized_start=440,
+  serialized_end=535,
 )
 _sym_db.RegisterEnumDescriptor(_ERRORCODE)
 
@@ -118,6 +118,13 @@ _SYNTHESIZECONFIG = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='use_opus', full_name='techmo.tribune.SynthesizeConfig.use_opus', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -131,7 +138,7 @@ _SYNTHESIZECONFIG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=122,
-  serialized_end=167,
+  serialized_end=185,
 )
 
 
@@ -168,8 +175,8 @@ _SYNTHESIZERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=169,
-  serialized_end=269,
+  serialized_start=187,
+  serialized_end=287,
 )
 
 
@@ -213,8 +220,8 @@ _AUDIODATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=271,
-  serialized_end=349,
+  serialized_start=289,
+  serialized_end=367,
 )
 
 
@@ -251,8 +258,8 @@ _ERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=351,
-  serialized_end=420,
+  serialized_start=369,
+  serialized_end=438,
 )
 
 _SYNTHESIZEREQUEST.fields_by_name['config'].message_type = _SYNTHESIZECONFIG
@@ -310,8 +317,8 @@ _TTS = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=519,
-  serialized_end=611,
+  serialized_start=537,
+  serialized_end=629,
   methods=[
   _descriptor.MethodDescriptor(
     name='Synthesize',

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 
 #include <boost/program_options.hpp>
 
@@ -26,7 +27,9 @@ po::options_description CreateOptionsDescription(void) {
              "how long the client is willing to wait for a reply from the server. "
              "If not specified, the service will set the deadline to a very large number.")
             ("sample-rate-hertz", po::value<unsigned int>()->default_value(0),
-             "Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.");
+             "Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.")
+            ("use-opus",
+             "Flag to compress audio using Opus codec, default: false");
     return optionsDescription;
 }
 
@@ -58,12 +61,20 @@ int main(int argc, const char *const argv[]) {
         config.session_id = userOptions["session-id"].as<std::string>();
         config.grpc_timeout = userOptions["grpc-timeout"].as<int>();
         config.sample_rate_hertz = sample_rate_hertz;
+        config.use_opus = userOptions.count("use-opus");
 
         techmo::tribune::TribuneClient tribune_client{ userOptions["service-address"].as<std::string>() };
 
         const auto audio_data = tribune_client.Synthesize(config, userOptions["text"].as<std::string>());
 
-        WriteWaveFile(userOptions["out-path"].as<std::string>(), audio_data.sample_rate_hertz, audio_data.audio_bytes);
+        if(config.use_opus == false) {
+            WriteWaveFile(userOptions["out-path"].as<std::string>(), audio_data.sample_rate_hertz, audio_data.audio_bytes);
+        }
+        else {
+            std::fstream file(userOptions["out-path"].as<std::string>(), std::ios::binary | std::ios::trunc | std::ios::out);
+            file.write(audio_data.audio_bytes.data(), audio_data.audio_bytes.size());
+            file.flush();
+        }
     }
     catch (const std::exception &e) {
         std::cerr << e.what() << std::endl;

@@ -14,7 +14,9 @@ def call_synthesize(args, text):
     stub = tribune_tts_pb2_grpc.TTSStub(channel)
 
     # Synthesis request
-    config = tribune_tts_pb2.SynthesizeConfig(sample_rate_hertz=int(args.sample_rate))
+    config = tribune_tts_pb2.SynthesizeConfig(sample_rate_hertz=int(args.sample_rate), use_opus=bool(args.use_opus))
+    if config.use_opus is True and config.sample_rate_hertz not in [0, 8000, 12000, 16000, 24000, 48000]:
+        raise RuntimeError("Only valid sample rates with opus encoding are: 8000, 12000, 16000, 24000, 48000.")
     request = tribune_tts_pb2.SynthesizeRequest(text=text, config=config)
     ws = WaveSaver()
 
@@ -38,7 +40,10 @@ def call_synthesize(args, text):
                     ws.setFrameRate(response.audio.sample_rate_hertz)
                 ws.append(response.audio.content)
                 if response.audio.end_of_stream:
-                    ws.save(wavefilename)
+                    if config.use_opus is False:
+                        ws.save(wavefilename)
+                    else:
+                        ws.save_raw(wavefilename)
     except grpc.RpcError as e:
         print("[Server-side error] Received following RPC error from the TTS service:", str(e))
     ws.clear()

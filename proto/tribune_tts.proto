@@ -50,6 +50,9 @@ message SynthesizeConfig
 {
     // Desired sampling frequency in hertz of synthesized audio.
     int32 sample_rate_hertz = 1;
+
+    // Use OggOpus compression and save to `.opus` file
+    bool use_opus = 2;
 }
 
 // `SynthesizeResponse` is the only message returned to the client by
