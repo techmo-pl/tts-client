@@ -6,12 +6,14 @@ class WaveSaver:
     """Wave Saver for TTS"""
     buffer = None
     _framerate = None
-    _nchannels = 1
-    _sampwidth = 2
+    _nchannels = None
+    _sampwidth = None
 
     def __init__(self, sampling_frequency = None):
         self.buffer = bytearray()
         self._framerate = sampling_frequency
+        self._nchannels = 1
+        self._sampwidth = 2
       
     def setFrameRate(self, sampling_frequency):
         self._framerate = sampling_frequency
