@@ -28,8 +28,8 @@ po::options_description CreateOptionsDescription(void) {
              "If not specified, the service will set the deadline to a very large number.")
             ("sample-rate-hertz", po::value<unsigned int>()->default_value(0),
              "Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.")
-            ("use-opus",
-             "Flag to compress audio using Opus codec, default: false");
+            ("audio-encoding", po::value<std::string>()->default_value("LINEAR16"),
+             "Audio encoding, possible values are: LINEAR16, OGG_OPUS");
     return optionsDescription;
 }
 
@@ -61,13 +61,22 @@ int main(int argc, const char *const argv[]) {
         config.session_id = userOptions["session-id"].as<std::string>();
         config.grpc_timeout = userOptions["grpc-timeout"].as<int>();
         config.sample_rate_hertz = sample_rate_hertz;
-        config.use_opus = userOptions.count("use-opus");
+        const auto encoding = userOptions["audio-encoding"].as<std::string>();
+        if(encoding == "LINEAR16") {
+            config.encoding = techmo::tribune::AudioEncoding::LINEAR16;
+        }
+        else if(encoding == "OGG_OPUS") {
+            config.encoding = techmo::tribune::AudioEncoding::OGG_OPUS;
+        }
+        else {
+            throw std::runtime_error("Unknown audio encoding: " + encoding);
+        }
 
         techmo::tribune::TribuneClient tribune_client{ userOptions["service-address"].as<std::string>() };
 
         const auto audio_data = tribune_client.Synthesize(config, userOptions["text"].as<std::string>());
 
-        if(config.use_opus == false) {
+        if(config.encoding == techmo::tribune::AudioEncoding::LINEAR16) {
             WriteWaveFile(userOptions["out-path"].as<std::string>(), audio_data.sample_rate_hertz, audio_data.audio_bytes);
         }
         else {

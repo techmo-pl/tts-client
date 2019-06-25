@@ -8,10 +8,8 @@
 namespace techmo { namespace tribune {
 
 SynthesizeRequest build_request(const TribuneClientConfig& config, const std::string& text) {
-    if(config.use_opus and (config.sample_rate_hertz != 0 and config.sample_rate_hertz != 8000
-            and config.sample_rate_hertz != 12000 and config.sample_rate_hertz != 16000
-            and config.sample_rate_hertz != 24000 and config.sample_rate_hertz != 48000)){
-        throw std::runtime_error("Only valid sample rates with Opus encoding are: 8000, 12000, 16000, 24000, 48000.");
+    if(config.encoding == AudioEncoding::OGG_OPUS and config.sample_rate_hertz != 0 ){
+        throw std::runtime_error("Custom sample rate is not supported with Opus compression.");
     }
 
     SynthesizeRequest request;
