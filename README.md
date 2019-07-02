@@ -26,3 +26,10 @@ We provide sample TTS Client written in:
 - C++ in `cpp` (accepts text to be synthesized as a command line string),  
 - Python in `python` (accepts text to be synthesized as a command line string or as a content of given text file).  
 By default it saves "TechmoTTS.wav" file with received synthesized audio content. To use it, you have to specify provided by us service IP address and port using `--service-address` option with string in form "address:port".
+
+TTS supports following SSML tags:  
+`<prosody volume="+40%">text</prosody>`	Change of volume.			Parses numeric value (+ and -)  
+`<prosody rate="-10%">text</prosody>`	Change of rate without change of pitch.	Parses numeric value (+ and -)  
+`<prosody pitch="+30%">text</prosody>`	Change of pitch.			Parses numeric value (+ and -)  
+`<break time="3s"/>`	Inserts silence.					Parses numeric value in seconds or milliseconds ("3s", "750ms")  
+Prosody tags can be combined together, example: `<prosody rate="+30%" pitch="+40%">text</prosody>`.

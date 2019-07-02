@@ -62,28 +62,16 @@ int main(int argc, const char *const argv[]) {
         config.grpc_timeout = userOptions["grpc-timeout"].as<int>();
         config.sample_rate_hertz = sample_rate_hertz;
         const auto encoding = userOptions["audio-encoding"].as<std::string>();
-        if(encoding == "LINEAR16") {
-            config.encoding = techmo::tribune::AudioEncoding::LINEAR16;
-        }
-        else if(encoding == "OGG_OPUS") {
-            config.encoding = techmo::tribune::AudioEncoding::OGG_OPUS;
-        }
-        else {
+        const std::vector<std::string> allowedEncodings{ "LINEAR16", "OGG_OPUS" };
+        if(std::find(allowedEncodings.begin(), allowedEncodings.end(), encoding) == allowedEncodings.end()){
             throw std::runtime_error("Unknown audio encoding: " + encoding);
         }
-
+        techmo::tribune::AudioEncoding_Parse(encoding, &config.encoding);
         techmo::tribune::TribuneClient tribune_client{ userOptions["service-address"].as<std::string>() };
 
         const auto audio_data = tribune_client.Synthesize(config, userOptions["text"].as<std::string>());
 
-        if(config.encoding == techmo::tribune::AudioEncoding::LINEAR16) {
-            WriteWaveFile(userOptions["out-path"].as<std::string>(), audio_data.sample_rate_hertz, audio_data.audio_bytes);
-        }
-        else {
-            std::fstream file(userOptions["out-path"].as<std::string>(), std::ios::binary | std::ios::trunc | std::ios::out);
-            file.write(audio_data.audio_bytes.data(), audio_data.audio_bytes.size());
-            file.flush();
-        }
+        WriteFile(userOptions["out-path"].as<std::string>(), audio_data.sample_rate_hertz, config.encoding, audio_data.audio_bytes);
     }
     catch (const std::exception &e) {
         std::cerr << e.what() << std::endl;

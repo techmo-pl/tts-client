@@ -3,6 +3,7 @@
 
 
 #include <string>
+#include "tribune_client.h"
 
 
 /// WAVE file header structure
@@ -34,8 +35,11 @@ struct WAV_DATA
 /// Reads at given path WAVE file header into WAV_HEADER struct and audio bytes into std::string.
 WAV_DATA ReadWaveFile(const std::string & wavePath);
 
-/// Writes at given path WAVE file with given sample rate [Hz] and audio bytes as std::string.
+/// Writes WAVE file at given path with given sample rate [Hz] and audio bytes as std::string.
 void WriteWaveFile(const std::string & wavePath, unsigned int sampleRate, const std::string & audioBytes);
+
+/// Writes file at given path depending on encoding.
+void WriteFile(const std::string & path, unsigned int sampleRate, techmo::tribune::AudioEncoding encoding, const std::string & audioBytes);
 
 
 #endif /* __WAVE_UTILS_H__ */

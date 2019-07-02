@@ -4,7 +4,7 @@ import grpc
 import os
 from wave_saver import WaveSaver
 
-class SimpleSaver:
+class SimpleFileSaver:
     """Raw saver for TTS"""
     buffer = None
     _framerate = None
@@ -30,6 +30,6 @@ class SaverFactory:
     @staticmethod
     def get_saver(encoding):
         if encoding == tribune_tts_pb2.AudioEncoding.Value('OGG_OPUS'):
-            return SimpleSaver()
+            return SimpleFileSaver()
         else:
             return WaveSaver()

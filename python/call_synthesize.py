@@ -2,7 +2,7 @@ import tribune_tts_pb2
 import tribune_tts_pb2_grpc
 import grpc
 import os
-from saver_factory import SaverFactory
+from file_saver import SaverFactory
 
 
 def call_synthesize(args, text):
