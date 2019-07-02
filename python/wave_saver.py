@@ -32,10 +32,6 @@ class WaveSaver:
             w.setparams(params)
             w.writeframes(self.buffer)
 
-    def save_raw(self, filename):
-        with open(filename, 'w+b') as f:
-            f.write(self.buffer)
-
     def load(self, filename):
         with wave.open(filename, 'r') as wr:
             self.buffer = wr.readframes(wr.getnframes())
