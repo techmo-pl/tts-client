@@ -51,7 +51,7 @@ namespace protobuf_tribune_5ftts_2eproto {
 namespace {
 
 ::google::protobuf::Metadata file_level_metadata[5];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
 
 }  // namespace
 
@@ -87,7 +87,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SynthesizeConfig, sample_rate_hertz_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SynthesizeConfig, use_opus_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SynthesizeConfig, encoding_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SynthesizeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -182,22 +182,24 @@ void AddDescriptorsImpl() {
       "\n\021tribune_tts.proto\022\016techmo.tribune\"S\n\021S"
       "ynthesizeRequest\022\014\n\004text\030\001 \001(\t\0220\n\006config"
       "\030\002 \001(\0132 .techmo.tribune.SynthesizeConfig"
-      "\"\?\n\020SynthesizeConfig\022\031\n\021sample_rate_hert"
-      "z\030\001 \001(\005\022\020\n\010use_opus\030\002 \001(\010\"d\n\022SynthesizeR"
-      "esponse\022(\n\005audio\030\001 \001(\0132\031.techmo.tribune."
-      "AudioData\022$\n\005error\030\002 \001(\0132\025.techmo.tribun"
-      "e.Error\"N\n\tAudioData\022\031\n\021sample_rate_hert"
-      "z\030\001 \001(\005\022\017\n\007content\030\002 \001(\014\022\025\n\rend_of_strea"
-      "m\030\003 \001(\010\"E\n\005Error\022\'\n\004code\030\001 \001(\0162\031.techmo."
-      "tribune.ErrorCode\022\023\n\013description\030\002 \001(\t*_"
-      "\n\tErrorCode\022\013\n\007UNKNOWN\020\000\022\013\n\007LICENCE\020\001\022\026\n"
-      "\022TEXT_NORMALIZATION\020\002\022\021\n\rTRANSCRIPTION\020\003"
-      "\022\r\n\tSYNTHESIS\020\0042\\\n\003TTS\022U\n\nSynthesize\022!.t"
-      "echmo.tribune.SynthesizeRequest\032\".techmo"
-      ".tribune.SynthesizeResponse0\001b\006proto3"
+      "\"^\n\020SynthesizeConfig\022\031\n\021sample_rate_hert"
+      "z\030\001 \001(\005\022/\n\010encoding\030\002 \001(\0162\035.techmo.tribu"
+      "ne.AudioEncoding\"d\n\022SynthesizeResponse\022("
+      "\n\005audio\030\001 \001(\0132\031.techmo.tribune.AudioData"
+      "\022$\n\005error\030\002 \001(\0132\025.techmo.tribune.Error\"N"
+      "\n\tAudioData\022\031\n\021sample_rate_hertz\030\001 \001(\005\022\017"
+      "\n\007content\030\002 \001(\014\022\025\n\rend_of_stream\030\003 \001(\010\"E"
+      "\n\005Error\022\'\n\004code\030\001 \001(\0162\031.techmo.tribune.E"
+      "rrorCode\022\023\n\013description\030\002 \001(\t*+\n\rAudioEn"
+      "coding\022\014\n\010LINEAR16\020\000\022\014\n\010OGG_OPUS\020\001*_\n\tEr"
+      "rorCode\022\013\n\007UNKNOWN\020\000\022\013\n\007LICENCE\020\001\022\026\n\022TEX"
+      "T_NORMALIZATION\020\002\022\021\n\rTRANSCRIPTION\020\003\022\r\n\t"
+      "SYNTHESIS\020\0042\\\n\003TTS\022U\n\nSynthesize\022!.techm"
+      "o.tribune.SynthesizeRequest\032\".techmo.tri"
+      "bune.SynthesizeResponse0\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 637);
+      descriptor, 713);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "tribune_tts.proto", &protobuf_RegisterTypes);
 }
@@ -216,9 +218,23 @@ struct StaticDescriptorInitializer {
 
 }  // namespace protobuf_tribune_5ftts_2eproto
 
-const ::google::protobuf::EnumDescriptor* ErrorCode_descriptor() {
+const ::google::protobuf::EnumDescriptor* AudioEncoding_descriptor() {
   protobuf_tribune_5ftts_2eproto::protobuf_AssignDescriptorsOnce();
   return protobuf_tribune_5ftts_2eproto::file_level_enum_descriptors[0];
+}
+bool AudioEncoding_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::google::protobuf::EnumDescriptor* ErrorCode_descriptor() {
+  protobuf_tribune_5ftts_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_tribune_5ftts_2eproto::file_level_enum_descriptors[1];
 }
 bool ErrorCode_IsValid(int value) {
   switch (value) {
@@ -637,7 +653,7 @@ void SynthesizeRequest::set_allocated_config(::techmo::tribune::SynthesizeConfig
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SynthesizeConfig::kSampleRateHertzFieldNumber;
-const int SynthesizeConfig::kUseOpusFieldNumber;
+const int SynthesizeConfig::kEncodingFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SynthesizeConfig::SynthesizeConfig()
@@ -654,15 +670,15 @@ SynthesizeConfig::SynthesizeConfig(const SynthesizeConfig& from)
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&sample_rate_hertz_, &from.sample_rate_hertz_,
-    static_cast<size_t>(reinterpret_cast<char*>(&use_opus_) -
-    reinterpret_cast<char*>(&sample_rate_hertz_)) + sizeof(use_opus_));
+    static_cast<size_t>(reinterpret_cast<char*>(&encoding_) -
+    reinterpret_cast<char*>(&sample_rate_hertz_)) + sizeof(encoding_));
   // @@protoc_insertion_point(copy_constructor:techmo.tribune.SynthesizeConfig)
 }
 
 void SynthesizeConfig::SharedCtor() {
   ::memset(&sample_rate_hertz_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&use_opus_) -
-      reinterpret_cast<char*>(&sample_rate_hertz_)) + sizeof(use_opus_));
+      reinterpret_cast<char*>(&encoding_) -
+      reinterpret_cast<char*>(&sample_rate_hertz_)) + sizeof(encoding_));
   _cached_size_ = 0;
 }
 
@@ -704,8 +720,8 @@ void SynthesizeConfig::Clear() {
   (void) cached_has_bits;
 
   ::memset(&sample_rate_hertz_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&use_opus_) -
-      reinterpret_cast<char*>(&sample_rate_hertz_)) + sizeof(use_opus_));
+      reinterpret_cast<char*>(&encoding_) -
+      reinterpret_cast<char*>(&sample_rate_hertz_)) + sizeof(encoding_));
   _internal_metadata_.Clear();
 }
 
@@ -733,14 +749,15 @@ bool SynthesizeConfig::MergePartialFromCodedStream(
         break;
       }
 
-      // bool use_opus = 2;
+      // .techmo.tribune.AudioEncoding encoding = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-
+          int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &use_opus_)));
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_encoding(static_cast< ::techmo::tribune::AudioEncoding >(value));
         } else {
           goto handle_unusual;
         }
@@ -778,9 +795,10 @@ void SynthesizeConfig::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->sample_rate_hertz(), output);
   }
 
-  // bool use_opus = 2;
-  if (this->use_opus() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->use_opus(), output);
+  // .techmo.tribune.AudioEncoding encoding = 2;
+  if (this->encoding() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->encoding(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -802,9 +820,10 @@ void SynthesizeConfig::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->sample_rate_hertz(), target);
   }
 
-  // bool use_opus = 2;
-  if (this->use_opus() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->use_opus(), target);
+  // .techmo.tribune.AudioEncoding encoding = 2;
+  if (this->encoding() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->encoding(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -831,9 +850,10 @@ size_t SynthesizeConfig::ByteSizeLong() const {
         this->sample_rate_hertz());
   }
 
-  // bool use_opus = 2;
-  if (this->use_opus() != 0) {
-    total_size += 1 + 1;
+  // .techmo.tribune.AudioEncoding encoding = 2;
+  if (this->encoding() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->encoding());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -868,8 +888,8 @@ void SynthesizeConfig::MergeFrom(const SynthesizeConfig& from) {
   if (from.sample_rate_hertz() != 0) {
     set_sample_rate_hertz(from.sample_rate_hertz());
   }
-  if (from.use_opus() != 0) {
-    set_use_opus(from.use_opus());
+  if (from.encoding() != 0) {
+    set_encoding(from.encoding());
   }
 }
 
@@ -898,7 +918,7 @@ void SynthesizeConfig::Swap(SynthesizeConfig* other) {
 void SynthesizeConfig::InternalSwap(SynthesizeConfig* other) {
   using std::swap;
   swap(sample_rate_hertz_, other->sample_rate_hertz_);
-  swap(use_opus_, other->use_opus_);
+  swap(encoding_, other->encoding_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
 }
@@ -925,18 +945,18 @@ void SynthesizeConfig::set_sample_rate_hertz(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:techmo.tribune.SynthesizeConfig.sample_rate_hertz)
 }
 
-// bool use_opus = 2;
-void SynthesizeConfig::clear_use_opus() {
-  use_opus_ = false;
+// .techmo.tribune.AudioEncoding encoding = 2;
+void SynthesizeConfig::clear_encoding() {
+  encoding_ = 0;
 }
-bool SynthesizeConfig::use_opus() const {
-  // @@protoc_insertion_point(field_get:techmo.tribune.SynthesizeConfig.use_opus)
-  return use_opus_;
+::techmo::tribune::AudioEncoding SynthesizeConfig::encoding() const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.SynthesizeConfig.encoding)
+  return static_cast< ::techmo::tribune::AudioEncoding >(encoding_);
 }
-void SynthesizeConfig::set_use_opus(bool value) {
+void SynthesizeConfig::set_encoding(::techmo::tribune::AudioEncoding value) {
   
-  use_opus_ = value;
-  // @@protoc_insertion_point(field_set:techmo.tribune.SynthesizeConfig.use_opus)
+  encoding_ = value;
+  // @@protoc_insertion_point(field_set:techmo.tribune.SynthesizeConfig.encoding)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

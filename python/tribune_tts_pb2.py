@@ -20,9 +20,32 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tribune_tts.proto',
   package='techmo.tribune',
   syntax='proto3',
-  serialized_pb=_b('\n\x11tribune_tts.proto\x12\x0etechmo.tribune\"S\n\x11SynthesizeRequest\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x30\n\x06\x63onfig\x18\x02 \x01(\x0b\x32 .techmo.tribune.SynthesizeConfig\"?\n\x10SynthesizeConfig\x12\x19\n\x11sample_rate_hertz\x18\x01 \x01(\x05\x12\x10\n\x08use_opus\x18\x02 \x01(\x08\"d\n\x12SynthesizeResponse\x12(\n\x05\x61udio\x18\x01 \x01(\x0b\x32\x19.techmo.tribune.AudioData\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x15.techmo.tribune.Error\"N\n\tAudioData\x12\x19\n\x11sample_rate_hertz\x18\x01 \x01(\x05\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\x12\x15\n\rend_of_stream\x18\x03 \x01(\x08\"E\n\x05\x45rror\x12\'\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x19.techmo.tribune.ErrorCode\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t*_\n\tErrorCode\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07LICENCE\x10\x01\x12\x16\n\x12TEXT_NORMALIZATION\x10\x02\x12\x11\n\rTRANSCRIPTION\x10\x03\x12\r\n\tSYNTHESIS\x10\x04\x32\\\n\x03TTS\x12U\n\nSynthesize\x12!.techmo.tribune.SynthesizeRequest\x1a\".techmo.tribune.SynthesizeResponse0\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x11tribune_tts.proto\x12\x0etechmo.tribune\"S\n\x11SynthesizeRequest\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x30\n\x06\x63onfig\x18\x02 \x01(\x0b\x32 .techmo.tribune.SynthesizeConfig\"^\n\x10SynthesizeConfig\x12\x19\n\x11sample_rate_hertz\x18\x01 \x01(\x05\x12/\n\x08\x65ncoding\x18\x02 \x01(\x0e\x32\x1d.techmo.tribune.AudioEncoding\"d\n\x12SynthesizeResponse\x12(\n\x05\x61udio\x18\x01 \x01(\x0b\x32\x19.techmo.tribune.AudioData\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x15.techmo.tribune.Error\"N\n\tAudioData\x12\x19\n\x11sample_rate_hertz\x18\x01 \x01(\x05\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\x12\x15\n\rend_of_stream\x18\x03 \x01(\x08\"E\n\x05\x45rror\x12\'\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x19.techmo.tribune.ErrorCode\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t*+\n\rAudioEncoding\x12\x0c\n\x08LINEAR16\x10\x00\x12\x0c\n\x08OGG_OPUS\x10\x01*_\n\tErrorCode\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07LICENCE\x10\x01\x12\x16\n\x12TEXT_NORMALIZATION\x10\x02\x12\x11\n\rTRANSCRIPTION\x10\x03\x12\r\n\tSYNTHESIS\x10\x04\x32\\\n\x03TTS\x12U\n\nSynthesize\x12!.techmo.tribune.SynthesizeRequest\x1a\".techmo.tribune.SynthesizeResponse0\x01\x62\x06proto3')
 )
 
+_AUDIOENCODING = _descriptor.EnumDescriptor(
+  name='AudioEncoding',
+  full_name='techmo.tribune.AudioEncoding',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='LINEAR16', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='OGG_OPUS', index=1, number=1,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=471,
+  serialized_end=514,
+)
+_sym_db.RegisterEnumDescriptor(_AUDIOENCODING)
+
+AudioEncoding = enum_type_wrapper.EnumTypeWrapper(_AUDIOENCODING)
 _ERRORCODE = _descriptor.EnumDescriptor(
   name='ErrorCode',
   full_name='techmo.tribune.ErrorCode',
@@ -52,12 +75,14 @@ _ERRORCODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=440,
-  serialized_end=535,
+  serialized_start=516,
+  serialized_end=611,
 )
 _sym_db.RegisterEnumDescriptor(_ERRORCODE)
 
 ErrorCode = enum_type_wrapper.EnumTypeWrapper(_ERRORCODE)
+LINEAR16 = 0
+OGG_OPUS = 1
 UNKNOWN = 0
 LICENCE = 1
 TEXT_NORMALIZATION = 2
@@ -119,9 +144,9 @@ _SYNTHESIZECONFIG = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='use_opus', full_name='techmo.tribune.SynthesizeConfig.use_opus', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='encoding', full_name='techmo.tribune.SynthesizeConfig.encoding', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -138,7 +163,7 @@ _SYNTHESIZECONFIG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=122,
-  serialized_end=185,
+  serialized_end=216,
 )
 
 
@@ -175,8 +200,8 @@ _SYNTHESIZERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=187,
-  serialized_end=287,
+  serialized_start=218,
+  serialized_end=318,
 )
 
 
@@ -220,8 +245,8 @@ _AUDIODATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=289,
-  serialized_end=367,
+  serialized_start=320,
+  serialized_end=398,
 )
 
 
@@ -258,11 +283,12 @@ _ERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=369,
-  serialized_end=438,
+  serialized_start=400,
+  serialized_end=469,
 )
 
 _SYNTHESIZEREQUEST.fields_by_name['config'].message_type = _SYNTHESIZECONFIG
+_SYNTHESIZECONFIG.fields_by_name['encoding'].enum_type = _AUDIOENCODING
 _SYNTHESIZERESPONSE.fields_by_name['audio'].message_type = _AUDIODATA
 _SYNTHESIZERESPONSE.fields_by_name['error'].message_type = _ERROR
 _ERROR.fields_by_name['code'].enum_type = _ERRORCODE
@@ -271,6 +297,7 @@ DESCRIPTOR.message_types_by_name['SynthesizeConfig'] = _SYNTHESIZECONFIG
 DESCRIPTOR.message_types_by_name['SynthesizeResponse'] = _SYNTHESIZERESPONSE
 DESCRIPTOR.message_types_by_name['AudioData'] = _AUDIODATA
 DESCRIPTOR.message_types_by_name['Error'] = _ERROR
+DESCRIPTOR.enum_types_by_name['AudioEncoding'] = _AUDIOENCODING
 DESCRIPTOR.enum_types_by_name['ErrorCode'] = _ERRORCODE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -317,8 +344,8 @@ _TTS = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=537,
-  serialized_end=629,
+  serialized_start=613,
+  serialized_end=705,
   methods=[
   _descriptor.MethodDescriptor(
     name='Synthesize',
