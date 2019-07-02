@@ -1,7 +1,6 @@
 #include <grpc++/grpc++.h>
 #include <google/protobuf/text_format.h>
 
-#include "tribune_tts.grpc.pb.h"
 #include "tribune_client.h"
 
 
@@ -15,7 +14,7 @@ SynthesizeRequest build_request(const TribuneClientConfig& config, const std::st
     SynthesizeRequest request;
     request.set_text(text);
     request.mutable_config()->set_sample_rate_hertz(config.sample_rate_hertz);
-    request.mutable_config()->set_use_opus(config.use_opus);
+    request.mutable_config()->set_encoding(config.encoding);
     return request;
 }
 
