@@ -43,3 +43,16 @@ void WriteWaveFile(const std::string & wavePath, unsigned int sampleRate, const 
     wave_file.write((char*)&audioBytes[0], audioBytes.size());
     wave_file.flush();
 }
+
+void WriteFile(const std::string & path, unsigned int sampleRate, techmo::tribune::AudioEncoding encoding, const std::string & audioBytes){
+    if(encoding == techmo::tribune::AudioEncoding::LINEAR16) {
+        WriteWaveFile(path, sampleRate, audioBytes);
+    }
+    else {
+        std::fstream file(path, std::ios::binary | std::ios::trunc | std::ios::out);
+        file.write(audioBytes.data(), audioBytes.size());
+        file.flush();
+    }
+
+
+}

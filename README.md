@@ -15,18 +15,7 @@ Language-specific build instructions can be found in their respective directorie
 Techmo TTS Service API is defined in `proto/TTS.proto` file.
 
 Service's `Synthesize` method accepts `SynthesizeRequest` object which contains whole phrase to be synthesized.
-You have to put the phrase as a string in `text` field of `SynthesizeRequest`. The string has to be in orthographic form. In that string you can use several special tags which can be interpreted. Tags have to be in from `<tag>something special</tag>` and can occur in any place in text. Currently interpreted tags are:
-
-cardinal    cardinal number     "<cardinal>7</cardinal>"    -> "siedem"
-signed      number with sign    "<signed>-15</signed>"      -> "minus piętnaście"
-ordinal     ordinal number      "<ordinal>1</ordinal>"      -> "pierwszy"
-fraction    fractional number   "<fraction>3/4</fraction>"  -> "trzy czwarte"
-postal      postal code         "<postal>30-020</postal>"   -> "trzydzieści zero dwadzieścia"
-time        time                "<time>22:00</time>"        -> "dwudziesta druga"
-date        date                "<date>12/05/2001</date>"   -> "dwunasty maja dwa tysiące jeden"
-
-Note: when interpreting tags only nominal case is supported at the moment.
-
+You have to put the phrase as a string in `text` field of `SynthesizeRequest`. The string has to be in orthographic form.
 You can set `SynthesizeConfig`'s fields to specify parameters of synthesis. Currently supported option is only `sample_rate_hertz`, which is desired sampling frequency (in hertz) of synthesized audio.
 
 `SynthesizeRequest` can be sent to the service via gRPC insecure channel (that does not require authentication).
@@ -37,3 +26,10 @@ We provide sample TTS Client written in:
 - C++ in `cpp` (accepts text to be synthesized as a command line string),  
 - Python in `python` (accepts text to be synthesized as a command line string or as a content of given text file).  
 By default it saves "TechmoTTS.wav" file with received synthesized audio content. To use it, you have to specify provided by us service IP address and port using `--service-address` option with string in form "address:port".
+
+TTS supports following SSML tags:  
+`<prosody volume="+40%">text</prosody>`	Change of volume.			Parses numeric value (+ and -)  
+`<prosody rate="-10%">text</prosody>`	Change of rate without change of pitch.	Parses numeric value (+ and -)  
+`<prosody pitch="+30%">text</prosody>`	Change of pitch.			Parses numeric value (+ and -)  
+`<break time="3s"/>`	Inserts silence.					Parses numeric value in seconds or milliseconds ("3s", "750ms")  
+Prosody tags can be combined together, example: `<prosody rate="+30%" pitch="+40%">text</prosody>`.

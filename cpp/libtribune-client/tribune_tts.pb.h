@@ -69,6 +69,27 @@ void AddDescriptors();
 void InitDefaults();
 }  // namespace protobuf_tribune_5ftts_2eproto
 
+enum AudioEncoding {
+  LINEAR16 = 0,
+  OGG_OPUS = 1,
+  AudioEncoding_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  AudioEncoding_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+};
+bool AudioEncoding_IsValid(int value);
+const AudioEncoding AudioEncoding_MIN = LINEAR16;
+const AudioEncoding AudioEncoding_MAX = OGG_OPUS;
+const int AudioEncoding_ARRAYSIZE = AudioEncoding_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* AudioEncoding_descriptor();
+inline const ::std::string& AudioEncoding_Name(AudioEncoding value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    AudioEncoding_descriptor(), value);
+}
+inline bool AudioEncoding_Parse(
+    const ::std::string& name, AudioEncoding* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<AudioEncoding>(
+    AudioEncoding_descriptor(), name, value);
+}
 enum ErrorCode {
   UNKNOWN = 0,
   LICENCE = 1,
@@ -297,11 +318,18 @@ class SynthesizeConfig : public ::google::protobuf::Message /* @@protoc_insertio
   ::google::protobuf::int32 sample_rate_hertz() const;
   void set_sample_rate_hertz(::google::protobuf::int32 value);
 
+  // .techmo.tribune.AudioEncoding encoding = 2;
+  void clear_encoding();
+  static const int kEncodingFieldNumber = 2;
+  ::techmo::tribune::AudioEncoding encoding() const;
+  void set_encoding(::techmo::tribune::AudioEncoding value);
+
   // @@protoc_insertion_point(class_scope:techmo.tribune.SynthesizeConfig)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::int32 sample_rate_hertz_;
+  int encoding_;
   mutable int _cached_size_;
   friend struct protobuf_tribune_5ftts_2eproto::TableStruct;
 };
@@ -769,6 +797,20 @@ inline void SynthesizeConfig::set_sample_rate_hertz(::google::protobuf::int32 va
   // @@protoc_insertion_point(field_set:techmo.tribune.SynthesizeConfig.sample_rate_hertz)
 }
 
+// .techmo.tribune.AudioEncoding encoding = 2;
+inline void SynthesizeConfig::clear_encoding() {
+  encoding_ = 0;
+}
+inline ::techmo::tribune::AudioEncoding SynthesizeConfig::encoding() const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.SynthesizeConfig.encoding)
+  return static_cast< ::techmo::tribune::AudioEncoding >(encoding_);
+}
+inline void SynthesizeConfig::set_encoding(::techmo::tribune::AudioEncoding value) {
+  
+  encoding_ = value;
+  // @@protoc_insertion_point(field_set:techmo.tribune.SynthesizeConfig.encoding)
+}
+
 // -------------------------------------------------------------------
 
 // SynthesizeResponse
@@ -1031,6 +1073,11 @@ inline void Error::set_allocated_description(::std::string* description) {
 namespace google {
 namespace protobuf {
 
+template <> struct is_proto_enum< ::techmo::tribune::AudioEncoding> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::techmo::tribune::AudioEncoding>() {
+  return ::techmo::tribune::AudioEncoding_descriptor();
+}
 template <> struct is_proto_enum< ::techmo::tribune::ErrorCode> : ::google::protobuf::internal::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::techmo::tribune::ErrorCode>() {

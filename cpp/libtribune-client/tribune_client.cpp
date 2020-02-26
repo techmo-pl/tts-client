@@ -1,16 +1,20 @@
 #include <grpc++/grpc++.h>
 #include <google/protobuf/text_format.h>
 
-#include "tribune_tts.grpc.pb.h"
 #include "tribune_client.h"
 
 
 namespace techmo { namespace tribune {
 
 SynthesizeRequest build_request(const TribuneClientConfig& config, const std::string& text) {
+    if(config.encoding == AudioEncoding::OGG_OPUS and config.sample_rate_hertz != 0 ){
+        throw std::runtime_error("Custom sample rate is not supported with Opus compression.");
+    }
+
     SynthesizeRequest request;
     request.set_text(text);
     request.mutable_config()->set_sample_rate_hertz(config.sample_rate_hertz);
+    request.mutable_config()->set_encoding(config.encoding);
     return request;
 }
 

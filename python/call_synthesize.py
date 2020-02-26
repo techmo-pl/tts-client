@@ -2,7 +2,7 @@ import tribune_tts_pb2
 import tribune_tts_pb2_grpc
 import grpc
 import os
-from wave_saver import WaveSaver
+from file_saver import SaverFactory
 
 
 def call_synthesize(args, text):
@@ -14,9 +14,11 @@ def call_synthesize(args, text):
     stub = tribune_tts_pb2_grpc.TTSStub(channel)
 
     # Synthesis request
-    config = tribune_tts_pb2.SynthesizeConfig(sample_rate_hertz=int(args.sample_rate))
+    config = tribune_tts_pb2.SynthesizeConfig(sample_rate_hertz=int(args.sample_rate), encoding=args.audio_encoding)
+    if config.encoding is tribune_tts_pb2.AudioEncoding.Value('OGG_OPUS') and config.sample_rate_hertz is not 0:
+        raise RuntimeError("Custom sample rate is not supported with Opus compression.")
     request = tribune_tts_pb2.SynthesizeRequest(text=text, config=config)
-    ws = WaveSaver()
+    ws = SaverFactory.get_saver(encoding=config.encoding)
 
     timeout=None
     if args.grpc_timeout > 0:

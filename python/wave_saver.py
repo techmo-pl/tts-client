@@ -31,7 +31,7 @@ class WaveSaver:
             params = (self._nchannels, self._sampwidth, self._framerate, len(self.buffer), 'NONE', 'not compressed')
             w.setparams(params)
             w.writeframes(self.buffer)
-    
+
     def load(self, filename):
         with wave.open(filename, 'r') as wr:
             self.buffer = wr.readframes(wr.getnframes())

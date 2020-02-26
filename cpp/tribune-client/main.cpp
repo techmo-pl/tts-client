@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 
 #include <boost/program_options.hpp>
 
@@ -26,7 +27,9 @@ po::options_description CreateOptionsDescription(void) {
              "how long the client is willing to wait for a reply from the server. "
              "If not specified, the service will set the deadline to a very large number.")
             ("sample-rate-hertz", po::value<unsigned int>()->default_value(0),
-             "Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.");
+             "Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.")
+            ("audio-encoding", po::value<std::string>()->default_value("LINEAR16"),
+             "Audio encoding, possible values are: LINEAR16, OGG_OPUS");
     return optionsDescription;
 }
 
@@ -58,12 +61,17 @@ int main(int argc, const char *const argv[]) {
         config.session_id = userOptions["session-id"].as<std::string>();
         config.grpc_timeout = userOptions["grpc-timeout"].as<int>();
         config.sample_rate_hertz = sample_rate_hertz;
-
+        const auto encoding = userOptions["audio-encoding"].as<std::string>();
+        const std::vector<std::string> allowedEncodings{ "LINEAR16", "OGG_OPUS" };
+        if(std::find(allowedEncodings.begin(), allowedEncodings.end(), encoding) == allowedEncodings.end()){
+            throw std::runtime_error("Unknown audio encoding: " + encoding);
+        }
+        techmo::tribune::AudioEncoding_Parse(encoding, &config.encoding);
         techmo::tribune::TribuneClient tribune_client{ userOptions["service-address"].as<std::string>() };
 
         const auto audio_data = tribune_client.Synthesize(config, userOptions["text"].as<std::string>());
 
-        WriteWaveFile(userOptions["out-path"].as<std::string>(), audio_data.sample_rate_hertz, audio_data.audio_bytes);
+        WriteFile(userOptions["out-path"].as<std::string>(), audio_data.sample_rate_hertz, config.encoding, audio_data.audio_bytes);
     }
     catch (const std::exception &e) {
         std::cerr << e.what() << std::endl;
