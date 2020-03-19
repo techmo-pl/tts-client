@@ -11,22 +11,34 @@
 
 #include "tribune_tts.pb.h"
 
-#include <grpc++/impl/codegen/async_stream.h>
-#include <grpc++/impl/codegen/async_unary_call.h>
-#include <grpc++/impl/codegen/method_handler_impl.h>
-#include <grpc++/impl/codegen/proto_utils.h>
-#include <grpc++/impl/codegen/rpc_method.h>
-#include <grpc++/impl/codegen/service_type.h>
-#include <grpc++/impl/codegen/status.h>
-#include <grpc++/impl/codegen/stub_options.h>
-#include <grpc++/impl/codegen/sync_stream.h>
+#include <functional>
+#include <grpcpp/impl/codegen/async_generic_service.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/impl/codegen/client_callback.h>
+#include <grpcpp/impl/codegen/client_context.h>
+#include <grpcpp/impl/codegen/completion_queue.h>
+#include <grpcpp/impl/codegen/method_handler_impl.h>
+#include <grpcpp/impl/codegen/proto_utils.h>
+#include <grpcpp/impl/codegen/rpc_method.h>
+#include <grpcpp/impl/codegen/server_callback.h>
+#include <grpcpp/impl/codegen/server_context.h>
+#include <grpcpp/impl/codegen/service_type.h>
+#include <grpcpp/impl/codegen/status.h>
+#include <grpcpp/impl/codegen/stub_options.h>
+#include <grpcpp/impl/codegen/sync_stream.h>
 
-namespace grpc {
+namespace grpc_impl {
 class CompletionQueue;
-class Channel;
-class RpcService;
 class ServerCompletionQueue;
 class ServerContext;
+}  // namespace grpc_impl
+
+namespace grpc {
+namespace experimental {
+template <typename RequestT, typename ResponseT>
+class MessageAllocator;
+}  // namespace experimental
 }  // namespace grpc
 
 namespace techmo {
@@ -72,6 +84,13 @@ class TTS final {
     std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::techmo::tribune::SynthesizeResponse>> PrepareAsyncSynthesize(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::techmo::tribune::SynthesizeResponse>>(PrepareAsyncSynthesizeRaw(context, request, cq));
     }
+    class experimental_async_interface {
+     public:
+      virtual ~experimental_async_interface() {}
+      // Returns audio signal with synthesized speech, given text and optional configuration.
+      virtual void Synthesize(::grpc::ClientContext* context, ::techmo::tribune::SynthesizeRequest* request, ::grpc::experimental::ClientReadReactor< ::techmo::tribune::SynthesizeResponse>* reactor) = 0;
+    };
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientReaderInterface< ::techmo::tribune::SynthesizeResponse>* SynthesizeRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::techmo::tribune::SynthesizeResponse>* AsyncSynthesizeRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
@@ -89,13 +108,25 @@ class TTS final {
     std::unique_ptr< ::grpc::ClientAsyncReader< ::techmo::tribune::SynthesizeResponse>> PrepareAsyncSynthesize(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncReader< ::techmo::tribune::SynthesizeResponse>>(PrepareAsyncSynthesizeRaw(context, request, cq));
     }
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
+     public:
+      void Synthesize(::grpc::ClientContext* context, ::techmo::tribune::SynthesizeRequest* request, ::grpc::experimental::ClientReadReactor< ::techmo::tribune::SynthesizeResponse>* reactor) override;
+     private:
+      friend class Stub;
+      explicit experimental_async(Stub* stub): stub_(stub) { }
+      Stub* stub() { return stub_; }
+      Stub* stub_;
+    };
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
+    class experimental_async async_stub_{this};
     ::grpc::ClientReader< ::techmo::tribune::SynthesizeResponse>* SynthesizeRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request) override;
     ::grpc::ClientAsyncReader< ::techmo::tribune::SynthesizeResponse>* AsyncSynthesizeRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
     ::grpc::ClientAsyncReader< ::techmo::tribune::SynthesizeResponse>* PrepareAsyncSynthesizeRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq) override;
-    const ::grpc::RpcMethod rpcmethod_Synthesize_;
+    const ::grpc::internal::RpcMethod rpcmethod_Synthesize_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -109,7 +140,7 @@ class TTS final {
   template <class BaseClass>
   class WithAsyncMethod_Synthesize : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_Synthesize() {
       ::grpc::Service::MarkMethodAsync(0);
@@ -118,7 +149,7 @@ class TTS final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Synthesize(::grpc::ServerContext* context, const ::techmo::tribune::SynthesizeRequest* request, ::grpc::ServerWriter< ::techmo::tribune::SynthesizeResponse>* writer) final override {
+    ::grpc::Status Synthesize(::grpc::ServerContext* /*context*/, const ::techmo::tribune::SynthesizeRequest* /*request*/, ::grpc::ServerWriter< ::techmo::tribune::SynthesizeResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -128,9 +159,32 @@ class TTS final {
   };
   typedef WithAsyncMethod_Synthesize<Service > AsyncService;
   template <class BaseClass>
+  class ExperimentalWithCallbackMethod_Synthesize : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_Synthesize() {
+      ::grpc::Service::experimental().MarkMethodCallback(0,
+        new ::grpc_impl::internal::CallbackServerStreamingHandler< ::techmo::tribune::SynthesizeRequest, ::techmo::tribune::SynthesizeResponse>(
+          [this] { return this->Synthesize(); }));
+    }
+    ~ExperimentalWithCallbackMethod_Synthesize() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Synthesize(::grpc::ServerContext* /*context*/, const ::techmo::tribune::SynthesizeRequest* /*request*/, ::grpc::ServerWriter< ::techmo::tribune::SynthesizeResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::experimental::ServerWriteReactor< ::techmo::tribune::SynthesizeRequest, ::techmo::tribune::SynthesizeResponse>* Synthesize() {
+      return new ::grpc_impl::internal::UnimplementedWriteReactor<
+        ::techmo::tribune::SynthesizeRequest, ::techmo::tribune::SynthesizeResponse>;}
+  };
+  typedef ExperimentalWithCallbackMethod_Synthesize<Service > ExperimentalCallbackService;
+  template <class BaseClass>
   class WithGenericMethod_Synthesize : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_Synthesize() {
       ::grpc::Service::MarkMethodGeneric(0);
@@ -139,26 +193,68 @@ class TTS final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Synthesize(::grpc::ServerContext* context, const ::techmo::tribune::SynthesizeRequest* request, ::grpc::ServerWriter< ::techmo::tribune::SynthesizeResponse>* writer) final override {
+    ::grpc::Status Synthesize(::grpc::ServerContext* /*context*/, const ::techmo::tribune::SynthesizeRequest* /*request*/, ::grpc::ServerWriter< ::techmo::tribune::SynthesizeResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+  };
+  template <class BaseClass>
+  class WithRawMethod_Synthesize : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_Synthesize() {
+      ::grpc::Service::MarkMethodRaw(0);
+    }
+    ~WithRawMethod_Synthesize() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Synthesize(::grpc::ServerContext* /*context*/, const ::techmo::tribune::SynthesizeRequest* /*request*/, ::grpc::ServerWriter< ::techmo::tribune::SynthesizeResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSynthesize(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(0, context, request, writer, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_Synthesize : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_Synthesize() {
+      ::grpc::Service::experimental().MarkMethodRawCallback(0,
+        new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          [this] { return this->Synthesize(); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_Synthesize() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Synthesize(::grpc::ServerContext* /*context*/, const ::techmo::tribune::SynthesizeRequest* /*request*/, ::grpc::ServerWriter< ::techmo::tribune::SynthesizeResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer, ::grpc::ByteBuffer>* Synthesize() {
+      return new ::grpc_impl::internal::UnimplementedWriteReactor<
+        ::grpc::ByteBuffer, ::grpc::ByteBuffer>;}
   };
   typedef Service StreamedUnaryService;
   template <class BaseClass>
   class WithSplitStreamingMethod_Synthesize : public BaseClass {
    private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_Synthesize() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::SplitServerStreamingHandler< ::techmo::tribune::SynthesizeRequest, ::techmo::tribune::SynthesizeResponse>(std::bind(&WithSplitStreamingMethod_Synthesize<BaseClass>::StreamedSynthesize, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler< ::techmo::tribune::SynthesizeRequest, ::techmo::tribune::SynthesizeResponse>(std::bind(&WithSplitStreamingMethod_Synthesize<BaseClass>::StreamedSynthesize, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithSplitStreamingMethod_Synthesize() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status Synthesize(::grpc::ServerContext* context, const ::techmo::tribune::SynthesizeRequest* request, ::grpc::ServerWriter< ::techmo::tribune::SynthesizeResponse>* writer) final override {
+    ::grpc::Status Synthesize(::grpc::ServerContext* /*context*/, const ::techmo::tribune::SynthesizeRequest* /*request*/, ::grpc::ServerWriter< ::techmo::tribune::SynthesizeResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
