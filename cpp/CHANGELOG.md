@@ -1,5 +1,9 @@
 # Tribune TTS gRPC C++ client Changelog
 
+## [1.3.0] - 2020-03-30
+### Changed
+- Switch GRPC version to `1.24.3` .
+
 ## [1.2.0] - 2018-12-12
 ### Added
 - Support for setting gRPC deadline (how long the client is willing to wait for a reply from the server).
