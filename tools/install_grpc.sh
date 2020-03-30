@@ -1,8 +1,10 @@
 #!/bin/bash
 # coding=utf-8
 
+set -euo pipefail
+
 jobs=32
-version="v1.7.2"
+version="v1.24.3"
 [ $# -ge 1 ] && jobs=$1
 [ $# -ge 2 ] && version="$2"
 
