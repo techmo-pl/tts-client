@@ -1,5 +1,9 @@
 # Tribune TTS gRPC Python client Changelog
 
+## [1.3.0] - 2020-03-30
+### Changed 
+- Switch GRPC version to `1.24.3` .
+
 ## [1.2.1] - 2019-04-19
 ### Fixed
 - Multithreading buffer access collision
