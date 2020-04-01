@@ -4,7 +4,7 @@
 virtualenv -p python3 proto_env
 # shellcheck disable=SC1091
 source proto_env/bin/activate
-pip install grpcio-tools==1.7.0
+pip install grpcio-tools==1.24.3
 
 function cleanup() {
     # shellcheck disable=SC1091
