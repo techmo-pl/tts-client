@@ -48,7 +48,7 @@ struct TableStruct_tribune_5ftts_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[5]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -72,6 +72,9 @@ extern SynthesizeRequestDefaultTypeInternal _SynthesizeRequest_default_instance_
 class SynthesizeResponse;
 class SynthesizeResponseDefaultTypeInternal;
 extern SynthesizeResponseDefaultTypeInternal _SynthesizeResponse_default_instance_;
+class Voice;
+class VoiceDefaultTypeInternal;
+extern VoiceDefaultTypeInternal _Voice_default_instance_;
 }  // namespace tribune
 }  // namespace techmo
 PROTOBUF_NAMESPACE_OPEN
@@ -80,10 +83,87 @@ template<> ::techmo::tribune::Error* Arena::CreateMaybeMessage<::techmo::tribune
 template<> ::techmo::tribune::SynthesizeConfig* Arena::CreateMaybeMessage<::techmo::tribune::SynthesizeConfig>(Arena*);
 template<> ::techmo::tribune::SynthesizeRequest* Arena::CreateMaybeMessage<::techmo::tribune::SynthesizeRequest>(Arena*);
 template<> ::techmo::tribune::SynthesizeResponse* Arena::CreateMaybeMessage<::techmo::tribune::SynthesizeResponse>(Arena*);
+template<> ::techmo::tribune::Voice* Arena::CreateMaybeMessage<::techmo::tribune::Voice>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace techmo {
 namespace tribune {
 
+enum OutputFormat : int {
+  PCM16 = 0,
+  OGG_VORBIS = 1,
+  OutputFormat_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  OutputFormat_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool OutputFormat_IsValid(int value);
+constexpr OutputFormat OutputFormat_MIN = PCM16;
+constexpr OutputFormat OutputFormat_MAX = OGG_VORBIS;
+constexpr int OutputFormat_ARRAYSIZE = OutputFormat_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* OutputFormat_descriptor();
+template<typename T>
+inline const std::string& OutputFormat_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, OutputFormat>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function OutputFormat_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    OutputFormat_descriptor(), enum_t_value);
+}
+inline bool OutputFormat_Parse(
+    const std::string& name, OutputFormat* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<OutputFormat>(
+    OutputFormat_descriptor(), name, value);
+}
+enum Age : int {
+  ADULT = 0,
+  CHILD = 1,
+  OLD = 2,
+  Age_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  Age_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool Age_IsValid(int value);
+constexpr Age Age_MIN = ADULT;
+constexpr Age Age_MAX = OLD;
+constexpr int Age_ARRAYSIZE = Age_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Age_descriptor();
+template<typename T>
+inline const std::string& Age_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, Age>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function Age_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    Age_descriptor(), enum_t_value);
+}
+inline bool Age_Parse(
+    const std::string& name, Age* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Age>(
+    Age_descriptor(), name, value);
+}
+enum Gender : int {
+  FEMALE = 0,
+  MALE = 1,
+  Gender_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  Gender_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool Gender_IsValid(int value);
+constexpr Gender Gender_MIN = FEMALE;
+constexpr Gender Gender_MAX = MALE;
+constexpr int Gender_ARRAYSIZE = Gender_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Gender_descriptor();
+template<typename T>
+inline const std::string& Gender_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, Gender>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function Gender_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    Gender_descriptor(), enum_t_value);
+}
+inline bool Gender_Parse(
+    const std::string& name, Gender* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Gender>(
+    Gender_descriptor(), name, value);
+}
 enum ErrorCode : int {
   UNKNOWN = 0,
   LICENCE = 1,
@@ -365,18 +445,194 @@ class SynthesizeConfig :
 
   // accessors -------------------------------------------------------
 
+  // string language = 3;
+  void clear_language();
+  static const int kLanguageFieldNumber = 3;
+  const std::string& language() const;
+  void set_language(const std::string& value);
+  void set_language(std::string&& value);
+  void set_language(const char* value);
+  void set_language(const char* value, size_t size);
+  std::string* mutable_language();
+  std::string* release_language();
+  void set_allocated_language(std::string* language);
+
+  // .techmo.tribune.Voice voice = 4;
+  bool has_voice() const;
+  void clear_voice();
+  static const int kVoiceFieldNumber = 4;
+  const ::techmo::tribune::Voice& voice() const;
+  ::techmo::tribune::Voice* release_voice();
+  ::techmo::tribune::Voice* mutable_voice();
+  void set_allocated_voice(::techmo::tribune::Voice* voice);
+
   // int32 sample_rate_hertz = 1;
   void clear_sample_rate_hertz();
   static const int kSampleRateHertzFieldNumber = 1;
   ::PROTOBUF_NAMESPACE_ID::int32 sample_rate_hertz() const;
   void set_sample_rate_hertz(::PROTOBUF_NAMESPACE_ID::int32 value);
 
+  // .techmo.tribune.OutputFormat output_format = 2;
+  void clear_output_format();
+  static const int kOutputFormatFieldNumber = 2;
+  ::techmo::tribune::OutputFormat output_format() const;
+  void set_output_format(::techmo::tribune::OutputFormat value);
+
   // @@protoc_insertion_point(class_scope:techmo.tribune.SynthesizeConfig)
  private:
   class HasBitSetters;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr language_;
+  ::techmo::tribune::Voice* voice_;
   ::PROTOBUF_NAMESPACE_ID::int32 sample_rate_hertz_;
+  int output_format_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_tribune_5ftts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Voice :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:techmo.tribune.Voice) */ {
+ public:
+  Voice();
+  virtual ~Voice();
+
+  Voice(const Voice& from);
+  Voice(Voice&& from) noexcept
+    : Voice() {
+    *this = ::std::move(from);
+  }
+
+  inline Voice& operator=(const Voice& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Voice& operator=(Voice&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const Voice& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Voice* internal_default_instance() {
+    return reinterpret_cast<const Voice*>(
+               &_Voice_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  void Swap(Voice* other);
+  friend void swap(Voice& a, Voice& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Voice* New() const final {
+    return CreateMaybeMessage<Voice>(nullptr);
+  }
+
+  Voice* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Voice>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const Voice& from);
+  void MergeFrom(const Voice& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Voice* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "techmo.tribune.Voice";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_tribune_5ftts_2eproto);
+    return ::descriptor_table_tribune_5ftts_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string name = 1;
+  void clear_name();
+  static const int kNameFieldNumber = 1;
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+
+  // .techmo.tribune.Gender gender = 2;
+  void clear_gender();
+  static const int kGenderFieldNumber = 2;
+  ::techmo::tribune::Gender gender() const;
+  void set_gender(::techmo::tribune::Gender value);
+
+  // .techmo.tribune.Age age = 3;
+  void clear_age();
+  static const int kAgeFieldNumber = 3;
+  ::techmo::tribune::Age age() const;
+  void set_age(::techmo::tribune::Age value);
+
+  // @@protoc_insertion_point(class_scope:techmo.tribune.Voice)
+ private:
+  class HasBitSetters;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  int gender_;
+  int age_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_tribune_5ftts_2eproto;
 };
@@ -424,7 +680,7 @@ class SynthesizeResponse :
                &_SynthesizeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(SynthesizeResponse* other);
   friend void swap(SynthesizeResponse& a, SynthesizeResponse& b) {
@@ -563,7 +819,7 @@ class AudioData :
                &_AudioData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(AudioData* other);
   friend void swap(AudioData& a, AudioData& b) {
@@ -709,7 +965,7 @@ class Error :
                &_Error_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(Error* other);
   friend void swap(Error& a, Error& b) {
@@ -933,6 +1189,205 @@ inline void SynthesizeConfig::set_sample_rate_hertz(::PROTOBUF_NAMESPACE_ID::int
   
   sample_rate_hertz_ = value;
   // @@protoc_insertion_point(field_set:techmo.tribune.SynthesizeConfig.sample_rate_hertz)
+}
+
+// .techmo.tribune.OutputFormat output_format = 2;
+inline void SynthesizeConfig::clear_output_format() {
+  output_format_ = 0;
+}
+inline ::techmo::tribune::OutputFormat SynthesizeConfig::output_format() const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.SynthesizeConfig.output_format)
+  return static_cast< ::techmo::tribune::OutputFormat >(output_format_);
+}
+inline void SynthesizeConfig::set_output_format(::techmo::tribune::OutputFormat value) {
+  
+  output_format_ = value;
+  // @@protoc_insertion_point(field_set:techmo.tribune.SynthesizeConfig.output_format)
+}
+
+// string language = 3;
+inline void SynthesizeConfig::clear_language() {
+  language_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& SynthesizeConfig::language() const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.SynthesizeConfig.language)
+  return language_.GetNoArena();
+}
+inline void SynthesizeConfig::set_language(const std::string& value) {
+  
+  language_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:techmo.tribune.SynthesizeConfig.language)
+}
+inline void SynthesizeConfig::set_language(std::string&& value) {
+  
+  language_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:techmo.tribune.SynthesizeConfig.language)
+}
+inline void SynthesizeConfig::set_language(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  language_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:techmo.tribune.SynthesizeConfig.language)
+}
+inline void SynthesizeConfig::set_language(const char* value, size_t size) {
+  
+  language_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:techmo.tribune.SynthesizeConfig.language)
+}
+inline std::string* SynthesizeConfig::mutable_language() {
+  
+  // @@protoc_insertion_point(field_mutable:techmo.tribune.SynthesizeConfig.language)
+  return language_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* SynthesizeConfig::release_language() {
+  // @@protoc_insertion_point(field_release:techmo.tribune.SynthesizeConfig.language)
+  
+  return language_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void SynthesizeConfig::set_allocated_language(std::string* language) {
+  if (language != nullptr) {
+    
+  } else {
+    
+  }
+  language_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), language);
+  // @@protoc_insertion_point(field_set_allocated:techmo.tribune.SynthesizeConfig.language)
+}
+
+// .techmo.tribune.Voice voice = 4;
+inline bool SynthesizeConfig::has_voice() const {
+  return this != internal_default_instance() && voice_ != nullptr;
+}
+inline void SynthesizeConfig::clear_voice() {
+  if (GetArenaNoVirtual() == nullptr && voice_ != nullptr) {
+    delete voice_;
+  }
+  voice_ = nullptr;
+}
+inline const ::techmo::tribune::Voice& SynthesizeConfig::voice() const {
+  const ::techmo::tribune::Voice* p = voice_;
+  // @@protoc_insertion_point(field_get:techmo.tribune.SynthesizeConfig.voice)
+  return p != nullptr ? *p : *reinterpret_cast<const ::techmo::tribune::Voice*>(
+      &::techmo::tribune::_Voice_default_instance_);
+}
+inline ::techmo::tribune::Voice* SynthesizeConfig::release_voice() {
+  // @@protoc_insertion_point(field_release:techmo.tribune.SynthesizeConfig.voice)
+  
+  ::techmo::tribune::Voice* temp = voice_;
+  voice_ = nullptr;
+  return temp;
+}
+inline ::techmo::tribune::Voice* SynthesizeConfig::mutable_voice() {
+  
+  if (voice_ == nullptr) {
+    auto* p = CreateMaybeMessage<::techmo::tribune::Voice>(GetArenaNoVirtual());
+    voice_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:techmo.tribune.SynthesizeConfig.voice)
+  return voice_;
+}
+inline void SynthesizeConfig::set_allocated_voice(::techmo::tribune::Voice* voice) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete voice_;
+  }
+  if (voice) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      voice = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, voice, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  voice_ = voice;
+  // @@protoc_insertion_point(field_set_allocated:techmo.tribune.SynthesizeConfig.voice)
+}
+
+// -------------------------------------------------------------------
+
+// Voice
+
+// string name = 1;
+inline void Voice::clear_name() {
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& Voice::name() const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.Voice.name)
+  return name_.GetNoArena();
+}
+inline void Voice::set_name(const std::string& value) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:techmo.tribune.Voice.name)
+}
+inline void Voice::set_name(std::string&& value) {
+  
+  name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:techmo.tribune.Voice.name)
+}
+inline void Voice::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:techmo.tribune.Voice.name)
+}
+inline void Voice::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:techmo.tribune.Voice.name)
+}
+inline std::string* Voice::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:techmo.tribune.Voice.name)
+  return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* Voice::release_name() {
+  // @@protoc_insertion_point(field_release:techmo.tribune.Voice.name)
+  
+  return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void Voice::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:techmo.tribune.Voice.name)
+}
+
+// .techmo.tribune.Gender gender = 2;
+inline void Voice::clear_gender() {
+  gender_ = 0;
+}
+inline ::techmo::tribune::Gender Voice::gender() const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.Voice.gender)
+  return static_cast< ::techmo::tribune::Gender >(gender_);
+}
+inline void Voice::set_gender(::techmo::tribune::Gender value) {
+  
+  gender_ = value;
+  // @@protoc_insertion_point(field_set:techmo.tribune.Voice.gender)
+}
+
+// .techmo.tribune.Age age = 3;
+inline void Voice::clear_age() {
+  age_ = 0;
+}
+inline ::techmo::tribune::Age Voice::age() const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.Voice.age)
+  return static_cast< ::techmo::tribune::Age >(age_);
+}
+inline void Voice::set_age(::techmo::tribune::Age value) {
+  
+  age_ = value;
+  // @@protoc_insertion_point(field_set:techmo.tribune.Voice.age)
 }
 
 // -------------------------------------------------------------------
@@ -1204,6 +1659,8 @@ inline void Error::set_allocated_description(std::string* description) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -1212,6 +1669,21 @@ inline void Error::set_allocated_description(std::string* description) {
 
 PROTOBUF_NAMESPACE_OPEN
 
+template <> struct is_proto_enum< ::techmo::tribune::OutputFormat> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::techmo::tribune::OutputFormat>() {
+  return ::techmo::tribune::OutputFormat_descriptor();
+}
+template <> struct is_proto_enum< ::techmo::tribune::Age> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::techmo::tribune::Age>() {
+  return ::techmo::tribune::Age_descriptor();
+}
+template <> struct is_proto_enum< ::techmo::tribune::Gender> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::techmo::tribune::Gender>() {
+  return ::techmo::tribune::Gender_descriptor();
+}
 template <> struct is_proto_enum< ::techmo::tribune::ErrorCode> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::techmo::tribune::ErrorCode>() {

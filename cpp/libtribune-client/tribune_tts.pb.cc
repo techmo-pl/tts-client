@@ -17,7 +17,8 @@
 #include <google/protobuf/port_def.inc>
 extern PROTOBUF_INTERNAL_EXPORT_tribune_5ftts_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AudioData_tribune_5ftts_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_tribune_5ftts_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Error_tribune_5ftts_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_tribune_5ftts_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SynthesizeConfig_tribune_5ftts_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_tribune_5ftts_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SynthesizeConfig_tribune_5ftts_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_tribune_5ftts_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Voice_tribune_5ftts_2eproto;
 namespace techmo {
 namespace tribune {
 class SynthesizeRequestDefaultTypeInternal {
@@ -28,6 +29,10 @@ class SynthesizeConfigDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SynthesizeConfig> _instance;
 } _SynthesizeConfig_default_instance_;
+class VoiceDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Voice> _instance;
+} _Voice_default_instance_;
 class SynthesizeResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SynthesizeResponse> _instance;
@@ -81,8 +86,9 @@ static void InitDefaultsscc_info_SynthesizeConfig_tribune_5ftts_2eproto() {
   ::techmo::tribune::SynthesizeConfig::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SynthesizeConfig_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_SynthesizeConfig_tribune_5ftts_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SynthesizeConfig_tribune_5ftts_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_SynthesizeConfig_tribune_5ftts_2eproto}, {
+      &scc_info_Voice_tribune_5ftts_2eproto.base,}};
 
 static void InitDefaultsscc_info_SynthesizeRequest_tribune_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -115,8 +121,22 @@ static void InitDefaultsscc_info_SynthesizeResponse_tribune_5ftts_2eproto() {
       &scc_info_AudioData_tribune_5ftts_2eproto.base,
       &scc_info_Error_tribune_5ftts_2eproto.base,}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_tribune_5ftts_2eproto[5];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_tribune_5ftts_2eproto[1];
+static void InitDefaultsscc_info_Voice_tribune_5ftts_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::techmo::tribune::_Voice_default_instance_;
+    new (ptr) ::techmo::tribune::Voice();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::techmo::tribune::Voice::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Voice_tribune_5ftts_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_Voice_tribune_5ftts_2eproto}, {}};
+
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_tribune_5ftts_2eproto[6];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_tribune_5ftts_2eproto[4];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_tribune_5ftts_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tribune_5ftts_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -133,6 +153,17 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tribune_5ftts_2eproto::offsets
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::techmo::tribune::SynthesizeConfig, sample_rate_hertz_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tribune::SynthesizeConfig, output_format_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tribune::SynthesizeConfig, language_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tribune::SynthesizeConfig, voice_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::techmo::tribune::Voice, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::techmo::tribune::Voice, name_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tribune::Voice, gender_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tribune::Voice, age_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::techmo::tribune::SynthesizeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -159,14 +190,16 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tribune_5ftts_2eproto::offsets
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::techmo::tribune::SynthesizeRequest)},
   { 7, -1, sizeof(::techmo::tribune::SynthesizeConfig)},
-  { 13, -1, sizeof(::techmo::tribune::SynthesizeResponse)},
-  { 20, -1, sizeof(::techmo::tribune::AudioData)},
-  { 28, -1, sizeof(::techmo::tribune::Error)},
+  { 16, -1, sizeof(::techmo::tribune::Voice)},
+  { 24, -1, sizeof(::techmo::tribune::SynthesizeResponse)},
+  { 31, -1, sizeof(::techmo::tribune::AudioData)},
+  { 39, -1, sizeof(::techmo::tribune::Error)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tribune::_SynthesizeRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tribune::_SynthesizeConfig_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tribune::_Voice_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tribune::_SynthesizeResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tribune::_AudioData_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tribune::_Error_default_instance_),
@@ -176,14 +209,22 @@ const char descriptor_table_protodef_tribune_5ftts_2eproto[] =
   "\n\021tribune_tts.proto\022\016techmo.tribune\"S\n\021S"
   "ynthesizeRequest\022\014\n\004text\030\001 \001(\t\0220\n\006config"
   "\030\002 \001(\0132 .techmo.tribune.SynthesizeConfig"
-  "\"-\n\020SynthesizeConfig\022\031\n\021sample_rate_hert"
-  "z\030\001 \001(\005\"d\n\022SynthesizeResponse\022(\n\005audio\030\001"
-  " \001(\0132\031.techmo.tribune.AudioData\022$\n\005error"
-  "\030\002 \001(\0132\025.techmo.tribune.Error\"N\n\tAudioDa"
-  "ta\022\031\n\021sample_rate_hertz\030\001 \001(\005\022\017\n\007content"
-  "\030\002 \001(\014\022\025\n\rend_of_stream\030\003 \001(\010\"E\n\005Error\022\'"
-  "\n\004code\030\001 \001(\0162\031.techmo.tribune.ErrorCode\022"
-  "\023\n\013description\030\002 \001(\t*_\n\tErrorCode\022\013\n\007UNK"
+  "\"\232\001\n\020SynthesizeConfig\022\031\n\021sample_rate_her"
+  "tz\030\001 \001(\005\0223\n\routput_format\030\002 \001(\0162\034.techmo"
+  ".tribune.OutputFormat\022\020\n\010language\030\003 \001(\t\022"
+  "$\n\005voice\030\004 \001(\0132\025.techmo.tribune.Voice\"_\n"
+  "\005Voice\022\014\n\004name\030\001 \001(\t\022&\n\006gender\030\002 \001(\0162\026.t"
+  "echmo.tribune.Gender\022 \n\003age\030\003 \001(\0162\023.tech"
+  "mo.tribune.Age\"d\n\022SynthesizeResponse\022(\n\005"
+  "audio\030\001 \001(\0132\031.techmo.tribune.AudioData\022$"
+  "\n\005error\030\002 \001(\0132\025.techmo.tribune.Error\"N\n\t"
+  "AudioData\022\031\n\021sample_rate_hertz\030\001 \001(\005\022\017\n\007"
+  "content\030\002 \001(\014\022\025\n\rend_of_stream\030\003 \001(\010\"E\n\005"
+  "Error\022\'\n\004code\030\001 \001(\0162\031.techmo.tribune.Err"
+  "orCode\022\023\n\013description\030\002 \001(\t*)\n\014OutputFor"
+  "mat\022\t\n\005PCM16\020\000\022\016\n\nOGG_VORBIS\020\001*$\n\003Age\022\t\n"
+  "\005ADULT\020\000\022\t\n\005CHILD\020\001\022\007\n\003OLD\020\002*\036\n\006Gender\022\n"
+  "\n\006FEMALE\020\000\022\010\n\004MALE\020\001*_\n\tErrorCode\022\013\n\007UNK"
   "NOWN\020\000\022\013\n\007LICENCE\020\001\022\026\n\022TEXT_NORMALIZATIO"
   "N\020\002\022\021\n\rTRANSCRIPTION\020\003\022\r\n\tSYNTHESIS\020\0042\\\n"
   "\003TTS\022U\n\nSynthesize\022!.techmo.tribune.Synt"
@@ -192,29 +233,73 @@ const char descriptor_table_protodef_tribune_5ftts_2eproto[] =
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_tribune_5ftts_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_tribune_5ftts_2eproto_sccs[5] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_tribune_5ftts_2eproto_sccs[6] = {
   &scc_info_AudioData_tribune_5ftts_2eproto.base,
   &scc_info_Error_tribune_5ftts_2eproto.base,
   &scc_info_SynthesizeConfig_tribune_5ftts_2eproto.base,
   &scc_info_SynthesizeRequest_tribune_5ftts_2eproto.base,
   &scc_info_SynthesizeResponse_tribune_5ftts_2eproto.base,
+  &scc_info_Voice_tribune_5ftts_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_tribune_5ftts_2eproto_once;
 static bool descriptor_table_tribune_5ftts_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_tribune_5ftts_2eproto = {
-  &descriptor_table_tribune_5ftts_2eproto_initialized, descriptor_table_protodef_tribune_5ftts_2eproto, "tribune_tts.proto", 619,
-  &descriptor_table_tribune_5ftts_2eproto_once, descriptor_table_tribune_5ftts_2eproto_sccs, descriptor_table_tribune_5ftts_2eproto_deps, 5, 0,
+  &descriptor_table_tribune_5ftts_2eproto_initialized, descriptor_table_protodef_tribune_5ftts_2eproto, "tribune_tts.proto", 939,
+  &descriptor_table_tribune_5ftts_2eproto_once, descriptor_table_tribune_5ftts_2eproto_sccs, descriptor_table_tribune_5ftts_2eproto_deps, 6, 0,
   schemas, file_default_instances, TableStruct_tribune_5ftts_2eproto::offsets,
-  file_level_metadata_tribune_5ftts_2eproto, 5, file_level_enum_descriptors_tribune_5ftts_2eproto, file_level_service_descriptors_tribune_5ftts_2eproto,
+  file_level_metadata_tribune_5ftts_2eproto, 6, file_level_enum_descriptors_tribune_5ftts_2eproto, file_level_service_descriptors_tribune_5ftts_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_tribune_5ftts_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_tribune_5ftts_2eproto), true);
 namespace techmo {
 namespace tribune {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ErrorCode_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* OutputFormat_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_tribune_5ftts_2eproto);
   return file_level_enum_descriptors_tribune_5ftts_2eproto[0];
+}
+bool OutputFormat_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Age_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_tribune_5ftts_2eproto);
+  return file_level_enum_descriptors_tribune_5ftts_2eproto[1];
+}
+bool Age_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Gender_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_tribune_5ftts_2eproto);
+  return file_level_enum_descriptors_tribune_5ftts_2eproto[2];
+}
+bool Gender_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ErrorCode_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_tribune_5ftts_2eproto);
+  return file_level_enum_descriptors_tribune_5ftts_2eproto[3];
 }
 bool ErrorCode_IsValid(int value) {
   switch (value) {
@@ -571,13 +656,23 @@ void SynthesizeRequest::InternalSwap(SynthesizeRequest* other) {
 // ===================================================================
 
 void SynthesizeConfig::InitAsDefaultInstance() {
+  ::techmo::tribune::_SynthesizeConfig_default_instance_._instance.get_mutable()->voice_ = const_cast< ::techmo::tribune::Voice*>(
+      ::techmo::tribune::Voice::internal_default_instance());
 }
 class SynthesizeConfig::HasBitSetters {
  public:
+  static const ::techmo::tribune::Voice& voice(const SynthesizeConfig* msg);
 };
 
+const ::techmo::tribune::Voice&
+SynthesizeConfig::HasBitSetters::voice(const SynthesizeConfig* msg) {
+  return *msg->voice_;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SynthesizeConfig::kSampleRateHertzFieldNumber;
+const int SynthesizeConfig::kOutputFormatFieldNumber;
+const int SynthesizeConfig::kLanguageFieldNumber;
+const int SynthesizeConfig::kVoiceFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SynthesizeConfig::SynthesizeConfig()
@@ -589,12 +684,27 @@ SynthesizeConfig::SynthesizeConfig(const SynthesizeConfig& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  sample_rate_hertz_ = from.sample_rate_hertz_;
+  language_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from.language().size() > 0) {
+    language_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.language_);
+  }
+  if (from.has_voice()) {
+    voice_ = new ::techmo::tribune::Voice(*from.voice_);
+  } else {
+    voice_ = nullptr;
+  }
+  ::memcpy(&sample_rate_hertz_, &from.sample_rate_hertz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&output_format_) -
+    reinterpret_cast<char*>(&sample_rate_hertz_)) + sizeof(output_format_));
   // @@protoc_insertion_point(copy_constructor:techmo.tribune.SynthesizeConfig)
 }
 
 void SynthesizeConfig::SharedCtor() {
-  sample_rate_hertz_ = 0;
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SynthesizeConfig_tribune_5ftts_2eproto.base);
+  language_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&voice_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&output_format_) -
+      reinterpret_cast<char*>(&voice_)) + sizeof(output_format_));
 }
 
 SynthesizeConfig::~SynthesizeConfig() {
@@ -603,6 +713,8 @@ SynthesizeConfig::~SynthesizeConfig() {
 }
 
 void SynthesizeConfig::SharedDtor() {
+  language_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete voice_;
 }
 
 void SynthesizeConfig::SetCachedSize(int size) const {
@@ -620,7 +732,14 @@ void SynthesizeConfig::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  sample_rate_hertz_ = 0;
+  language_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && voice_ != nullptr) {
+    delete voice_;
+  }
+  voice_ = nullptr;
+  ::memset(&sample_rate_hertz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&output_format_) -
+      reinterpret_cast<char*>(&sample_rate_hertz_)) + sizeof(output_format_));
   _internal_metadata_.Clear();
 }
 
@@ -636,6 +755,28 @@ const char* SynthesizeConfig::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           sample_rate_hertz_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .techmo.tribune.OutputFormat output_format = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          set_output_format(static_cast<::techmo::tribune::OutputFormat>(val));
+        } else goto handle_unusual;
+        continue;
+      // string language = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_language(), ptr, ctx, "techmo.tribune.SynthesizeConfig.language");
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .techmo.tribune.Voice voice = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr = ctx->ParseMessage(mutable_voice(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -682,6 +823,46 @@ bool SynthesizeConfig::MergePartialFromCodedStream(
         break;
       }
 
+      // .techmo.tribune.OutputFormat output_format = 2;
+      case 2: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_output_format(static_cast< ::techmo::tribune::OutputFormat >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string language = 3;
+      case 3: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
+                input, this->mutable_language()));
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+            this->language().data(), static_cast<int>(this->language().length()),
+            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
+            "techmo.tribune.SynthesizeConfig.language"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .techmo.tribune.Voice voice = 4;
+      case 4: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (34 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
+               input, mutable_voice()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -714,6 +895,28 @@ void SynthesizeConfig::SerializeWithCachedSizes(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32(1, this->sample_rate_hertz(), output);
   }
 
+  // .techmo.tribune.OutputFormat output_format = 2;
+  if (this->output_format() != 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnum(
+      2, this->output_format(), output);
+  }
+
+  // string language = 3;
+  if (this->language().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->language().data(), static_cast<int>(this->language().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "techmo.tribune.SynthesizeConfig.language");
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->language(), output);
+  }
+
+  // .techmo.tribune.Voice voice = 4;
+  if (this->has_voice()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, HasBitSetters::voice(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -730,6 +933,30 @@ void SynthesizeConfig::SerializeWithCachedSizes(
   // int32 sample_rate_hertz = 1;
   if (this->sample_rate_hertz() != 0) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->sample_rate_hertz(), target);
+  }
+
+  // .techmo.tribune.OutputFormat output_format = 2;
+  if (this->output_format() != 0) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->output_format(), target);
+  }
+
+  // string language = 3;
+  if (this->language().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->language().data(), static_cast<int>(this->language().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "techmo.tribune.SynthesizeConfig.language");
+    target =
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
+        3, this->language(), target);
+  }
+
+  // .techmo.tribune.Voice voice = 4;
+  if (this->has_voice()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, HasBitSetters::voice(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -753,11 +980,31 @@ size_t SynthesizeConfig::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string language = 3;
+  if (this->language().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->language());
+  }
+
+  // .techmo.tribune.Voice voice = 4;
+  if (this->has_voice()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *voice_);
+  }
+
   // int32 sample_rate_hertz = 1;
   if (this->sample_rate_hertz() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->sample_rate_hertz());
+  }
+
+  // .techmo.tribune.OutputFormat output_format = 2;
+  if (this->output_format() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->output_format());
   }
 
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
@@ -787,8 +1034,18 @@ void SynthesizeConfig::MergeFrom(const SynthesizeConfig& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.language().size() > 0) {
+
+    language_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.language_);
+  }
+  if (from.has_voice()) {
+    mutable_voice()->::techmo::tribune::Voice::MergeFrom(from.voice());
+  }
   if (from.sample_rate_hertz() != 0) {
     set_sample_rate_hertz(from.sample_rate_hertz());
+  }
+  if (from.output_format() != 0) {
+    set_output_format(from.output_format());
   }
 }
 
@@ -817,10 +1074,390 @@ void SynthesizeConfig::Swap(SynthesizeConfig* other) {
 void SynthesizeConfig::InternalSwap(SynthesizeConfig* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  language_.Swap(&other->language_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(voice_, other->voice_);
   swap(sample_rate_hertz_, other->sample_rate_hertz_);
+  swap(output_format_, other->output_format_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SynthesizeConfig::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void Voice::InitAsDefaultInstance() {
+}
+class Voice::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Voice::kNameFieldNumber;
+const int Voice::kGenderFieldNumber;
+const int Voice::kAgeFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Voice::Voice()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:techmo.tribune.Voice)
+}
+Voice::Voice(const Voice& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from.name().size() > 0) {
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  ::memcpy(&gender_, &from.gender_,
+    static_cast<size_t>(reinterpret_cast<char*>(&age_) -
+    reinterpret_cast<char*>(&gender_)) + sizeof(age_));
+  // @@protoc_insertion_point(copy_constructor:techmo.tribune.Voice)
+}
+
+void Voice::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Voice_tribune_5ftts_2eproto.base);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&gender_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&age_) -
+      reinterpret_cast<char*>(&gender_)) + sizeof(age_));
+}
+
+Voice::~Voice() {
+  // @@protoc_insertion_point(destructor:techmo.tribune.Voice)
+  SharedDtor();
+}
+
+void Voice::SharedDtor() {
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void Voice::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const Voice& Voice::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Voice_tribune_5ftts_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void Voice::Clear() {
+// @@protoc_insertion_point(message_clear_start:techmo.tribune.Voice)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&gender_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&age_) -
+      reinterpret_cast<char*>(&gender_)) + sizeof(age_));
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* Voice::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_name(), ptr, ctx, "techmo.tribune.Voice.name");
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .techmo.tribune.Gender gender = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          set_gender(static_cast<::techmo::tribune::Gender>(val));
+        } else goto handle_unusual;
+        continue;
+      // .techmo.tribune.Age age = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          set_age(static_cast<::techmo::tribune::Age>(val));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool Voice::MergePartialFromCodedStream(
+    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+  // @@protoc_insertion_point(parse_start:techmo.tribune.Voice)
+  for (;;) {
+    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string name = 1;
+      case 1: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
+                input, this->mutable_name()));
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+            this->name().data(), static_cast<int>(this->name().length()),
+            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
+            "techmo.tribune.Voice.name"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .techmo.tribune.Gender gender = 2;
+      case 2: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_gender(static_cast< ::techmo::tribune::Gender >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .techmo.tribune.Age age = 3;
+      case 3: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (24 & 0xFF)) {
+          int value = 0;
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_age(static_cast< ::techmo::tribune::Age >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:techmo.tribune.Voice)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:techmo.tribune.Voice)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void Voice::SerializeWithCachedSizes(
+    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:techmo.tribune.Voice)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->name().data(), static_cast<int>(this->name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "techmo.tribune.Voice.name");
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->name(), output);
+  }
+
+  // .techmo.tribune.Gender gender = 2;
+  if (this->gender() != 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnum(
+      2, this->gender(), output);
+  }
+
+  // .techmo.tribune.Age age = 3;
+  if (this->age() != 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnum(
+      3, this->age(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:techmo.tribune.Voice)
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* Voice::InternalSerializeWithCachedSizesToArray(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.Voice)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->name().data(), static_cast<int>(this->name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "techmo.tribune.Voice.name");
+    target =
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
+        1, this->name(), target);
+  }
+
+  // .techmo.tribune.Gender gender = 2;
+  if (this->gender() != 0) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->gender(), target);
+  }
+
+  // .techmo.tribune.Age age = 3;
+  if (this->age() != 0) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      3, this->age(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.Voice)
+  return target;
+}
+
+size_t Voice::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:techmo.tribune.Voice)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (this->name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->name());
+  }
+
+  // .techmo.tribune.Gender gender = 2;
+  if (this->gender() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->gender());
+  }
+
+  // .techmo.tribune.Age age = 3;
+  if (this->age() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->age());
+  }
+
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Voice::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tribune.Voice)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Voice* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Voice>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tribune.Voice)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tribune.Voice)
+    MergeFrom(*source);
+  }
+}
+
+void Voice::MergeFrom(const Voice& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tribune.Voice)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  if (from.gender() != 0) {
+    set_gender(from.gender());
+  }
+  if (from.age() != 0) {
+    set_age(from.age());
+  }
+}
+
+void Voice::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tribune.Voice)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Voice::CopyFrom(const Voice& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tribune.Voice)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Voice::IsInitialized() const {
+  return true;
+}
+
+void Voice::Swap(Voice* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Voice::InternalSwap(Voice* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(gender_, other->gender_);
+  swap(age_, other->age_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Voice::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -1851,6 +2488,9 @@ template<> PROTOBUF_NOINLINE ::techmo::tribune::SynthesizeRequest* Arena::Create
 }
 template<> PROTOBUF_NOINLINE ::techmo::tribune::SynthesizeConfig* Arena::CreateMaybeMessage< ::techmo::tribune::SynthesizeConfig >(Arena* arena) {
   return Arena::CreateInternal< ::techmo::tribune::SynthesizeConfig >(arena);
+}
+template<> PROTOBUF_NOINLINE ::techmo::tribune::Voice* Arena::CreateMaybeMessage< ::techmo::tribune::Voice >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tribune::Voice >(arena);
 }
 template<> PROTOBUF_NOINLINE ::techmo::tribune::SynthesizeResponse* Arena::CreateMaybeMessage< ::techmo::tribune::SynthesizeResponse >(Arena* arena) {
   return Arena::CreateInternal< ::techmo::tribune::SynthesizeResponse >(arena);

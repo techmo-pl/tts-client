@@ -3,8 +3,8 @@
 // source: tribune_tts.proto
 // Original file comments:
 // Techmo Tribune TTS API  
-// version: 1.1.0   
-// authors: Dawid Skurzok, Paweł Jaciów  
+// version: 2.0.0   
+// authors: Dawid Skurzok, Paweł Jaciów, Michał Radziszewski  
 // date:    2018-01-25  
 #ifndef GRPC_tribune_5ftts_2eproto__INCLUDED
 #define GRPC_tribune_5ftts_2eproto__INCLUDED
@@ -46,26 +46,23 @@ namespace tribune {
 
 // Service that implements Techmo Text-To-Speech (TTS) API.
 //
-// Service's `Synthesize` method accepts `SynthesizeRequest` object which contains whole phrase to be synthesized.  
-// You have to put the phrase as a string in `text` field of `SynthesizeRequest`. The string has to be in orthographic form. In that string you can use several special tags which can be interpreted. Tags have to be in from `<tag>something special</tag>` and can occur in any place in text. Currently interpreted tags are:
+// Service's `Synthesize` method accepts `SynthesizeRequest` object which contains the whole phrase to be synthesized.  
+// The phrase to synthesize is put as a string in `text` field of `SynthesizeRequest`. The string has to be in orthographic form.
+// The string can be either a plain text or SSML (https://w3.org/TR/speech-synthesis11/).
+// Currently the following SSML tags are supported:
+// `<speak>` - root xml node, with optional `xml:lang` attribute,
+// `<prosody>` - supported attributes: `pitch`, `range`, `rate`, and `volume`,
+// `<break>` - supported attributes: `strength` and `time`,
+// `<emphasis>` - supported attribute: `level`,
+// `<say-as>` - supported attribute: `interpret-as` (consult Techmo TTS documentation for the complete list of all available implementations),
+// `<lang>` - supported attribute: `xml:lang`,
+// `<voice>` - supported attributes: `name`, `gender`, and `age`.
 //
-// | Tag | Description | Example (input) | Example (output) |
-// | --- | ----------- | --------------- | ---------------- |
-// | **cardinal** | *cardinal number* | `<cardinal>7</cardinal>` | *siedem* |
-// | **signed** | *number with sign* | `<signed>-15</signed>` | *minus piętnaście* |
-// | **ordinal** | *ordinal number* | `<ordinal>1</ordinal>` | *pierwszy* |
-// | **fraction** | *fractional number* | `<fraction>3/4</fraction>` | *trzy czwarte* |
-// | **postal** | *postal code* | `<postal>30-020</postal>` | *trzydzieści zero dwadzieścia* |
-// | **time** | *time* | `<time>22:00</time>` | *dwudziesta druga* |
-// | **date** | *date* | `<date>12/05/2001</date>` | *dwunasty maja dwa tysiące jeden* |
-//
-// Note: when interpreting tags only nominal case is supported at the moment.
-//
-// You can set `SynthesizeConfig`'s fields to specify parameters of synthesis. Currently supported option is only `sample_rate_hertz`, which is desired sampling frequency (in hertz) of synthesized audio.
+// `SynthesizeConfig`'s fields can be set to specify parameters of synthesis (sampling rate, language, and voice) and a format of the output (PCM16 or Ogg/Vorbis compression).
 //
 // `SynthesizeRequest` can be sent to the service via gRPC insecure channel (that does not require authentication).
 //
-// `Synthesize` returns synthesized audio in `SynthesizeResponse` as a stream. When reading from the stream you have to check if `SynthesizeResponse` contains `error` field. If it does you can print its `code` and `description`. No `error` field in `SynthesizeResponse` means everything worked fine and its `audio` contains byte `content` that can be appended to received audio samples with `sample_rate_hertz` sampling frequency in hertz. When receiving `SynthesizeResponse` with `audio` you have to check if its `end_of_stream` flag is set to true. When it is set to true it means service has fnished synthesis and you can save your wave file with received synthesized audio content.
+// `Synthesize` returns synthesized audio in `SynthesizeResponse` as a stream. When reading from the stream it is necessary to check if `SynthesizeResponse` contains `error` field. If it does its `code` and `description` can be printed. No `error` field in `SynthesizeResponse` means everything worked fine and its `audio` contains byte `content` that can be appended to received audio samples with `sample_rate_hertz` sampling frequency in hertz. When receiving In `SynthesizeResponse` with `audio`, the `end_of_stream` set to true means that service has fnished synthesis. Otherwise further chunks with more audio are expected.
 class TTS final {
  public:
   static constexpr char const* service_full_name() {
