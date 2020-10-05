@@ -1,15 +1,43 @@
 // Techmo Tribune TTS API  
 // version: 2.0.0   
 // authors: Dawid Skurzok, Paweł Jaciów, Michał Radziszewski  
-// date:    2018-01-25  
+// date:    2020-10-05  
 syntax = "proto3";
 
 package techmo.tribune;
 
 // Service that implements Techmo Text-To-Speech (TTS) API.
-//
-// Service's `Synthesize` method accepts `SynthesizeRequest` object which contains the whole phrase to be synthesized.  
-// The phrase to synthesize is put as a string in `text` field of `SynthesizeRequest`. The string has to be in orthographic form.
+service TTS
+{
+    // Lists all available voices which can be used to synthesize speech.
+    rpc ListVoices(ListVoicesRequest) returns (ListVoicesResponse);
+
+    // Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
+    // Returns audio signal with synthesized speech (streaming version, one or more response packets) or `error`.
+    rpc SynthesizeStreaming(SynthesizeRequest) returns (stream SynthesizeResponse);
+
+    // Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
+    // Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet) or `error`.
+    rpc Synthesize(SynthesizeRequest) returns (SynthesizeResponse);
+}
+
+// The  top-level message sent by the client to request listing of available voices.
+message ListVoicesRequest
+{
+    // ISO 639-1 language code. Optional. When defined, limits the listed voices to the voices supprting the requested language.
+    string language = 1;
+}
+
+// The listing of available voices returned by a `ListVoices` call.
+message ListVoicesResponse
+{
+    // The list of all available voices or voices supproting the requested laguage.
+    repeated Voice voices = 1;
+}
+
+// The top-level message sent by the client for `Synthesize` and `SynthesizeStreaming` methods.
+// It contains a text to be synthesized and a configuration.
+// The phrase to synthesize is put as a string in `text` field. The string has to be in orthographic form.
 // The string can be either a plain text or SSML (https://w3.org/TR/speech-synthesis11/).
 // Currently the following SSML tags are supported:
 // `<speak>` - root xml node, with optional `xml:lang` attribute,
@@ -19,20 +47,7 @@ package techmo.tribune;
 // `<say-as>` - supported attribute: `interpret-as` (consult Techmo TTS documentation for the complete list of all available implementations),
 // `<lang>` - supported attribute: `xml:lang`,
 // `<voice>` - supported attributes: `name`, `gender`, and `age`.
-//
 // `SynthesizeConfig`'s fields can be set to specify parameters of synthesis (sampling rate, language, and voice) and a format of the output (PCM16 or Ogg/Vorbis compression).
-//
-// `SynthesizeRequest` can be sent to the service via gRPC insecure channel (that does not require authentication).
-//
-// `Synthesize` returns synthesized audio in `SynthesizeResponse` as a stream. When reading from the stream it is necessary to check if `SynthesizeResponse` contains `error` field. If it does its `code` and `description` can be printed. No `error` field in `SynthesizeResponse` means everything worked fine and its `audio` contains byte `content` that can be appended to received audio samples with `sample_rate_hertz` sampling frequency in hertz. When receiving In `SynthesizeResponse` with `audio`, the `end_of_stream` set to true means that service has fnished synthesis. Otherwise further chunks with more audio are expected.
-service TTS
-{
-    // Returns audio signal with synthesized speech, given text and optional configuration.
-    rpc Synthesize(SynthesizeRequest) returns (stream SynthesizeResponse);
-}
-
-// `SynthesizeRequest` is the top-level message sent by the client for
-// the `Synthesize` method. It contains a text to be synthesized and a configuration.
 message SynthesizeRequest
 {
     // Text to be synthesized.
@@ -45,7 +60,7 @@ message SynthesizeRequest
 // Provides information to the synthesizer that specifies how to process the request.
 message SynthesizeConfig
 {
-    // Desired sampling frequency in hertz of synthesized audio.
+    // Desired sampling frequency in hertz of synthesized audio. The value 0 means use the default Synthesizer sampling rate.
     int32 sample_rate_hertz = 1;
 
     // Requested format of the output audio stream.
@@ -54,8 +69,11 @@ message SynthesizeConfig
     // ISO 639-1 code of the language of text to be synthesized (may be overriden by SSML tags in request text).
     string language = 3;
 
+    // Optional. Overrides the default synthesized speech parameters
+    AudioConfig audio_config = 4;
+
     // Requested voice to be used to synthesize the text (may be overriden by SSML tags in request text).
-    Voice voice = 4;
+    Voice voice = 5;
 }
 
 // The requested format of the response audio data.
@@ -65,37 +83,47 @@ enum OutputFormat
     OGG_VORBIS = 1;  // Ogg/Vorbis endoded data stream.
 }
 
-// Voice definition.
+// Desfines the parameters of synthesized speech.
+message AudioConfig
+{
+    // The average speech pitch scaling factor. 1.0 means default voice pitch.
+    float pitch = 1;
+
+    // The speech range scaling factor. 1.0 means default voice range.
+    float range = 2;
+
+    // The speech rate (speed) scaling factor. 1.0 means default voice rate.
+    float rate = 3;
+
+    // The speech volume. 1.0 means default volume.
+    float volume = 4;
+}
+
+// Voice definition. If both name and gender is defined, the name takes precedence.
+// If only name is defined, the specified voice is loaded.
+// If only gender is defined, the default voice for the requested gender is loaded.
 message Voice
 {
     // The name of the voice (empty string means default voice).
     string name = 1;
 
-    // Gender of the voice (FEMALE is default).
+    // Gender of the voice (UNSPECIFIED is default).
     Gender gender = 2;
-
-    // Age of the voice (ADULT is default).
-    Age age = 3;
-}
-
-// Age of the voice.
-enum Age
-{
-    ADULT = 0;
-    CHILD = 1;
-    OLD = 2;
 }
 
 // Gender of the voice.
 enum Gender
 {
-    FEMALE = 0;
-    MALE = 1;
+    UNSPECIFIED = 0;
+    FEMALE = 1;
+    MALE = 2;
 }
 
-// `SynthesizeResponse` is the only message returned to the client by
-// `Synthesize`. A series of one or more `SynthesizeResponse`
-// messages are streamed back to the client.
+// `SynthesizeResponse` is the only message returned to the client by `Synthesize` and `SynthesizeSync`.
+// During `Synthesize`, a series of one or more `SynthesizeResponse` messages are streamed back to the client.
+// During `SynthesizeSync` always one message is generated.
+// If `SynthesizeResponse` contains `error` field, its `code` and `description` can be printed.
+// Otherwise, the synthesized `audio` is available to use.
 message SynthesizeResponse
 {
     // Audio data corresponding to a portion of the text
@@ -115,9 +143,6 @@ message AudioData
 
     // Audio data bytes encoded by default as Linear PCM (uncompressed 16-bit signed little-endian samples).
     bytes content = 2;
-
-    // Last message flag. If set to true, no more data will be sent.
-    bool end_of_stream = 3;
 }
 
 // Indicates the type of the error for the operation.

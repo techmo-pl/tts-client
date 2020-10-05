@@ -6,24 +6,6 @@ import tribune_tts_pb2 as tribune__tts__pb2
 
 class TTSStub(object):
   """Service that implements Techmo Text-To-Speech (TTS) API.
-
-  Service's `Synthesize` method accepts `SynthesizeRequest` object which contains the whole phrase to be synthesized.  
-  The phrase to synthesize is put as a string in `text` field of `SynthesizeRequest`. The string has to be in orthographic form.
-  The string can be either a plain text or SSML (https://w3.org/TR/speech-synthesis11/).
-  Currently the following SSML tags are supported:
-  `<speak>` - root xml node, with optional `xml:lang` attribute,
-  `<prosody>` - supported attributes: `pitch`, `range`, `rate`, and `volume`,
-  `<break>` - supported attributes: `strength` and `time`,
-  `<emphasis>` - supported attribute: `level`,
-  `<say-as>` - supported attribute: `interpret-as` (consult Techmo TTS documentation for the complete list of all available implementations),
-  `<lang>` - supported attribute: `xml:lang`,
-  `<voice>` - supported attributes: `name`, `gender`, and `age`.
-
-  `SynthesizeConfig`'s fields can be set to specify parameters of synthesis (sampling rate, language, and voice) and a format of the output (PCM16 or Ogg/Vorbis compression).
-
-  `SynthesizeRequest` can be sent to the service via gRPC insecure channel (that does not require authentication).
-
-  `Synthesize` returns synthesized audio in `SynthesizeResponse` as a stream. When reading from the stream it is necessary to check if `SynthesizeResponse` contains `error` field. If it does its `code` and `description` can be printed. No `error` field in `SynthesizeResponse` means everything worked fine and its `audio` contains byte `content` that can be appended to received audio samples with `sample_rate_hertz` sampling frequency in hertz. When receiving In `SynthesizeResponse` with `audio`, the `end_of_stream` set to true means that service has fnished synthesis. Otherwise further chunks with more audio are expected.
   """
 
   def __init__(self, channel):
@@ -32,7 +14,17 @@ class TTSStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.Synthesize = channel.unary_stream(
+    self.ListVoices = channel.unary_unary(
+        '/techmo.tribune.TTS/ListVoices',
+        request_serializer=tribune__tts__pb2.ListVoicesRequest.SerializeToString,
+        response_deserializer=tribune__tts__pb2.ListVoicesResponse.FromString,
+        )
+    self.SynthesizeStreaming = channel.unary_stream(
+        '/techmo.tribune.TTS/SynthesizeStreaming',
+        request_serializer=tribune__tts__pb2.SynthesizeRequest.SerializeToString,
+        response_deserializer=tribune__tts__pb2.SynthesizeResponse.FromString,
+        )
+    self.Synthesize = channel.unary_unary(
         '/techmo.tribune.TTS/Synthesize',
         request_serializer=tribune__tts__pb2.SynthesizeRequest.SerializeToString,
         response_deserializer=tribune__tts__pb2.SynthesizeResponse.FromString,
@@ -41,28 +33,26 @@ class TTSStub(object):
 
 class TTSServicer(object):
   """Service that implements Techmo Text-To-Speech (TTS) API.
-
-  Service's `Synthesize` method accepts `SynthesizeRequest` object which contains the whole phrase to be synthesized.  
-  The phrase to synthesize is put as a string in `text` field of `SynthesizeRequest`. The string has to be in orthographic form.
-  The string can be either a plain text or SSML (https://w3.org/TR/speech-synthesis11/).
-  Currently the following SSML tags are supported:
-  `<speak>` - root xml node, with optional `xml:lang` attribute,
-  `<prosody>` - supported attributes: `pitch`, `range`, `rate`, and `volume`,
-  `<break>` - supported attributes: `strength` and `time`,
-  `<emphasis>` - supported attribute: `level`,
-  `<say-as>` - supported attribute: `interpret-as` (consult Techmo TTS documentation for the complete list of all available implementations),
-  `<lang>` - supported attribute: `xml:lang`,
-  `<voice>` - supported attributes: `name`, `gender`, and `age`.
-
-  `SynthesizeConfig`'s fields can be set to specify parameters of synthesis (sampling rate, language, and voice) and a format of the output (PCM16 or Ogg/Vorbis compression).
-
-  `SynthesizeRequest` can be sent to the service via gRPC insecure channel (that does not require authentication).
-
-  `Synthesize` returns synthesized audio in `SynthesizeResponse` as a stream. When reading from the stream it is necessary to check if `SynthesizeResponse` contains `error` field. If it does its `code` and `description` can be printed. No `error` field in `SynthesizeResponse` means everything worked fine and its `audio` contains byte `content` that can be appended to received audio samples with `sample_rate_hertz` sampling frequency in hertz. When receiving In `SynthesizeResponse` with `audio`, the `end_of_stream` set to true means that service has fnished synthesis. Otherwise further chunks with more audio are expected.
   """
 
+  def ListVoices(self, request, context):
+    """Lists all available voices which can be used to synthesize speech.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def SynthesizeStreaming(self, request, context):
+    """Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
+    Returns audio signal with synthesized speech (streaming version, one or more response packets) or `error`.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def Synthesize(self, request, context):
-    """Returns audio signal with synthesized speech, given text and optional configuration.
+    """Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
+    Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet) or `error`.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -71,7 +61,17 @@ class TTSServicer(object):
 
 def add_TTSServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'Synthesize': grpc.unary_stream_rpc_method_handler(
+      'ListVoices': grpc.unary_unary_rpc_method_handler(
+          servicer.ListVoices,
+          request_deserializer=tribune__tts__pb2.ListVoicesRequest.FromString,
+          response_serializer=tribune__tts__pb2.ListVoicesResponse.SerializeToString,
+      ),
+      'SynthesizeStreaming': grpc.unary_stream_rpc_method_handler(
+          servicer.SynthesizeStreaming,
+          request_deserializer=tribune__tts__pb2.SynthesizeRequest.FromString,
+          response_serializer=tribune__tts__pb2.SynthesizeResponse.SerializeToString,
+      ),
+      'Synthesize': grpc.unary_unary_rpc_method_handler(
           servicer.Synthesize,
           request_deserializer=tribune__tts__pb2.SynthesizeRequest.FromString,
           response_serializer=tribune__tts__pb2.SynthesizeResponse.SerializeToString,
