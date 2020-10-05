@@ -100,8 +100,8 @@ message AudioConfig
 }
 
 // Voice definition. If both name and gender is defined, the name takes precedence.
-// If only name is defined, the specified voice is loaded.
-// If only gender is defined, the default voice for the requested gender is loaded.
+// If only name is defined, the specified voice is used.
+// If only gender is defined, the default voice for the requested gender is used.
 message Voice
 {
     // The name of the voice (empty string means default voice).
@@ -119,9 +119,9 @@ enum Gender
     MALE = 2;
 }
 
-// `SynthesizeResponse` is the only message returned to the client by `Synthesize` and `SynthesizeSync`.
-// During `Synthesize`, a series of one or more `SynthesizeResponse` messages are streamed back to the client.
-// During `SynthesizeSync` always one message is generated.
+// `SynthesizeResponse` is the only message returned to the client by `SynthesizeStreaming` and `Synthesize`.
+// During `SynthesizeStreaming`, a series of one or more `SynthesizeResponse` messages are streamed back to the client.
+// During `Synthesize` always one message is generated.
 // If `SynthesizeResponse` contains `error` field, its `code` and `description` can be printed.
 // Otherwise, the synthesized `audio` is available to use.
 message SynthesizeResponse
@@ -142,6 +142,7 @@ message AudioData
     int32 sample_rate_hertz = 1;
 
     // Audio data bytes encoded by default as Linear PCM (uncompressed 16-bit signed little-endian samples).
+    // Using `output_format` in request it can be changed to Ogg/Vorbis encoded stream.
     bytes content = 2;
 }
 
