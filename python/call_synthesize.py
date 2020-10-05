@@ -2,34 +2,35 @@ import tribune_tts_pb2
 import tribune_tts_pb2_grpc
 import grpc
 import os
-from wave_saver import WaveSaver
+from audio_saver import AudioSaver
 
 
 def call_synthesize(args, text):
     # determine the output format
-    out_format = tribune_tts_pb2.OutputFormat.PCM16
-    if args.out_format == "ogg-vorbis":
-        out_format = tribune_tts_pb2.OutputFormat.OGG_VORBIS
-    elif args.out_format != "pcm16":
-        raise RuntimeError("Unsupported output-format: " + args.out_format)
+    audio_encoding = tribune_tts_pb2.AudioEncoding.PCM16
+    if args.audio_encoding == "ogg-vorbis":
+        audio_encoding = tribune_tts_pb2.AudioEncoding.OGG_VORBIS
+    elif args.audio_encoding != "pcm16":
+        raise RuntimeError("Unsupported audio-encoding: " + args.audio_encoding)
 
     # Output file determination
     out_path = args.out_path
     if out_path == "":
-        if out_format == tribune_tts_pb2.OutputFormat.PCM16:
+        if audio_encoding == tribune_tts_pb2.AudioEncoding.PCM16:
             out_path = "TechmoTTS.wav"
         else:
             out_path = "TechmoTTS.ogg"
-    wavefilename = os.path.join(out_path)
+    audiofilename = os.path.join(out_path)
 
     # Establish GRPC channel
     channel = grpc.insecure_channel(args.service)
     stub = tribune_tts_pb2_grpc.TTSStub(channel)
 
     # Synthesis request
-    config = tribune_tts_pb2.SynthesizeConfig(sample_rate_hertz=int(args.sample_rate), output_format=out_format)
+    config = tribune_tts_pb2.SynthesizeConfig(audio_config=tribune_tts_pb2.AudioConfig(audio_encoding=audio_encoding, sample_rate_hertz=int(args.sample_rate), pitch=1, range=1, rate=1, volume=1))
     request = tribune_tts_pb2.SynthesizeRequest(text=text, config=config)
-    ws = WaveSaver()
+    asv = AudioSaver()
+    asv.setEncoding(audio_encoding)
 
     timeout=None
     if args.grpc_timeout > 0:
@@ -44,17 +45,13 @@ def call_synthesize(args, text):
                 print("Error [" + str(response.error.code) + "]: " + response.error.description)
                 break
             else:
-                if ws._framerate:
-                    if ws._framerate != response.audio.sample_rate_hertz:
+                if asv._framerate:
+                    if asv._framerate != response.audio.sample_rate_hertz:
                         raise RuntimeError("Sample rate does not match previously received.")
                 else:
-                    ws.setFrameRate(response.audio.sample_rate_hertz)
-                ws.append(response.audio.content)
-
-        if out_format == tribune_tts_pb2.OutputFormat.PCM16:
-            ws.save(wavefilename)
-        else:
-            ws.saveOggVorbis(wavefilename)
+                    asv.setFrameRate(response.audio.sample_rate_hertz)
+                asv.append(response.audio.content)
+        asv.save(audiofilename)
     except grpc.RpcError as e:
         print("[Server-side error] Received following RPC error from the TTS service:", str(e))
-    ws.clear()
+    asv.clear()

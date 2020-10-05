@@ -100,30 +100,30 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace techmo {
 namespace tribune {
 
-enum OutputFormat : int {
+enum AudioEncoding : int {
   PCM16 = 0,
   OGG_VORBIS = 1,
-  OutputFormat_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  OutputFormat_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+  AudioEncoding_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  AudioEncoding_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
-bool OutputFormat_IsValid(int value);
-constexpr OutputFormat OutputFormat_MIN = PCM16;
-constexpr OutputFormat OutputFormat_MAX = OGG_VORBIS;
-constexpr int OutputFormat_ARRAYSIZE = OutputFormat_MAX + 1;
+bool AudioEncoding_IsValid(int value);
+constexpr AudioEncoding AudioEncoding_MIN = PCM16;
+constexpr AudioEncoding AudioEncoding_MAX = OGG_VORBIS;
+constexpr int AudioEncoding_ARRAYSIZE = AudioEncoding_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* OutputFormat_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AudioEncoding_descriptor();
 template<typename T>
-inline const std::string& OutputFormat_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, OutputFormat>::value ||
+inline const std::string& AudioEncoding_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, AudioEncoding>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function OutputFormat_Name.");
+    "Incorrect type passed to function AudioEncoding_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    OutputFormat_descriptor(), enum_t_value);
+    AudioEncoding_descriptor(), enum_t_value);
 }
-inline bool OutputFormat_Parse(
-    const std::string& name, OutputFormat* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<OutputFormat>(
-    OutputFormat_descriptor(), name, value);
+inline bool AudioEncoding_Parse(
+    const std::string& name, AudioEncoding* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<AudioEncoding>(
+    AudioEncoding_descriptor(), name, value);
 }
 enum Gender : int {
   UNSPECIFIED = 0,
@@ -696,9 +696,9 @@ class SynthesizeConfig :
 
   // accessors -------------------------------------------------------
 
-  // string language = 3;
+  // string language = 1;
   void clear_language();
-  static const int kLanguageFieldNumber = 3;
+  static const int kLanguageFieldNumber = 1;
   const std::string& language() const;
   void set_language(const std::string& value);
   void set_language(std::string&& value);
@@ -708,35 +708,23 @@ class SynthesizeConfig :
   std::string* release_language();
   void set_allocated_language(std::string* language);
 
-  // .techmo.tribune.AudioConfig audio_config = 4;
+  // .techmo.tribune.AudioConfig audio_config = 2;
   bool has_audio_config() const;
   void clear_audio_config();
-  static const int kAudioConfigFieldNumber = 4;
+  static const int kAudioConfigFieldNumber = 2;
   const ::techmo::tribune::AudioConfig& audio_config() const;
   ::techmo::tribune::AudioConfig* release_audio_config();
   ::techmo::tribune::AudioConfig* mutable_audio_config();
   void set_allocated_audio_config(::techmo::tribune::AudioConfig* audio_config);
 
-  // .techmo.tribune.Voice voice = 5;
+  // .techmo.tribune.Voice voice = 3;
   bool has_voice() const;
   void clear_voice();
-  static const int kVoiceFieldNumber = 5;
+  static const int kVoiceFieldNumber = 3;
   const ::techmo::tribune::Voice& voice() const;
   ::techmo::tribune::Voice* release_voice();
   ::techmo::tribune::Voice* mutable_voice();
   void set_allocated_voice(::techmo::tribune::Voice* voice);
-
-  // int32 sample_rate_hertz = 1;
-  void clear_sample_rate_hertz();
-  static const int kSampleRateHertzFieldNumber = 1;
-  ::PROTOBUF_NAMESPACE_ID::int32 sample_rate_hertz() const;
-  void set_sample_rate_hertz(::PROTOBUF_NAMESPACE_ID::int32 value);
-
-  // .techmo.tribune.OutputFormat output_format = 2;
-  void clear_output_format();
-  static const int kOutputFormatFieldNumber = 2;
-  ::techmo::tribune::OutputFormat output_format() const;
-  void set_output_format(::techmo::tribune::OutputFormat value);
 
   // @@protoc_insertion_point(class_scope:techmo.tribune.SynthesizeConfig)
  private:
@@ -746,8 +734,6 @@ class SynthesizeConfig :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr language_;
   ::techmo::tribune::AudioConfig* audio_config_;
   ::techmo::tribune::Voice* voice_;
-  ::PROTOBUF_NAMESPACE_ID::int32 sample_rate_hertz_;
-  int output_format_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_tribune_5ftts_2eproto;
 };
@@ -862,27 +848,39 @@ class AudioConfig :
 
   // accessors -------------------------------------------------------
 
-  // float pitch = 1;
+  // .techmo.tribune.AudioEncoding audio_encoding = 1;
+  void clear_audio_encoding();
+  static const int kAudioEncodingFieldNumber = 1;
+  ::techmo::tribune::AudioEncoding audio_encoding() const;
+  void set_audio_encoding(::techmo::tribune::AudioEncoding value);
+
+  // int32 sample_rate_hertz = 2;
+  void clear_sample_rate_hertz();
+  static const int kSampleRateHertzFieldNumber = 2;
+  ::PROTOBUF_NAMESPACE_ID::int32 sample_rate_hertz() const;
+  void set_sample_rate_hertz(::PROTOBUF_NAMESPACE_ID::int32 value);
+
+  // float pitch = 3;
   void clear_pitch();
-  static const int kPitchFieldNumber = 1;
+  static const int kPitchFieldNumber = 3;
   float pitch() const;
   void set_pitch(float value);
 
-  // float range = 2;
+  // float range = 4;
   void clear_range();
-  static const int kRangeFieldNumber = 2;
+  static const int kRangeFieldNumber = 4;
   float range() const;
   void set_range(float value);
 
-  // float rate = 3;
+  // float rate = 5;
   void clear_rate();
-  static const int kRateFieldNumber = 3;
+  static const int kRateFieldNumber = 5;
   float rate() const;
   void set_rate(float value);
 
-  // float volume = 4;
+  // float volume = 6;
   void clear_volume();
-  static const int kVolumeFieldNumber = 4;
+  static const int kVolumeFieldNumber = 6;
   float volume() const;
   void set_volume(float value);
 
@@ -891,6 +889,8 @@ class AudioConfig :
   class HasBitSetters;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  int audio_encoding_;
+  ::PROTOBUF_NAMESPACE_ID::int32 sample_rate_hertz_;
   float pitch_;
   float range_;
   float rate_;
@@ -1660,35 +1660,7 @@ inline void SynthesizeRequest::set_allocated_config(::techmo::tribune::Synthesiz
 
 // SynthesizeConfig
 
-// int32 sample_rate_hertz = 1;
-inline void SynthesizeConfig::clear_sample_rate_hertz() {
-  sample_rate_hertz_ = 0;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 SynthesizeConfig::sample_rate_hertz() const {
-  // @@protoc_insertion_point(field_get:techmo.tribune.SynthesizeConfig.sample_rate_hertz)
-  return sample_rate_hertz_;
-}
-inline void SynthesizeConfig::set_sample_rate_hertz(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  
-  sample_rate_hertz_ = value;
-  // @@protoc_insertion_point(field_set:techmo.tribune.SynthesizeConfig.sample_rate_hertz)
-}
-
-// .techmo.tribune.OutputFormat output_format = 2;
-inline void SynthesizeConfig::clear_output_format() {
-  output_format_ = 0;
-}
-inline ::techmo::tribune::OutputFormat SynthesizeConfig::output_format() const {
-  // @@protoc_insertion_point(field_get:techmo.tribune.SynthesizeConfig.output_format)
-  return static_cast< ::techmo::tribune::OutputFormat >(output_format_);
-}
-inline void SynthesizeConfig::set_output_format(::techmo::tribune::OutputFormat value) {
-  
-  output_format_ = value;
-  // @@protoc_insertion_point(field_set:techmo.tribune.SynthesizeConfig.output_format)
-}
-
-// string language = 3;
+// string language = 1;
 inline void SynthesizeConfig::clear_language() {
   language_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -1739,7 +1711,7 @@ inline void SynthesizeConfig::set_allocated_language(std::string* language) {
   // @@protoc_insertion_point(field_set_allocated:techmo.tribune.SynthesizeConfig.language)
 }
 
-// .techmo.tribune.AudioConfig audio_config = 4;
+// .techmo.tribune.AudioConfig audio_config = 2;
 inline bool SynthesizeConfig::has_audio_config() const {
   return this != internal_default_instance() && audio_config_ != nullptr;
 }
@@ -1790,7 +1762,7 @@ inline void SynthesizeConfig::set_allocated_audio_config(::techmo::tribune::Audi
   // @@protoc_insertion_point(field_set_allocated:techmo.tribune.SynthesizeConfig.audio_config)
 }
 
-// .techmo.tribune.Voice voice = 5;
+// .techmo.tribune.Voice voice = 3;
 inline bool SynthesizeConfig::has_voice() const {
   return this != internal_default_instance() && voice_ != nullptr;
 }
@@ -1845,7 +1817,35 @@ inline void SynthesizeConfig::set_allocated_voice(::techmo::tribune::Voice* voic
 
 // AudioConfig
 
-// float pitch = 1;
+// .techmo.tribune.AudioEncoding audio_encoding = 1;
+inline void AudioConfig::clear_audio_encoding() {
+  audio_encoding_ = 0;
+}
+inline ::techmo::tribune::AudioEncoding AudioConfig::audio_encoding() const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.AudioConfig.audio_encoding)
+  return static_cast< ::techmo::tribune::AudioEncoding >(audio_encoding_);
+}
+inline void AudioConfig::set_audio_encoding(::techmo::tribune::AudioEncoding value) {
+  
+  audio_encoding_ = value;
+  // @@protoc_insertion_point(field_set:techmo.tribune.AudioConfig.audio_encoding)
+}
+
+// int32 sample_rate_hertz = 2;
+inline void AudioConfig::clear_sample_rate_hertz() {
+  sample_rate_hertz_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 AudioConfig::sample_rate_hertz() const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.AudioConfig.sample_rate_hertz)
+  return sample_rate_hertz_;
+}
+inline void AudioConfig::set_sample_rate_hertz(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  sample_rate_hertz_ = value;
+  // @@protoc_insertion_point(field_set:techmo.tribune.AudioConfig.sample_rate_hertz)
+}
+
+// float pitch = 3;
 inline void AudioConfig::clear_pitch() {
   pitch_ = 0;
 }
@@ -1859,7 +1859,7 @@ inline void AudioConfig::set_pitch(float value) {
   // @@protoc_insertion_point(field_set:techmo.tribune.AudioConfig.pitch)
 }
 
-// float range = 2;
+// float range = 4;
 inline void AudioConfig::clear_range() {
   range_ = 0;
 }
@@ -1873,7 +1873,7 @@ inline void AudioConfig::set_range(float value) {
   // @@protoc_insertion_point(field_set:techmo.tribune.AudioConfig.range)
 }
 
-// float rate = 3;
+// float rate = 5;
 inline void AudioConfig::clear_rate() {
   rate_ = 0;
 }
@@ -1887,7 +1887,7 @@ inline void AudioConfig::set_rate(float value) {
   // @@protoc_insertion_point(field_set:techmo.tribune.AudioConfig.rate)
 }
 
-// float volume = 4;
+// float volume = 6;
 inline void AudioConfig::clear_volume() {
   volume_ = 0;
 }
@@ -2241,10 +2241,10 @@ inline void Error::set_allocated_description(std::string* description) {
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::techmo::tribune::OutputFormat> : ::std::true_type {};
+template <> struct is_proto_enum< ::techmo::tribune::AudioEncoding> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::techmo::tribune::OutputFormat>() {
-  return ::techmo::tribune::OutputFormat_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::techmo::tribune::AudioEncoding>() {
+  return ::techmo::tribune::AudioEncoding_descriptor();
 }
 template <> struct is_proto_enum< ::techmo::tribune::Gender> : ::std::true_type {};
 template <>
