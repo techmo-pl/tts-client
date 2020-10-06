@@ -6,27 +6,6 @@ import tribune_tts_pb2 as tribune__tts__pb2
 
 class TTSStub(object):
   """Service that implements Techmo Text-To-Speech (TTS) API.
-
-  Service's `Synthesize` method accepts `SynthesizeRequest` object which contains whole phrase to be synthesized.  
-  You have to put the phrase as a string in `text` field of `SynthesizeRequest`. The string has to be in orthographic form. In that string you can use several special tags which can be interpreted. Tags have to be in from `<tag>something special</tag>` and can occur in any place in text. Currently interpreted tags are:
-
-  | Tag | Description | Example (input) | Example (output) |
-  | --- | ----------- | --------------- | ---------------- |
-  | **cardinal** | *cardinal number* | `<cardinal>7</cardinal>` | *siedem* |
-  | **signed** | *number with sign* | `<signed>-15</signed>` | *minus piętnaście* |
-  | **ordinal** | *ordinal number* | `<ordinal>1</ordinal>` | *pierwszy* |
-  | **fraction** | *fractional number* | `<fraction>3/4</fraction>` | *trzy czwarte* |
-  | **postal** | *postal code* | `<postal>30-020</postal>` | *trzydzieści zero dwadzieścia* |
-  | **time** | *time* | `<time>22:00</time>` | *dwudziesta druga* |
-  | **date** | *date* | `<date>12/05/2001</date>` | *dwunasty maja dwa tysiące jeden* |
-
-  Note: when interpreting tags only nominal case is supported at the moment.
-
-  You can set `SynthesizeConfig`'s fields to specify parameters of synthesis. Currently supported option is only `sample_rate_hertz`, which is desired sampling frequency (in hertz) of synthesized audio.
-
-  `SynthesizeRequest` can be sent to the service via gRPC insecure channel (that does not require authentication).
-
-  `Synthesize` returns synthesized audio in `SynthesizeResponse` as a stream. When reading from the stream you have to check if `SynthesizeResponse` contains `error` field. If it does you can print its `code` and `description`. No `error` field in `SynthesizeResponse` means everything worked fine and its `audio` contains byte `content` that can be appended to received audio samples with `sample_rate_hertz` sampling frequency in hertz. When receiving `SynthesizeResponse` with `audio` you have to check if its `end_of_stream` flag is set to true. When it is set to true it means service has fnished synthesis and you can save your wave file with received synthesized audio content.
   """
 
   def __init__(self, channel):
@@ -35,7 +14,17 @@ class TTSStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.Synthesize = channel.unary_stream(
+    self.ListVoices = channel.unary_unary(
+        '/techmo.tribune.TTS/ListVoices',
+        request_serializer=tribune__tts__pb2.ListVoicesRequest.SerializeToString,
+        response_deserializer=tribune__tts__pb2.ListVoicesResponse.FromString,
+        )
+    self.SynthesizeStreaming = channel.unary_stream(
+        '/techmo.tribune.TTS/SynthesizeStreaming',
+        request_serializer=tribune__tts__pb2.SynthesizeRequest.SerializeToString,
+        response_deserializer=tribune__tts__pb2.SynthesizeResponse.FromString,
+        )
+    self.Synthesize = channel.unary_unary(
         '/techmo.tribune.TTS/Synthesize',
         request_serializer=tribune__tts__pb2.SynthesizeRequest.SerializeToString,
         response_deserializer=tribune__tts__pb2.SynthesizeResponse.FromString,
@@ -44,31 +33,26 @@ class TTSStub(object):
 
 class TTSServicer(object):
   """Service that implements Techmo Text-To-Speech (TTS) API.
-
-  Service's `Synthesize` method accepts `SynthesizeRequest` object which contains whole phrase to be synthesized.  
-  You have to put the phrase as a string in `text` field of `SynthesizeRequest`. The string has to be in orthographic form. In that string you can use several special tags which can be interpreted. Tags have to be in from `<tag>something special</tag>` and can occur in any place in text. Currently interpreted tags are:
-
-  | Tag | Description | Example (input) | Example (output) |
-  | --- | ----------- | --------------- | ---------------- |
-  | **cardinal** | *cardinal number* | `<cardinal>7</cardinal>` | *siedem* |
-  | **signed** | *number with sign* | `<signed>-15</signed>` | *minus piętnaście* |
-  | **ordinal** | *ordinal number* | `<ordinal>1</ordinal>` | *pierwszy* |
-  | **fraction** | *fractional number* | `<fraction>3/4</fraction>` | *trzy czwarte* |
-  | **postal** | *postal code* | `<postal>30-020</postal>` | *trzydzieści zero dwadzieścia* |
-  | **time** | *time* | `<time>22:00</time>` | *dwudziesta druga* |
-  | **date** | *date* | `<date>12/05/2001</date>` | *dwunasty maja dwa tysiące jeden* |
-
-  Note: when interpreting tags only nominal case is supported at the moment.
-
-  You can set `SynthesizeConfig`'s fields to specify parameters of synthesis. Currently supported option is only `sample_rate_hertz`, which is desired sampling frequency (in hertz) of synthesized audio.
-
-  `SynthesizeRequest` can be sent to the service via gRPC insecure channel (that does not require authentication).
-
-  `Synthesize` returns synthesized audio in `SynthesizeResponse` as a stream. When reading from the stream you have to check if `SynthesizeResponse` contains `error` field. If it does you can print its `code` and `description`. No `error` field in `SynthesizeResponse` means everything worked fine and its `audio` contains byte `content` that can be appended to received audio samples with `sample_rate_hertz` sampling frequency in hertz. When receiving `SynthesizeResponse` with `audio` you have to check if its `end_of_stream` flag is set to true. When it is set to true it means service has fnished synthesis and you can save your wave file with received synthesized audio content.
   """
 
+  def ListVoices(self, request, context):
+    """Lists all available voices which can be used to synthesize speech.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def SynthesizeStreaming(self, request, context):
+    """Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
+    Returns audio signal with synthesized speech (streaming version, one or more response packets) or `error`.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def Synthesize(self, request, context):
-    """Returns audio signal with synthesized speech, given text and optional configuration.
+    """Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
+    Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet) or `error`.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -77,7 +61,17 @@ class TTSServicer(object):
 
 def add_TTSServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'Synthesize': grpc.unary_stream_rpc_method_handler(
+      'ListVoices': grpc.unary_unary_rpc_method_handler(
+          servicer.ListVoices,
+          request_deserializer=tribune__tts__pb2.ListVoicesRequest.FromString,
+          response_serializer=tribune__tts__pb2.ListVoicesResponse.SerializeToString,
+      ),
+      'SynthesizeStreaming': grpc.unary_stream_rpc_method_handler(
+          servicer.SynthesizeStreaming,
+          request_deserializer=tribune__tts__pb2.SynthesizeRequest.FromString,
+          response_serializer=tribune__tts__pb2.SynthesizeResponse.SerializeToString,
+      ),
+      'Synthesize': grpc.unary_unary_rpc_method_handler(
           servicer.Synthesize,
           request_deserializer=tribune__tts__pb2.SynthesizeRequest.FromString,
           response_serializer=tribune__tts__pb2.SynthesizeResponse.SerializeToString,

@@ -1,41 +1,53 @@
 // Techmo Tribune TTS API  
-// version: 1.1.0   
-// authors: Dawid Skurzok, Paweł Jaciów  
-// date:    2018-01-25  
+// version: 2.0.0   
+// authors: Dawid Skurzok, Paweł Jaciów, Michał Radziszewski  
+// date:    2020-10-05  
 syntax = "proto3";
 
 package techmo.tribune;
 
 // Service that implements Techmo Text-To-Speech (TTS) API.
-//
-// Service's `Synthesize` method accepts `SynthesizeRequest` object which contains whole phrase to be synthesized.  
-// You have to put the phrase as a string in `text` field of `SynthesizeRequest`. The string has to be in orthographic form. In that string you can use several special tags which can be interpreted. Tags have to be in from `<tag>something special</tag>` and can occur in any place in text. Currently interpreted tags are:
-//
-// | Tag | Description | Example (input) | Example (output) |
-// | --- | ----------- | --------------- | ---------------- |
-// | **cardinal** | *cardinal number* | `<cardinal>7</cardinal>` | *siedem* |
-// | **signed** | *number with sign* | `<signed>-15</signed>` | *minus piętnaście* |
-// | **ordinal** | *ordinal number* | `<ordinal>1</ordinal>` | *pierwszy* |
-// | **fraction** | *fractional number* | `<fraction>3/4</fraction>` | *trzy czwarte* |
-// | **postal** | *postal code* | `<postal>30-020</postal>` | *trzydzieści zero dwadzieścia* |
-// | **time** | *time* | `<time>22:00</time>` | *dwudziesta druga* |
-// | **date** | *date* | `<date>12/05/2001</date>` | *dwunasty maja dwa tysiące jeden* |
-//
-// Note: when interpreting tags only nominal case is supported at the moment.
-//
-// You can set `SynthesizeConfig`'s fields to specify parameters of synthesis. Currently supported option is only `sample_rate_hertz`, which is desired sampling frequency (in hertz) of synthesized audio.
-//
-// `SynthesizeRequest` can be sent to the service via gRPC insecure channel (that does not require authentication).
-//
-// `Synthesize` returns synthesized audio in `SynthesizeResponse` as a stream. When reading from the stream you have to check if `SynthesizeResponse` contains `error` field. If it does you can print its `code` and `description`. No `error` field in `SynthesizeResponse` means everything worked fine and its `audio` contains byte `content` that can be appended to received audio samples with `sample_rate_hertz` sampling frequency in hertz. When receiving `SynthesizeResponse` with `audio` you have to check if its `end_of_stream` flag is set to true. When it is set to true it means service has fnished synthesis and you can save your wave file with received synthesized audio content.
 service TTS
 {
-    // Returns audio signal with synthesized speech, given text and optional configuration.
-    rpc Synthesize(SynthesizeRequest) returns (stream SynthesizeResponse);
+    // Lists all available voices which can be used to synthesize speech.
+    rpc ListVoices(ListVoicesRequest) returns (ListVoicesResponse);
+
+    // Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
+    // Returns audio signal with synthesized speech (streaming version, one or more response packets) or `error`.
+    rpc SynthesizeStreaming(SynthesizeRequest) returns (stream SynthesizeResponse);
+
+    // Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
+    // Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet) or `error`.
+    rpc Synthesize(SynthesizeRequest) returns (SynthesizeResponse);
 }
 
-// `SynthesizeRequest` is the top-level message sent by the client for
-// the `Synthesize` method. It contains a text to be synthesized and a configuration.
+// The  top-level message sent by the client to request listing of available voices.
+message ListVoicesRequest
+{
+    // ISO 639-1 language code. Optional. When defined, limits the listed voices to the voices supprting the requested language.
+    string language = 1;
+}
+
+// The listing of available voices returned by a `ListVoices` call.
+message ListVoicesResponse
+{
+    // The list of all available voices or voices supproting the requested laguage.
+    repeated Voice voices = 1;
+}
+
+// The top-level message sent by the client for `Synthesize` and `SynthesizeStreaming` methods.
+// It contains a text to be synthesized and a configuration.
+// The phrase to synthesize is put as a string in `text` field. The string has to be in orthographic form.
+// The string can be either a plain text or SSML (https://w3.org/TR/speech-synthesis11/).
+// Currently the following SSML tags are supported:
+// `<speak>` - root xml node, with optional `xml:lang` attribute,
+// `<prosody>` - supported attributes: `pitch`, `range`, `rate`, and `volume`,
+// `<break>` - supported attributes: `strength` and `time`,
+// `<emphasis>` - supported attribute: `level`,
+// `<say-as>` - supported attribute: `interpret-as` (consult Techmo TTS documentation for the complete list of all available implementations),
+// `<lang>` - supported attribute: `xml:lang`,
+// `<voice>` - supported attributes: `name`, `gender`, and `age`.
+// `SynthesizeConfig`'s fields can be set to specify parameters of synthesis (sampling rate, language, and voice) and a format of the output (PCM16 or Ogg/Vorbis compression).
 message SynthesizeRequest
 {
     // Text to be synthesized.
@@ -48,13 +60,70 @@ message SynthesizeRequest
 // Provides information to the synthesizer that specifies how to process the request.
 message SynthesizeConfig
 {
-    // Desired sampling frequency in hertz of synthesized audio.
-    int32 sample_rate_hertz = 1;
+    // ISO 639-1 code of the language of text to be synthesized (may be overriden by SSML tags in request text).
+    string language = 1;
+
+    // Optional. Overrides the default synthesized speech parameters
+    AudioConfig audio_config = 2;
+
+    // Requested voice to be used to synthesize the text (may be overriden by SSML tags in request text).
+    Voice voice = 3;
 }
 
-// `SynthesizeResponse` is the only message returned to the client by
-// `Synthesize`. A series of one or more `SynthesizeResponse`
-// messages are streamed back to the client.
+// Desfines the parameters of synthesized speech.
+message AudioConfig
+{
+    // Requested format of the output audio stream.
+    AudioEncoding audio_encoding = 1;
+
+    // Desired sampling frequency in hertz of synthesized audio. The value 0 means use the default Synthesizer sampling rate.
+    int32 sample_rate_hertz = 2;
+
+    // The average speech pitch scaling factor. The value 0.0 means use the default voice pitch.
+    float pitch = 3;
+
+    // The speech range scaling factor. The value 0.0 means use the default voice range.
+    float range = 4;
+
+    // The speech rate (speed) scaling factor. The value 0.0 means use the default voice rate.
+    float rate = 5;
+
+    // The speech volume. The value 0.0 means use the default volume.
+    float volume = 6;
+}
+
+// Voice definition. If both name and gender is defined, the name takes precedence.
+// If only name is defined, the specified voice is used.
+// If only gender is defined, the default voice for the requested gender is used.
+message Voice
+{
+    // The name of the voice (empty string means default voice).
+    string name = 1;
+
+    // Gender of the voice (UNSPECIFIED is default).
+    Gender gender = 2;
+}
+
+// The requested format of the response audio data.
+enum AudioEncoding
+{
+    PCM16 = 0;       // Uncompressed 16-bit signed integer samples, without any header.
+    OGG_VORBIS = 1;  // Ogg/Vorbis endoded data stream.
+}
+
+// Gender of the voice.
+enum Gender
+{
+    UNSPECIFIED = 0;
+    FEMALE = 1;
+    MALE = 2;
+}
+
+// `SynthesizeResponse` is the only message returned to the client by `SynthesizeStreaming` and `Synthesize`.
+// During `SynthesizeStreaming`, a series of one or more `SynthesizeResponse` messages are streamed back to the client.
+// During `Synthesize` always one message is generated.
+// If `SynthesizeResponse` contains `error` field, its `code` and `description` can be printed.
+// Otherwise, the synthesized `audio` is available to use.
 message SynthesizeResponse
 {
     // Audio data corresponding to a portion of the text
@@ -73,10 +142,8 @@ message AudioData
     int32 sample_rate_hertz = 1;
 
     // Audio data bytes encoded by default as Linear PCM (uncompressed 16-bit signed little-endian samples).
+    // Using `output_format` in request it can be changed to Ogg/Vorbis encoded stream.
     bytes content = 2;
-
-    // Last message flag. If set to true, no more data will be sent.
-    bool end_of_stream = 3;
 }
 
 // Indicates the type of the error for the operation.
@@ -98,3 +165,4 @@ message Error
     // Error description.
     string description = 2;
 }
+
