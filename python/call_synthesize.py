@@ -22,12 +22,35 @@ def call_synthesize(args, text):
             out_path = "TechmoTTS.ogg"
     audiofilename = os.path.join(out_path)
 
+    # Determine the voice
+    voice = None
+    if args.voice_name != "" or args.voice_gender != "":
+       gender = tribune_tts_pb2.Gender.UNSPECIFIED
+       if args.voice_gender == "female":
+           gender = tribune_tts_pb2.Gender.FEMALE
+       elif args.voice_gender == "male":
+           gender = tribune_tts_pb2.Gender.MALE
+       elif args.voice_gender != "":
+           raise RuntimeError("Unsupported voice-gender: " + args.voice_gender)
+       voice=tribune_tts_pb2.Voice(
+           name=args.voice_name,
+           gender=gender)
+
     # Establish GRPC channel
     channel = grpc.insecure_channel(args.service)
     stub = tribune_tts_pb2_grpc.TTSStub(channel)
 
     # Synthesis request
-    config = tribune_tts_pb2.SynthesizeConfig(audio_config=tribune_tts_pb2.AudioConfig(audio_encoding=audio_encoding, sample_rate_hertz=int(args.sample_rate), pitch=1, range=1, rate=1, volume=1))
+    config = tribune_tts_pb2.SynthesizeConfig(
+        language=args.language,
+        audio_config=tribune_tts_pb2.AudioConfig(
+            audio_encoding=audio_encoding,
+            sample_rate_hertz=int(args.sample_rate),
+            pitch=args.speech_pitch,
+            range=args.speech_range,
+            rate=args.speech_rate,
+            volume=args.speech_volume),
+        voice=voice)
     request = tribune_tts_pb2.SynthesizeRequest(text=text, config=config)
     asv = AudioSaver()
     asv.setEncoding(audio_encoding)
