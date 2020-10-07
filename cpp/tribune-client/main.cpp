@@ -26,7 +26,23 @@ po::options_description CreateOptionsDescription(void) {
              "how long the client is willing to wait for a reply from the server. "
              "If not specified, the service will set the deadline to a very large number.")
             ("sample-rate-hertz", po::value<unsigned int>()->default_value(0),
-             "Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.");
+             "Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.")
+            ("audio-encoding", po::value<std::string>()->default_value("pcm16"),
+             "Encoding of the output audio, pcm16 (default) or ogg-vorbs.")
+            ("speech-pitch", po::value<float>()->default_value(0.0f),
+             "Allows adjusting the default pitch of the synthesized speech (optional, can be overriden by SSML).")
+            ("speech-range", po::value<float>()->default_value(0.0f),
+             "Allows adjusting the default range of the synthesized speech (optional, can be overriden by SSML).")
+            ("speech-rate", po::value<float>()->default_value(0.0f),
+             "Allows adjusting the default rate (speed) of the synthesized speech (optional, can be overriden by SSML).")
+            ("speech-volume", po::value<float>()->default_value(0.0),
+             "Allows adjusting the default volume of the synthesized speech (optional, can be overriden by SSML).")
+            ("voice-name", po::value<std::string>()->default_value(""),
+             "Name od the voice used to synthesize the phrase (optional, can be overriden by SSML).")
+            ("voice-gender", po::value<std::string>()->default_value(""),
+             "Gender of the voice - female or male (optional, can be overriden by SSML).")
+            ("language", po::value<std::string>()->default_value(""),
+             "ISO 639-1 language code of the phrase to synthesize (optional, can be overriden by SSML).");
     return optionsDescription;
 }
 
@@ -57,7 +73,8 @@ int main(int argc, const char *const argv[]) {
         techmo::tribune::TribuneClientConfig config;
         config.session_id = userOptions["session-id"].as<std::string>();
         config.grpc_timeout = userOptions["grpc-timeout"].as<int>();
-        config.sample_rate_hertz = sample_rate_hertz;
+        config.audio_config.emplace();
+        config.audio_config->sample_rate_hertz = sample_rate_hertz;
 
         techmo::tribune::TribuneClient tribune_client{ userOptions["service-address"].as<std::string>() };
 
