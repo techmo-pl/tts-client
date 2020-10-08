@@ -1,7 +1,6 @@
 #include <grpc++/grpc++.h>
 #include <google/protobuf/text_format.h>
-
-#include "tribune_client.h"
+#include "TribuneClient.h"
 
 namespace techmo::tribune
 {
