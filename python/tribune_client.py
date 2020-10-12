@@ -24,13 +24,13 @@ def main():
                   help="Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.", type=int)
     parser.add_argument("-ae", "--audio-encoding", dest="audio_encoding", default="pcm16",
                   help="Encoding of the output audio, pcm16 (default) or ogg-vorbs.", type=str)
-    parser.add_argument("-sp", "--speech-pitch", dest="speech_pitch", default=0.0,
+    parser.add_argument("-sp", "--speech-pitch", dest="speech_pitch", default=1.0,
                   help="Allows adjusting the default pitch of the synthesized speech (optional, can be overriden by SSML).", type=float)
-    parser.add_argument("-sr", "--speech-range", dest="speech_range", default=0.0,
+    parser.add_argument("-sr", "--speech-range", dest="speech_range", default=1.0,
                   help="Allows adjusting the default range of the synthesized speech (optional, can be overriden by SSML).", type=float)
-    parser.add_argument("-ss", "--speech-rate", dest="speech_rate", default=0.0,
+    parser.add_argument("-ss", "--speech-rate", dest="speech_rate", default=1.0,
                   help="Allows adjusting the default rate (speed) of the synthesized speech (optional, can be overriden by SSML).", type=float)
-    parser.add_argument("-sv", "--speech-volume", dest="speech_volume", default=0.0,
+    parser.add_argument("-sv", "--speech-volume", dest="speech_volume", default=1.0,
                   help="Allows adjusting the default volume of the synthesized speech (optional, can be overriden by SSML).", type=float)
     parser.add_argument("-vn", "--voice-name", dest="voice_name", default="",
                   help="Name od the voice used to synthesize the phrase (optional, can be overriden by SSML).", type=str) 

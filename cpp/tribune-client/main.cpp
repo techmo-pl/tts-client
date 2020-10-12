@@ -27,13 +27,13 @@ po::options_description CreateOptionsDescription(void)
 			"Encoding of the output audio, pcm16 (default) or ogg-vorbs.")
 		("sample-rate-hertz", po::value<unsigned int>()->default_value(0),
 			"Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.")
-		("speech-pitch", po::value<float>()->default_value(0.0f),
+		("speech-pitch", po::value<float>()->default_value(1.0f),
 			"Allows adjusting the default pitch of the synthesized speech (optional, can be overriden by SSML).")
-		("speech-range", po::value<float>()->default_value(0.0f),
+		("speech-range", po::value<float>()->default_value(1.0f),
 			"Allows adjusting the default range of the synthesized speech (optional, can be overriden by SSML).")
-		("speech-rate", po::value<float>()->default_value(0.0f),
+		("speech-rate", po::value<float>()->default_value(1.0f),
 			"Allows adjusting the default rate (speed) of the synthesized speech (optional, can be overriden by SSML).")
-		("speech-volume", po::value<float>()->default_value(0.0),
+		("speech-volume", po::value<float>()->default_value(1.0f),
 			"Allows adjusting the default volume of the synthesized speech (optional, can be overriden by SSML).")
 		("voice-name", po::value<std::string>()->default_value(""),
 			"Name od the voice used to synthesize the phrase (optional, can be overriden by SSML).")

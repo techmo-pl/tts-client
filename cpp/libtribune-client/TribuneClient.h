@@ -16,17 +16,17 @@ namespace techmo::tribune
 		// Sample rate in Hz of synthesized audio. If set to 0, the service will use voice's originalsynthesizer default sample rate.
 		int sample_rate_hertz{ 0 };
 
-		// The average speech pitch scaling factor. The value 0.0 means use the default voice pitch.
-		float pitch{ 0.0f };
+		// The average speech pitch scaling factor. The value 1.0 is a neutral value.
+		float pitch{ 1.0f };
 
-		// The speech range scaling factor. The value 0.0 means use the default voice range.
-		float range{ 0.0f };
+		// The speech range scaling factor. The value 1.0 is a neutral value.
+		float range{ 1.0f };
 
-		// The speech rate (speed) scaling factor. The value 0.0 means use the default voice rate.
-		float rate{ 0.0f };
+		// The speech rate (speed) scaling factor. The value 1.0 is a neutral value.
+		float rate{ 1.0f };
 
-		// The speech volume. The value 0.0 means use the default volume.
-		float volume{ 0.0f };
+		// The speech volume scaling factor. The value 1.0 is a neutral value.
+		float volume{ 1.0f };
 	};
 
 	// Voice definition. If both name and gender is defined, the name takes precedence.

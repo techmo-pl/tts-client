@@ -79,16 +79,16 @@ message AudioConfig
     // Desired sampling frequency in hertz of synthesized audio. The value 0 means use the default Synthesizer sampling rate.
     int32 sample_rate_hertz = 2;
 
-    // The average speech pitch scaling factor. The value 0.0 means use the default voice pitch.
+    // The average speech pitch scaling factor. The value 1.0 is a neutral value.
     float pitch = 3;
 
-    // The speech range scaling factor. The value 0.0 means use the default voice range.
+    // The speech range scaling factor. The value 1.0 is a neutral value.
     float range = 4;
 
-    // The speech rate (speed) scaling factor. The value 0.0 means use the default voice rate.
+    // The speech rate (speed) scaling factor. The value 1.0 is a neutral value.
     float rate = 5;
 
-    // The speech volume. The value 0.0 means use the default volume.
+    // The speech volume scaling factor. The value 1.0 is a neutral value.
     float volume = 6;
 }
 
