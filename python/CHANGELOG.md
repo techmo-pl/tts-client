@@ -1,9 +1,9 @@
 # Tribune TTS gRPC Python client Changelog
 
-## [1.5.0] - 2020-10-07
+## [1.5.0] - 2020-10-16
 ### Added
 - The `--speech-pitch`, `--speech-range`, `--speech-rate`, and `--speech-volume`, options for controlling speech parameters
-- The `--voice-name` and `--voice-gender` options for controlling voice
+- The `--voice-name`, `--voice-gender`, and `--voice-age` options for controlling voice
 - The `--language` option
 
 ## [1.4.0] - 2020-10-05

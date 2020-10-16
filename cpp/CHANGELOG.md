@@ -1,12 +1,12 @@
 # Tribune TTS gRPC C++ client Changelog
 
-## [1.5.0] - 2020-10-07
+## [1.5.0] - 2020-10-16
 ### Changed
 - Updated the proto to version 2.0.0.
 ### Added
 - The `--audio-encoding` option, with `pcm16` (default) and `ogg-vorbis`.
 - The `--speech-pitch`, `--speech-range`, `--speech-rate`, and `--speech-volume`, options for controlling speech parameters
-- The `--voice-name` and `--voice-gender` options for controlling voice
+- The `--voice-name`, `--voice-gender`, and `--voice-age` options for controlling voice
 - The `--language` option
 
 ## [1.3.0] - 2020-03-30
