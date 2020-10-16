@@ -32,6 +32,7 @@ namespace techmo::tribune
 
 			grpc_voice->set_name(input_voice.name);
 			grpc_voice->set_gender(input_voice.gender);
+			grpc_voice->set_age(input_voice.age);
 		}
 
 		return request;

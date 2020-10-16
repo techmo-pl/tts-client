@@ -29,16 +29,19 @@ namespace techmo::tribune
 		float volume{ 1.0f };
 	};
 
-	// Voice definition. If both name and gender is defined, the name takes precedence.
-	// If only name is defined, the specified voice is used.
-	// If only gender is defined, the default voice for the requested gender is used.
+	// Voice definition. If there is no voice satisfying all the required criteria,
+	// the voice is selected according to name (if defined) first, gender (if defined) second,
+	// and age (if defined) third.
 	struct SynthesizeVoice
 	{
 		// The name of the voice (empty string means default voice).
 		std::string name;
 
-		// Gender of the voice (UNSPECIFIED is default).
-		Gender gender{ Gender::UNSPECIFIED };
+		// Gender of the voice (GENDER_UNSPECIFIED is default).
+		Gender gender{ Gender::GENDER_UNSPECIFIED };
+
+		// Age of the voice (AGE_UNSPECIFIED is default).
+		Age age{ Age::AGE_UNSPECIFIED };
 	};
 
 	struct TribuneClientConfig

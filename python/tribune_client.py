@@ -36,6 +36,8 @@ def main():
                   help="Name od the voice used to synthesize the phrase (optional, can be overriden by SSML).", type=str) 
     parser.add_argument("-vg", "--voice-gender", dest="voice_gender", default="",
                   help="Gender of the voice - female or male (optional, can be overriden by SSML).", type=str) 
+    parser.add_argument("-va", "--voice-age", dest="voice_age", default="",
+                  help="Age of the voice - adult, child, or senile (optional, can be overriden by SSML).", type=str) 
     parser.add_argument("-l", "--language", dest="language", default="",
                   help="ISO 639-1 language code of the phrase to synthesize (optional, can be overriden by SSML).", type=str) 
 

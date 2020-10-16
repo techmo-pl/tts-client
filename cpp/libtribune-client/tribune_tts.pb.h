@@ -48,7 +48,7 @@ struct TableStruct_tribune_5ftts_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[17]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -63,15 +63,39 @@ extern AudioConfigDefaultTypeInternal _AudioConfig_default_instance_;
 class AudioData;
 class AudioDataDefaultTypeInternal;
 extern AudioDataDefaultTypeInternal _AudioData_default_instance_;
+class DeleteLexiconRequest;
+class DeleteLexiconRequestDefaultTypeInternal;
+extern DeleteLexiconRequestDefaultTypeInternal _DeleteLexiconRequest_default_instance_;
+class DeleteLexiconResponse;
+class DeleteLexiconResponseDefaultTypeInternal;
+extern DeleteLexiconResponseDefaultTypeInternal _DeleteLexiconResponse_default_instance_;
 class Error;
 class ErrorDefaultTypeInternal;
 extern ErrorDefaultTypeInternal _Error_default_instance_;
+class GetLexiconRequest;
+class GetLexiconRequestDefaultTypeInternal;
+extern GetLexiconRequestDefaultTypeInternal _GetLexiconRequest_default_instance_;
+class GetLexiconResponse;
+class GetLexiconResponseDefaultTypeInternal;
+extern GetLexiconResponseDefaultTypeInternal _GetLexiconResponse_default_instance_;
+class ListLexiconsRequest;
+class ListLexiconsRequestDefaultTypeInternal;
+extern ListLexiconsRequestDefaultTypeInternal _ListLexiconsRequest_default_instance_;
+class ListLexiconsResponse;
+class ListLexiconsResponseDefaultTypeInternal;
+extern ListLexiconsResponseDefaultTypeInternal _ListLexiconsResponse_default_instance_;
 class ListVoicesRequest;
 class ListVoicesRequestDefaultTypeInternal;
 extern ListVoicesRequestDefaultTypeInternal _ListVoicesRequest_default_instance_;
 class ListVoicesResponse;
 class ListVoicesResponseDefaultTypeInternal;
 extern ListVoicesResponseDefaultTypeInternal _ListVoicesResponse_default_instance_;
+class PutLexiconRequest;
+class PutLexiconRequestDefaultTypeInternal;
+extern PutLexiconRequestDefaultTypeInternal _PutLexiconRequest_default_instance_;
+class PutLexiconResponse;
+class PutLexiconResponseDefaultTypeInternal;
+extern PutLexiconResponseDefaultTypeInternal _PutLexiconResponse_default_instance_;
 class SynthesizeConfig;
 class SynthesizeConfigDefaultTypeInternal;
 extern SynthesizeConfigDefaultTypeInternal _SynthesizeConfig_default_instance_;
@@ -89,9 +113,17 @@ extern VoiceDefaultTypeInternal _Voice_default_instance_;
 PROTOBUF_NAMESPACE_OPEN
 template<> ::techmo::tribune::AudioConfig* Arena::CreateMaybeMessage<::techmo::tribune::AudioConfig>(Arena*);
 template<> ::techmo::tribune::AudioData* Arena::CreateMaybeMessage<::techmo::tribune::AudioData>(Arena*);
+template<> ::techmo::tribune::DeleteLexiconRequest* Arena::CreateMaybeMessage<::techmo::tribune::DeleteLexiconRequest>(Arena*);
+template<> ::techmo::tribune::DeleteLexiconResponse* Arena::CreateMaybeMessage<::techmo::tribune::DeleteLexiconResponse>(Arena*);
 template<> ::techmo::tribune::Error* Arena::CreateMaybeMessage<::techmo::tribune::Error>(Arena*);
+template<> ::techmo::tribune::GetLexiconRequest* Arena::CreateMaybeMessage<::techmo::tribune::GetLexiconRequest>(Arena*);
+template<> ::techmo::tribune::GetLexiconResponse* Arena::CreateMaybeMessage<::techmo::tribune::GetLexiconResponse>(Arena*);
+template<> ::techmo::tribune::ListLexiconsRequest* Arena::CreateMaybeMessage<::techmo::tribune::ListLexiconsRequest>(Arena*);
+template<> ::techmo::tribune::ListLexiconsResponse* Arena::CreateMaybeMessage<::techmo::tribune::ListLexiconsResponse>(Arena*);
 template<> ::techmo::tribune::ListVoicesRequest* Arena::CreateMaybeMessage<::techmo::tribune::ListVoicesRequest>(Arena*);
 template<> ::techmo::tribune::ListVoicesResponse* Arena::CreateMaybeMessage<::techmo::tribune::ListVoicesResponse>(Arena*);
+template<> ::techmo::tribune::PutLexiconRequest* Arena::CreateMaybeMessage<::techmo::tribune::PutLexiconRequest>(Arena*);
+template<> ::techmo::tribune::PutLexiconResponse* Arena::CreateMaybeMessage<::techmo::tribune::PutLexiconResponse>(Arena*);
 template<> ::techmo::tribune::SynthesizeConfig* Arena::CreateMaybeMessage<::techmo::tribune::SynthesizeConfig>(Arena*);
 template<> ::techmo::tribune::SynthesizeRequest* Arena::CreateMaybeMessage<::techmo::tribune::SynthesizeRequest>(Arena*);
 template<> ::techmo::tribune::SynthesizeResponse* Arena::CreateMaybeMessage<::techmo::tribune::SynthesizeResponse>(Arena*);
@@ -126,14 +158,14 @@ inline bool AudioEncoding_Parse(
     AudioEncoding_descriptor(), name, value);
 }
 enum Gender : int {
-  UNSPECIFIED = 0,
+  GENDER_UNSPECIFIED = 0,
   FEMALE = 1,
   MALE = 2,
   Gender_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   Gender_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool Gender_IsValid(int value);
-constexpr Gender Gender_MIN = UNSPECIFIED;
+constexpr Gender Gender_MIN = GENDER_UNSPECIFIED;
 constexpr Gender Gender_MAX = MALE;
 constexpr int Gender_ARRAYSIZE = Gender_MAX + 1;
 
@@ -151,12 +183,41 @@ inline bool Gender_Parse(
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Gender>(
     Gender_descriptor(), name, value);
 }
+enum Age : int {
+  AGE_UNSPECIFIED = 0,
+  ADULT = 1,
+  CHILD = 2,
+  SENILE = 3,
+  Age_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  Age_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool Age_IsValid(int value);
+constexpr Age Age_MIN = AGE_UNSPECIFIED;
+constexpr Age Age_MAX = SENILE;
+constexpr int Age_ARRAYSIZE = Age_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Age_descriptor();
+template<typename T>
+inline const std::string& Age_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, Age>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function Age_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    Age_descriptor(), enum_t_value);
+}
+inline bool Age_Parse(
+    const std::string& name, Age* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Age>(
+    Age_descriptor(), name, value);
+}
 enum ErrorCode : int {
   UNKNOWN = 0,
   LICENCE = 1,
-  TEXT_NORMALIZATION = 2,
-  TRANSCRIPTION = 3,
-  SYNTHESIS = 4,
+  MISSING_OBJECT = 2,
+  SSML = 3,
+  TEXT_NORMALIZATION = 4,
+  TRANSCRIPTION = 5,
+  SYNTHESIS = 6,
   ErrorCode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   ErrorCode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
@@ -1027,6 +1088,12 @@ class Voice :
   ::techmo::tribune::Gender gender() const;
   void set_gender(::techmo::tribune::Gender value);
 
+  // .techmo.tribune.Age age = 3;
+  void clear_age();
+  static const int kAgeFieldNumber = 3;
+  ::techmo::tribune::Age age() const;
+  void set_age(::techmo::tribune::Age value);
+
   // @@protoc_insertion_point(class_scope:techmo.tribune.Voice)
  private:
   class HasBitSetters;
@@ -1034,6 +1101,7 @@ class Voice :
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   int gender_;
+  int age_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_tribune_5ftts_2eproto;
 };
@@ -1317,6 +1385,1085 @@ class AudioData :
 };
 // -------------------------------------------------------------------
 
+class PutLexiconRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:techmo.tribune.PutLexiconRequest) */ {
+ public:
+  PutLexiconRequest();
+  virtual ~PutLexiconRequest();
+
+  PutLexiconRequest(const PutLexiconRequest& from);
+  PutLexiconRequest(PutLexiconRequest&& from) noexcept
+    : PutLexiconRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline PutLexiconRequest& operator=(const PutLexiconRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline PutLexiconRequest& operator=(PutLexiconRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const PutLexiconRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PutLexiconRequest* internal_default_instance() {
+    return reinterpret_cast<const PutLexiconRequest*>(
+               &_PutLexiconRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  void Swap(PutLexiconRequest* other);
+  friend void swap(PutLexiconRequest& a, PutLexiconRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PutLexiconRequest* New() const final {
+    return CreateMaybeMessage<PutLexiconRequest>(nullptr);
+  }
+
+  PutLexiconRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PutLexiconRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const PutLexiconRequest& from);
+  void MergeFrom(const PutLexiconRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PutLexiconRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "techmo.tribune.PutLexiconRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_tribune_5ftts_2eproto);
+    return ::descriptor_table_tribune_5ftts_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string name = 1;
+  void clear_name();
+  static const int kNameFieldNumber = 1;
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+
+  // string content = 2;
+  void clear_content();
+  static const int kContentFieldNumber = 2;
+  const std::string& content() const;
+  void set_content(const std::string& value);
+  void set_content(std::string&& value);
+  void set_content(const char* value);
+  void set_content(const char* value, size_t size);
+  std::string* mutable_content();
+  std::string* release_content();
+  void set_allocated_content(std::string* content);
+
+  // @@protoc_insertion_point(class_scope:techmo.tribune.PutLexiconRequest)
+ private:
+  class HasBitSetters;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr content_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_tribune_5ftts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class PutLexiconResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:techmo.tribune.PutLexiconResponse) */ {
+ public:
+  PutLexiconResponse();
+  virtual ~PutLexiconResponse();
+
+  PutLexiconResponse(const PutLexiconResponse& from);
+  PutLexiconResponse(PutLexiconResponse&& from) noexcept
+    : PutLexiconResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline PutLexiconResponse& operator=(const PutLexiconResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline PutLexiconResponse& operator=(PutLexiconResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const PutLexiconResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PutLexiconResponse* internal_default_instance() {
+    return reinterpret_cast<const PutLexiconResponse*>(
+               &_PutLexiconResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  void Swap(PutLexiconResponse* other);
+  friend void swap(PutLexiconResponse& a, PutLexiconResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PutLexiconResponse* New() const final {
+    return CreateMaybeMessage<PutLexiconResponse>(nullptr);
+  }
+
+  PutLexiconResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PutLexiconResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const PutLexiconResponse& from);
+  void MergeFrom(const PutLexiconResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PutLexiconResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "techmo.tribune.PutLexiconResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_tribune_5ftts_2eproto);
+    return ::descriptor_table_tribune_5ftts_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .techmo.tribune.Error error = 1;
+  bool has_error() const;
+  void clear_error();
+  static const int kErrorFieldNumber = 1;
+  const ::techmo::tribune::Error& error() const;
+  ::techmo::tribune::Error* release_error();
+  ::techmo::tribune::Error* mutable_error();
+  void set_allocated_error(::techmo::tribune::Error* error);
+
+  // @@protoc_insertion_point(class_scope:techmo.tribune.PutLexiconResponse)
+ private:
+  class HasBitSetters;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::techmo::tribune::Error* error_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_tribune_5ftts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DeleteLexiconRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:techmo.tribune.DeleteLexiconRequest) */ {
+ public:
+  DeleteLexiconRequest();
+  virtual ~DeleteLexiconRequest();
+
+  DeleteLexiconRequest(const DeleteLexiconRequest& from);
+  DeleteLexiconRequest(DeleteLexiconRequest&& from) noexcept
+    : DeleteLexiconRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline DeleteLexiconRequest& operator=(const DeleteLexiconRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DeleteLexiconRequest& operator=(DeleteLexiconRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const DeleteLexiconRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DeleteLexiconRequest* internal_default_instance() {
+    return reinterpret_cast<const DeleteLexiconRequest*>(
+               &_DeleteLexiconRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  void Swap(DeleteLexiconRequest* other);
+  friend void swap(DeleteLexiconRequest& a, DeleteLexiconRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DeleteLexiconRequest* New() const final {
+    return CreateMaybeMessage<DeleteLexiconRequest>(nullptr);
+  }
+
+  DeleteLexiconRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DeleteLexiconRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const DeleteLexiconRequest& from);
+  void MergeFrom(const DeleteLexiconRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DeleteLexiconRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "techmo.tribune.DeleteLexiconRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_tribune_5ftts_2eproto);
+    return ::descriptor_table_tribune_5ftts_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string name = 1;
+  void clear_name();
+  static const int kNameFieldNumber = 1;
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+
+  // @@protoc_insertion_point(class_scope:techmo.tribune.DeleteLexiconRequest)
+ private:
+  class HasBitSetters;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_tribune_5ftts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DeleteLexiconResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:techmo.tribune.DeleteLexiconResponse) */ {
+ public:
+  DeleteLexiconResponse();
+  virtual ~DeleteLexiconResponse();
+
+  DeleteLexiconResponse(const DeleteLexiconResponse& from);
+  DeleteLexiconResponse(DeleteLexiconResponse&& from) noexcept
+    : DeleteLexiconResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline DeleteLexiconResponse& operator=(const DeleteLexiconResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DeleteLexiconResponse& operator=(DeleteLexiconResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const DeleteLexiconResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DeleteLexiconResponse* internal_default_instance() {
+    return reinterpret_cast<const DeleteLexiconResponse*>(
+               &_DeleteLexiconResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  void Swap(DeleteLexiconResponse* other);
+  friend void swap(DeleteLexiconResponse& a, DeleteLexiconResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DeleteLexiconResponse* New() const final {
+    return CreateMaybeMessage<DeleteLexiconResponse>(nullptr);
+  }
+
+  DeleteLexiconResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DeleteLexiconResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const DeleteLexiconResponse& from);
+  void MergeFrom(const DeleteLexiconResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DeleteLexiconResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "techmo.tribune.DeleteLexiconResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_tribune_5ftts_2eproto);
+    return ::descriptor_table_tribune_5ftts_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .techmo.tribune.Error error = 1;
+  bool has_error() const;
+  void clear_error();
+  static const int kErrorFieldNumber = 1;
+  const ::techmo::tribune::Error& error() const;
+  ::techmo::tribune::Error* release_error();
+  ::techmo::tribune::Error* mutable_error();
+  void set_allocated_error(::techmo::tribune::Error* error);
+
+  // @@protoc_insertion_point(class_scope:techmo.tribune.DeleteLexiconResponse)
+ private:
+  class HasBitSetters;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::techmo::tribune::Error* error_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_tribune_5ftts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetLexiconRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:techmo.tribune.GetLexiconRequest) */ {
+ public:
+  GetLexiconRequest();
+  virtual ~GetLexiconRequest();
+
+  GetLexiconRequest(const GetLexiconRequest& from);
+  GetLexiconRequest(GetLexiconRequest&& from) noexcept
+    : GetLexiconRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetLexiconRequest& operator=(const GetLexiconRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetLexiconRequest& operator=(GetLexiconRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetLexiconRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetLexiconRequest* internal_default_instance() {
+    return reinterpret_cast<const GetLexiconRequest*>(
+               &_GetLexiconRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  void Swap(GetLexiconRequest* other);
+  friend void swap(GetLexiconRequest& a, GetLexiconRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetLexiconRequest* New() const final {
+    return CreateMaybeMessage<GetLexiconRequest>(nullptr);
+  }
+
+  GetLexiconRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetLexiconRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetLexiconRequest& from);
+  void MergeFrom(const GetLexiconRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetLexiconRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "techmo.tribune.GetLexiconRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_tribune_5ftts_2eproto);
+    return ::descriptor_table_tribune_5ftts_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string name = 1;
+  void clear_name();
+  static const int kNameFieldNumber = 1;
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+
+  // @@protoc_insertion_point(class_scope:techmo.tribune.GetLexiconRequest)
+ private:
+  class HasBitSetters;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_tribune_5ftts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetLexiconResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:techmo.tribune.GetLexiconResponse) */ {
+ public:
+  GetLexiconResponse();
+  virtual ~GetLexiconResponse();
+
+  GetLexiconResponse(const GetLexiconResponse& from);
+  GetLexiconResponse(GetLexiconResponse&& from) noexcept
+    : GetLexiconResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetLexiconResponse& operator=(const GetLexiconResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetLexiconResponse& operator=(GetLexiconResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetLexiconResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetLexiconResponse* internal_default_instance() {
+    return reinterpret_cast<const GetLexiconResponse*>(
+               &_GetLexiconResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  void Swap(GetLexiconResponse* other);
+  friend void swap(GetLexiconResponse& a, GetLexiconResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetLexiconResponse* New() const final {
+    return CreateMaybeMessage<GetLexiconResponse>(nullptr);
+  }
+
+  GetLexiconResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetLexiconResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetLexiconResponse& from);
+  void MergeFrom(const GetLexiconResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetLexiconResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "techmo.tribune.GetLexiconResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_tribune_5ftts_2eproto);
+    return ::descriptor_table_tribune_5ftts_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string content = 1;
+  void clear_content();
+  static const int kContentFieldNumber = 1;
+  const std::string& content() const;
+  void set_content(const std::string& value);
+  void set_content(std::string&& value);
+  void set_content(const char* value);
+  void set_content(const char* value, size_t size);
+  std::string* mutable_content();
+  std::string* release_content();
+  void set_allocated_content(std::string* content);
+
+  // .techmo.tribune.Error error = 2;
+  bool has_error() const;
+  void clear_error();
+  static const int kErrorFieldNumber = 2;
+  const ::techmo::tribune::Error& error() const;
+  ::techmo::tribune::Error* release_error();
+  ::techmo::tribune::Error* mutable_error();
+  void set_allocated_error(::techmo::tribune::Error* error);
+
+  // @@protoc_insertion_point(class_scope:techmo.tribune.GetLexiconResponse)
+ private:
+  class HasBitSetters;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr content_;
+  ::techmo::tribune::Error* error_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_tribune_5ftts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ListLexiconsRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:techmo.tribune.ListLexiconsRequest) */ {
+ public:
+  ListLexiconsRequest();
+  virtual ~ListLexiconsRequest();
+
+  ListLexiconsRequest(const ListLexiconsRequest& from);
+  ListLexiconsRequest(ListLexiconsRequest&& from) noexcept
+    : ListLexiconsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ListLexiconsRequest& operator=(const ListLexiconsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListLexiconsRequest& operator=(ListLexiconsRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ListLexiconsRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ListLexiconsRequest* internal_default_instance() {
+    return reinterpret_cast<const ListLexiconsRequest*>(
+               &_ListLexiconsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  void Swap(ListLexiconsRequest* other);
+  friend void swap(ListLexiconsRequest& a, ListLexiconsRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListLexiconsRequest* New() const final {
+    return CreateMaybeMessage<ListLexiconsRequest>(nullptr);
+  }
+
+  ListLexiconsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListLexiconsRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ListLexiconsRequest& from);
+  void MergeFrom(const ListLexiconsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListLexiconsRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "techmo.tribune.ListLexiconsRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_tribune_5ftts_2eproto);
+    return ::descriptor_table_tribune_5ftts_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string language = 1;
+  void clear_language();
+  static const int kLanguageFieldNumber = 1;
+  const std::string& language() const;
+  void set_language(const std::string& value);
+  void set_language(std::string&& value);
+  void set_language(const char* value);
+  void set_language(const char* value, size_t size);
+  std::string* mutable_language();
+  std::string* release_language();
+  void set_allocated_language(std::string* language);
+
+  // @@protoc_insertion_point(class_scope:techmo.tribune.ListLexiconsRequest)
+ private:
+  class HasBitSetters;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr language_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_tribune_5ftts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ListLexiconsResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:techmo.tribune.ListLexiconsResponse) */ {
+ public:
+  ListLexiconsResponse();
+  virtual ~ListLexiconsResponse();
+
+  ListLexiconsResponse(const ListLexiconsResponse& from);
+  ListLexiconsResponse(ListLexiconsResponse&& from) noexcept
+    : ListLexiconsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ListLexiconsResponse& operator=(const ListLexiconsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListLexiconsResponse& operator=(ListLexiconsResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ListLexiconsResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ListLexiconsResponse* internal_default_instance() {
+    return reinterpret_cast<const ListLexiconsResponse*>(
+               &_ListLexiconsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  void Swap(ListLexiconsResponse* other);
+  friend void swap(ListLexiconsResponse& a, ListLexiconsResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListLexiconsResponse* New() const final {
+    return CreateMaybeMessage<ListLexiconsResponse>(nullptr);
+  }
+
+  ListLexiconsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListLexiconsResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ListLexiconsResponse& from);
+  void MergeFrom(const ListLexiconsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListLexiconsResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "techmo.tribune.ListLexiconsResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_tribune_5ftts_2eproto);
+    return ::descriptor_table_tribune_5ftts_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated string names = 1;
+  int names_size() const;
+  void clear_names();
+  static const int kNamesFieldNumber = 1;
+  const std::string& names(int index) const;
+  std::string* mutable_names(int index);
+  void set_names(int index, const std::string& value);
+  void set_names(int index, std::string&& value);
+  void set_names(int index, const char* value);
+  void set_names(int index, const char* value, size_t size);
+  std::string* add_names();
+  void add_names(const std::string& value);
+  void add_names(std::string&& value);
+  void add_names(const char* value);
+  void add_names(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& names() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_names();
+
+  // @@protoc_insertion_point(class_scope:techmo.tribune.ListLexiconsResponse)
+ private:
+  class HasBitSetters;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> names_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_tribune_5ftts_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Error :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:techmo.tribune.Error) */ {
  public:
@@ -1359,7 +2506,7 @@ class Error :
                &_Error_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    16;
 
   void Swap(Error* other);
   friend void swap(Error& a, Error& b) {
@@ -1970,6 +3117,20 @@ inline void Voice::set_gender(::techmo::tribune::Gender value) {
   // @@protoc_insertion_point(field_set:techmo.tribune.Voice.gender)
 }
 
+// .techmo.tribune.Age age = 3;
+inline void Voice::clear_age() {
+  age_ = 0;
+}
+inline ::techmo::tribune::Age Voice::age() const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.Voice.age)
+  return static_cast< ::techmo::tribune::Age >(age_);
+}
+inline void Voice::set_age(::techmo::tribune::Age value) {
+  
+  age_ = value;
+  // @@protoc_insertion_point(field_set:techmo.tribune.Voice.age)
+}
+
 // -------------------------------------------------------------------
 
 // SynthesizeResponse
@@ -2147,6 +3308,562 @@ inline void AudioData::set_allocated_content(std::string* content) {
 
 // -------------------------------------------------------------------
 
+// PutLexiconRequest
+
+// string name = 1;
+inline void PutLexiconRequest::clear_name() {
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& PutLexiconRequest::name() const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.PutLexiconRequest.name)
+  return name_.GetNoArena();
+}
+inline void PutLexiconRequest::set_name(const std::string& value) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:techmo.tribune.PutLexiconRequest.name)
+}
+inline void PutLexiconRequest::set_name(std::string&& value) {
+  
+  name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:techmo.tribune.PutLexiconRequest.name)
+}
+inline void PutLexiconRequest::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:techmo.tribune.PutLexiconRequest.name)
+}
+inline void PutLexiconRequest::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:techmo.tribune.PutLexiconRequest.name)
+}
+inline std::string* PutLexiconRequest::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:techmo.tribune.PutLexiconRequest.name)
+  return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* PutLexiconRequest::release_name() {
+  // @@protoc_insertion_point(field_release:techmo.tribune.PutLexiconRequest.name)
+  
+  return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void PutLexiconRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:techmo.tribune.PutLexiconRequest.name)
+}
+
+// string content = 2;
+inline void PutLexiconRequest::clear_content() {
+  content_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& PutLexiconRequest::content() const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.PutLexiconRequest.content)
+  return content_.GetNoArena();
+}
+inline void PutLexiconRequest::set_content(const std::string& value) {
+  
+  content_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:techmo.tribune.PutLexiconRequest.content)
+}
+inline void PutLexiconRequest::set_content(std::string&& value) {
+  
+  content_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:techmo.tribune.PutLexiconRequest.content)
+}
+inline void PutLexiconRequest::set_content(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  content_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:techmo.tribune.PutLexiconRequest.content)
+}
+inline void PutLexiconRequest::set_content(const char* value, size_t size) {
+  
+  content_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:techmo.tribune.PutLexiconRequest.content)
+}
+inline std::string* PutLexiconRequest::mutable_content() {
+  
+  // @@protoc_insertion_point(field_mutable:techmo.tribune.PutLexiconRequest.content)
+  return content_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* PutLexiconRequest::release_content() {
+  // @@protoc_insertion_point(field_release:techmo.tribune.PutLexiconRequest.content)
+  
+  return content_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void PutLexiconRequest::set_allocated_content(std::string* content) {
+  if (content != nullptr) {
+    
+  } else {
+    
+  }
+  content_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), content);
+  // @@protoc_insertion_point(field_set_allocated:techmo.tribune.PutLexiconRequest.content)
+}
+
+// -------------------------------------------------------------------
+
+// PutLexiconResponse
+
+// .techmo.tribune.Error error = 1;
+inline bool PutLexiconResponse::has_error() const {
+  return this != internal_default_instance() && error_ != nullptr;
+}
+inline void PutLexiconResponse::clear_error() {
+  if (GetArenaNoVirtual() == nullptr && error_ != nullptr) {
+    delete error_;
+  }
+  error_ = nullptr;
+}
+inline const ::techmo::tribune::Error& PutLexiconResponse::error() const {
+  const ::techmo::tribune::Error* p = error_;
+  // @@protoc_insertion_point(field_get:techmo.tribune.PutLexiconResponse.error)
+  return p != nullptr ? *p : *reinterpret_cast<const ::techmo::tribune::Error*>(
+      &::techmo::tribune::_Error_default_instance_);
+}
+inline ::techmo::tribune::Error* PutLexiconResponse::release_error() {
+  // @@protoc_insertion_point(field_release:techmo.tribune.PutLexiconResponse.error)
+  
+  ::techmo::tribune::Error* temp = error_;
+  error_ = nullptr;
+  return temp;
+}
+inline ::techmo::tribune::Error* PutLexiconResponse::mutable_error() {
+  
+  if (error_ == nullptr) {
+    auto* p = CreateMaybeMessage<::techmo::tribune::Error>(GetArenaNoVirtual());
+    error_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:techmo.tribune.PutLexiconResponse.error)
+  return error_;
+}
+inline void PutLexiconResponse::set_allocated_error(::techmo::tribune::Error* error) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete error_;
+  }
+  if (error) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, error, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  error_ = error;
+  // @@protoc_insertion_point(field_set_allocated:techmo.tribune.PutLexiconResponse.error)
+}
+
+// -------------------------------------------------------------------
+
+// DeleteLexiconRequest
+
+// string name = 1;
+inline void DeleteLexiconRequest::clear_name() {
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& DeleteLexiconRequest::name() const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.DeleteLexiconRequest.name)
+  return name_.GetNoArena();
+}
+inline void DeleteLexiconRequest::set_name(const std::string& value) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:techmo.tribune.DeleteLexiconRequest.name)
+}
+inline void DeleteLexiconRequest::set_name(std::string&& value) {
+  
+  name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:techmo.tribune.DeleteLexiconRequest.name)
+}
+inline void DeleteLexiconRequest::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:techmo.tribune.DeleteLexiconRequest.name)
+}
+inline void DeleteLexiconRequest::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:techmo.tribune.DeleteLexiconRequest.name)
+}
+inline std::string* DeleteLexiconRequest::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:techmo.tribune.DeleteLexiconRequest.name)
+  return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* DeleteLexiconRequest::release_name() {
+  // @@protoc_insertion_point(field_release:techmo.tribune.DeleteLexiconRequest.name)
+  
+  return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void DeleteLexiconRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:techmo.tribune.DeleteLexiconRequest.name)
+}
+
+// -------------------------------------------------------------------
+
+// DeleteLexiconResponse
+
+// .techmo.tribune.Error error = 1;
+inline bool DeleteLexiconResponse::has_error() const {
+  return this != internal_default_instance() && error_ != nullptr;
+}
+inline void DeleteLexiconResponse::clear_error() {
+  if (GetArenaNoVirtual() == nullptr && error_ != nullptr) {
+    delete error_;
+  }
+  error_ = nullptr;
+}
+inline const ::techmo::tribune::Error& DeleteLexiconResponse::error() const {
+  const ::techmo::tribune::Error* p = error_;
+  // @@protoc_insertion_point(field_get:techmo.tribune.DeleteLexiconResponse.error)
+  return p != nullptr ? *p : *reinterpret_cast<const ::techmo::tribune::Error*>(
+      &::techmo::tribune::_Error_default_instance_);
+}
+inline ::techmo::tribune::Error* DeleteLexiconResponse::release_error() {
+  // @@protoc_insertion_point(field_release:techmo.tribune.DeleteLexiconResponse.error)
+  
+  ::techmo::tribune::Error* temp = error_;
+  error_ = nullptr;
+  return temp;
+}
+inline ::techmo::tribune::Error* DeleteLexiconResponse::mutable_error() {
+  
+  if (error_ == nullptr) {
+    auto* p = CreateMaybeMessage<::techmo::tribune::Error>(GetArenaNoVirtual());
+    error_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:techmo.tribune.DeleteLexiconResponse.error)
+  return error_;
+}
+inline void DeleteLexiconResponse::set_allocated_error(::techmo::tribune::Error* error) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete error_;
+  }
+  if (error) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, error, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  error_ = error;
+  // @@protoc_insertion_point(field_set_allocated:techmo.tribune.DeleteLexiconResponse.error)
+}
+
+// -------------------------------------------------------------------
+
+// GetLexiconRequest
+
+// string name = 1;
+inline void GetLexiconRequest::clear_name() {
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& GetLexiconRequest::name() const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.GetLexiconRequest.name)
+  return name_.GetNoArena();
+}
+inline void GetLexiconRequest::set_name(const std::string& value) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:techmo.tribune.GetLexiconRequest.name)
+}
+inline void GetLexiconRequest::set_name(std::string&& value) {
+  
+  name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:techmo.tribune.GetLexiconRequest.name)
+}
+inline void GetLexiconRequest::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:techmo.tribune.GetLexiconRequest.name)
+}
+inline void GetLexiconRequest::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:techmo.tribune.GetLexiconRequest.name)
+}
+inline std::string* GetLexiconRequest::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:techmo.tribune.GetLexiconRequest.name)
+  return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* GetLexiconRequest::release_name() {
+  // @@protoc_insertion_point(field_release:techmo.tribune.GetLexiconRequest.name)
+  
+  return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void GetLexiconRequest::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:techmo.tribune.GetLexiconRequest.name)
+}
+
+// -------------------------------------------------------------------
+
+// GetLexiconResponse
+
+// string content = 1;
+inline void GetLexiconResponse::clear_content() {
+  content_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& GetLexiconResponse::content() const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.GetLexiconResponse.content)
+  return content_.GetNoArena();
+}
+inline void GetLexiconResponse::set_content(const std::string& value) {
+  
+  content_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:techmo.tribune.GetLexiconResponse.content)
+}
+inline void GetLexiconResponse::set_content(std::string&& value) {
+  
+  content_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:techmo.tribune.GetLexiconResponse.content)
+}
+inline void GetLexiconResponse::set_content(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  content_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:techmo.tribune.GetLexiconResponse.content)
+}
+inline void GetLexiconResponse::set_content(const char* value, size_t size) {
+  
+  content_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:techmo.tribune.GetLexiconResponse.content)
+}
+inline std::string* GetLexiconResponse::mutable_content() {
+  
+  // @@protoc_insertion_point(field_mutable:techmo.tribune.GetLexiconResponse.content)
+  return content_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* GetLexiconResponse::release_content() {
+  // @@protoc_insertion_point(field_release:techmo.tribune.GetLexiconResponse.content)
+  
+  return content_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void GetLexiconResponse::set_allocated_content(std::string* content) {
+  if (content != nullptr) {
+    
+  } else {
+    
+  }
+  content_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), content);
+  // @@protoc_insertion_point(field_set_allocated:techmo.tribune.GetLexiconResponse.content)
+}
+
+// .techmo.tribune.Error error = 2;
+inline bool GetLexiconResponse::has_error() const {
+  return this != internal_default_instance() && error_ != nullptr;
+}
+inline void GetLexiconResponse::clear_error() {
+  if (GetArenaNoVirtual() == nullptr && error_ != nullptr) {
+    delete error_;
+  }
+  error_ = nullptr;
+}
+inline const ::techmo::tribune::Error& GetLexiconResponse::error() const {
+  const ::techmo::tribune::Error* p = error_;
+  // @@protoc_insertion_point(field_get:techmo.tribune.GetLexiconResponse.error)
+  return p != nullptr ? *p : *reinterpret_cast<const ::techmo::tribune::Error*>(
+      &::techmo::tribune::_Error_default_instance_);
+}
+inline ::techmo::tribune::Error* GetLexiconResponse::release_error() {
+  // @@protoc_insertion_point(field_release:techmo.tribune.GetLexiconResponse.error)
+  
+  ::techmo::tribune::Error* temp = error_;
+  error_ = nullptr;
+  return temp;
+}
+inline ::techmo::tribune::Error* GetLexiconResponse::mutable_error() {
+  
+  if (error_ == nullptr) {
+    auto* p = CreateMaybeMessage<::techmo::tribune::Error>(GetArenaNoVirtual());
+    error_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:techmo.tribune.GetLexiconResponse.error)
+  return error_;
+}
+inline void GetLexiconResponse::set_allocated_error(::techmo::tribune::Error* error) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete error_;
+  }
+  if (error) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, error, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  error_ = error;
+  // @@protoc_insertion_point(field_set_allocated:techmo.tribune.GetLexiconResponse.error)
+}
+
+// -------------------------------------------------------------------
+
+// ListLexiconsRequest
+
+// string language = 1;
+inline void ListLexiconsRequest::clear_language() {
+  language_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& ListLexiconsRequest::language() const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.ListLexiconsRequest.language)
+  return language_.GetNoArena();
+}
+inline void ListLexiconsRequest::set_language(const std::string& value) {
+  
+  language_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:techmo.tribune.ListLexiconsRequest.language)
+}
+inline void ListLexiconsRequest::set_language(std::string&& value) {
+  
+  language_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:techmo.tribune.ListLexiconsRequest.language)
+}
+inline void ListLexiconsRequest::set_language(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  language_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:techmo.tribune.ListLexiconsRequest.language)
+}
+inline void ListLexiconsRequest::set_language(const char* value, size_t size) {
+  
+  language_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:techmo.tribune.ListLexiconsRequest.language)
+}
+inline std::string* ListLexiconsRequest::mutable_language() {
+  
+  // @@protoc_insertion_point(field_mutable:techmo.tribune.ListLexiconsRequest.language)
+  return language_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* ListLexiconsRequest::release_language() {
+  // @@protoc_insertion_point(field_release:techmo.tribune.ListLexiconsRequest.language)
+  
+  return language_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void ListLexiconsRequest::set_allocated_language(std::string* language) {
+  if (language != nullptr) {
+    
+  } else {
+    
+  }
+  language_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), language);
+  // @@protoc_insertion_point(field_set_allocated:techmo.tribune.ListLexiconsRequest.language)
+}
+
+// -------------------------------------------------------------------
+
+// ListLexiconsResponse
+
+// repeated string names = 1;
+inline int ListLexiconsResponse::names_size() const {
+  return names_.size();
+}
+inline void ListLexiconsResponse::clear_names() {
+  names_.Clear();
+}
+inline const std::string& ListLexiconsResponse::names(int index) const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.ListLexiconsResponse.names)
+  return names_.Get(index);
+}
+inline std::string* ListLexiconsResponse::mutable_names(int index) {
+  // @@protoc_insertion_point(field_mutable:techmo.tribune.ListLexiconsResponse.names)
+  return names_.Mutable(index);
+}
+inline void ListLexiconsResponse::set_names(int index, const std::string& value) {
+  // @@protoc_insertion_point(field_set:techmo.tribune.ListLexiconsResponse.names)
+  names_.Mutable(index)->assign(value);
+}
+inline void ListLexiconsResponse::set_names(int index, std::string&& value) {
+  // @@protoc_insertion_point(field_set:techmo.tribune.ListLexiconsResponse.names)
+  names_.Mutable(index)->assign(std::move(value));
+}
+inline void ListLexiconsResponse::set_names(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  names_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:techmo.tribune.ListLexiconsResponse.names)
+}
+inline void ListLexiconsResponse::set_names(int index, const char* value, size_t size) {
+  names_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:techmo.tribune.ListLexiconsResponse.names)
+}
+inline std::string* ListLexiconsResponse::add_names() {
+  // @@protoc_insertion_point(field_add_mutable:techmo.tribune.ListLexiconsResponse.names)
+  return names_.Add();
+}
+inline void ListLexiconsResponse::add_names(const std::string& value) {
+  names_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:techmo.tribune.ListLexiconsResponse.names)
+}
+inline void ListLexiconsResponse::add_names(std::string&& value) {
+  names_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:techmo.tribune.ListLexiconsResponse.names)
+}
+inline void ListLexiconsResponse::add_names(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  names_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:techmo.tribune.ListLexiconsResponse.names)
+}
+inline void ListLexiconsResponse::add_names(const char* value, size_t size) {
+  names_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:techmo.tribune.ListLexiconsResponse.names)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+ListLexiconsResponse::names() const {
+  // @@protoc_insertion_point(field_list:techmo.tribune.ListLexiconsResponse.names)
+  return names_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+ListLexiconsResponse::mutable_names() {
+  // @@protoc_insertion_point(field_mutable_list:techmo.tribune.ListLexiconsResponse.names)
+  return &names_;
+}
+
+// -------------------------------------------------------------------
+
 // Error
 
 // .techmo.tribune.ErrorCode code = 1;
@@ -2233,6 +3950,22 @@ inline void Error::set_allocated_description(std::string* description) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -2250,6 +3983,11 @@ template <> struct is_proto_enum< ::techmo::tribune::Gender> : ::std::true_type 
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::techmo::tribune::Gender>() {
   return ::techmo::tribune::Gender_descriptor();
+}
+template <> struct is_proto_enum< ::techmo::tribune::Age> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::techmo::tribune::Age>() {
+  return ::techmo::tribune::Age_descriptor();
 }
 template <> struct is_proto_enum< ::techmo::tribune::ErrorCode> : ::std::true_type {};
 template <>

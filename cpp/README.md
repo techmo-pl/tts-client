@@ -49,6 +49,7 @@ Options:
 --speech-volume       Allows adjusting the default volume of the synthesized speech (optional, can be overriden by SSML).
 --voice-name          Name od the voice used to synthesize the phrase (optional, can be overriden by SSML).
 --voice-gender        Gender of the voice - female or male (optional, can be overriden by SSML).
+--voice-age           Age of the voice - adult, child, or senile (optional, can be overriden by SSML).
 --language            ISO 639-1 language code of the phrase to synthesize (optional, can be overriden by SSML).
 ```
 

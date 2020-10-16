@@ -13,7 +13,7 @@ def call_synthesize(args, text):
     elif args.audio_encoding != "pcm16":
         raise RuntimeError("Unsupported audio-encoding: " + args.audio_encoding)
 
-    # Output file determination
+    # determine the output file name
     out_path = args.out_path
     if out_path == "":
         if audio_encoding == tribune_tts_pb2.AudioEncoding.PCM16:
@@ -22,19 +22,31 @@ def call_synthesize(args, text):
             out_path = "TechmoTTS.ogg"
     audiofilename = os.path.join(out_path)
 
-    # Determine the voice
+    # determine the voice
     voice = None
-    if args.voice_name != "" or args.voice_gender != "":
-       gender = tribune_tts_pb2.Gender.UNSPECIFIED
+    if args.voice_name != "" or args.voice_gender != "" or args.voice_age != "":
+       gender = tribune_tts_pb2.Gender.GENDER_UNSPECIFIED
        if args.voice_gender == "female":
            gender = tribune_tts_pb2.Gender.FEMALE
        elif args.voice_gender == "male":
            gender = tribune_tts_pb2.Gender.MALE
        elif args.voice_gender != "":
            raise RuntimeError("Unsupported voice-gender: " + args.voice_gender)
+
+       age = tribune_tts_pb2.Age.AGE_UNSPECIFIED
+       if args.voice_age == "adult":
+           age = tribune_tts_pb2.Age.ADULT
+       elif args.voice_age == "child":
+           age = tribune_tts_pb2.Age.CHILD
+       elif args.voice_age == "senile":
+           age = tribune_tts_pb2.Age.SENILE
+       elif args.voice_age != "":
+           raise RuntimeError("Unsupported voice-age: " + args.voice_age)
+
        voice=tribune_tts_pb2.Voice(
            name=args.voice_name,
-           gender=gender)
+           gender=gender,
+           age=age)
 
     # Establish GRPC channel
     channel = grpc.insecure_channel(args.service)

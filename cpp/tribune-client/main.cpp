@@ -39,6 +39,8 @@ po::options_description CreateOptionsDescription(void)
 			"Name od the voice used to synthesize the phrase (optional, can be overriden by SSML).")
 		("voice-gender", po::value<std::string>()->default_value(""),
 			"Gender of the voice - female or male (optional, can be overriden by SSML).")
+		("voice-age", po::value<std::string>()->default_value(""),
+			"Age of the voice - adult, child, or senile (optional, can be overriden by SSML).")
 		("language", po::value<std::string>()->default_value(""),
 			"ISO 639-1 language code of the phrase to synthesize (optional, can be overriden by SSML).");
 	return optionsDescription;
@@ -101,9 +103,10 @@ int main(int argc, const char* const argv[])
 
 		std::string voiceName = userOptions["voice-name"].as<std::string>();
 		std::string voiceGender = userOptions["voice-gender"].as<std::string>();
-		if (!voiceName.empty() || !voiceGender.empty())
+		std::string voiceAge = userOptions["voice-age"].as<std::string>();
+		if (!voiceName.empty() || !voiceGender.empty() || !voiceAge.empty())
 		{
-			techmo::tribune::Gender gender{ techmo::tribune::Gender::UNSPECIFIED };
+			techmo::tribune::Gender gender{ techmo::tribune::Gender::GENDER_UNSPECIFIED };
 
 			if (voiceGender == "female")
 			{
@@ -118,9 +121,29 @@ int main(int argc, const char* const argv[])
 				throw std::runtime_error{ "Unsupported voice-gender: " + voiceGender + "." };
 			}
 
+			techmo::tribune::Age age{ techmo::tribune::Age::AGE_UNSPECIFIED };
+
+			if (voiceAge == "adult")
+			{
+				age = techmo::tribune::Age::ADULT;
+			}
+			else if (voiceAge == "child")
+			{
+				age = techmo::tribune::Age::CHILD;
+			}
+			else if (voiceAge == "senile")
+			{
+				age = techmo::tribune::Age::SENILE;
+			}
+			else if (!voiceAge.empty())
+			{
+				throw std::runtime_error{ "Unsupported voice-age: " + voiceAge + "." };
+			}
+
 			config.voice.emplace();
 			config.voice->name = voiceName;
 			config.voice->gender = gender;
+			config.voice->age = age;
 		}
 
 		std::string outputPath = userOptions["out-path"].as<std::string>();
