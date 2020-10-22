@@ -1,7 +1,7 @@
 // Techmo Tribune TTS API  
 // version: 2.0.0   
 // authors: Dawid Skurzok, Paweł Jaciów, Michał Radziszewski  
-// date:    2020-10-05  
+// date:    2020-10-16  
 syntax = "proto3";
 
 package techmo.tribune;
@@ -19,9 +19,25 @@ service TTS
     // Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
     // Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet) or `error`.
     rpc Synthesize(SynthesizeRequest) returns (SynthesizeResponse);
+
+    // Adds a new lexicon with the requested name or overwrites the existing one if there is already a lexicon with such name.
+    // Returns status information - Success or Error.
+    rpc PutLexicon(PutLexiconRequest) returns (PutLexiconResponse);
+
+    // Removes the lexicon with the requested name.
+    // Returns status information - Success or Error.
+    rpc DeleteLexicon(DeleteLexiconRequest) returns (DeleteLexiconResponse);
+
+    // Sends back the content of the lexicon with the requested name.
+    // Returns the lexicon content and status information - Success or Error.
+    rpc GetLexicon(GetLexiconRequest) returns (GetLexiconResponse);
+
+    // Lists all client-defined lexicons which can be referred by `<lexicon>` tag in synthesize requests.
+    // Returns the list of names of lexicons.
+    rpc ListLexicons(ListLexiconsRequest) returns (ListLexiconsResponse);
 }
 
-// The  top-level message sent by the client to request listing of available voices.
+// The top-level message sent by the client to request listing of available voices.
 message ListVoicesRequest
 {
     // ISO 639-1 language code. Optional. When defined, limits the listed voices to the voices supprting the requested language.
@@ -79,22 +95,22 @@ message AudioConfig
     // Desired sampling frequency in hertz of synthesized audio. The value 0 means use the default Synthesizer sampling rate.
     int32 sample_rate_hertz = 2;
 
-    // The average speech pitch scaling factor. The value 0.0 means use the default voice pitch.
+    // The average speech pitch scaling factor. The value 1.0 is a neutral value.
     float pitch = 3;
 
-    // The speech range scaling factor. The value 0.0 means use the default voice range.
+    // The speech range scaling factor. The value 1.0 is a neutral value.
     float range = 4;
 
-    // The speech rate (speed) scaling factor. The value 0.0 means use the default voice rate.
+    // The speech rate (speed) scaling factor. The value 1.0 is a neutral value.
     float rate = 5;
 
-    // The speech volume. The value 0.0 means use the default volume.
+    // The speech volume scaling factor. The value 1.0 is a neutral value.
     float volume = 6;
 }
 
-// Voice definition. If both name and gender is defined, the name takes precedence.
-// If only name is defined, the specified voice is used.
-// If only gender is defined, the default voice for the requested gender is used.
+// Voice definition. If there is no voice satisfying all the required criteria,
+// the voice is selected according to name (if defined) first, gender (if defined) second,
+// and age (if defined) third.
 message Voice
 {
     // The name of the voice (empty string means default voice).
@@ -102,6 +118,9 @@ message Voice
 
     // Gender of the voice (UNSPECIFIED is default).
     Gender gender = 2;
+
+    // Age of the voice (UNSPECIFIED is default).
+    Age age = 3;
 }
 
 // The requested format of the response audio data.
@@ -114,9 +133,18 @@ enum AudioEncoding
 // Gender of the voice.
 enum Gender
 {
-    UNSPECIFIED = 0;
+    GENDER_UNSPECIFIED = 0;
     FEMALE = 1;
     MALE = 2;
+}
+
+// Age of the voice.
+enum Age
+{
+    AGE_UNSPECIFIED = 0;
+    ADULT = 1;
+    CHILD = 2;
+    SENILE = 3;
 }
 
 // `SynthesizeResponse` is the only message returned to the client by `SynthesizeStreaming` and `Synthesize`.
@@ -146,14 +174,78 @@ message AudioData
     bytes content = 2;
 }
 
+// The top-level message sent by the client to put the new pronounciation lexicon.
+message PutLexiconRequest
+{
+    // Name of the lexicon, used as `uri` attributes of `<lexicon>` tags in synthesize requests.
+    string name = 1;
+
+    // Content of the lexicon, shall comply to https://www.w3.org/TR/pronunciation-lexicon/.
+    string content = 2;
+}
+
+// Status of the PutLexicon call.
+message PutLexiconResponse
+{
+    // If set, specifies the error for the operation. Otherwise, the operation has been succesful.
+    Error error = 1;
+}
+
+// The top-level message sent by the client to delete the requested pronounciation lexicon.
+message DeleteLexiconRequest
+{
+    // Name of the lexicon to delete.
+    string name = 1;
+}
+
+// Status of the DeleteLexicon call.
+message DeleteLexiconResponse
+{
+    // If set, specifies the error for the operation. Otherwise, the operation has been succesful.
+    Error error = 1;
+}
+
+// The top-level message sent by the client to get the content the requested pronounciation lexicon.
+message GetLexiconRequest
+{
+    // Name of the lexicon to list its content.
+    string name = 1;
+}
+
+// Result of the GetLexicon call.
+message GetLexiconResponse
+{
+    // If successful, contains the content of the lexicon, in SSML/XML format.
+    string content = 1;
+
+    // If set, specifies the error for the operation. Otherwise, the operation has been succesful.
+    Error error = 2;
+}
+
+// The top-level message sent by the client to obtain the list of all available lexicons.
+message ListLexiconsRequest
+{
+    // ISO 639-1 language code. Optional. When defined, limits the listed lexicons to the lexicons supprting the requested language.
+    string language = 1;
+}
+
+// Result of the ListLexicons call.
+message ListLexiconsResponse
+{
+    // The list of names of all available lexicons.
+    repeated string names = 1;
+}
+
 // Indicates the type of the error for the operation.
 enum ErrorCode
 {
     UNKNOWN = 0;            // Unknown error.
     LICENCE = 1;            // Licence related error.
-    TEXT_NORMALIZATION = 2; // Error during text normalization.
-    TRANSCRIPTION = 3;      // Error during orthographic to phonetic transcription.
-    SYNTHESIS = 4;          // Error during speech synthesis.
+    MISSING_OBJECT = 2;     // An object referred by the given name does not exist.
+    SSML = 3;               // SSML parser error.
+    TEXT_NORMALIZATION = 4; // Error during text normalization.
+    TRANSCRIPTION = 5;      // Error during orthographic to phonetic transcription.
+    SYNTHESIS = 6;          // Error during speech synthesis.
 }
 
 // Received error details.

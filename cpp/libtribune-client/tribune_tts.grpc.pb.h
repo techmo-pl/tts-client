@@ -5,7 +5,7 @@
 // Techmo Tribune TTS API  
 // version: 2.0.0   
 // authors: Dawid Skurzok, Paweł Jaciów, Michał Radziszewski  
-// date:    2020-10-05  
+// date:    2020-10-16  
 #ifndef GRPC_tribune_5ftts_2eproto__INCLUDED
 #define GRPC_tribune_5ftts_2eproto__INCLUDED
 
@@ -81,6 +81,42 @@ class TTS final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::SynthesizeResponse>> PrepareAsyncSynthesize(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::SynthesizeResponse>>(PrepareAsyncSynthesizeRaw(context, request, cq));
     }
+    // Adds a new lexicon with the requested name or overwrites the existing one if there is already a lexicon with such name.
+    // Returns status information - Success or Error.
+    virtual ::grpc::Status PutLexicon(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest& request, ::techmo::tribune::PutLexiconResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::PutLexiconResponse>> AsyncPutLexicon(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::PutLexiconResponse>>(AsyncPutLexiconRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::PutLexiconResponse>> PrepareAsyncPutLexicon(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::PutLexiconResponse>>(PrepareAsyncPutLexiconRaw(context, request, cq));
+    }
+    // Removes the lexicon with the requested name.
+    // Returns status information - Success or Error.
+    virtual ::grpc::Status DeleteLexicon(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest& request, ::techmo::tribune::DeleteLexiconResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::DeleteLexiconResponse>> AsyncDeleteLexicon(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::DeleteLexiconResponse>>(AsyncDeleteLexiconRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::DeleteLexiconResponse>> PrepareAsyncDeleteLexicon(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::DeleteLexiconResponse>>(PrepareAsyncDeleteLexiconRaw(context, request, cq));
+    }
+    // Sends back the content of the lexicon with the requested name.
+    // Returns the lexicon content and status information - Success or Error.
+    virtual ::grpc::Status GetLexicon(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest& request, ::techmo::tribune::GetLexiconResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::GetLexiconResponse>> AsyncGetLexicon(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::GetLexiconResponse>>(AsyncGetLexiconRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::GetLexiconResponse>> PrepareAsyncGetLexicon(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::GetLexiconResponse>>(PrepareAsyncGetLexiconRaw(context, request, cq));
+    }
+    // Lists all client-defined lexicons which can be referred by `<lexicon>` tag in synthesize requests.
+    // Returns the list of names of lexicons.
+    virtual ::grpc::Status ListLexicons(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest& request, ::techmo::tribune::ListLexiconsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::ListLexiconsResponse>> AsyncListLexicons(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::ListLexiconsResponse>>(AsyncListLexiconsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::ListLexiconsResponse>> PrepareAsyncListLexicons(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::ListLexiconsResponse>>(PrepareAsyncListLexiconsRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -98,6 +134,30 @@ class TTS final {
       virtual void Synthesize(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::SynthesizeResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void Synthesize(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest* request, ::techmo::tribune::SynthesizeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void Synthesize(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::SynthesizeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // Adds a new lexicon with the requested name or overwrites the existing one if there is already a lexicon with such name.
+      // Returns status information - Success or Error.
+      virtual void PutLexicon(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest* request, ::techmo::tribune::PutLexiconResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void PutLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::PutLexiconResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void PutLexicon(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest* request, ::techmo::tribune::PutLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void PutLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::PutLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // Removes the lexicon with the requested name.
+      // Returns status information - Success or Error.
+      virtual void DeleteLexicon(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest* request, ::techmo::tribune::DeleteLexiconResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::DeleteLexiconResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteLexicon(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest* request, ::techmo::tribune::DeleteLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::DeleteLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // Sends back the content of the lexicon with the requested name.
+      // Returns the lexicon content and status information - Success or Error.
+      virtual void GetLexicon(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest* request, ::techmo::tribune::GetLexiconResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::GetLexiconResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetLexicon(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest* request, ::techmo::tribune::GetLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::GetLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // Lists all client-defined lexicons which can be referred by `<lexicon>` tag in synthesize requests.
+      // Returns the list of names of lexicons.
+      virtual void ListLexicons(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest* request, ::techmo::tribune::ListLexiconsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ListLexicons(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::ListLexiconsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ListLexicons(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest* request, ::techmo::tribune::ListLexiconsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void ListLexicons(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::ListLexiconsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -108,6 +168,14 @@ class TTS final {
     virtual ::grpc::ClientAsyncReaderInterface< ::techmo::tribune::SynthesizeResponse>* PrepareAsyncSynthesizeStreamingRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::SynthesizeResponse>* AsyncSynthesizeRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::SynthesizeResponse>* PrepareAsyncSynthesizeRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::PutLexiconResponse>* AsyncPutLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::PutLexiconResponse>* PrepareAsyncPutLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::DeleteLexiconResponse>* AsyncDeleteLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::DeleteLexiconResponse>* PrepareAsyncDeleteLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::GetLexiconResponse>* AsyncGetLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::GetLexiconResponse>* PrepareAsyncGetLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::ListLexiconsResponse>* AsyncListLexiconsRaw(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tribune::ListLexiconsResponse>* PrepareAsyncListLexiconsRaw(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -135,6 +203,34 @@ class TTS final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::SynthesizeResponse>> PrepareAsyncSynthesize(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::SynthesizeResponse>>(PrepareAsyncSynthesizeRaw(context, request, cq));
     }
+    ::grpc::Status PutLexicon(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest& request, ::techmo::tribune::PutLexiconResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::PutLexiconResponse>> AsyncPutLexicon(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::PutLexiconResponse>>(AsyncPutLexiconRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::PutLexiconResponse>> PrepareAsyncPutLexicon(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::PutLexiconResponse>>(PrepareAsyncPutLexiconRaw(context, request, cq));
+    }
+    ::grpc::Status DeleteLexicon(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest& request, ::techmo::tribune::DeleteLexiconResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::DeleteLexiconResponse>> AsyncDeleteLexicon(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::DeleteLexiconResponse>>(AsyncDeleteLexiconRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::DeleteLexiconResponse>> PrepareAsyncDeleteLexicon(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::DeleteLexiconResponse>>(PrepareAsyncDeleteLexiconRaw(context, request, cq));
+    }
+    ::grpc::Status GetLexicon(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest& request, ::techmo::tribune::GetLexiconResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::GetLexiconResponse>> AsyncGetLexicon(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::GetLexiconResponse>>(AsyncGetLexiconRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::GetLexiconResponse>> PrepareAsyncGetLexicon(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::GetLexiconResponse>>(PrepareAsyncGetLexiconRaw(context, request, cq));
+    }
+    ::grpc::Status ListLexicons(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest& request, ::techmo::tribune::ListLexiconsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::ListLexiconsResponse>> AsyncListLexicons(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::ListLexiconsResponse>>(AsyncListLexiconsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::ListLexiconsResponse>> PrepareAsyncListLexicons(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::techmo::tribune::ListLexiconsResponse>>(PrepareAsyncListLexiconsRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -147,6 +243,22 @@ class TTS final {
       void Synthesize(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::SynthesizeResponse* response, std::function<void(::grpc::Status)>) override;
       void Synthesize(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest* request, ::techmo::tribune::SynthesizeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void Synthesize(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::SynthesizeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void PutLexicon(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest* request, ::techmo::tribune::PutLexiconResponse* response, std::function<void(::grpc::Status)>) override;
+      void PutLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::PutLexiconResponse* response, std::function<void(::grpc::Status)>) override;
+      void PutLexicon(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest* request, ::techmo::tribune::PutLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void PutLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::PutLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void DeleteLexicon(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest* request, ::techmo::tribune::DeleteLexiconResponse* response, std::function<void(::grpc::Status)>) override;
+      void DeleteLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::DeleteLexiconResponse* response, std::function<void(::grpc::Status)>) override;
+      void DeleteLexicon(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest* request, ::techmo::tribune::DeleteLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void DeleteLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::DeleteLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetLexicon(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest* request, ::techmo::tribune::GetLexiconResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::GetLexiconResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetLexicon(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest* request, ::techmo::tribune::GetLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::GetLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void ListLexicons(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest* request, ::techmo::tribune::ListLexiconsResponse* response, std::function<void(::grpc::Status)>) override;
+      void ListLexicons(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::ListLexiconsResponse* response, std::function<void(::grpc::Status)>) override;
+      void ListLexicons(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest* request, ::techmo::tribune::ListLexiconsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void ListLexicons(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::ListLexiconsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -165,9 +277,21 @@ class TTS final {
     ::grpc::ClientAsyncReader< ::techmo::tribune::SynthesizeResponse>* PrepareAsyncSynthesizeStreamingRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::techmo::tribune::SynthesizeResponse>* AsyncSynthesizeRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::techmo::tribune::SynthesizeResponse>* PrepareAsyncSynthesizeRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::techmo::tribune::PutLexiconResponse>* AsyncPutLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::techmo::tribune::PutLexiconResponse>* PrepareAsyncPutLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::techmo::tribune::DeleteLexiconResponse>* AsyncDeleteLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::techmo::tribune::DeleteLexiconResponse>* PrepareAsyncDeleteLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::techmo::tribune::GetLexiconResponse>* AsyncGetLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::techmo::tribune::GetLexiconResponse>* PrepareAsyncGetLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::techmo::tribune::ListLexiconsResponse>* AsyncListLexiconsRaw(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::techmo::tribune::ListLexiconsResponse>* PrepareAsyncListLexiconsRaw(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_ListVoices_;
     const ::grpc::internal::RpcMethod rpcmethod_SynthesizeStreaming_;
     const ::grpc::internal::RpcMethod rpcmethod_Synthesize_;
+    const ::grpc::internal::RpcMethod rpcmethod_PutLexicon_;
+    const ::grpc::internal::RpcMethod rpcmethod_DeleteLexicon_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetLexicon_;
+    const ::grpc::internal::RpcMethod rpcmethod_ListLexicons_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -183,6 +307,18 @@ class TTS final {
     // Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
     // Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet) or `error`.
     virtual ::grpc::Status Synthesize(::grpc::ServerContext* context, const ::techmo::tribune::SynthesizeRequest* request, ::techmo::tribune::SynthesizeResponse* response);
+    // Adds a new lexicon with the requested name or overwrites the existing one if there is already a lexicon with such name.
+    // Returns status information - Success or Error.
+    virtual ::grpc::Status PutLexicon(::grpc::ServerContext* context, const ::techmo::tribune::PutLexiconRequest* request, ::techmo::tribune::PutLexiconResponse* response);
+    // Removes the lexicon with the requested name.
+    // Returns status information - Success or Error.
+    virtual ::grpc::Status DeleteLexicon(::grpc::ServerContext* context, const ::techmo::tribune::DeleteLexiconRequest* request, ::techmo::tribune::DeleteLexiconResponse* response);
+    // Sends back the content of the lexicon with the requested name.
+    // Returns the lexicon content and status information - Success or Error.
+    virtual ::grpc::Status GetLexicon(::grpc::ServerContext* context, const ::techmo::tribune::GetLexiconRequest* request, ::techmo::tribune::GetLexiconResponse* response);
+    // Lists all client-defined lexicons which can be referred by `<lexicon>` tag in synthesize requests.
+    // Returns the list of names of lexicons.
+    virtual ::grpc::Status ListLexicons(::grpc::ServerContext* context, const ::techmo::tribune::ListLexiconsRequest* request, ::techmo::tribune::ListLexiconsResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_ListVoices : public BaseClass {
@@ -244,7 +380,87 @@ class TTS final {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_ListVoices<WithAsyncMethod_SynthesizeStreaming<WithAsyncMethod_Synthesize<Service > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_PutLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_PutLexicon() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_PutLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status PutLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::PutLexiconRequest* /*request*/, ::techmo::tribune::PutLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestPutLexicon(::grpc::ServerContext* context, ::techmo::tribune::PutLexiconRequest* request, ::grpc::ServerAsyncResponseWriter< ::techmo::tribune::PutLexiconResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_DeleteLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_DeleteLexicon() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_DeleteLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::DeleteLexiconRequest* /*request*/, ::techmo::tribune::DeleteLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteLexicon(::grpc::ServerContext* context, ::techmo::tribune::DeleteLexiconRequest* request, ::grpc::ServerAsyncResponseWriter< ::techmo::tribune::DeleteLexiconResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetLexicon() {
+      ::grpc::Service::MarkMethodAsync(5);
+    }
+    ~WithAsyncMethod_GetLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::GetLexiconRequest* /*request*/, ::techmo::tribune::GetLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetLexicon(::grpc::ServerContext* context, ::techmo::tribune::GetLexiconRequest* request, ::grpc::ServerAsyncResponseWriter< ::techmo::tribune::GetLexiconResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_ListLexicons : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_ListLexicons() {
+      ::grpc::Service::MarkMethodAsync(6);
+    }
+    ~WithAsyncMethod_ListLexicons() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListLexicons(::grpc::ServerContext* /*context*/, const ::techmo::tribune::ListLexiconsRequest* /*request*/, ::techmo::tribune::ListLexiconsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListLexicons(::grpc::ServerContext* context, ::techmo::tribune::ListLexiconsRequest* request, ::grpc::ServerAsyncResponseWriter< ::techmo::tribune::ListLexiconsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_ListVoices<WithAsyncMethod_SynthesizeStreaming<WithAsyncMethod_Synthesize<WithAsyncMethod_PutLexicon<WithAsyncMethod_DeleteLexicon<WithAsyncMethod_GetLexicon<WithAsyncMethod_ListLexicons<Service > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_ListVoices : public BaseClass {
    private:
@@ -329,7 +545,131 @@ class TTS final {
     }
     virtual void Synthesize(::grpc::ServerContext* /*context*/, const ::techmo::tribune::SynthesizeRequest* /*request*/, ::techmo::tribune::SynthesizeResponse* /*response*/, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
-  typedef ExperimentalWithCallbackMethod_ListVoices<ExperimentalWithCallbackMethod_SynthesizeStreaming<ExperimentalWithCallbackMethod_Synthesize<Service > > > ExperimentalCallbackService;
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_PutLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_PutLexicon() {
+      ::grpc::Service::experimental().MarkMethodCallback(3,
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::techmo::tribune::PutLexiconRequest, ::techmo::tribune::PutLexiconResponse>(
+          [this](::grpc::ServerContext* context,
+                 const ::techmo::tribune::PutLexiconRequest* request,
+                 ::techmo::tribune::PutLexiconResponse* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   return this->PutLexicon(context, request, response, controller);
+                 }));
+    }
+    void SetMessageAllocatorFor_PutLexicon(
+        ::grpc::experimental::MessageAllocator< ::techmo::tribune::PutLexiconRequest, ::techmo::tribune::PutLexiconResponse>* allocator) {
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::techmo::tribune::PutLexiconRequest, ::techmo::tribune::PutLexiconResponse>*>(
+          ::grpc::Service::experimental().GetHandler(3))
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_PutLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status PutLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::PutLexiconRequest* /*request*/, ::techmo::tribune::PutLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void PutLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::PutLexiconRequest* /*request*/, ::techmo::tribune::PutLexiconResponse* /*response*/, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_DeleteLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_DeleteLexicon() {
+      ::grpc::Service::experimental().MarkMethodCallback(4,
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::techmo::tribune::DeleteLexiconRequest, ::techmo::tribune::DeleteLexiconResponse>(
+          [this](::grpc::ServerContext* context,
+                 const ::techmo::tribune::DeleteLexiconRequest* request,
+                 ::techmo::tribune::DeleteLexiconResponse* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   return this->DeleteLexicon(context, request, response, controller);
+                 }));
+    }
+    void SetMessageAllocatorFor_DeleteLexicon(
+        ::grpc::experimental::MessageAllocator< ::techmo::tribune::DeleteLexiconRequest, ::techmo::tribune::DeleteLexiconResponse>* allocator) {
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::techmo::tribune::DeleteLexiconRequest, ::techmo::tribune::DeleteLexiconResponse>*>(
+          ::grpc::Service::experimental().GetHandler(4))
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_DeleteLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::DeleteLexiconRequest* /*request*/, ::techmo::tribune::DeleteLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void DeleteLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::DeleteLexiconRequest* /*request*/, ::techmo::tribune::DeleteLexiconResponse* /*response*/, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_GetLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_GetLexicon() {
+      ::grpc::Service::experimental().MarkMethodCallback(5,
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::techmo::tribune::GetLexiconRequest, ::techmo::tribune::GetLexiconResponse>(
+          [this](::grpc::ServerContext* context,
+                 const ::techmo::tribune::GetLexiconRequest* request,
+                 ::techmo::tribune::GetLexiconResponse* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   return this->GetLexicon(context, request, response, controller);
+                 }));
+    }
+    void SetMessageAllocatorFor_GetLexicon(
+        ::grpc::experimental::MessageAllocator< ::techmo::tribune::GetLexiconRequest, ::techmo::tribune::GetLexiconResponse>* allocator) {
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::techmo::tribune::GetLexiconRequest, ::techmo::tribune::GetLexiconResponse>*>(
+          ::grpc::Service::experimental().GetHandler(5))
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_GetLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::GetLexiconRequest* /*request*/, ::techmo::tribune::GetLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void GetLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::GetLexiconRequest* /*request*/, ::techmo::tribune::GetLexiconResponse* /*response*/, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_ListLexicons : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_ListLexicons() {
+      ::grpc::Service::experimental().MarkMethodCallback(6,
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::techmo::tribune::ListLexiconsRequest, ::techmo::tribune::ListLexiconsResponse>(
+          [this](::grpc::ServerContext* context,
+                 const ::techmo::tribune::ListLexiconsRequest* request,
+                 ::techmo::tribune::ListLexiconsResponse* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   return this->ListLexicons(context, request, response, controller);
+                 }));
+    }
+    void SetMessageAllocatorFor_ListLexicons(
+        ::grpc::experimental::MessageAllocator< ::techmo::tribune::ListLexiconsRequest, ::techmo::tribune::ListLexiconsResponse>* allocator) {
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::techmo::tribune::ListLexiconsRequest, ::techmo::tribune::ListLexiconsResponse>*>(
+          ::grpc::Service::experimental().GetHandler(6))
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_ListLexicons() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListLexicons(::grpc::ServerContext* /*context*/, const ::techmo::tribune::ListLexiconsRequest* /*request*/, ::techmo::tribune::ListLexiconsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void ListLexicons(::grpc::ServerContext* /*context*/, const ::techmo::tribune::ListLexiconsRequest* /*request*/, ::techmo::tribune::ListLexiconsResponse* /*response*/, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  typedef ExperimentalWithCallbackMethod_ListVoices<ExperimentalWithCallbackMethod_SynthesizeStreaming<ExperimentalWithCallbackMethod_Synthesize<ExperimentalWithCallbackMethod_PutLexicon<ExperimentalWithCallbackMethod_DeleteLexicon<ExperimentalWithCallbackMethod_GetLexicon<ExperimentalWithCallbackMethod_ListLexicons<Service > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_ListVoices : public BaseClass {
    private:
@@ -377,6 +717,74 @@ class TTS final {
     }
     // disable synchronous version of this method
     ::grpc::Status Synthesize(::grpc::ServerContext* /*context*/, const ::techmo::tribune::SynthesizeRequest* /*request*/, ::techmo::tribune::SynthesizeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_PutLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_PutLexicon() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_PutLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status PutLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::PutLexiconRequest* /*request*/, ::techmo::tribune::PutLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DeleteLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_DeleteLexicon() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_DeleteLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::DeleteLexiconRequest* /*request*/, ::techmo::tribune::DeleteLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetLexicon() {
+      ::grpc::Service::MarkMethodGeneric(5);
+    }
+    ~WithGenericMethod_GetLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::GetLexiconRequest* /*request*/, ::techmo::tribune::GetLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_ListLexicons : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_ListLexicons() {
+      ::grpc::Service::MarkMethodGeneric(6);
+    }
+    ~WithGenericMethod_ListLexicons() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListLexicons(::grpc::ServerContext* /*context*/, const ::techmo::tribune::ListLexiconsRequest* /*request*/, ::techmo::tribune::ListLexiconsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -439,6 +847,86 @@ class TTS final {
     }
     void RequestSynthesize(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_PutLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_PutLexicon() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_PutLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status PutLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::PutLexiconRequest* /*request*/, ::techmo::tribune::PutLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestPutLexicon(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DeleteLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_DeleteLexicon() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_DeleteLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::DeleteLexiconRequest* /*request*/, ::techmo::tribune::DeleteLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteLexicon(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetLexicon() {
+      ::grpc::Service::MarkMethodRaw(5);
+    }
+    ~WithRawMethod_GetLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::GetLexiconRequest* /*request*/, ::techmo::tribune::GetLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetLexicon(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_ListLexicons : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_ListLexicons() {
+      ::grpc::Service::MarkMethodRaw(6);
+    }
+    ~WithRawMethod_ListLexicons() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListLexicons(::grpc::ServerContext* /*context*/, const ::techmo::tribune::ListLexiconsRequest* /*request*/, ::techmo::tribune::ListLexiconsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListLexicons(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -514,6 +1002,106 @@ class TTS final {
     virtual void Synthesize(::grpc::ServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_PutLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_PutLexicon() {
+      ::grpc::Service::experimental().MarkMethodRawCallback(3,
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          [this](::grpc::ServerContext* context,
+                 const ::grpc::ByteBuffer* request,
+                 ::grpc::ByteBuffer* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   this->PutLexicon(context, request, response, controller);
+                 }));
+    }
+    ~ExperimentalWithRawCallbackMethod_PutLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status PutLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::PutLexiconRequest* /*request*/, ::techmo::tribune::PutLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void PutLexicon(::grpc::ServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_DeleteLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_DeleteLexicon() {
+      ::grpc::Service::experimental().MarkMethodRawCallback(4,
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          [this](::grpc::ServerContext* context,
+                 const ::grpc::ByteBuffer* request,
+                 ::grpc::ByteBuffer* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   this->DeleteLexicon(context, request, response, controller);
+                 }));
+    }
+    ~ExperimentalWithRawCallbackMethod_DeleteLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::DeleteLexiconRequest* /*request*/, ::techmo::tribune::DeleteLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void DeleteLexicon(::grpc::ServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_GetLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_GetLexicon() {
+      ::grpc::Service::experimental().MarkMethodRawCallback(5,
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          [this](::grpc::ServerContext* context,
+                 const ::grpc::ByteBuffer* request,
+                 ::grpc::ByteBuffer* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   this->GetLexicon(context, request, response, controller);
+                 }));
+    }
+    ~ExperimentalWithRawCallbackMethod_GetLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::GetLexiconRequest* /*request*/, ::techmo::tribune::GetLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void GetLexicon(::grpc::ServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_ListLexicons : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_ListLexicons() {
+      ::grpc::Service::experimental().MarkMethodRawCallback(6,
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          [this](::grpc::ServerContext* context,
+                 const ::grpc::ByteBuffer* request,
+                 ::grpc::ByteBuffer* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   this->ListLexicons(context, request, response, controller);
+                 }));
+    }
+    ~ExperimentalWithRawCallbackMethod_ListLexicons() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListLexicons(::grpc::ServerContext* /*context*/, const ::techmo::tribune::ListLexiconsRequest* /*request*/, ::techmo::tribune::ListLexiconsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void ListLexicons(::grpc::ServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_ListVoices : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -553,7 +1141,87 @@ class TTS final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedSynthesize(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::techmo::tribune::SynthesizeRequest,::techmo::tribune::SynthesizeResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_ListVoices<WithStreamedUnaryMethod_Synthesize<Service > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_PutLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_PutLexicon() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::StreamedUnaryHandler< ::techmo::tribune::PutLexiconRequest, ::techmo::tribune::PutLexiconResponse>(std::bind(&WithStreamedUnaryMethod_PutLexicon<BaseClass>::StreamedPutLexicon, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_PutLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status PutLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::PutLexiconRequest* /*request*/, ::techmo::tribune::PutLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedPutLexicon(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::techmo::tribune::PutLexiconRequest,::techmo::tribune::PutLexiconResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DeleteLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_DeleteLexicon() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler< ::techmo::tribune::DeleteLexiconRequest, ::techmo::tribune::DeleteLexiconResponse>(std::bind(&WithStreamedUnaryMethod_DeleteLexicon<BaseClass>::StreamedDeleteLexicon, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_DeleteLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DeleteLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::DeleteLexiconRequest* /*request*/, ::techmo::tribune::DeleteLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDeleteLexicon(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::techmo::tribune::DeleteLexiconRequest,::techmo::tribune::DeleteLexiconResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetLexicon : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetLexicon() {
+      ::grpc::Service::MarkMethodStreamed(5,
+        new ::grpc::internal::StreamedUnaryHandler< ::techmo::tribune::GetLexiconRequest, ::techmo::tribune::GetLexiconResponse>(std::bind(&WithStreamedUnaryMethod_GetLexicon<BaseClass>::StreamedGetLexicon, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetLexicon() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetLexicon(::grpc::ServerContext* /*context*/, const ::techmo::tribune::GetLexiconRequest* /*request*/, ::techmo::tribune::GetLexiconResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetLexicon(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::techmo::tribune::GetLexiconRequest,::techmo::tribune::GetLexiconResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_ListLexicons : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_ListLexicons() {
+      ::grpc::Service::MarkMethodStreamed(6,
+        new ::grpc::internal::StreamedUnaryHandler< ::techmo::tribune::ListLexiconsRequest, ::techmo::tribune::ListLexiconsResponse>(std::bind(&WithStreamedUnaryMethod_ListLexicons<BaseClass>::StreamedListLexicons, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_ListLexicons() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ListLexicons(::grpc::ServerContext* /*context*/, const ::techmo::tribune::ListLexiconsRequest* /*request*/, ::techmo::tribune::ListLexiconsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedListLexicons(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::techmo::tribune::ListLexiconsRequest,::techmo::tribune::ListLexiconsResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_ListVoices<WithStreamedUnaryMethod_Synthesize<WithStreamedUnaryMethod_PutLexicon<WithStreamedUnaryMethod_DeleteLexicon<WithStreamedUnaryMethod_GetLexicon<WithStreamedUnaryMethod_ListLexicons<Service > > > > > > StreamedUnaryService;
   template <class BaseClass>
   class WithSplitStreamingMethod_SynthesizeStreaming : public BaseClass {
    private:
@@ -575,7 +1243,7 @@ class TTS final {
     virtual ::grpc::Status StreamedSynthesizeStreaming(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::techmo::tribune::SynthesizeRequest,::techmo::tribune::SynthesizeResponse>* server_split_streamer) = 0;
   };
   typedef WithSplitStreamingMethod_SynthesizeStreaming<Service > SplitStreamedService;
-  typedef WithStreamedUnaryMethod_ListVoices<WithSplitStreamingMethod_SynthesizeStreaming<WithStreamedUnaryMethod_Synthesize<Service > > > StreamedService;
+  typedef WithStreamedUnaryMethod_ListVoices<WithSplitStreamingMethod_SynthesizeStreaming<WithStreamedUnaryMethod_Synthesize<WithStreamedUnaryMethod_PutLexicon<WithStreamedUnaryMethod_DeleteLexicon<WithStreamedUnaryMethod_GetLexicon<WithStreamedUnaryMethod_ListLexicons<Service > > > > > > > StreamedService;
 };
 
 }  // namespace tribune

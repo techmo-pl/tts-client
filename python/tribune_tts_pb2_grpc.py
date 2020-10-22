@@ -29,6 +29,26 @@ class TTSStub(object):
         request_serializer=tribune__tts__pb2.SynthesizeRequest.SerializeToString,
         response_deserializer=tribune__tts__pb2.SynthesizeResponse.FromString,
         )
+    self.PutLexicon = channel.unary_unary(
+        '/techmo.tribune.TTS/PutLexicon',
+        request_serializer=tribune__tts__pb2.PutLexiconRequest.SerializeToString,
+        response_deserializer=tribune__tts__pb2.PutLexiconResponse.FromString,
+        )
+    self.DeleteLexicon = channel.unary_unary(
+        '/techmo.tribune.TTS/DeleteLexicon',
+        request_serializer=tribune__tts__pb2.DeleteLexiconRequest.SerializeToString,
+        response_deserializer=tribune__tts__pb2.DeleteLexiconResponse.FromString,
+        )
+    self.GetLexicon = channel.unary_unary(
+        '/techmo.tribune.TTS/GetLexicon',
+        request_serializer=tribune__tts__pb2.GetLexiconRequest.SerializeToString,
+        response_deserializer=tribune__tts__pb2.GetLexiconResponse.FromString,
+        )
+    self.ListLexicons = channel.unary_unary(
+        '/techmo.tribune.TTS/ListLexicons',
+        request_serializer=tribune__tts__pb2.ListLexiconsRequest.SerializeToString,
+        response_deserializer=tribune__tts__pb2.ListLexiconsResponse.FromString,
+        )
 
 
 class TTSServicer(object):
@@ -58,6 +78,38 @@ class TTSServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def PutLexicon(self, request, context):
+    """Adds a new lexicon with the requested name or overwrites the existing one if there is already a lexicon with such name.
+    Returns status information - Success or Error.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeleteLexicon(self, request, context):
+    """Removes the lexicon with the requested name.
+    Returns status information - Success or Error.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetLexicon(self, request, context):
+    """Sends back the content of the lexicon with the requested name.
+    Returns the lexicon content and status information - Success or Error.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ListLexicons(self, request, context):
+    """Lists all client-defined lexicons which can be referred by `<lexicon>` tag in synthesize requests.
+    Returns the list of names of lexicons.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_TTSServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -75,6 +127,26 @@ def add_TTSServicer_to_server(servicer, server):
           servicer.Synthesize,
           request_deserializer=tribune__tts__pb2.SynthesizeRequest.FromString,
           response_serializer=tribune__tts__pb2.SynthesizeResponse.SerializeToString,
+      ),
+      'PutLexicon': grpc.unary_unary_rpc_method_handler(
+          servicer.PutLexicon,
+          request_deserializer=tribune__tts__pb2.PutLexiconRequest.FromString,
+          response_serializer=tribune__tts__pb2.PutLexiconResponse.SerializeToString,
+      ),
+      'DeleteLexicon': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteLexicon,
+          request_deserializer=tribune__tts__pb2.DeleteLexiconRequest.FromString,
+          response_serializer=tribune__tts__pb2.DeleteLexiconResponse.SerializeToString,
+      ),
+      'GetLexicon': grpc.unary_unary_rpc_method_handler(
+          servicer.GetLexicon,
+          request_deserializer=tribune__tts__pb2.GetLexiconRequest.FromString,
+          response_serializer=tribune__tts__pb2.GetLexiconResponse.SerializeToString,
+      ),
+      'ListLexicons': grpc.unary_unary_rpc_method_handler(
+          servicer.ListLexicons,
+          request_deserializer=tribune__tts__pb2.ListLexiconsRequest.FromString,
+          response_serializer=tribune__tts__pb2.ListLexiconsResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

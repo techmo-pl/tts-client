@@ -34,35 +34,31 @@ Run:
 
 Options:
 ```
-  --help                                Print help message.
-  --service-address arg                 IP address and port (address:port) of a
-                                        service the client will connect to.
-  --out-path arg (=TechmoTTS.wav)       Path to output wave file with 
-                                        synthesized audio content.
-  --text arg (=Techmo Trybun: Syntezator mowy polskiej.)
-                                        Text to be synthesized (in polish).
-  --session-id arg                      Session ID to be passed to the service.
-                                        If not specified, the service will 
-                                        generate a default session ID itself.
-  --grpc-timeout arg (=0)               Timeout in milliseconds used to set 
-                                        gRPC deadline - how long the client is 
-                                        willing to wait for a reply from the 
-                                        server. If not specified, the service 
-                                        will set the deadline to a very large 
-                                        number.
-  --sample-rate-hertz arg (=0)          Sample rate in Hz of synthesized audio.
-                                        Set to 0 (default) to use voice's 
-                                        original sample rate.
+--help                Print help message.
+--service-address     IP address and port (address:port) of a service the client will connect to.
+--out-path            Path to output wave file with synthesized audio content (optional, default: TechmoTTS.wav or TechmoTTS.ogg).
+--text                Text to be synthesized (optional, default: 'Techmo Trybun: Syntezator mowy polskiej.').
+--session-id          Session ID to be passed to the service. If not specified, the service generates a default session ID itself.
+--grpc-timeout        Timeout in milliseconds used to set gRPC deadline - how long the client is willing to wait for a reply from the 
+                      server. If not specified, the service will set the deadline to a very large number (optional, default: 0).
+--audio-encoding      Encoding of the output audio, pcm16 (default) or ogg-vorbs.
+--sample-rate-hertz   Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.
+--speech-pitch        Allows adjusting the default pitch of the synthesized speech (optional, can be overriden by SSML).
+--speech-range        Allows adjusting the default range of the synthesized speech (optional, can be overriden by SSML).
+--speech-rate         Allows adjusting the default rate (speed) of the synthesized speech (optional, can be overriden by SSML).
+--speech-volume       Allows adjusting the default volume of the synthesized speech (optional, can be overriden by SSML).
+--voice-name          Name od the voice used to synthesize the phrase (optional, can be overriden by SSML).
+--voice-gender        Gender of the voice - female or male (optional, can be overriden by SSML).
+--voice-age           Age of the voice - adult, child, or senile (optional, can be overriden by SSML).
+--language            ISO 639-1 language code of the phrase to synthesize (optional, can be overriden by SSML).
 ```
 
-In input text you can use several special tags which can be interpreted. Tags have to be in from `<tag>something special</tag>` and can occur in any place in text. Currently interpreted tags are:
-
-cardinal    cardinal number     "<cardinal>7</cardinal>"    -> "siedem"
-signed      number with sign    "<signed>-15</signed>"      -> "minus piętnaście"
-ordinal     ordinal number      "<ordinal>1</ordinal>"      -> "pierwszy"
-fraction    fractional number   "<fraction>3/4</fraction>"  -> "trzy czwarte"
-postal      postal code         "<postal>30-020</postal>"   -> "trzydzieści zero dwadzieścia"
-time        time                "<time>22:00</time>"        -> "dwudziesta druga"
-date        date                "<date>12/05/2001</date>"   -> "dwunasty maja dwa tysiące jeden"
-
-Note: when interpreting tags only nominal case is supported at the moment.
+The input text can be either a plain text or SSML (https://w3.org/TR/speech-synthesis11/).
+Currently the following SSML tags are supported:
+- `<speak>` - root xml node, with optional `xml:lang` attribute,
+- `<prosody>` - supported attributes: `pitch`, `range`, `rate`, and `volume`,
+- `<break>` - supported attributes: `strength` and `time`,
+- `<emphasis>` - supported attribute: `level`,
+- `<say-as>` - supported attribute: `interpret-as` (consult Techmo TTS documentation for the complete list of all available implementations),
+- `<lang>` - supported attribute: `xml:lang`,
+- `<voice>` - supported attributes: `name`, `gender`, and `age`.
