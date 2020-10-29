@@ -48,7 +48,7 @@ message ListVoicesRequest
 message ListVoicesResponse
 {
     // The list of all available voices or voices supproting the requested laguage.
-    repeated Voice voices = 1;
+    repeated VoiceInfo voices = 1;
 }
 
 // The top-level message sent by the client for `Synthesize` and `SynthesizeStreaming` methods.
@@ -108,7 +108,8 @@ message AudioConfig
     float volume = 6;
 }
 
-// Voice definition. If there is no voice satisfying all the required criteria,
+// Voice definition used to describe requested voice in SynthesizeConfig.
+// If there is no voice satisfying all the required criteria,
 // the voice is selected according to name (if defined) first, gender (if defined) second,
 // and age (if defined) third.
 message Voice
@@ -116,11 +117,29 @@ message Voice
     // The name of the voice (empty string means default voice).
     string name = 1;
 
-    // Gender of the voice (UNSPECIFIED is default).
+    // Gender of the voice (GENDER_UNSPECIFIED is default).
     Gender gender = 2;
 
-    // Age of the voice (UNSPECIFIED is default).
+    // Age of the voice (AGE_UNSPECIFIED is default).
     Age age = 3;
+}
+
+// Information about a voice, returned by ListVoices call.
+// All parameters are always defined - the supported_languages and name are non-empy,
+// and GENDER_UNSPECIFIED or AGE_UNSPECIFIED are never returned.
+message VoiceInfo
+{
+    // The list of ISO 639-1 codes of laguages supported by the voice.
+    repeated string supported_languages = 1;
+
+    // The name of the voice.
+    string name = 2;
+
+    // Gender of the voice.
+    Gender gender = 3;
+
+    // Age of the voice.
+    Age age = 4;
 }
 
 // The requested format of the response audio data.
