@@ -48,7 +48,7 @@ struct TableStruct_tribune_5ftts_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[17]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -108,6 +108,9 @@ extern SynthesizeResponseDefaultTypeInternal _SynthesizeResponse_default_instanc
 class Voice;
 class VoiceDefaultTypeInternal;
 extern VoiceDefaultTypeInternal _Voice_default_instance_;
+class VoiceInfo;
+class VoiceInfoDefaultTypeInternal;
+extern VoiceInfoDefaultTypeInternal _VoiceInfo_default_instance_;
 }  // namespace tribune
 }  // namespace techmo
 PROTOBUF_NAMESPACE_OPEN
@@ -128,6 +131,7 @@ template<> ::techmo::tribune::SynthesizeConfig* Arena::CreateMaybeMessage<::tech
 template<> ::techmo::tribune::SynthesizeRequest* Arena::CreateMaybeMessage<::techmo::tribune::SynthesizeRequest>(Arena*);
 template<> ::techmo::tribune::SynthesizeResponse* Arena::CreateMaybeMessage<::techmo::tribune::SynthesizeResponse>(Arena*);
 template<> ::techmo::tribune::Voice* Arena::CreateMaybeMessage<::techmo::tribune::Voice>(Arena*);
+template<> ::techmo::tribune::VoiceInfo* Arena::CreateMaybeMessage<::techmo::tribune::VoiceInfo>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace techmo {
 namespace tribune {
@@ -483,16 +487,16 @@ class ListVoicesResponse :
 
   // accessors -------------------------------------------------------
 
-  // repeated .techmo.tribune.Voice voices = 1;
+  // repeated .techmo.tribune.VoiceInfo voices = 1;
   int voices_size() const;
   void clear_voices();
   static const int kVoicesFieldNumber = 1;
-  ::techmo::tribune::Voice* mutable_voices(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::techmo::tribune::Voice >*
+  ::techmo::tribune::VoiceInfo* mutable_voices(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::techmo::tribune::VoiceInfo >*
       mutable_voices();
-  const ::techmo::tribune::Voice& voices(int index) const;
-  ::techmo::tribune::Voice* add_voices();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::techmo::tribune::Voice >&
+  const ::techmo::tribune::VoiceInfo& voices(int index) const;
+  ::techmo::tribune::VoiceInfo* add_voices();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::techmo::tribune::VoiceInfo >&
       voices() const;
 
   // @@protoc_insertion_point(class_scope:techmo.tribune.ListVoicesResponse)
@@ -500,7 +504,7 @@ class ListVoicesResponse :
   class HasBitSetters;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::techmo::tribune::Voice > voices_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::techmo::tribune::VoiceInfo > voices_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_tribune_5ftts_2eproto;
 };
@@ -1107,6 +1111,154 @@ class Voice :
 };
 // -------------------------------------------------------------------
 
+class VoiceInfo :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:techmo.tribune.VoiceInfo) */ {
+ public:
+  VoiceInfo();
+  virtual ~VoiceInfo();
+
+  VoiceInfo(const VoiceInfo& from);
+  VoiceInfo(VoiceInfo&& from) noexcept
+    : VoiceInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline VoiceInfo& operator=(const VoiceInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline VoiceInfo& operator=(VoiceInfo&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const VoiceInfo& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const VoiceInfo* internal_default_instance() {
+    return reinterpret_cast<const VoiceInfo*>(
+               &_VoiceInfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  void Swap(VoiceInfo* other);
+  friend void swap(VoiceInfo& a, VoiceInfo& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline VoiceInfo* New() const final {
+    return CreateMaybeMessage<VoiceInfo>(nullptr);
+  }
+
+  VoiceInfo* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<VoiceInfo>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const VoiceInfo& from);
+  void MergeFrom(const VoiceInfo& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(VoiceInfo* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "techmo.tribune.VoiceInfo";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_tribune_5ftts_2eproto);
+    return ::descriptor_table_tribune_5ftts_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated string supported_languages = 1;
+  int supported_languages_size() const;
+  void clear_supported_languages();
+  static const int kSupportedLanguagesFieldNumber = 1;
+  const std::string& supported_languages(int index) const;
+  std::string* mutable_supported_languages(int index);
+  void set_supported_languages(int index, const std::string& value);
+  void set_supported_languages(int index, std::string&& value);
+  void set_supported_languages(int index, const char* value);
+  void set_supported_languages(int index, const char* value, size_t size);
+  std::string* add_supported_languages();
+  void add_supported_languages(const std::string& value);
+  void add_supported_languages(std::string&& value);
+  void add_supported_languages(const char* value);
+  void add_supported_languages(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& supported_languages() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_supported_languages();
+
+  // .techmo.tribune.Voice voice = 2;
+  bool has_voice() const;
+  void clear_voice();
+  static const int kVoiceFieldNumber = 2;
+  const ::techmo::tribune::Voice& voice() const;
+  ::techmo::tribune::Voice* release_voice();
+  ::techmo::tribune::Voice* mutable_voice();
+  void set_allocated_voice(::techmo::tribune::Voice* voice);
+
+  // @@protoc_insertion_point(class_scope:techmo.tribune.VoiceInfo)
+ private:
+  class HasBitSetters;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> supported_languages_;
+  ::techmo::tribune::Voice* voice_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_tribune_5ftts_2eproto;
+};
+// -------------------------------------------------------------------
+
 class SynthesizeResponse :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:techmo.tribune.SynthesizeResponse) */ {
  public:
@@ -1149,7 +1301,7 @@ class SynthesizeResponse :
                &_SynthesizeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(SynthesizeResponse* other);
   friend void swap(SynthesizeResponse& a, SynthesizeResponse& b) {
@@ -1288,7 +1440,7 @@ class AudioData :
                &_AudioData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(AudioData* other);
   friend void swap(AudioData& a, AudioData& b) {
@@ -1427,7 +1579,7 @@ class PutLexiconRequest :
                &_PutLexiconRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(PutLexiconRequest* other);
   friend void swap(PutLexiconRequest& a, PutLexiconRequest& b) {
@@ -1572,7 +1724,7 @@ class PutLexiconResponse :
                &_PutLexiconResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(PutLexiconResponse* other);
   friend void swap(PutLexiconResponse& a, PutLexiconResponse& b) {
@@ -1701,7 +1853,7 @@ class DeleteLexiconRequest :
                &_DeleteLexiconRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(DeleteLexiconRequest* other);
   friend void swap(DeleteLexiconRequest& a, DeleteLexiconRequest& b) {
@@ -1833,7 +1985,7 @@ class DeleteLexiconResponse :
                &_DeleteLexiconResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(DeleteLexiconResponse* other);
   friend void swap(DeleteLexiconResponse& a, DeleteLexiconResponse& b) {
@@ -1962,7 +2114,7 @@ class GetLexiconRequest :
                &_GetLexiconRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   void Swap(GetLexiconRequest* other);
   friend void swap(GetLexiconRequest& a, GetLexiconRequest& b) {
@@ -2094,7 +2246,7 @@ class GetLexiconResponse :
                &_GetLexiconResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   void Swap(GetLexiconResponse* other);
   friend void swap(GetLexiconResponse& a, GetLexiconResponse& b) {
@@ -2236,7 +2388,7 @@ class ListLexiconsRequest :
                &_ListLexiconsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   void Swap(ListLexiconsRequest* other);
   friend void swap(ListLexiconsRequest& a, ListLexiconsRequest& b) {
@@ -2368,7 +2520,7 @@ class ListLexiconsResponse :
                &_ListLexiconsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   void Swap(ListLexiconsResponse* other);
   friend void swap(ListLexiconsResponse& a, ListLexiconsResponse& b) {
@@ -2506,7 +2658,7 @@ class Error :
                &_Error_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   void Swap(Error* other);
   friend void swap(Error& a, Error& b) {
@@ -2667,31 +2819,31 @@ inline void ListVoicesRequest::set_allocated_language(std::string* language) {
 
 // ListVoicesResponse
 
-// repeated .techmo.tribune.Voice voices = 1;
+// repeated .techmo.tribune.VoiceInfo voices = 1;
 inline int ListVoicesResponse::voices_size() const {
   return voices_.size();
 }
 inline void ListVoicesResponse::clear_voices() {
   voices_.Clear();
 }
-inline ::techmo::tribune::Voice* ListVoicesResponse::mutable_voices(int index) {
+inline ::techmo::tribune::VoiceInfo* ListVoicesResponse::mutable_voices(int index) {
   // @@protoc_insertion_point(field_mutable:techmo.tribune.ListVoicesResponse.voices)
   return voices_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::techmo::tribune::Voice >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::techmo::tribune::VoiceInfo >*
 ListVoicesResponse::mutable_voices() {
   // @@protoc_insertion_point(field_mutable_list:techmo.tribune.ListVoicesResponse.voices)
   return &voices_;
 }
-inline const ::techmo::tribune::Voice& ListVoicesResponse::voices(int index) const {
+inline const ::techmo::tribune::VoiceInfo& ListVoicesResponse::voices(int index) const {
   // @@protoc_insertion_point(field_get:techmo.tribune.ListVoicesResponse.voices)
   return voices_.Get(index);
 }
-inline ::techmo::tribune::Voice* ListVoicesResponse::add_voices() {
+inline ::techmo::tribune::VoiceInfo* ListVoicesResponse::add_voices() {
   // @@protoc_insertion_point(field_add:techmo.tribune.ListVoicesResponse.voices)
   return voices_.Add();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::techmo::tribune::Voice >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::techmo::tribune::VoiceInfo >&
 ListVoicesResponse::voices() const {
   // @@protoc_insertion_point(field_list:techmo.tribune.ListVoicesResponse.voices)
   return voices_;
@@ -3129,6 +3281,126 @@ inline void Voice::set_age(::techmo::tribune::Age value) {
   
   age_ = value;
   // @@protoc_insertion_point(field_set:techmo.tribune.Voice.age)
+}
+
+// -------------------------------------------------------------------
+
+// VoiceInfo
+
+// repeated string supported_languages = 1;
+inline int VoiceInfo::supported_languages_size() const {
+  return supported_languages_.size();
+}
+inline void VoiceInfo::clear_supported_languages() {
+  supported_languages_.Clear();
+}
+inline const std::string& VoiceInfo::supported_languages(int index) const {
+  // @@protoc_insertion_point(field_get:techmo.tribune.VoiceInfo.supported_languages)
+  return supported_languages_.Get(index);
+}
+inline std::string* VoiceInfo::mutable_supported_languages(int index) {
+  // @@protoc_insertion_point(field_mutable:techmo.tribune.VoiceInfo.supported_languages)
+  return supported_languages_.Mutable(index);
+}
+inline void VoiceInfo::set_supported_languages(int index, const std::string& value) {
+  // @@protoc_insertion_point(field_set:techmo.tribune.VoiceInfo.supported_languages)
+  supported_languages_.Mutable(index)->assign(value);
+}
+inline void VoiceInfo::set_supported_languages(int index, std::string&& value) {
+  // @@protoc_insertion_point(field_set:techmo.tribune.VoiceInfo.supported_languages)
+  supported_languages_.Mutable(index)->assign(std::move(value));
+}
+inline void VoiceInfo::set_supported_languages(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  supported_languages_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:techmo.tribune.VoiceInfo.supported_languages)
+}
+inline void VoiceInfo::set_supported_languages(int index, const char* value, size_t size) {
+  supported_languages_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:techmo.tribune.VoiceInfo.supported_languages)
+}
+inline std::string* VoiceInfo::add_supported_languages() {
+  // @@protoc_insertion_point(field_add_mutable:techmo.tribune.VoiceInfo.supported_languages)
+  return supported_languages_.Add();
+}
+inline void VoiceInfo::add_supported_languages(const std::string& value) {
+  supported_languages_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:techmo.tribune.VoiceInfo.supported_languages)
+}
+inline void VoiceInfo::add_supported_languages(std::string&& value) {
+  supported_languages_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:techmo.tribune.VoiceInfo.supported_languages)
+}
+inline void VoiceInfo::add_supported_languages(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  supported_languages_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:techmo.tribune.VoiceInfo.supported_languages)
+}
+inline void VoiceInfo::add_supported_languages(const char* value, size_t size) {
+  supported_languages_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:techmo.tribune.VoiceInfo.supported_languages)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+VoiceInfo::supported_languages() const {
+  // @@protoc_insertion_point(field_list:techmo.tribune.VoiceInfo.supported_languages)
+  return supported_languages_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+VoiceInfo::mutable_supported_languages() {
+  // @@protoc_insertion_point(field_mutable_list:techmo.tribune.VoiceInfo.supported_languages)
+  return &supported_languages_;
+}
+
+// .techmo.tribune.Voice voice = 2;
+inline bool VoiceInfo::has_voice() const {
+  return this != internal_default_instance() && voice_ != nullptr;
+}
+inline void VoiceInfo::clear_voice() {
+  if (GetArenaNoVirtual() == nullptr && voice_ != nullptr) {
+    delete voice_;
+  }
+  voice_ = nullptr;
+}
+inline const ::techmo::tribune::Voice& VoiceInfo::voice() const {
+  const ::techmo::tribune::Voice* p = voice_;
+  // @@protoc_insertion_point(field_get:techmo.tribune.VoiceInfo.voice)
+  return p != nullptr ? *p : *reinterpret_cast<const ::techmo::tribune::Voice*>(
+      &::techmo::tribune::_Voice_default_instance_);
+}
+inline ::techmo::tribune::Voice* VoiceInfo::release_voice() {
+  // @@protoc_insertion_point(field_release:techmo.tribune.VoiceInfo.voice)
+  
+  ::techmo::tribune::Voice* temp = voice_;
+  voice_ = nullptr;
+  return temp;
+}
+inline ::techmo::tribune::Voice* VoiceInfo::mutable_voice() {
+  
+  if (voice_ == nullptr) {
+    auto* p = CreateMaybeMessage<::techmo::tribune::Voice>(GetArenaNoVirtual());
+    voice_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:techmo.tribune.VoiceInfo.voice)
+  return voice_;
+}
+inline void VoiceInfo::set_allocated_voice(::techmo::tribune::Voice* voice) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete voice_;
+  }
+  if (voice) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      voice = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, voice, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  voice_ = voice;
+  // @@protoc_insertion_point(field_set_allocated:techmo.tribune.VoiceInfo.voice)
 }
 
 // -------------------------------------------------------------------
@@ -3934,6 +4206,8 @@ inline void Error::set_allocated_description(std::string* description) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
