@@ -83,6 +83,9 @@ message SynthesizeConfig
     AudioConfig audio_config = 2;
 
     // Requested voice to be used to synthesize the text (may be overriden by SSML tags in request text).
+    // If there is no voice satisfying all the required criteria,
+    // the voice is selected according to name (if defined) first, gender (if defined) second,
+    // and age (if defined) third.
     Voice voice = 3;
 }
 
@@ -108,38 +111,29 @@ message AudioConfig
     float volume = 6;
 }
 
-// Voice definition used to describe requested voice in SynthesizeConfig.
-// If there is no voice satisfying all the required criteria,
-// the voice is selected according to name (if defined) first, gender (if defined) second,
-// and age (if defined) third.
+// Voice definition used to describe requested voice in SynthesizeConfig,
+// and voice parameters in ListVoices (as a part of VoiceInfo).
 message Voice
 {
-    // The name of the voice (empty string means default voice).
+    // The name of the voice.
     string name = 1;
 
-    // Gender of the voice (GENDER_UNSPECIFIED is default).
+    // Gender of the voice.
     Gender gender = 2;
 
-    // Age of the voice (AGE_UNSPECIFIED is default).
+    // Age of the voice.
     Age age = 3;
 }
 
 // Information about a voice, returned by ListVoices call.
-// All parameters are always defined - the supported_languages and name are non-empy,
-// and GENDER_UNSPECIFIED or AGE_UNSPECIFIED are never returned.
+// Both the supported_languages and voice are always defined, i.e. non-empy.
 message VoiceInfo
 {
     // The list of ISO 639-1 codes of laguages supported by the voice.
     repeated string supported_languages = 1;
 
-    // The name of the voice.
-    string name = 2;
-
-    // Gender of the voice.
-    Gender gender = 3;
-
-    // Age of the voice.
-    Age age = 4;
+    // The voice parameters.
+    Voice voice = 2;
 }
 
 // The requested format of the response audio data.

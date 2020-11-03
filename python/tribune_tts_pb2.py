@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='techmo.tribune',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x11tribune_tts.proto\x12\x0etechmo.tribune\"%\n\x11ListVoicesRequest\x12\x10\n\x08language\x18\x01 \x01(\t\"?\n\x12ListVoicesResponse\x12)\n\x06voices\x18\x01 \x03(\x0b\x32\x19.techmo.tribune.VoiceInfo\"S\n\x11SynthesizeRequest\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x30\n\x06\x63onfig\x18\x02 \x01(\x0b\x32 .techmo.tribune.SynthesizeConfig\"}\n\x10SynthesizeConfig\x12\x10\n\x08language\x18\x01 \x01(\t\x12\x31\n\x0c\x61udio_config\x18\x02 \x01(\x0b\x32\x1b.techmo.tribune.AudioConfig\x12$\n\x05voice\x18\x03 \x01(\x0b\x32\x15.techmo.tribune.Voice\"\x9b\x01\n\x0b\x41udioConfig\x12\x35\n\x0e\x61udio_encoding\x18\x01 \x01(\x0e\x32\x1d.techmo.tribune.AudioEncoding\x12\x19\n\x11sample_rate_hertz\x18\x02 \x01(\x05\x12\r\n\x05pitch\x18\x03 \x01(\x02\x12\r\n\x05range\x18\x04 \x01(\x02\x12\x0c\n\x04rate\x18\x05 \x01(\x02\x12\x0e\n\x06volume\x18\x06 \x01(\x02\"_\n\x05Voice\x12\x0c\n\x04name\x18\x01 \x01(\t\x12&\n\x06gender\x18\x02 \x01(\x0e\x32\x16.techmo.tribune.Gender\x12 \n\x03\x61ge\x18\x03 \x01(\x0e\x32\x13.techmo.tribune.Age\"\x80\x01\n\tVoiceInfo\x12\x1b\n\x13supported_languages\x18\x01 \x03(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12&\n\x06gender\x18\x03 \x01(\x0e\x32\x16.techmo.tribune.Gender\x12 \n\x03\x61ge\x18\x04 \x01(\x0e\x32\x13.techmo.tribune.Age\"d\n\x12SynthesizeResponse\x12(\n\x05\x61udio\x18\x01 \x01(\x0b\x32\x19.techmo.tribune.AudioData\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x15.techmo.tribune.Error\"7\n\tAudioData\x12\x19\n\x11sample_rate_hertz\x18\x01 \x01(\x05\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\"2\n\x11PutLexiconRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\":\n\x12PutLexiconResponse\x12$\n\x05\x65rror\x18\x01 \x01(\x0b\x32\x15.techmo.tribune.Error\"$\n\x14\x44\x65leteLexiconRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"=\n\x15\x44\x65leteLexiconResponse\x12$\n\x05\x65rror\x18\x01 \x01(\x0b\x32\x15.techmo.tribune.Error\"!\n\x11GetLexiconRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"K\n\x12GetLexiconResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x15.techmo.tribune.Error\"\'\n\x13ListLexiconsRequest\x12\x10\n\x08language\x18\x01 \x01(\t\"%\n\x14ListLexiconsResponse\x12\r\n\x05names\x18\x01 \x03(\t\"E\n\x05\x45rror\x12\'\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x19.techmo.tribune.ErrorCode\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t**\n\rAudioEncoding\x12\t\n\x05PCM16\x10\x00\x12\x0e\n\nOGG_VORBIS\x10\x01*6\n\x06Gender\x12\x16\n\x12GENDER_UNSPECIFIED\x10\x00\x12\n\n\x06\x46\x45MALE\x10\x01\x12\x08\n\x04MALE\x10\x02*<\n\x03\x41ge\x12\x13\n\x0f\x41GE_UNSPECIFIED\x10\x00\x12\t\n\x05\x41\x44ULT\x10\x01\x12\t\n\x05\x43HILD\x10\x02\x12\n\n\x06SENILE\x10\x03*}\n\tErrorCode\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07LICENCE\x10\x01\x12\x12\n\x0eMISSING_OBJECT\x10\x02\x12\x08\n\x04SSML\x10\x03\x12\x16\n\x12TEXT_NORMALIZATION\x10\x04\x12\x11\n\rTRANSCRIPTION\x10\x05\x12\r\n\tSYNTHESIS\x10\x06\x32\xf2\x04\n\x03TTS\x12S\n\nListVoices\x12!.techmo.tribune.ListVoicesRequest\x1a\".techmo.tribune.ListVoicesResponse\x12^\n\x13SynthesizeStreaming\x12!.techmo.tribune.SynthesizeRequest\x1a\".techmo.tribune.SynthesizeResponse0\x01\x12S\n\nSynthesize\x12!.techmo.tribune.SynthesizeRequest\x1a\".techmo.tribune.SynthesizeResponse\x12S\n\nPutLexicon\x12!.techmo.tribune.PutLexiconRequest\x1a\".techmo.tribune.PutLexiconResponse\x12\\\n\rDeleteLexicon\x12$.techmo.tribune.DeleteLexiconRequest\x1a%.techmo.tribune.DeleteLexiconResponse\x12S\n\nGetLexicon\x12!.techmo.tribune.GetLexiconRequest\x1a\".techmo.tribune.GetLexiconResponse\x12Y\n\x0cListLexicons\x12#.techmo.tribune.ListLexiconsRequest\x1a$.techmo.tribune.ListLexiconsResponseb\x06proto3')
+  serialized_pb=_b('\n\x11tribune_tts.proto\x12\x0etechmo.tribune\"%\n\x11ListVoicesRequest\x12\x10\n\x08language\x18\x01 \x01(\t\"?\n\x12ListVoicesResponse\x12)\n\x06voices\x18\x01 \x03(\x0b\x32\x19.techmo.tribune.VoiceInfo\"S\n\x11SynthesizeRequest\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x30\n\x06\x63onfig\x18\x02 \x01(\x0b\x32 .techmo.tribune.SynthesizeConfig\"}\n\x10SynthesizeConfig\x12\x10\n\x08language\x18\x01 \x01(\t\x12\x31\n\x0c\x61udio_config\x18\x02 \x01(\x0b\x32\x1b.techmo.tribune.AudioConfig\x12$\n\x05voice\x18\x03 \x01(\x0b\x32\x15.techmo.tribune.Voice\"\x9b\x01\n\x0b\x41udioConfig\x12\x35\n\x0e\x61udio_encoding\x18\x01 \x01(\x0e\x32\x1d.techmo.tribune.AudioEncoding\x12\x19\n\x11sample_rate_hertz\x18\x02 \x01(\x05\x12\r\n\x05pitch\x18\x03 \x01(\x02\x12\r\n\x05range\x18\x04 \x01(\x02\x12\x0c\n\x04rate\x18\x05 \x01(\x02\x12\x0e\n\x06volume\x18\x06 \x01(\x02\"_\n\x05Voice\x12\x0c\n\x04name\x18\x01 \x01(\t\x12&\n\x06gender\x18\x02 \x01(\x0e\x32\x16.techmo.tribune.Gender\x12 \n\x03\x61ge\x18\x03 \x01(\x0e\x32\x13.techmo.tribune.Age\"N\n\tVoiceInfo\x12\x1b\n\x13supported_languages\x18\x01 \x03(\t\x12$\n\x05voice\x18\x02 \x01(\x0b\x32\x15.techmo.tribune.Voice\"d\n\x12SynthesizeResponse\x12(\n\x05\x61udio\x18\x01 \x01(\x0b\x32\x19.techmo.tribune.AudioData\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x15.techmo.tribune.Error\"7\n\tAudioData\x12\x19\n\x11sample_rate_hertz\x18\x01 \x01(\x05\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\"2\n\x11PutLexiconRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\":\n\x12PutLexiconResponse\x12$\n\x05\x65rror\x18\x01 \x01(\x0b\x32\x15.techmo.tribune.Error\"$\n\x14\x44\x65leteLexiconRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"=\n\x15\x44\x65leteLexiconResponse\x12$\n\x05\x65rror\x18\x01 \x01(\x0b\x32\x15.techmo.tribune.Error\"!\n\x11GetLexiconRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"K\n\x12GetLexiconResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x15.techmo.tribune.Error\"\'\n\x13ListLexiconsRequest\x12\x10\n\x08language\x18\x01 \x01(\t\"%\n\x14ListLexiconsResponse\x12\r\n\x05names\x18\x01 \x03(\t\"E\n\x05\x45rror\x12\'\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x19.techmo.tribune.ErrorCode\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t**\n\rAudioEncoding\x12\t\n\x05PCM16\x10\x00\x12\x0e\n\nOGG_VORBIS\x10\x01*6\n\x06Gender\x12\x16\n\x12GENDER_UNSPECIFIED\x10\x00\x12\n\n\x06\x46\x45MALE\x10\x01\x12\x08\n\x04MALE\x10\x02*<\n\x03\x41ge\x12\x13\n\x0f\x41GE_UNSPECIFIED\x10\x00\x12\t\n\x05\x41\x44ULT\x10\x01\x12\t\n\x05\x43HILD\x10\x02\x12\n\n\x06SENILE\x10\x03*}\n\tErrorCode\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07LICENCE\x10\x01\x12\x12\n\x0eMISSING_OBJECT\x10\x02\x12\x08\n\x04SSML\x10\x03\x12\x16\n\x12TEXT_NORMALIZATION\x10\x04\x12\x11\n\rTRANSCRIPTION\x10\x05\x12\r\n\tSYNTHESIS\x10\x06\x32\xf2\x04\n\x03TTS\x12S\n\nListVoices\x12!.techmo.tribune.ListVoicesRequest\x1a\".techmo.tribune.ListVoicesResponse\x12^\n\x13SynthesizeStreaming\x12!.techmo.tribune.SynthesizeRequest\x1a\".techmo.tribune.SynthesizeResponse0\x01\x12S\n\nSynthesize\x12!.techmo.tribune.SynthesizeRequest\x1a\".techmo.tribune.SynthesizeResponse\x12S\n\nPutLexicon\x12!.techmo.tribune.PutLexiconRequest\x1a\".techmo.tribune.PutLexiconResponse\x12\\\n\rDeleteLexicon\x12$.techmo.tribune.DeleteLexiconRequest\x1a%.techmo.tribune.DeleteLexiconResponse\x12S\n\nGetLexicon\x12!.techmo.tribune.GetLexiconRequest\x1a\".techmo.tribune.GetLexiconResponse\x12Y\n\x0cListLexicons\x12#.techmo.tribune.ListLexiconsRequest\x1a$.techmo.tribune.ListLexiconsResponseb\x06proto3')
 )
 
 _AUDIOENCODING = _descriptor.EnumDescriptor(
@@ -41,8 +41,8 @@ _AUDIOENCODING = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1374,
-  serialized_end=1416,
+  serialized_start=1323,
+  serialized_end=1365,
 )
 _sym_db.RegisterEnumDescriptor(_AUDIOENCODING)
 
@@ -68,8 +68,8 @@ _GENDER = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1418,
-  serialized_end=1472,
+  serialized_start=1367,
+  serialized_end=1421,
 )
 _sym_db.RegisterEnumDescriptor(_GENDER)
 
@@ -99,8 +99,8 @@ _AGE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1474,
-  serialized_end=1534,
+  serialized_start=1423,
+  serialized_end=1483,
 )
 _sym_db.RegisterEnumDescriptor(_AGE)
 
@@ -142,8 +142,8 @@ _ERRORCODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1536,
-  serialized_end=1661,
+  serialized_start=1485,
+  serialized_end=1610,
 )
 _sym_db.RegisterEnumDescriptor(_ERRORCODE)
 
@@ -438,23 +438,9 @@ _VOICEINFO = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='name', full_name='techmo.tribune.VoiceInfo.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='gender', full_name='techmo.tribune.VoiceInfo.gender', index=2,
-      number=3, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='age', full_name='techmo.tribune.VoiceInfo.age', index=3,
-      number=4, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
+      name='voice', full_name='techmo.tribune.VoiceInfo.voice', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -470,8 +456,8 @@ _VOICEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=609,
-  serialized_end=737,
+  serialized_start=608,
+  serialized_end=686,
 )
 
 
@@ -508,8 +494,8 @@ _SYNTHESIZERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=739,
-  serialized_end=839,
+  serialized_start=688,
+  serialized_end=788,
 )
 
 
@@ -546,8 +532,8 @@ _AUDIODATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=841,
-  serialized_end=896,
+  serialized_start=790,
+  serialized_end=845,
 )
 
 
@@ -584,8 +570,8 @@ _PUTLEXICONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=898,
-  serialized_end=948,
+  serialized_start=847,
+  serialized_end=897,
 )
 
 
@@ -615,8 +601,8 @@ _PUTLEXICONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=950,
-  serialized_end=1008,
+  serialized_start=899,
+  serialized_end=957,
 )
 
 
@@ -646,8 +632,8 @@ _DELETELEXICONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1010,
-  serialized_end=1046,
+  serialized_start=959,
+  serialized_end=995,
 )
 
 
@@ -677,8 +663,8 @@ _DELETELEXICONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1048,
-  serialized_end=1109,
+  serialized_start=997,
+  serialized_end=1058,
 )
 
 
@@ -708,8 +694,8 @@ _GETLEXICONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1111,
-  serialized_end=1144,
+  serialized_start=1060,
+  serialized_end=1093,
 )
 
 
@@ -746,8 +732,8 @@ _GETLEXICONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1146,
-  serialized_end=1221,
+  serialized_start=1095,
+  serialized_end=1170,
 )
 
 
@@ -777,8 +763,8 @@ _LISTLEXICONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1223,
-  serialized_end=1262,
+  serialized_start=1172,
+  serialized_end=1211,
 )
 
 
@@ -808,8 +794,8 @@ _LISTLEXICONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1264,
-  serialized_end=1301,
+  serialized_start=1213,
+  serialized_end=1250,
 )
 
 
@@ -846,8 +832,8 @@ _ERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1303,
-  serialized_end=1372,
+  serialized_start=1252,
+  serialized_end=1321,
 )
 
 _LISTVOICESRESPONSE.fields_by_name['voices'].message_type = _VOICEINFO
@@ -857,8 +843,7 @@ _SYNTHESIZECONFIG.fields_by_name['voice'].message_type = _VOICE
 _AUDIOCONFIG.fields_by_name['audio_encoding'].enum_type = _AUDIOENCODING
 _VOICE.fields_by_name['gender'].enum_type = _GENDER
 _VOICE.fields_by_name['age'].enum_type = _AGE
-_VOICEINFO.fields_by_name['gender'].enum_type = _GENDER
-_VOICEINFO.fields_by_name['age'].enum_type = _AGE
+_VOICEINFO.fields_by_name['voice'].message_type = _VOICE
 _SYNTHESIZERESPONSE.fields_by_name['audio'].message_type = _AUDIODATA
 _SYNTHESIZERESPONSE.fields_by_name['error'].message_type = _ERROR
 _PUTLEXICONRESPONSE.fields_by_name['error'].message_type = _ERROR
@@ -1023,8 +1008,8 @@ _TTS = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1664,
-  serialized_end=2290,
+  serialized_start=1613,
+  serialized_end=2239,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListVoices',

@@ -1238,29 +1238,14 @@ class VoiceInfo :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& supported_languages() const;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_supported_languages();
 
-  // string name = 2;
-  void clear_name();
-  static const int kNameFieldNumber = 2;
-  const std::string& name() const;
-  void set_name(const std::string& value);
-  void set_name(std::string&& value);
-  void set_name(const char* value);
-  void set_name(const char* value, size_t size);
-  std::string* mutable_name();
-  std::string* release_name();
-  void set_allocated_name(std::string* name);
-
-  // .techmo.tribune.Gender gender = 3;
-  void clear_gender();
-  static const int kGenderFieldNumber = 3;
-  ::techmo::tribune::Gender gender() const;
-  void set_gender(::techmo::tribune::Gender value);
-
-  // .techmo.tribune.Age age = 4;
-  void clear_age();
-  static const int kAgeFieldNumber = 4;
-  ::techmo::tribune::Age age() const;
-  void set_age(::techmo::tribune::Age value);
+  // .techmo.tribune.Voice voice = 2;
+  bool has_voice() const;
+  void clear_voice();
+  static const int kVoiceFieldNumber = 2;
+  const ::techmo::tribune::Voice& voice() const;
+  ::techmo::tribune::Voice* release_voice();
+  ::techmo::tribune::Voice* mutable_voice();
+  void set_allocated_voice(::techmo::tribune::Voice* voice);
 
   // @@protoc_insertion_point(class_scope:techmo.tribune.VoiceInfo)
  private:
@@ -1268,9 +1253,7 @@ class VoiceInfo :
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> supported_languages_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
-  int gender_;
-  int age_;
+  ::techmo::tribune::Voice* voice_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_tribune_5ftts_2eproto;
 };
@@ -3369,83 +3352,55 @@ VoiceInfo::mutable_supported_languages() {
   return &supported_languages_;
 }
 
-// string name = 2;
-inline void VoiceInfo::clear_name() {
-  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+// .techmo.tribune.Voice voice = 2;
+inline bool VoiceInfo::has_voice() const {
+  return this != internal_default_instance() && voice_ != nullptr;
 }
-inline const std::string& VoiceInfo::name() const {
-  // @@protoc_insertion_point(field_get:techmo.tribune.VoiceInfo.name)
-  return name_.GetNoArena();
+inline void VoiceInfo::clear_voice() {
+  if (GetArenaNoVirtual() == nullptr && voice_ != nullptr) {
+    delete voice_;
+  }
+  voice_ = nullptr;
 }
-inline void VoiceInfo::set_name(const std::string& value) {
+inline const ::techmo::tribune::Voice& VoiceInfo::voice() const {
+  const ::techmo::tribune::Voice* p = voice_;
+  // @@protoc_insertion_point(field_get:techmo.tribune.VoiceInfo.voice)
+  return p != nullptr ? *p : *reinterpret_cast<const ::techmo::tribune::Voice*>(
+      &::techmo::tribune::_Voice_default_instance_);
+}
+inline ::techmo::tribune::Voice* VoiceInfo::release_voice() {
+  // @@protoc_insertion_point(field_release:techmo.tribune.VoiceInfo.voice)
   
-  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:techmo.tribune.VoiceInfo.name)
+  ::techmo::tribune::Voice* temp = voice_;
+  voice_ = nullptr;
+  return temp;
 }
-inline void VoiceInfo::set_name(std::string&& value) {
+inline ::techmo::tribune::Voice* VoiceInfo::mutable_voice() {
   
-  name_.SetNoArena(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:techmo.tribune.VoiceInfo.name)
+  if (voice_ == nullptr) {
+    auto* p = CreateMaybeMessage<::techmo::tribune::Voice>(GetArenaNoVirtual());
+    voice_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:techmo.tribune.VoiceInfo.voice)
+  return voice_;
 }
-inline void VoiceInfo::set_name(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:techmo.tribune.VoiceInfo.name)
-}
-inline void VoiceInfo::set_name(const char* value, size_t size) {
-  
-  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:techmo.tribune.VoiceInfo.name)
-}
-inline std::string* VoiceInfo::mutable_name() {
-  
-  // @@protoc_insertion_point(field_mutable:techmo.tribune.VoiceInfo.name)
-  return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline std::string* VoiceInfo::release_name() {
-  // @@protoc_insertion_point(field_release:techmo.tribune.VoiceInfo.name)
-  
-  return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline void VoiceInfo::set_allocated_name(std::string* name) {
-  if (name != nullptr) {
+inline void VoiceInfo::set_allocated_voice(::techmo::tribune::Voice* voice) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete voice_;
+  }
+  if (voice) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      voice = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, voice, submessage_arena);
+    }
     
   } else {
     
   }
-  name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:techmo.tribune.VoiceInfo.name)
-}
-
-// .techmo.tribune.Gender gender = 3;
-inline void VoiceInfo::clear_gender() {
-  gender_ = 0;
-}
-inline ::techmo::tribune::Gender VoiceInfo::gender() const {
-  // @@protoc_insertion_point(field_get:techmo.tribune.VoiceInfo.gender)
-  return static_cast< ::techmo::tribune::Gender >(gender_);
-}
-inline void VoiceInfo::set_gender(::techmo::tribune::Gender value) {
-  
-  gender_ = value;
-  // @@protoc_insertion_point(field_set:techmo.tribune.VoiceInfo.gender)
-}
-
-// .techmo.tribune.Age age = 4;
-inline void VoiceInfo::clear_age() {
-  age_ = 0;
-}
-inline ::techmo::tribune::Age VoiceInfo::age() const {
-  // @@protoc_insertion_point(field_get:techmo.tribune.VoiceInfo.age)
-  return static_cast< ::techmo::tribune::Age >(age_);
-}
-inline void VoiceInfo::set_age(::techmo::tribune::Age value) {
-  
-  age_ = value;
-  // @@protoc_insertion_point(field_set:techmo.tribune.VoiceInfo.age)
+  voice_ = voice;
+  // @@protoc_insertion_point(field_set_allocated:techmo.tribune.VoiceInfo.voice)
 }
 
 // -------------------------------------------------------------------
