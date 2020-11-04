@@ -1,6 +1,7 @@
 from argparse import ArgumentParser
 import codecs
 from VERSION import TRIBUNE_CLIENT_VERSION
+from call_listvoices import call_listvoices
 from call_synthesize import call_synthesize
 
 
@@ -14,10 +15,14 @@ def main():
                   help="Session ID to be passed to the service. If not specified, the service will generate a default session ID itself.", type=str)
     parser.add_argument("--grpc-timeout", dest="grpc_timeout", default=0,
                   help="Timeout in milliseconds used to set gRPC deadline - how long the client is willing to wait for a reply from the server. If not specified, the service will set the deadline to a very large number.", type=int)
-    parser.add_argument("-t", "--text", dest="text", default="Techmo Trybun: Syntezator mowy polskiej.",
-                  help="Text to be synthesized (in polish).", type=str)
+    parser.add_argument("--list-voices", dest="list_voices", action='store_true', default=False,
+                  help="Lists all available voices.")
+    parser.add_argument("--no-streaming", dest="no_streaming", action='store_true', default=False,
+                  help="Calls the non-streaming version of Synthesize (default is streaming).")
+    parser.add_argument("-t", "--text", dest="text", default="Techmo Trybun: Syntezator mowy.",
+                  help="Text to be synthesized.", type=str)
     parser.add_argument("-i", "--input_text_file", dest="inputfile", default="",
-                  help="A file with text to be synthesized (in polish).", type=str) 
+                  help="A file with text to be synthesized (in polish).", type=str)
     parser.add_argument("-o", "--out-path", dest="out_path", default="",
                   help="A path to the output wave file with synthesized audio content.", type=str)
     parser.add_argument("-f", "--sample_rate", dest="sample_rate", default=0,
@@ -47,6 +52,10 @@ def main():
     # Check if service address and port are provided
     if len(args.service) == 0:
         raise RuntimeError("No service address and port provided.")
+
+    if args.list_voices:
+        call_listvoices(args)
+        return
 
     # Input text determination
     input_text = ""
