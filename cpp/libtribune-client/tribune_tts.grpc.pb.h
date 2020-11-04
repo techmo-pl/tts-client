@@ -2,10 +2,10 @@
 // If you make any local change, they will be lost.
 // source: tribune_tts.proto
 // Original file comments:
-// Techmo Tribune TTS API  
-// version: 2.0.0   
-// authors: Dawid Skurzok, Paweł Jaciów, Michał Radziszewski  
-// date:    2020-10-16  
+// Techmo Tribune TTS API
+// version: 2.0.0
+// authors: Dawid Skurzok, Paweł Jaciów, Michał Radziszewski
+// date:    2020-11-04
 #ifndef GRPC_tribune_5ftts_2eproto__INCLUDED
 #define GRPC_tribune_5ftts_2eproto__INCLUDED
 

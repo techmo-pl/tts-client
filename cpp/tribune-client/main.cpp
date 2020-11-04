@@ -16,13 +16,15 @@ po::options_description CreateOptionsDescription(void)
 			"IP address and port (address:port) of a service the client will connect to.")
 		("out-path", po::value<std::string>()->default_value(""),
 			"Path to output wave file with synthesized audio content.")
-		("text", po::value<std::string>()->default_value("Techmo Trybun: Syntezator mowy polskiej."),
+		("text", po::value<std::string>()->default_value("Techmo Trybun: Syntezator mowy."),
 			"Text to be synthesized.")
 		("session-id", po::value<std::string>()->default_value(""),
 			"Session ID to be passed to the service. If not specified, the service will generate a default session ID itself.")
 		("grpc-timeout", po::value<int>()->default_value(0), "Timeout in milliseconds used to set gRPC deadline - "
 			"how long the client is willing to wait for a reply from the server. "
 			"If not specified, the service will set the deadline to a very large number.")
+		("list-voices", "Lists all available voices.")
+		("no-streaming", "Calls the non-streaming version of Synthesize (default is streaming).")
 		("audio-encoding", po::value<std::string>()->default_value("pcm16"),
 			"Encoding of the output audio, pcm16 (default) or ogg-vorbs.")
 		("sample-rate-hertz", po::value<unsigned int>()->default_value(0),
@@ -45,6 +47,11 @@ po::options_description CreateOptionsDescription(void)
 			"ISO 639-1 language code of the phrase to synthesize (optional, can be overriden by SSML).");
 	return optionsDescription;
 }
+
+void printVoices(const std::vector<techmo::tribune::SynthesizeVoiceInfo>& voices);
+techmo::tribune::AudioEncoding encodingFromString(std::string_view encodingString);
+techmo::tribune::Gender genderFromString(std::string_view genderString);
+techmo::tribune::Age ageFromString(std::string_view ageString);
 
 int main(int argc, const char* const argv[])
 {
@@ -73,77 +80,41 @@ int main(int argc, const char* const argv[])
 
 	try
 	{
-		techmo::tribune::AudioEncoding encoding{ techmo::tribune::AudioEncoding::PCM16 };
-		std::string encodingOption = userOptions["audio-encoding"].as<std::string>();
-		if (!encodingOption.empty())
+		techmo::tribune::TribuneClient tribuneClient{ userOptions["service-address"].as<std::string>() };
+
+		techmo::tribune::TribuneClientConfig clientConfig;
+		clientConfig.session_id = userOptions["session-id"].as<std::string>();
+		clientConfig.grpc_timeout = userOptions["grpc-timeout"].as<int>();
+
+		if (userOptions.count("list-voices"))
 		{
-			if (encodingOption == "ogg-vorbis")
-			{
-				encoding = techmo::tribune::AudioEncoding::OGG_VORBIS;
-			}
-			else if (encodingOption != "pcm16")
-			{
-				throw std::runtime_error{ "Unsupported audio-encoding: " + encodingOption + "." };
-			}
+			printVoices(tribuneClient.ListVoices(
+				clientConfig, userOptions["language"].as<std::string>()));
+			return 0;
 		}
 
-		const auto sample_rate_hertz = userOptions["sample-rate-hertz"].as<unsigned int>();
+		techmo::tribune::AudioEncoding encoding{
+			encodingFromString(userOptions["audio-encoding"].as<std::string>()) };
 
-		techmo::tribune::TribuneClientConfig config;
-		config.session_id = userOptions["session-id"].as<std::string>();
-		config.grpc_timeout = userOptions["grpc-timeout"].as<int>();
-		config.language = userOptions["language"].as<std::string>();
-		config.audio_config.emplace();
-		config.audio_config->encoding = encoding;
-		config.audio_config->sample_rate_hertz = sample_rate_hertz;
-		config.audio_config->pitch = userOptions["speech-pitch"].as<float>();
-		config.audio_config->range = userOptions["speech-range"].as<float>();
-		config.audio_config->rate = userOptions["speech-rate"].as<float>();
-		config.audio_config->volume = userOptions["speech-volume"].as<float>();
+		techmo::tribune::TribuneSynthesizeConfig synthesizeConfig;
+		synthesizeConfig.language = userOptions["language"].as<std::string>();
+		synthesizeConfig.audio_config.emplace();
+		synthesizeConfig.audio_config->encoding = encoding;
+		synthesizeConfig.audio_config->sample_rate_hertz = userOptions["sample-rate-hertz"].as<int>();
+		synthesizeConfig.audio_config->pitch = userOptions["speech-pitch"].as<float>();
+		synthesizeConfig.audio_config->range = userOptions["speech-range"].as<float>();
+		synthesizeConfig.audio_config->rate = userOptions["speech-rate"].as<float>();
+		synthesizeConfig.audio_config->volume = userOptions["speech-volume"].as<float>();
 
 		std::string voiceName = userOptions["voice-name"].as<std::string>();
 		std::string voiceGender = userOptions["voice-gender"].as<std::string>();
 		std::string voiceAge = userOptions["voice-age"].as<std::string>();
 		if (!voiceName.empty() || !voiceGender.empty() || !voiceAge.empty())
 		{
-			techmo::tribune::Gender gender{ techmo::tribune::Gender::GENDER_UNSPECIFIED };
-
-			if (voiceGender == "female")
-			{
-				gender = techmo::tribune::Gender::FEMALE;
-			}
-			else if (voiceGender == "male")
-			{
-				gender = techmo::tribune::Gender::MALE;
-			}
-			else if (!voiceGender.empty())
-			{
-				throw std::runtime_error{ "Unsupported voice-gender: " + voiceGender + "." };
-			}
-
-			techmo::tribune::Age age{ techmo::tribune::Age::AGE_UNSPECIFIED };
-
-			if (voiceAge == "adult")
-			{
-				age = techmo::tribune::Age::ADULT;
-			}
-			else if (voiceAge == "child")
-			{
-				age = techmo::tribune::Age::CHILD;
-			}
-			else if (voiceAge == "senile")
-			{
-				age = techmo::tribune::Age::SENILE;
-			}
-			else if (!voiceAge.empty())
-			{
-				throw std::runtime_error{ "Unsupported voice-age: " + voiceAge + "." };
-			}
-
-			config.voice.emplace();
-			config.voice->name = voiceName;
-			config.voice->gender = gender;
-			config.voice->age = age;
+			synthesizeConfig.voice.emplace();
+			synthesizeConfig.voice->name = voiceName;
+			synthesizeConfig.voice->gender = genderFromString(voiceGender);
+			synthesizeConfig.voice->age = ageFromString(voiceAge);
 		}
 
 		std::string outputPath = userOptions["out-path"].as<std::string>();
@@ -159,9 +130,10 @@ int main(int argc, const char* const argv[])
 			}
 		}
 
-		techmo::tribune::TribuneClient tribune_client{ userOptions["service-address"].as<std::string>() };
-
-		const auto audio_data = tribune_client.Synthesize(config, userOptions["text"].as<std::string>());
+		std::string requestText = userOptions["text"].as<std::string>();
+		const auto audio_data = (userOptions.count("no-streaming") ?
+			tribuneClient.Synthesize(clientConfig, synthesizeConfig, requestText) :
+			tribuneClient.SynthesizeStreaming(clientConfig, synthesizeConfig, requestText));
 
 		if (encoding == techmo::tribune::AudioEncoding::PCM16)
 		{
@@ -179,4 +151,78 @@ int main(int argc, const char* const argv[])
 	}
 
 	return 0;
+}
+
+void printVoices(const std::vector<techmo::tribune::SynthesizeVoiceInfo>& voices)
+{
+	std::cout << std::endl << "Available voices:" << std::endl;
+	for (const auto& voice: voices)
+	{
+		std::cout << "name: '" << voice.voice.name << "'" << std::endl;
+		std::cout << "gender: " << voice.voice.gender << std::endl;
+		std::cout << "age: " << voice.voice.age << std::endl << std::endl;
+	}
+}
+
+techmo::tribune::AudioEncoding encodingFromString(std::string_view encodingString)
+{
+	if (encodingString.empty() || encodingString == "pcm16")
+	{
+		return techmo::tribune::AudioEncoding::PCM16;
+	}
+	if (encodingString == "ogg-vorbis")
+	{
+		return techmo::tribune::AudioEncoding::OGG_VORBIS;
+	}
+
+	std::string message{ "Unsupported audio-encoding: " };
+	message += encodingString;
+	message += ".";
+	throw std::runtime_error{ message };
+}
+
+techmo::tribune::Gender genderFromString(std::string_view genderString)
+{
+	if (genderString == "female")
+	{
+		return techmo::tribune::Gender::FEMALE;
+	}
+	else if (genderString == "male")
+	{
+		return techmo::tribune::Gender::MALE;
+	}
+	else if (genderString.empty())
+	{
+		return techmo::tribune::Gender::GENDER_UNSPECIFIED;
+	}
+
+	std::string message{ "Unsupported voice-gender: " };
+	message += genderString;
+	message += ".";
+	throw std::runtime_error{ message };
+}
+
+techmo::tribune::Age ageFromString(std::string_view ageString)
+{
+	if (ageString == "adult")
+	{
+		return techmo::tribune::Age::ADULT;
+	}
+	else if (ageString == "child")
+	{
+		return techmo::tribune::Age::CHILD;
+	}
+	else if (ageString == "senile")
+	{
+		return techmo::tribune::Age::SENILE;
+	}
+	else if (ageString.empty())
+	{
+		return techmo::tribune::Age::AGE_UNSPECIFIED;
+	}
+
+	std::string message{ "Unsupported voice-age: " };
+	message += ageString;
+	message += ".";
+	throw std::runtime_error{ message };
 }

@@ -1,1 +1,1 @@
-static constexpr auto LIBTRIBUNE_CLIENT_VERSION = "1.5.0";
+static constexpr auto LIBTRIBUNE_CLIENT_VERSION = "2.0.0";
