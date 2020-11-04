@@ -35,17 +35,10 @@ def call_synthesize(args, text):
     asv.setEncoding(audio_encoding)
 
     try:
-        for response in stub.SynthesizeStreaming(request, timeout=timeout, metadata=metadata):
-            if response.HasField('error'):
-                print("Error [" + str(response.error.code) + "]: " + response.error.description)
-                break
-            else:
-                if asv._framerate:
-                    if asv._framerate != response.audio.sample_rate_hertz:
-                        raise RuntimeError("Sample rate does not match previously received.")
-                else:
-                    asv.setFrameRate(response.audio.sample_rate_hertz)
-                asv.append(response.audio.content)
+        if args.no_streaming:
+            internal_synthesize(stub, request, timeout, metadata, asv)
+        else:
+            internal_synthesize_streaming(stub, request, timeout, metadata, asv)
         asv.save(out_path)
     except grpc.RpcError as e:
         print("[Server-side error] Received following RPC error from the TTS service:", str(e))
@@ -94,3 +87,23 @@ def create_voice(args):
             age=age)
     else:
         return None
+
+def internal_synthesize_streaming(stub, request, timeout, metadata, audio_saver):
+    for response in stub.SynthesizeStreaming(request, timeout=timeout, metadata=metadata):
+        if response.HasField('error'):
+            raise RuntimeError("Error [" + str(response.error.code) + "]: " + response.error.description)
+        else:
+            if audio_saver._framerate:
+                if audio_saver._framerate != response.audio.sample_rate_hertz:
+                    raise RuntimeError("Sample rate does not match previously received.")
+            else:
+                audio_saver.setFrameRate(response.audio.sample_rate_hertz)
+            audio_saver.append(response.audio.content)
+
+def internal_synthesize(stub, request, timeout, metadata, audio_saver):
+    response = stub.Synthesize(request, timeout=timeout, metadata=metadata)
+    if response.HasField('error'):
+        raise RuntimeError("Error [" + str(response.error.code) + "]: " + response.error.description)
+    else:
+        audio_saver.setFrameRate(response.audio.sample_rate_hertz)
+        audio_saver.append(response.audio.content)
