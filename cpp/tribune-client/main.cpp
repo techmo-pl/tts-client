@@ -11,25 +11,25 @@ po::options_description CreateOptionsDescription(void)
 {
 	po::options_description optionsDescription("Tribune TTS gRPC client options:");
 	optionsDescription.add_options()
-		("help", "Print help message.")
+		("help", "Prints help message.")
 		("service-address", po::value<std::string>()->required(),
-			"IP address and port (address:port) of a service the client will connect to.")
+			"An IP address and a port (address:port) of a service the client will connect to.")
 		("out-path", po::value<std::string>()->default_value(""),
-			"Path to output wave file with synthesized audio content.")
+			"A path to output wave file with synthesized audio content.")
 		("text", po::value<std::string>()->default_value("Techmo Trybun: Syntezator mowy."),
-			"Text to be synthesized.")
+			"A text to be synthesized.")
 		("session-id", po::value<std::string>()->default_value(""),
-			"Session ID to be passed to the service. If not specified, the service will generate a default session ID itself.")
-		("grpc-timeout", po::value<int>()->default_value(0), "Timeout in milliseconds used to set gRPC deadline - "
-			"how long the client is willing to wait for a reply from the server. "
-			"If not specified, the service will set the deadline to a very large number.")
+			"A session ID to be passed to the service. If not specified, the service will generate a default session ID itself.")
+		("grpc-timeout", po::value<int>()->default_value(0),
+			"A timeout in milliseconds used to set gRPC deadline - "
+			"how long the client is willing to wait for a reply from the server (optional).")
 		("list-voices", "Lists all available voices.")
 		("response", po::value<std::string>()->default_value("streaming"),
 			"streaming or single, calls the streaming (default) or non-streaming version of Synthesize.")
 		("audio-encoding", po::value<std::string>()->default_value("pcm16"),
-			"Encoding of the output audio, pcm16 (default) or ogg-vorbs.")
+			"An encoding of the output audio, pcm16 (default) or ogg-vorbs.")
 		("sample-rate-hertz", po::value<unsigned int>()->default_value(0),
-			"Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.")
+			"A sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.")
 		("speech-pitch", po::value<float>()->default_value(1.0f),
 			"Allows adjusting the default pitch of the synthesized speech (optional, can be overriden by SSML).")
 		("speech-range", po::value<float>()->default_value(1.0f),
@@ -39,11 +39,11 @@ po::options_description CreateOptionsDescription(void)
 		("speech-volume", po::value<float>()->default_value(1.0f),
 			"Allows adjusting the default volume of the synthesized speech (optional, can be overriden by SSML).")
 		("voice-name", po::value<std::string>()->default_value(""),
-			"Name od the voice used to synthesize the phrase (optional, can be overriden by SSML).")
+			"A name od the voice used to synthesize the phrase (optional, can be overriden by SSML).")
 		("voice-gender", po::value<std::string>()->default_value(""),
-			"Gender of the voice - female or male (optional, can be overriden by SSML).")
+			"A gender of the voice - female or male (optional, can be overriden by SSML).")
 		("voice-age", po::value<std::string>()->default_value(""),
-			"Age of the voice - adult, child, or senile (optional, can be overriden by SSML).")
+			"An age of the voice - adult, child, or senile (optional, can be overriden by SSML).")
 		("language", po::value<std::string>()->default_value(""),
 			"ISO 639-1 language code of the phrase to synthesize (optional, can be overriden by SSML).");
 	return optionsDescription;

@@ -22,17 +22,22 @@ python tribune_client.py -s "192.168.1.1:4321" -f 44100 -t "Polski tekst do synt
 Usage:
 ```
 usage: tribune_client.py [-h] -s SERVICE [--session-id SESSION_ID]
-                         [--grpc-timeout GRPC_TIMEOUT] [-t TEXT]
-                         [-i INPUTFILE] [-o OUT_PATH] [-f SAMPLE_RATE]
+                         [--grpc-timeout GRPC_TIMEOUT] [--list-voices]
+                         [-r RESPONSE] [-t TEXT] [-i INPUTFILE] [-o OUT_PATH]
+                         [-f SAMPLE_RATE] [-ae AUDIO_ENCODING]
+                         [-sp SPEECH_PITCH] [-sr SPEECH_RANGE]
+                         [-ss SPEECH_RATE] [-sv SPEECH_VOLUME]
+                         [-vn VOICE_NAME] [-vg VOICE_GENDER] [-va VOICE_AGE]
+                         [-l LANGUAGE]
 
 optional arguments:
-  -h, --help            Show this help message and exit.
+  -h, --help            Shows this help message and exits.
   -s SERVICE, --service-address SERVICE
-                        IP address and port (address:port) of a service the client connects to.
+                        An IP address and port (address:port) of a service the client connects to.
   --session-id SESSION_ID
-                        Session ID to be passed to the service. If not specified, the service generates a default session ID.
+                        A session ID to be passed to the service. If not specified, the service generates a default session ID.
   --grpc-timeout GRPC_TIMEOUT
-                        Timeout in milliseconds used to set gRPC deadline - how long the client is willing to wait for a reply from the server (optional).
+                        A timeout in milliseconds used to set gRPC deadline - how long the client is willing to wait for a reply from the server (optional).
   --list-voices         Lists all available voices.
   -r RESPONSE, --response RESPONSE
                         streaming or single, calls the streaming (default) or non-streaming version of Synthesize.
@@ -42,9 +47,9 @@ optional arguments:
   -o OUT_PATH, --out-path OUT_PATH
                         A path to the output wave file with synthesized audio content.
   -f SAMPLE_RATE, --sample_rate SAMPLE_RATE
-                        Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.
+                        A sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.
   -ae AUDIO_ENCODING, --audio-encoding AUDIO_ENCODING
-                        Encoding of the output audio, pcm16 (default) or ogg-vorbis.
+                        An ncoding of the output audio, pcm16 (default) or ogg-vorbis.
   -sp SPEECH_PITCH, --speech-pitch SPEECH_PITCH
                         Allows adjusting the default pitch of the synthesized speech (optional, can be overriden by SSML).
   -sr SPEECH_RANGE, --speech-range SPEECH_RANGE
@@ -54,11 +59,11 @@ optional arguments:
   -sv SPEECH_VOLUME, --speech-volume SPEECH_VOLUME
                         Allows adjusting the default volume of the synthesized speech (optional, can be overriden by SSML).
   -vn VOICE_NAME, --voice-name VOICE_NAME
-                        Name od the voice used to synthesize the phrase (optional, can be overriden by SSML).
+                        A name od the voice used to synthesize the phrase (optional, can be overriden by SSML).
   -vg VOICE_GENDER, --voice-gender VOICE_GENDER
-                        Gender of the voice - female or male (optional, can be overriden by SSML).
+                        A gender of the voice - female or male (optional, can be overriden by SSML).
   -va VOICE_AGE, --voice-age VOICE_AGE
-                        Age of the voice - adult, child, or senile (optional, can be overriden by SSML).
+                        An age of the voice - adult, child, or senile (optional, can be overriden by SSML).
   -l LANGUAGE, --language LANGUAGE
                         ISO 639-1 language code of the phrase to synthesize (optional, can be overriden by SSML).
 ```
