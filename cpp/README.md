@@ -41,6 +41,8 @@ Options:
 --session-id          Session ID to be passed to the service. If not specified, the service generates a default session ID itself.
 --grpc-timeout        Timeout in milliseconds used to set gRPC deadline - how long the client is willing to wait for a reply from the 
                       server. If not specified, the service will set the deadline to a very large number (optional, default: 0).
+--list-voices         Lists all available voices.
+--no-streaming        Calls the non-streaming version of Synthesize (default is streaming).
 --audio-encoding      Encoding of the output audio, pcm16 (default) or ogg-vorbs.
 --sample-rate-hertz   Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.
 --speech-pitch        Allows adjusting the default pitch of the synthesized speech (optional, can be overriden by SSML).
