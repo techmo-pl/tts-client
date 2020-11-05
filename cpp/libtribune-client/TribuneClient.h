@@ -3,6 +3,7 @@
 
 #include <optional>
 #include <string>
+#include <string_view>
 #include <vector>
 #include "tribune_tts.grpc.pb.h"
 
@@ -81,33 +82,33 @@ namespace techmo::tribune
 	struct TribuneAudioData
 	{
 		// Sample rate in Hz of received audio data.
-		int sample_rate_hertz = 0;
+		int sample_rate_hertz{ 0 };
 
 		// Received audio data.
-		std::string audio_bytes = "";
+		std::string audio_bytes;
 	};
 
 	class TribuneClient
 	{
 	public:
-		TribuneClient(const std::string& serviceAddress):
+		TribuneClient(std::string_view serviceAddress):
 			m_serviceAddress{ serviceAddress }
 		{
 		}
 
 		std::vector<SynthesizeVoiceInfo> ListVoices(
 			const TribuneClientConfig& clientConfig,
-			const std::string& language = "");
+			std::string_view language = "") const;
 
 		TribuneAudioData SynthesizeStreaming(
 			const TribuneClientConfig& clientConfig,
 			const TribuneSynthesizeConfig& synthesizeConfig,
-			const std::string& text);
+			std::string_view text) const;
 
 		TribuneAudioData Synthesize(
 			const TribuneClientConfig& clientConfig,
 			const TribuneSynthesizeConfig& synthesizeConfig,
-			const std::string& text);
+			std::string_view text) const;
 
 	private:
 		const std::string m_serviceAddress;

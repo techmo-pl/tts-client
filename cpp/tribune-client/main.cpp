@@ -24,7 +24,8 @@ po::options_description CreateOptionsDescription(void)
 			"how long the client is willing to wait for a reply from the server. "
 			"If not specified, the service will set the deadline to a very large number.")
 		("list-voices", "Lists all available voices.")
-		("no-streaming", "Calls the non-streaming version of Synthesize (default is streaming).")
+		("response", po::value<std::string>()->default_value("streaming"),
+			"streaming or single, calls the streaming (default) or non-streaming version of Synthesize.")
 		("audio-encoding", po::value<std::string>()->default_value("pcm16"),
 			"Encoding of the output audio, pcm16 (default) or ogg-vorbs.")
 		("sample-rate-hertz", po::value<unsigned int>()->default_value(0),
@@ -130,10 +131,27 @@ int main(int argc, const char* const argv[])
 			}
 		}
 
+		bool useStreaming;
+		if (userOptions["response"].as<std::string>() == "streaming")
+		{
+			useStreaming = true;
+		}
+		else if (userOptions["response"].as<std::string>() == "single")
+		{
+			useStreaming = false;
+		}
+		else
+		{
+			std::string message{ "Unsupported response: " };
+			message += userOptions["response"].as<std::string>();
+			message += ".";
+			throw std::runtime_error{ message };
+		}
+
 		std::string requestText = userOptions["text"].as<std::string>();
-		const auto audio_data = (userOptions.count("no-streaming") ?
-			tribuneClient.Synthesize(clientConfig, synthesizeConfig, requestText) :
-			tribuneClient.SynthesizeStreaming(clientConfig, synthesizeConfig, requestText));
+		const auto audio_data = (useStreaming ?
+			tribuneClient.SynthesizeStreaming(clientConfig, synthesizeConfig, requestText) :
+			tribuneClient.Synthesize(clientConfig, synthesizeConfig, requestText));
 
 		if (encoding == techmo::tribune::AudioEncoding::PCM16)
 		{

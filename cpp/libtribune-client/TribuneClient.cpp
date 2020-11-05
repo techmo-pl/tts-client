@@ -18,10 +18,10 @@ namespace techmo::tribune
 		}
 	}
 
-	SynthesizeRequest build_request(const TribuneSynthesizeConfig& input_config, const std::string& text)
+	SynthesizeRequest build_request(const TribuneSynthesizeConfig& input_config, std::string_view text)
 	{
 		SynthesizeRequest request;
-		request.set_text(text);
+		request.set_text(std::string{ text });
 		SynthesizeConfig* grpc_synthesize_config = request.mutable_config();
 
 		grpc_synthesize_config->set_language(input_config.language);
@@ -108,14 +108,14 @@ namespace techmo::tribune
 
 	std::vector<SynthesizeVoiceInfo> TribuneClient::ListVoices(
 		const TribuneClientConfig& clientConfig,
-		const std::string& language)
+		std::string_view language) const
 	{
 		auto stub = TTS::NewStub(grpc::CreateChannel(m_serviceAddress, grpc::InsecureChannelCredentials()));
 		grpc::ClientContext context;
 		build_context(context, clientConfig);
 
 		ListVoicesRequest request;
-		request.set_language(language);
+		request.set_language(std::string{ language });
 		ListVoicesResponse response;
 		grpc::Status status = stub->ListVoices(&context, request, &response);
 		if (status.ok())
@@ -139,7 +139,7 @@ namespace techmo::tribune
 	TribuneAudioData TribuneClient::SynthesizeStreaming(
 		const TribuneClientConfig& clientConfig,
 		const TribuneSynthesizeConfig& synthesizeConfig,
-		const std::string& text)
+		std::string_view text) const
 	{
 		auto stub = TTS::NewStub(grpc::CreateChannel(m_serviceAddress, grpc::InsecureChannelCredentials()));
 		grpc::ClientContext context;
@@ -149,8 +149,8 @@ namespace techmo::tribune
 
 		auto reader = stub->SynthesizeStreaming(&context, request);
 
-		std::string received_audio_bytes = "";
-		int received_sample_rate_hertz = 0;
+		std::string received_audio_bytes;
+		int received_sample_rate_hertz{ 0 };
 		SynthesizeResponse response;
 
 		int requested_sample_rate_hertz{ 0 };
@@ -203,7 +203,7 @@ namespace techmo::tribune
 	TribuneAudioData TribuneClient::Synthesize(
 		const TribuneClientConfig& clientConfig,
 		const TribuneSynthesizeConfig& synthesizeConfig,
-		const std::string& text)
+		std::string_view text) const
 	{
 		auto stub = TTS::NewStub(grpc::CreateChannel(m_serviceAddress, grpc::InsecureChannelCredentials()));
 		grpc::ClientContext context;

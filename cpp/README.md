@@ -42,7 +42,7 @@ Options:
 --grpc-timeout        Timeout in milliseconds used to set gRPC deadline - how long the client is willing to wait for a reply from the 
                       server. If not specified, the service will set the deadline to a very large number (optional, default: 0).
 --list-voices         Lists all available voices.
---no-streaming        Calls the non-streaming version of Synthesize (default is streaming).
+--response            streaming or single, calls the streaming (default) or non-streaming version of Synthesize.
 --audio-encoding      Encoding of the output audio, pcm16 (default) or ogg-vorbs.
 --sample-rate-hertz   Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.
 --speech-pitch        Allows adjusting the default pitch of the synthesized speech (optional, can be overriden by SSML).
