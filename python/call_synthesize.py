@@ -35,10 +35,12 @@ def call_synthesize(args, text):
     asv.setEncoding(audio_encoding)
 
     try:
-        if args.no_streaming:
+        if args.response == "streaming":
+            internal_synthesize_streaming(stub, request, timeout, metadata, asv)
+        elif args.response == "single":
             internal_synthesize(stub, request, timeout, metadata, asv)
         else:
-            internal_synthesize_streaming(stub, request, timeout, metadata, asv)
+            raise RuntimeError("Unsupported response type: " + args.response)
         asv.save(out_path)
     except grpc.RpcError as e:
         print("[Server-side error] Received following RPC error from the TTS service:", str(e))

@@ -10,41 +10,41 @@ def main():
 
     parser = ArgumentParser()
     parser.add_argument("-s", "--service-address", dest="service", required=True,
-                  help="IP address and port (address:port) of a service the client will connect to.", type=str)
+        help="IP address and port (address:port) of a service the client connects to.", type=str)
     parser.add_argument("--session-id", dest="session_id", default="",
-                  help="Session ID to be passed to the service. If not specified, the service will generate a default session ID itself.", type=str)
+        help="Session ID to be passed to the service. If not specified, the service generates a default session ID.", type=str)
     parser.add_argument("--grpc-timeout", dest="grpc_timeout", default=0,
-                  help="Timeout in milliseconds used to set gRPC deadline - how long the client is willing to wait for a reply from the server. If not specified, the service will set the deadline to a very large number.", type=int)
+        help="Timeout in milliseconds used to set gRPC deadline - how long the client is willing to wait for a reply from the server (optional).", type=int)
     parser.add_argument("--list-voices", dest="list_voices", action='store_true', default=False,
-                  help="Lists all available voices.")
-    parser.add_argument("--no-streaming", dest="no_streaming", action='store_true', default=False,
-                  help="Calls the non-streaming version of Synthesize (default is streaming).")
+        help="Lists all available voices.")
+    parser.add_argument("-r", "--response", dest="response", default="streaming",
+        help="streaming or single, calls the streaming (default) or non-streaming version of Synthesize.", type=str)
     parser.add_argument("-t", "--text", dest="text", default="Techmo Trybun: Syntezator mowy.",
-                  help="Text to be synthesized.", type=str)
+        help="Text to be synthesized.", type=str)
     parser.add_argument("-i", "--input_text_file", dest="inputfile", default="",
-                  help="A file with text to be synthesized (in polish).", type=str)
+        help="A file with text to be synthesized.", type=str)
     parser.add_argument("-o", "--out-path", dest="out_path", default="",
-                  help="A path to the output wave file with synthesized audio content.", type=str)
+        help="A path to the output wave file with synthesized audio content.", type=str)
     parser.add_argument("-f", "--sample_rate", dest="sample_rate", default=0,
-                  help="Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.", type=int)
+        help="Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.", type=int)
     parser.add_argument("-ae", "--audio-encoding", dest="audio_encoding", default="pcm16",
-                  help="Encoding of the output audio, pcm16 (default) or ogg-vorbs.", type=str)
+        help="Encoding of the output audio, pcm16 (default) or ogg-vorbis.", type=str)
     parser.add_argument("-sp", "--speech-pitch", dest="speech_pitch", default=1.0,
-                  help="Allows adjusting the default pitch of the synthesized speech (optional, can be overriden by SSML).", type=float)
+        help="Allows adjusting the default pitch of the synthesized speech (optional, can be overriden by SSML).", type=float)
     parser.add_argument("-sr", "--speech-range", dest="speech_range", default=1.0,
-                  help="Allows adjusting the default range of the synthesized speech (optional, can be overriden by SSML).", type=float)
+        help="Allows adjusting the default range of the synthesized speech (optional, can be overriden by SSML).", type=float)
     parser.add_argument("-ss", "--speech-rate", dest="speech_rate", default=1.0,
-                  help="Allows adjusting the default rate (speed) of the synthesized speech (optional, can be overriden by SSML).", type=float)
+        help="Allows adjusting the default rate (speed) of the synthesized speech (optional, can be overriden by SSML).", type=float)
     parser.add_argument("-sv", "--speech-volume", dest="speech_volume", default=1.0,
-                  help="Allows adjusting the default volume of the synthesized speech (optional, can be overriden by SSML).", type=float)
+        help="Allows adjusting the default volume of the synthesized speech (optional, can be overriden by SSML).", type=float)
     parser.add_argument("-vn", "--voice-name", dest="voice_name", default="",
-                  help="Name od the voice used to synthesize the phrase (optional, can be overriden by SSML).", type=str) 
+        help="Name od the voice used to synthesize the phrase (optional, can be overriden by SSML).", type=str) 
     parser.add_argument("-vg", "--voice-gender", dest="voice_gender", default="",
-                  help="Gender of the voice - female or male (optional, can be overriden by SSML).", type=str) 
+        help="Gender of the voice - female or male (optional, can be overriden by SSML).", type=str) 
     parser.add_argument("-va", "--voice-age", dest="voice_age", default="",
-                  help="Age of the voice - adult, child, or senile (optional, can be overriden by SSML).", type=str) 
+        help="Age of the voice - adult, child, or senile (optional, can be overriden by SSML).", type=str) 
     parser.add_argument("-l", "--language", dest="language", default="",
-                  help="ISO 639-1 language code of the phrase to synthesize (optional, can be overriden by SSML).", type=str) 
+        help="ISO 639-1 language code of the phrase to synthesize (optional, can be overriden by SSML).", type=str) 
 
     # Parse and validate options
     args = parser.parse_args()
