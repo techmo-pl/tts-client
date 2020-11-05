@@ -28,7 +28,7 @@ po::options_description CreateOptionsDescription(void)
 			"streaming or single, calls the streaming (default) or non-streaming version of Synthesize.")
 		("audio-encoding", po::value<std::string>()->default_value("pcm16"),
 			"An encoding of the output audio, pcm16 (default) or ogg-vorbs.")
-		("sample-rate-hertz", po::value<unsigned int>()->default_value(0),
+		("sample-rate-hertz", po::value<int>()->default_value(0),
 			"A sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.")
 		("speech-pitch", po::value<float>()->default_value(1.0f),
 			"Allows adjusting the default pitch of the synthesized speech (optional, can be overriden by SSML).")
@@ -173,7 +173,7 @@ int main(int argc, const char* const argv[])
 
 void printVoices(const std::vector<techmo::tribune::SynthesizeVoiceInfo>& voices)
 {
-	std::cout << std::endl << "Available voices:" << std::endl;
+	std::cout << std::endl << "Available voices:" << std::endl << std::endl;
 	for (const auto& voice: voices)
 	{
 		std::cout << "name: '" << voice.voice.name << "'" << std::endl;
