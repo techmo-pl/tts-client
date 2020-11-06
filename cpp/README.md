@@ -34,22 +34,24 @@ Run:
 
 Options:
 ```
---help                Print help message.
---service-address     IP address and port (address:port) of a service the client will connect to.
---out-path            Path to output wave file with synthesized audio content (optional, default: TechmoTTS.wav or TechmoTTS.ogg).
---text                Text to be synthesized (optional, default: 'Techmo Trybun: Syntezator mowy polskiej.').
---session-id          Session ID to be passed to the service. If not specified, the service generates a default session ID itself.
---grpc-timeout        Timeout in milliseconds used to set gRPC deadline - how long the client is willing to wait for a reply from the 
-                      server. If not specified, the service will set the deadline to a very large number (optional, default: 0).
---audio-encoding      Encoding of the output audio, pcm16 (default) or ogg-vorbs.
---sample-rate-hertz   Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.
+--help                Prints this help message.
+--service-address     An IP address and port (address:port) of a service the client will connect to.
+--out-path            A path to output wave file with synthesized audio content (optional, default: TechmoTTS.wav or TechmoTTS.ogg).
+--text                A text to be synthesized (optional, default: 'Techmo Trybun: Syntezator mowy polskiej.').
+--session-id          A session ID to be passed to the service. If not specified, the service generates a default session ID itself.
+--grpc-timeout        A timeout in milliseconds used to set gRPC deadline - how long the client is willing to wait for a reply from the
+                      server (optional).
+--list-voices         Lists all available voices.
+--response            streaming or single, calls the streaming (default) or non-streaming version of Synthesize.
+--audio-encoding      An encoding of the output audio, pcm16 (default) or ogg-vorbs.
+--sample-rate-hertz   A sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.
 --speech-pitch        Allows adjusting the default pitch of the synthesized speech (optional, can be overriden by SSML).
 --speech-range        Allows adjusting the default range of the synthesized speech (optional, can be overriden by SSML).
 --speech-rate         Allows adjusting the default rate (speed) of the synthesized speech (optional, can be overriden by SSML).
 --speech-volume       Allows adjusting the default volume of the synthesized speech (optional, can be overriden by SSML).
---voice-name          Name od the voice used to synthesize the phrase (optional, can be overriden by SSML).
---voice-gender        Gender of the voice - female or male (optional, can be overriden by SSML).
---voice-age           Age of the voice - adult, child, or senile (optional, can be overriden by SSML).
+--voice-name          A name od the voice used to synthesize the phrase (optional, can be overriden by SSML).
+--voice-gender        A gender of the voice - female or male (optional, can be overriden by SSML).
+--voice-age           An age of the voice - adult, child, or senile (optional, can be overriden by SSML).
 --language            ISO 639-1 language code of the phrase to synthesize (optional, can be overriden by SSML).
 ```
 

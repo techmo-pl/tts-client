@@ -4,10 +4,24 @@
 
 namespace techmo::tribune
 {
-	SynthesizeRequest build_request(const TribuneClientConfig& input_config, const std::string& text)
+	void build_context(grpc::ClientContext& context, const TribuneClientConfig& clientConfig)
+	{
+		if (!clientConfig.session_id.empty())
+		{
+			context.AddMetadata("session_id", clientConfig.session_id);
+		}
+
+		if (clientConfig.grpc_timeout > 0)
+		{
+			context.set_deadline(std::chrono::system_clock::now()
+				+ std::chrono::milliseconds{ clientConfig.grpc_timeout });
+		}
+	}
+
+	SynthesizeRequest build_request(const TribuneSynthesizeConfig& input_config, std::string_view text)
 	{
 		SynthesizeRequest request;
-		request.set_text(text);
+		request.set_text(std::string{ text });
 		SynthesizeConfig* grpc_synthesize_config = request.mutable_config();
 
 		grpc_synthesize_config->set_language(input_config.language);
@@ -45,19 +59,8 @@ namespace techmo::tribune
 		return out_str;
 	}
 
-	bool error_response(const SynthesizeResponse& response)
+	std::string grpc_status_to_string(const grpc::Status& status)
 	{
-		const auto is_error = response.has_error();
-
-		if (is_error)
-		{
-			std::cerr << "Received error response: (" << protobuf_message_to_string(response.error()) << std::endl;
-		}
-
-		return is_error;
-	}
-
-	std::string grpc_status_to_string(const grpc::Status& status) {
 		// Status codes and their use in gRPC explanation can be found here:
 		// https://github.com/grpc/grpc/blob/master/doc/statuscodes.md
 		// https://grpc.io/grpc/cpp/namespacegrpc.html#aff1730578c90160528f6a8d67ef5c43b
@@ -92,40 +95,76 @@ namespace techmo::tribune
 		return status_string + " (" + std::to_string(status.error_code()) + ") " + status.error_message();
 	}
 
-	TribuneAudioData TribuneClient::Synthesize(const TribuneClientConfig& config, const std::string& text)
+	void fillVoiceInfo(SynthesizeVoiceInfo& voiceInfo, const VoiceInfo& grpcVoiceInfo)
 	{
-		const SynthesizeRequest request = build_request(config, text);
+		for (int i = 0; i < grpcVoiceInfo.supported_languages_size(); ++i)
+		{
+			voiceInfo.supported_languages.push_back(grpcVoiceInfo.supported_languages(i));
+		}
+		voiceInfo.voice.name = grpcVoiceInfo.voice().name();
+		voiceInfo.voice.gender = grpcVoiceInfo.voice().gender();
+		voiceInfo.voice.age = grpcVoiceInfo.voice().age();
+	}
 
-		auto stub = TTS::NewStub(grpc::CreateChannel(service_address_, grpc::InsecureChannelCredentials()));
-
+	std::vector<SynthesizeVoiceInfo> TribuneClient::ListVoices(
+		const TribuneClientConfig& clientConfig,
+		std::string_view language) const
+	{
+		auto stub = TTS::NewStub(grpc::CreateChannel(m_serviceAddress, grpc::InsecureChannelCredentials()));
 		grpc::ClientContext context;
-		if (not config.session_id.empty())
-		{
-			context.AddMetadata("session_id", config.session_id);
-		}
+		build_context(context, clientConfig);
 
-		if (config.grpc_timeout > 0)
+		ListVoicesRequest request;
+		request.set_language(std::string{ language });
+		ListVoicesResponse response;
+		grpc::Status status = stub->ListVoices(&context, request, &response);
+		if (status.ok())
 		{
-			context.set_deadline(std::chrono::system_clock::now() + std::chrono::milliseconds{ config.grpc_timeout });
+			std::vector<SynthesizeVoiceInfo> voices;
+			for (int i = 0; i < response.voices_size(); ++i)
+			{
+				SynthesizeVoiceInfo voiceInfo;
+				fillVoiceInfo(voiceInfo, response.voices(i));
+				voices.push_back(voiceInfo);
+			}
+			return voices;
 		}
+		else
+		{
+			throw std::runtime_error{ "Synthesize RPC failed with status "
+				+ grpc_status_to_string(status) };
+		}
+	}
+
+	TribuneAudioData TribuneClient::SynthesizeStreaming(
+		const TribuneClientConfig& clientConfig,
+		const TribuneSynthesizeConfig& synthesizeConfig,
+		std::string_view text) const
+	{
+		auto stub = TTS::NewStub(grpc::CreateChannel(m_serviceAddress, grpc::InsecureChannelCredentials()));
+		grpc::ClientContext context;
+		build_context(context, clientConfig);
+
+		const SynthesizeRequest request = build_request(synthesizeConfig, text);
 
 		auto reader = stub->SynthesizeStreaming(&context, request);
 
-		std::string received_audio_bytes = "";
-		unsigned int received_sample_rate_hertz = 0;
+		std::string received_audio_bytes;
+		int received_sample_rate_hertz{ 0 };
 		SynthesizeResponse response;
 
 		int requested_sample_rate_hertz{ 0 };
-		if (config.audio_config)
+		if (synthesizeConfig.audio_config)
 		{
-			requested_sample_rate_hertz = config.audio_config->sample_rate_hertz;
+			requested_sample_rate_hertz = synthesizeConfig.audio_config->sample_rate_hertz;
 		}
 
 		while (reader->Read(&response))
 		{
-			if (error_response(response))
+			if (response.has_error())
 			{
-				break;
+				throw std::runtime_error{ "Received error response: ("
+					+ protobuf_message_to_string(response.error()) };
 			}
 
 			const auto& audio = response.audio();
@@ -152,10 +191,41 @@ namespace techmo::tribune
 
 		const grpc::Status status = reader->Finish();
 
-		if (not status.ok()) {
-			std::cerr << "Synthesize RPC failed with status " << grpc_status_to_string(status) << std::endl;
+		if (!status.ok())
+		{
+			throw std::runtime_error{ "SynthesizeStreaming RPC failed with status "
+				+ grpc_status_to_string(status) };
 		}
 
 		return TribuneAudioData{ received_sample_rate_hertz, received_audio_bytes };
+	}
+
+	TribuneAudioData TribuneClient::Synthesize(
+		const TribuneClientConfig& clientConfig,
+		const TribuneSynthesizeConfig& synthesizeConfig,
+		std::string_view text) const
+	{
+		auto stub = TTS::NewStub(grpc::CreateChannel(m_serviceAddress, grpc::InsecureChannelCredentials()));
+		grpc::ClientContext context;
+		build_context(context, clientConfig);
+
+		const SynthesizeRequest request = build_request(synthesizeConfig, text);
+		SynthesizeResponse response;
+		grpc::Status status = stub->Synthesize(&context, request, &response);
+		if (status.ok())
+		{
+			if (response.has_error())
+			{
+				throw std::runtime_error{ "Received error response: ("
+					+ protobuf_message_to_string(response.error()) };
+			}
+			return response.has_audio() ? TribuneAudioData{
+				response.audio().sample_rate_hertz(), response.audio().content() } : TribuneAudioData{ };
+		}
+		else
+		{
+			throw std::runtime_error{ "Synthesize RPC failed with status "
+				+ grpc_status_to_string(status) };
+		}
 	}
 }

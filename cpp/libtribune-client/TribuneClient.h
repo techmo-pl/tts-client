@@ -3,6 +3,8 @@
 
 #include <optional>
 #include <string>
+#include <string_view>
+#include <vector>
 #include "tribune_tts.grpc.pb.h"
 
 namespace techmo::tribune
@@ -29,19 +31,41 @@ namespace techmo::tribune
 		float volume{ 1.0f };
 	};
 
-	// Voice definition. If there is no voice satisfying all the required criteria,
-	// the voice is selected according to name (if defined) first, gender (if defined) second,
-	// and age (if defined) third.
+	// Voice definition used to describe requested voice in SynthesizeConfig,
+	// and voice parameters in ListVoices (as a part of VoiceInfo).
 	struct SynthesizeVoice
 	{
-		// The name of the voice (empty string means default voice).
+		// The name of the voice.
 		std::string name;
 
-		// Gender of the voice (GENDER_UNSPECIFIED is default).
+		// Gender of the voice.
 		Gender gender{ Gender::GENDER_UNSPECIFIED };
 
-		// Age of the voice (AGE_UNSPECIFIED is default).
+		// Age of the voice.
 		Age age{ Age::AGE_UNSPECIFIED };
+	};
+
+	// Information about a voice, returned by ListVoices call.
+	// Both the supported_languages and voice are always defined, i.e. non-empy.
+	struct SynthesizeVoiceInfo
+	{
+		// The list of ISO 639-1 codes of laguages supported by the voice.
+		std::vector<std::string> supported_languages;
+
+		// The voice parameters.
+		SynthesizeVoice voice;
+	};
+
+	struct TribuneSynthesizeConfig
+	{
+		// ISO 639-1 code of the language of text to be synthesized (optional, may be overriden by SSML tags in request text).
+		std::string language;
+
+		// Parameters to configure the audio synthesis (optional).
+		std::optional<SynthesizeAudioConfig> audio_config;
+
+		// Requested voice to be used to synthesize the text (may be overriden by SSML tags in request text).
+		std::optional<SynthesizeVoice> voice;
 	};
 
 	struct TribuneClientConfig
@@ -53,35 +77,41 @@ namespace techmo::tribune
 		// Timeout in milliseconds used to set gRPC deadline - how long the client is willing to wait for a reply from the server.
 		int grpc_timeout{ 0 };
 
-		// ISO 639-1 code of the language of text to be synthesized (optional, may be overriden by SSML tags in request text).
-		std::string language;
-
-		// Parameters to configure the audio synthesis (optional).
-		std::optional<SynthesizeAudioConfig> audio_config;
-
-		// Requested voice to be used to synthesize the text (may be overriden by SSML tags in request text).
-		std::optional<SynthesizeVoice> voice;
 	};
 
 	struct TribuneAudioData
 	{
 		// Sample rate in Hz of received audio data.
-		unsigned int sample_rate_hertz = 0;
+		int sample_rate_hertz{ 0 };
 
 		// Received audio data.
-		std::string audio_bytes = "";
+		std::string audio_bytes;
 	};
 
 	class TribuneClient
 	{
 	public:
-		TribuneClient(const std::string& service_address) : service_address_{ service_address } {}
+		TribuneClient(std::string_view serviceAddress):
+			m_serviceAddress{ serviceAddress }
+		{
+		}
 
-		// Returns synthesized audio bytes.
-		TribuneAudioData Synthesize(const TribuneClientConfig& config, const std::string& text);
+		std::vector<SynthesizeVoiceInfo> ListVoices(
+			const TribuneClientConfig& clientConfig,
+			std::string_view language = "") const;
+
+		TribuneAudioData SynthesizeStreaming(
+			const TribuneClientConfig& clientConfig,
+			const TribuneSynthesizeConfig& synthesizeConfig,
+			std::string_view text) const;
+
+		TribuneAudioData Synthesize(
+			const TribuneClientConfig& clientConfig,
+			const TribuneSynthesizeConfig& synthesizeConfig,
+			std::string_view text) const;
 
 	private:
-		const std::string service_address_;
+		const std::string m_serviceAddress;
 	};
 
 }

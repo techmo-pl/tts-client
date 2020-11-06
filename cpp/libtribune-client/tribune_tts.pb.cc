@@ -5,7 +5,6 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/wire_format_lite.h>
@@ -109,7 +108,7 @@ static void InitDefaultsscc_info_AudioConfig_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AudioConfig_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_AudioConfig_tribune_5ftts_2eproto}, {}};
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AudioConfig_tribune_5ftts_2eproto}, {}};
 
 static void InitDefaultsscc_info_AudioData_tribune_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -123,7 +122,7 @@ static void InitDefaultsscc_info_AudioData_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AudioData_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_AudioData_tribune_5ftts_2eproto}, {}};
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AudioData_tribune_5ftts_2eproto}, {}};
 
 static void InitDefaultsscc_info_DeleteLexiconRequest_tribune_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -137,7 +136,7 @@ static void InitDefaultsscc_info_DeleteLexiconRequest_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteLexiconRequest_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_DeleteLexiconRequest_tribune_5ftts_2eproto}, {}};
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeleteLexiconRequest_tribune_5ftts_2eproto}, {}};
 
 static void InitDefaultsscc_info_DeleteLexiconResponse_tribune_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -151,7 +150,7 @@ static void InitDefaultsscc_info_DeleteLexiconResponse_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_DeleteLexiconResponse_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_DeleteLexiconResponse_tribune_5ftts_2eproto}, {
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_DeleteLexiconResponse_tribune_5ftts_2eproto}, {
       &scc_info_Error_tribune_5ftts_2eproto.base,}};
 
 static void InitDefaultsscc_info_Error_tribune_5ftts_2eproto() {
@@ -166,7 +165,7 @@ static void InitDefaultsscc_info_Error_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Error_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_Error_tribune_5ftts_2eproto}, {}};
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Error_tribune_5ftts_2eproto}, {}};
 
 static void InitDefaultsscc_info_GetLexiconRequest_tribune_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -180,7 +179,7 @@ static void InitDefaultsscc_info_GetLexiconRequest_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetLexiconRequest_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_GetLexiconRequest_tribune_5ftts_2eproto}, {}};
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetLexiconRequest_tribune_5ftts_2eproto}, {}};
 
 static void InitDefaultsscc_info_GetLexiconResponse_tribune_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -194,7 +193,7 @@ static void InitDefaultsscc_info_GetLexiconResponse_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetLexiconResponse_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_GetLexiconResponse_tribune_5ftts_2eproto}, {
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetLexiconResponse_tribune_5ftts_2eproto}, {
       &scc_info_Error_tribune_5ftts_2eproto.base,}};
 
 static void InitDefaultsscc_info_ListLexiconsRequest_tribune_5ftts_2eproto() {
@@ -209,7 +208,7 @@ static void InitDefaultsscc_info_ListLexiconsRequest_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ListLexiconsRequest_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_ListLexiconsRequest_tribune_5ftts_2eproto}, {}};
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ListLexiconsRequest_tribune_5ftts_2eproto}, {}};
 
 static void InitDefaultsscc_info_ListLexiconsResponse_tribune_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -223,7 +222,7 @@ static void InitDefaultsscc_info_ListLexiconsResponse_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ListLexiconsResponse_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_ListLexiconsResponse_tribune_5ftts_2eproto}, {}};
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ListLexiconsResponse_tribune_5ftts_2eproto}, {}};
 
 static void InitDefaultsscc_info_ListVoicesRequest_tribune_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -237,7 +236,7 @@ static void InitDefaultsscc_info_ListVoicesRequest_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ListVoicesRequest_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_ListVoicesRequest_tribune_5ftts_2eproto}, {}};
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ListVoicesRequest_tribune_5ftts_2eproto}, {}};
 
 static void InitDefaultsscc_info_ListVoicesResponse_tribune_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -251,7 +250,7 @@ static void InitDefaultsscc_info_ListVoicesResponse_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ListVoicesResponse_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_ListVoicesResponse_tribune_5ftts_2eproto}, {
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ListVoicesResponse_tribune_5ftts_2eproto}, {
       &scc_info_VoiceInfo_tribune_5ftts_2eproto.base,}};
 
 static void InitDefaultsscc_info_PutLexiconRequest_tribune_5ftts_2eproto() {
@@ -266,7 +265,7 @@ static void InitDefaultsscc_info_PutLexiconRequest_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PutLexiconRequest_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_PutLexiconRequest_tribune_5ftts_2eproto}, {}};
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PutLexiconRequest_tribune_5ftts_2eproto}, {}};
 
 static void InitDefaultsscc_info_PutLexiconResponse_tribune_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -280,7 +279,7 @@ static void InitDefaultsscc_info_PutLexiconResponse_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PutLexiconResponse_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_PutLexiconResponse_tribune_5ftts_2eproto}, {
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PutLexiconResponse_tribune_5ftts_2eproto}, {
       &scc_info_Error_tribune_5ftts_2eproto.base,}};
 
 static void InitDefaultsscc_info_SynthesizeConfig_tribune_5ftts_2eproto() {
@@ -295,7 +294,7 @@ static void InitDefaultsscc_info_SynthesizeConfig_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_SynthesizeConfig_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsscc_info_SynthesizeConfig_tribune_5ftts_2eproto}, {
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_SynthesizeConfig_tribune_5ftts_2eproto}, {
       &scc_info_AudioConfig_tribune_5ftts_2eproto.base,
       &scc_info_Voice_tribune_5ftts_2eproto.base,}};
 
@@ -311,7 +310,7 @@ static void InitDefaultsscc_info_SynthesizeRequest_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SynthesizeRequest_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_SynthesizeRequest_tribune_5ftts_2eproto}, {
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_SynthesizeRequest_tribune_5ftts_2eproto}, {
       &scc_info_SynthesizeConfig_tribune_5ftts_2eproto.base,}};
 
 static void InitDefaultsscc_info_SynthesizeResponse_tribune_5ftts_2eproto() {
@@ -326,7 +325,7 @@ static void InitDefaultsscc_info_SynthesizeResponse_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_SynthesizeResponse_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsscc_info_SynthesizeResponse_tribune_5ftts_2eproto}, {
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_SynthesizeResponse_tribune_5ftts_2eproto}, {
       &scc_info_AudioData_tribune_5ftts_2eproto.base,
       &scc_info_Error_tribune_5ftts_2eproto.base,}};
 
@@ -342,7 +341,7 @@ static void InitDefaultsscc_info_Voice_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Voice_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_Voice_tribune_5ftts_2eproto}, {}};
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Voice_tribune_5ftts_2eproto}, {}};
 
 static void InitDefaultsscc_info_VoiceInfo_tribune_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -356,7 +355,7 @@ static void InitDefaultsscc_info_VoiceInfo_tribune_5ftts_2eproto() {
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_VoiceInfo_tribune_5ftts_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_VoiceInfo_tribune_5ftts_2eproto}, {
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_VoiceInfo_tribune_5ftts_2eproto}, {
       &scc_info_Voice_tribune_5ftts_2eproto.base,}};
 
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_tribune_5ftts_2eproto[18];
@@ -531,7 +530,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tribune::_Error_default_instance_),
 };
 
-const char descriptor_table_protodef_tribune_5ftts_2eproto[] =
+const char descriptor_table_protodef_tribune_5ftts_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\021tribune_tts.proto\022\016techmo.tribune\"%\n\021L"
   "istVoicesRequest\022\020\n\010language\030\001 \001(\t\"\?\n\022Li"
   "stVoicesResponse\022)\n\006voices\030\001 \003(\0132\031.techm"
@@ -694,13 +693,9 @@ bool ErrorCode_IsValid(int value) {
 
 void ListVoicesRequest::InitAsDefaultInstance() {
 }
-class ListVoicesRequest::HasBitSetters {
+class ListVoicesRequest::_Internal {
  public:
 };
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListVoicesRequest::kLanguageFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ListVoicesRequest::ListVoicesRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
@@ -712,7 +707,7 @@ ListVoicesRequest::ListVoicesRequest(const ListVoicesRequest& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   language_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (from.language().size() > 0) {
+  if (!from._internal_language().empty()) {
     language_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.language_);
   }
   // @@protoc_insertion_point(copy_constructor:techmo.tribune.ListVoicesRequest)
@@ -751,7 +746,6 @@ void ListVoicesRequest::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* ListVoicesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -762,7 +756,9 @@ const char* ListVoicesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       // string language = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_language(), ptr, ctx, "techmo.tribune.ListVoicesRequest.language");
+          auto str = _internal_mutable_language();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tribune.ListVoicesRequest.language"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -785,78 +781,9 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool ListVoicesRequest::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.ListVoicesRequest)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string language = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->mutable_language()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-            this->language().data(), static_cast<int>(this->language().length()),
-            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
-            "techmo.tribune.ListVoicesRequest.language"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.ListVoicesRequest)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.ListVoicesRequest)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void ListVoicesRequest::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.ListVoicesRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string language = 1;
-  if (this->language().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->language().data(), static_cast<int>(this->language().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tribune.ListVoicesRequest.language");
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->language(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.ListVoicesRequest)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* ListVoicesRequest::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* ListVoicesRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.ListVoicesRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
@@ -864,17 +791,16 @@ void ListVoicesRequest::SerializeWithCachedSizes(
   // string language = 1;
   if (this->language().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->language().data(), static_cast<int>(this->language().length()),
+      this->_internal_language().data(), static_cast<int>(this->_internal_language().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "techmo.tribune.ListVoicesRequest.language");
-    target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
-        1, this->language(), target);
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_language(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.ListVoicesRequest)
   return target;
@@ -884,11 +810,6 @@ size_t ListVoicesRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.ListVoicesRequest)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -897,9 +818,13 @@ size_t ListVoicesRequest::ByteSizeLong() const {
   if (this->language().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->language());
+        this->_internal_language());
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -951,10 +876,6 @@ bool ListVoicesRequest::IsInitialized() const {
   return true;
 }
 
-void ListVoicesRequest::Swap(ListVoicesRequest* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void ListVoicesRequest::InternalSwap(ListVoicesRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -971,13 +892,9 @@ void ListVoicesRequest::InternalSwap(ListVoicesRequest* other) {
 
 void ListVoicesResponse::InitAsDefaultInstance() {
 }
-class ListVoicesResponse::HasBitSetters {
+class ListVoicesResponse::_Internal {
  public:
 };
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListVoicesResponse::kVoicesFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ListVoicesResponse::ListVoicesResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
@@ -1023,7 +940,6 @@ void ListVoicesResponse::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* ListVoicesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -1037,10 +953,10 @@ const char* ListVoicesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(add_voices(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_voices(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint8>(ptr) == 10);
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -1062,88 +978,24 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool ListVoicesResponse::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.ListVoicesResponse)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .techmo.tribune.VoiceInfo voices = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
-                input, add_voices()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.ListVoicesResponse)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.ListVoicesResponse)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void ListVoicesResponse::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.ListVoicesResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .techmo.tribune.VoiceInfo voices = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->voices_size()); i < n; i++) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1,
-      this->voices(static_cast<int>(i)),
-      output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.ListVoicesResponse)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* ListVoicesResponse::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* ListVoicesResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.ListVoicesResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .techmo.tribune.VoiceInfo voices = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->voices_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->_internal_voices_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->voices(static_cast<int>(i)), target);
+      InternalWriteMessage(1, this->_internal_voices(i), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.ListVoicesResponse)
   return target;
@@ -1153,26 +1005,21 @@ size_t ListVoicesResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.ListVoicesResponse)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .techmo.tribune.VoiceInfo voices = 1;
-  {
-    unsigned int count = static_cast<unsigned int>(this->voices_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          this->voices(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_voices_size();
+  for (const auto& msg : this->voices_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -1221,14 +1068,10 @@ bool ListVoicesResponse::IsInitialized() const {
   return true;
 }
 
-void ListVoicesResponse::Swap(ListVoicesResponse* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void ListVoicesResponse::InternalSwap(ListVoicesResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  CastToBase(&voices_)->InternalSwap(CastToBase(&other->voices_));
+  voices_.InternalSwap(&other->voices_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListVoicesResponse::GetMetadata() const {
@@ -1242,20 +1085,15 @@ void SynthesizeRequest::InitAsDefaultInstance() {
   ::techmo::tribune::_SynthesizeRequest_default_instance_._instance.get_mutable()->config_ = const_cast< ::techmo::tribune::SynthesizeConfig*>(
       ::techmo::tribune::SynthesizeConfig::internal_default_instance());
 }
-class SynthesizeRequest::HasBitSetters {
+class SynthesizeRequest::_Internal {
  public:
   static const ::techmo::tribune::SynthesizeConfig& config(const SynthesizeRequest* msg);
 };
 
 const ::techmo::tribune::SynthesizeConfig&
-SynthesizeRequest::HasBitSetters::config(const SynthesizeRequest* msg) {
+SynthesizeRequest::_Internal::config(const SynthesizeRequest* msg) {
   return *msg->config_;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SynthesizeRequest::kTextFieldNumber;
-const int SynthesizeRequest::kConfigFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
 SynthesizeRequest::SynthesizeRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
@@ -1266,10 +1104,10 @@ SynthesizeRequest::SynthesizeRequest(const SynthesizeRequest& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   text_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (from.text().size() > 0) {
+  if (!from._internal_text().empty()) {
     text_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.text_);
   }
-  if (from.has_config()) {
+  if (from._internal_has_config()) {
     config_ = new ::techmo::tribune::SynthesizeConfig(*from.config_);
   } else {
     config_ = nullptr;
@@ -1316,7 +1154,6 @@ void SynthesizeRequest::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* SynthesizeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -1327,14 +1164,16 @@ const char* SynthesizeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       // string text = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_text(), ptr, ctx, "techmo.tribune.SynthesizeRequest.text");
+          auto str = _internal_mutable_text();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tribune.SynthesizeRequest.text"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // .techmo.tribune.SynthesizeConfig config = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(mutable_config(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_config(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1357,95 +1196,9 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool SynthesizeRequest::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.SynthesizeRequest)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string text = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->mutable_text()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-            this->text().data(), static_cast<int>(this->text().length()),
-            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
-            "techmo.tribune.SynthesizeRequest.text"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      // .techmo.tribune.SynthesizeConfig config = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
-               input, mutable_config()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.SynthesizeRequest)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.SynthesizeRequest)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void SynthesizeRequest::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.SynthesizeRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string text = 1;
-  if (this->text().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->text().data(), static_cast<int>(this->text().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tribune.SynthesizeRequest.text");
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->text(), output);
-  }
-
-  // .techmo.tribune.SynthesizeConfig config = 2;
-  if (this->has_config()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::config(this), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.SynthesizeRequest)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* SynthesizeRequest::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* SynthesizeRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.SynthesizeRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1453,24 +1206,24 @@ void SynthesizeRequest::SerializeWithCachedSizes(
   // string text = 1;
   if (this->text().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->text().data(), static_cast<int>(this->text().length()),
+      this->_internal_text().data(), static_cast<int>(this->_internal_text().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "techmo.tribune.SynthesizeRequest.text");
-    target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
-        1, this->text(), target);
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_text(), target);
   }
 
   // .techmo.tribune.SynthesizeConfig config = 2;
   if (this->has_config()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, HasBitSetters::config(this), target);
+      InternalWriteMessage(
+        2, _Internal::config(this), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.SynthesizeRequest)
   return target;
@@ -1480,11 +1233,6 @@ size_t SynthesizeRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.SynthesizeRequest)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1493,7 +1241,7 @@ size_t SynthesizeRequest::ByteSizeLong() const {
   if (this->text().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->text());
+        this->_internal_text());
   }
 
   // .techmo.tribune.SynthesizeConfig config = 2;
@@ -1503,6 +1251,10 @@ size_t SynthesizeRequest::ByteSizeLong() const {
         *config_);
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -1535,7 +1287,7 @@ void SynthesizeRequest::MergeFrom(const SynthesizeRequest& from) {
     text_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.text_);
   }
   if (from.has_config()) {
-    mutable_config()->::techmo::tribune::SynthesizeConfig::MergeFrom(from.config());
+    _internal_mutable_config()->::techmo::tribune::SynthesizeConfig::MergeFrom(from._internal_config());
   }
 }
 
@@ -1557,10 +1309,6 @@ bool SynthesizeRequest::IsInitialized() const {
   return true;
 }
 
-void SynthesizeRequest::Swap(SynthesizeRequest* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SynthesizeRequest::InternalSwap(SynthesizeRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -1582,26 +1330,20 @@ void SynthesizeConfig::InitAsDefaultInstance() {
   ::techmo::tribune::_SynthesizeConfig_default_instance_._instance.get_mutable()->voice_ = const_cast< ::techmo::tribune::Voice*>(
       ::techmo::tribune::Voice::internal_default_instance());
 }
-class SynthesizeConfig::HasBitSetters {
+class SynthesizeConfig::_Internal {
  public:
   static const ::techmo::tribune::AudioConfig& audio_config(const SynthesizeConfig* msg);
   static const ::techmo::tribune::Voice& voice(const SynthesizeConfig* msg);
 };
 
 const ::techmo::tribune::AudioConfig&
-SynthesizeConfig::HasBitSetters::audio_config(const SynthesizeConfig* msg) {
+SynthesizeConfig::_Internal::audio_config(const SynthesizeConfig* msg) {
   return *msg->audio_config_;
 }
 const ::techmo::tribune::Voice&
-SynthesizeConfig::HasBitSetters::voice(const SynthesizeConfig* msg) {
+SynthesizeConfig::_Internal::voice(const SynthesizeConfig* msg) {
   return *msg->voice_;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SynthesizeConfig::kLanguageFieldNumber;
-const int SynthesizeConfig::kAudioConfigFieldNumber;
-const int SynthesizeConfig::kVoiceFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
 SynthesizeConfig::SynthesizeConfig()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
@@ -1612,15 +1354,15 @@ SynthesizeConfig::SynthesizeConfig(const SynthesizeConfig& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   language_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (from.language().size() > 0) {
+  if (!from._internal_language().empty()) {
     language_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.language_);
   }
-  if (from.has_audio_config()) {
+  if (from._internal_has_audio_config()) {
     audio_config_ = new ::techmo::tribune::AudioConfig(*from.audio_config_);
   } else {
     audio_config_ = nullptr;
   }
-  if (from.has_voice()) {
+  if (from._internal_has_voice()) {
     voice_ = new ::techmo::tribune::Voice(*from.voice_);
   } else {
     voice_ = nullptr;
@@ -1674,7 +1416,6 @@ void SynthesizeConfig::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* SynthesizeConfig::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -1685,21 +1426,23 @@ const char* SynthesizeConfig::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
       // string language = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_language(), ptr, ctx, "techmo.tribune.SynthesizeConfig.language");
+          auto str = _internal_mutable_language();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tribune.SynthesizeConfig.language"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // .techmo.tribune.AudioConfig audio_config = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(mutable_audio_config(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_audio_config(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // .techmo.tribune.Voice voice = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          ptr = ctx->ParseMessage(mutable_voice(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_voice(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1722,112 +1465,9 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool SynthesizeConfig::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.SynthesizeConfig)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string language = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->mutable_language()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-            this->language().data(), static_cast<int>(this->language().length()),
-            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
-            "techmo.tribune.SynthesizeConfig.language"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      // .techmo.tribune.AudioConfig audio_config = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
-               input, mutable_audio_config()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .techmo.tribune.Voice voice = 3;
-      case 3: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
-               input, mutable_voice()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.SynthesizeConfig)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.SynthesizeConfig)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void SynthesizeConfig::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.SynthesizeConfig)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string language = 1;
-  if (this->language().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->language().data(), static_cast<int>(this->language().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tribune.SynthesizeConfig.language");
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->language(), output);
-  }
-
-  // .techmo.tribune.AudioConfig audio_config = 2;
-  if (this->has_audio_config()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::audio_config(this), output);
-  }
-
-  // .techmo.tribune.Voice voice = 3;
-  if (this->has_voice()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, HasBitSetters::voice(this), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.SynthesizeConfig)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* SynthesizeConfig::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* SynthesizeConfig::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.SynthesizeConfig)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1835,31 +1475,32 @@ void SynthesizeConfig::SerializeWithCachedSizes(
   // string language = 1;
   if (this->language().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->language().data(), static_cast<int>(this->language().length()),
+      this->_internal_language().data(), static_cast<int>(this->_internal_language().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "techmo.tribune.SynthesizeConfig.language");
-    target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
-        1, this->language(), target);
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_language(), target);
   }
 
   // .techmo.tribune.AudioConfig audio_config = 2;
   if (this->has_audio_config()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, HasBitSetters::audio_config(this), target);
+      InternalWriteMessage(
+        2, _Internal::audio_config(this), target, stream);
   }
 
   // .techmo.tribune.Voice voice = 3;
   if (this->has_voice()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, HasBitSetters::voice(this), target);
+      InternalWriteMessage(
+        3, _Internal::voice(this), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.SynthesizeConfig)
   return target;
@@ -1869,11 +1510,6 @@ size_t SynthesizeConfig::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.SynthesizeConfig)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1882,7 +1518,7 @@ size_t SynthesizeConfig::ByteSizeLong() const {
   if (this->language().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->language());
+        this->_internal_language());
   }
 
   // .techmo.tribune.AudioConfig audio_config = 2;
@@ -1899,6 +1535,10 @@ size_t SynthesizeConfig::ByteSizeLong() const {
         *voice_);
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -1931,10 +1571,10 @@ void SynthesizeConfig::MergeFrom(const SynthesizeConfig& from) {
     language_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.language_);
   }
   if (from.has_audio_config()) {
-    mutable_audio_config()->::techmo::tribune::AudioConfig::MergeFrom(from.audio_config());
+    _internal_mutable_audio_config()->::techmo::tribune::AudioConfig::MergeFrom(from._internal_audio_config());
   }
   if (from.has_voice()) {
-    mutable_voice()->::techmo::tribune::Voice::MergeFrom(from.voice());
+    _internal_mutable_voice()->::techmo::tribune::Voice::MergeFrom(from._internal_voice());
   }
 }
 
@@ -1956,10 +1596,6 @@ bool SynthesizeConfig::IsInitialized() const {
   return true;
 }
 
-void SynthesizeConfig::Swap(SynthesizeConfig* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SynthesizeConfig::InternalSwap(SynthesizeConfig* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -1978,18 +1614,9 @@ void SynthesizeConfig::InternalSwap(SynthesizeConfig* other) {
 
 void AudioConfig::InitAsDefaultInstance() {
 }
-class AudioConfig::HasBitSetters {
+class AudioConfig::_Internal {
  public:
 };
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int AudioConfig::kAudioEncodingFieldNumber;
-const int AudioConfig::kSampleRateHertzFieldNumber;
-const int AudioConfig::kPitchFieldNumber;
-const int AudioConfig::kRangeFieldNumber;
-const int AudioConfig::kRateFieldNumber;
-const int AudioConfig::kVolumeFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 AudioConfig::AudioConfig()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
@@ -2041,7 +1668,6 @@ void AudioConfig::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* AudioConfig::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -2054,7 +1680,7 @@ const char* AudioConfig::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          set_audio_encoding(static_cast<::techmo::tribune::AudioEncoding>(val));
+          _internal_set_audio_encoding(static_cast<::techmo::tribune::AudioEncoding>(val));
         } else goto handle_unusual;
         continue;
       // int32 sample_rate_hertz = 2;
@@ -2111,201 +1737,53 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool AudioConfig::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.AudioConfig)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .techmo.tribune.AudioEncoding audio_encoding = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (8 & 0xFF)) {
-          int value = 0;
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_audio_encoding(static_cast< ::techmo::tribune::AudioEncoding >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      // int32 sample_rate_hertz = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (16 & 0xFF)) {
-
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   ::PROTOBUF_NAMESPACE_ID::int32, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32>(
-                 input, &sample_rate_hertz_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // float pitch = 3;
-      case 3: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (29 & 0xFF)) {
-
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &pitch_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // float range = 4;
-      case 4: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (37 & 0xFF)) {
-
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &range_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // float rate = 5;
-      case 5: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (45 & 0xFF)) {
-
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &rate_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // float volume = 6;
-      case 6: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (53 & 0xFF)) {
-
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &volume_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.AudioConfig)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.AudioConfig)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void AudioConfig::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.AudioConfig)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .techmo.tribune.AudioEncoding audio_encoding = 1;
-  if (this->audio_encoding() != 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnum(
-      1, this->audio_encoding(), output);
-  }
-
-  // int32 sample_rate_hertz = 2;
-  if (this->sample_rate_hertz() != 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32(2, this->sample_rate_hertz(), output);
-  }
-
-  // float pitch = 3;
-  if (!(this->pitch() <= 0 && this->pitch() >= 0)) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(3, this->pitch(), output);
-  }
-
-  // float range = 4;
-  if (!(this->range() <= 0 && this->range() >= 0)) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(4, this->range(), output);
-  }
-
-  // float rate = 5;
-  if (!(this->rate() <= 0 && this->rate() >= 0)) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(5, this->rate(), output);
-  }
-
-  // float volume = 6;
-  if (!(this->volume() <= 0 && this->volume() >= 0)) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(6, this->volume(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.AudioConfig)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* AudioConfig::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* AudioConfig::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.AudioConfig)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .techmo.tribune.AudioEncoding audio_encoding = 1;
   if (this->audio_encoding() != 0) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      1, this->audio_encoding(), target);
+      1, this->_internal_audio_encoding(), target);
   }
 
   // int32 sample_rate_hertz = 2;
   if (this->sample_rate_hertz() != 0) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->sample_rate_hertz(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_sample_rate_hertz(), target);
   }
 
   // float pitch = 3;
   if (!(this->pitch() <= 0 && this->pitch() >= 0)) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->pitch(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_pitch(), target);
   }
 
   // float range = 4;
   if (!(this->range() <= 0 && this->range() >= 0)) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->range(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_range(), target);
   }
 
   // float rate = 5;
   if (!(this->rate() <= 0 && this->rate() >= 0)) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->rate(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_rate(), target);
   }
 
   // float volume = 6;
   if (!(this->volume() <= 0 && this->volume() >= 0)) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->volume(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_volume(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.AudioConfig)
   return target;
@@ -2315,11 +1793,6 @@ size_t AudioConfig::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.AudioConfig)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2327,14 +1800,14 @@ size_t AudioConfig::ByteSizeLong() const {
   // .techmo.tribune.AudioEncoding audio_encoding = 1;
   if (this->audio_encoding() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->audio_encoding());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_audio_encoding());
   }
 
   // int32 sample_rate_hertz = 2;
   if (this->sample_rate_hertz() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->sample_rate_hertz());
+        this->_internal_sample_rate_hertz());
   }
 
   // float pitch = 3;
@@ -2357,6 +1830,10 @@ size_t AudioConfig::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -2385,22 +1862,22 @@ void AudioConfig::MergeFrom(const AudioConfig& from) {
   (void) cached_has_bits;
 
   if (from.audio_encoding() != 0) {
-    set_audio_encoding(from.audio_encoding());
+    _internal_set_audio_encoding(from._internal_audio_encoding());
   }
   if (from.sample_rate_hertz() != 0) {
-    set_sample_rate_hertz(from.sample_rate_hertz());
+    _internal_set_sample_rate_hertz(from._internal_sample_rate_hertz());
   }
   if (!(from.pitch() <= 0 && from.pitch() >= 0)) {
-    set_pitch(from.pitch());
+    _internal_set_pitch(from._internal_pitch());
   }
   if (!(from.range() <= 0 && from.range() >= 0)) {
-    set_range(from.range());
+    _internal_set_range(from._internal_range());
   }
   if (!(from.rate() <= 0 && from.rate() >= 0)) {
-    set_rate(from.rate());
+    _internal_set_rate(from._internal_rate());
   }
   if (!(from.volume() <= 0 && from.volume() >= 0)) {
-    set_volume(from.volume());
+    _internal_set_volume(from._internal_volume());
   }
 }
 
@@ -2422,10 +1899,6 @@ bool AudioConfig::IsInitialized() const {
   return true;
 }
 
-void AudioConfig::Swap(AudioConfig* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void AudioConfig::InternalSwap(AudioConfig* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -2446,15 +1919,9 @@ void AudioConfig::InternalSwap(AudioConfig* other) {
 
 void Voice::InitAsDefaultInstance() {
 }
-class Voice::HasBitSetters {
+class Voice::_Internal {
  public:
 };
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Voice::kNameFieldNumber;
-const int Voice::kGenderFieldNumber;
-const int Voice::kAgeFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Voice::Voice()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
@@ -2466,7 +1933,7 @@ Voice::Voice(const Voice& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (from.name().size() > 0) {
+  if (!from._internal_name().empty()) {
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   ::memcpy(&gender_, &from.gender_,
@@ -2514,7 +1981,6 @@ void Voice::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* Voice::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -2525,7 +1991,9 @@ const char* Voice::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_name(), ptr, ctx, "techmo.tribune.Voice.name");
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tribune.Voice.name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2534,7 +2002,7 @@ const char* Voice::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          set_gender(static_cast<::techmo::tribune::Gender>(val));
+          _internal_set_gender(static_cast<::techmo::tribune::Gender>(val));
         } else goto handle_unusual;
         continue;
       // .techmo.tribune.Age age = 3;
@@ -2542,7 +2010,7 @@ const char* Voice::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          set_age(static_cast<::techmo::tribune::Age>(val));
+          _internal_set_age(static_cast<::techmo::tribune::Age>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -2564,118 +2032,9 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool Voice::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.Voice)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string name = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->mutable_name()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-            this->name().data(), static_cast<int>(this->name().length()),
-            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
-            "techmo.tribune.Voice.name"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      // .techmo.tribune.Gender gender = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (16 & 0xFF)) {
-          int value = 0;
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_gender(static_cast< ::techmo::tribune::Gender >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .techmo.tribune.Age age = 3;
-      case 3: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (24 & 0xFF)) {
-          int value = 0;
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_age(static_cast< ::techmo::tribune::Age >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.Voice)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.Voice)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void Voice::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.Voice)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string name = 1;
-  if (this->name().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), static_cast<int>(this->name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tribune.Voice.name");
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->name(), output);
-  }
-
-  // .techmo.tribune.Gender gender = 2;
-  if (this->gender() != 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnum(
-      2, this->gender(), output);
-  }
-
-  // .techmo.tribune.Age age = 3;
-  if (this->age() != 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnum(
-      3, this->age(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.Voice)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* Voice::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* Voice::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.Voice)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
@@ -2683,29 +2042,30 @@ void Voice::SerializeWithCachedSizes(
   // string name = 1;
   if (this->name().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), static_cast<int>(this->name().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "techmo.tribune.Voice.name");
-    target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
-        1, this->name(), target);
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
   }
 
   // .techmo.tribune.Gender gender = 2;
   if (this->gender() != 0) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      2, this->gender(), target);
+      2, this->_internal_gender(), target);
   }
 
   // .techmo.tribune.Age age = 3;
   if (this->age() != 0) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      3, this->age(), target);
+      3, this->_internal_age(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.Voice)
   return target;
@@ -2715,11 +2075,6 @@ size_t Voice::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.Voice)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2728,21 +2083,25 @@ size_t Voice::ByteSizeLong() const {
   if (this->name().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->name());
+        this->_internal_name());
   }
 
   // .techmo.tribune.Gender gender = 2;
   if (this->gender() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->gender());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_gender());
   }
 
   // .techmo.tribune.Age age = 3;
   if (this->age() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->age());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_age());
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -2775,10 +2134,10 @@ void Voice::MergeFrom(const Voice& from) {
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   if (from.gender() != 0) {
-    set_gender(from.gender());
+    _internal_set_gender(from._internal_gender());
   }
   if (from.age() != 0) {
-    set_age(from.age());
+    _internal_set_age(from._internal_age());
   }
 }
 
@@ -2800,10 +2159,6 @@ bool Voice::IsInitialized() const {
   return true;
 }
 
-void Voice::Swap(Voice* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Voice::InternalSwap(Voice* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -2824,20 +2179,15 @@ void VoiceInfo::InitAsDefaultInstance() {
   ::techmo::tribune::_VoiceInfo_default_instance_._instance.get_mutable()->voice_ = const_cast< ::techmo::tribune::Voice*>(
       ::techmo::tribune::Voice::internal_default_instance());
 }
-class VoiceInfo::HasBitSetters {
+class VoiceInfo::_Internal {
  public:
   static const ::techmo::tribune::Voice& voice(const VoiceInfo* msg);
 };
 
 const ::techmo::tribune::Voice&
-VoiceInfo::HasBitSetters::voice(const VoiceInfo* msg) {
+VoiceInfo::_Internal::voice(const VoiceInfo* msg) {
   return *msg->voice_;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int VoiceInfo::kSupportedLanguagesFieldNumber;
-const int VoiceInfo::kVoiceFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
 VoiceInfo::VoiceInfo()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
@@ -2848,7 +2198,7 @@ VoiceInfo::VoiceInfo(const VoiceInfo& from)
       _internal_metadata_(nullptr),
       supported_languages_(from.supported_languages_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_voice()) {
+  if (from._internal_has_voice()) {
     voice_ = new ::techmo::tribune::Voice(*from.voice_);
   } else {
     voice_ = nullptr;
@@ -2893,7 +2243,6 @@ void VoiceInfo::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* VoiceInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -2907,16 +2256,18 @@ const char* VoiceInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(add_supported_languages(), ptr, ctx, "techmo.tribune.VoiceInfo.supported_languages");
+            auto str = _internal_add_supported_languages();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tribune.VoiceInfo.supported_languages"));
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint8>(ptr) == 10);
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else goto handle_unusual;
         continue;
       // .techmo.tribune.Voice voice = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(mutable_voice(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_voice(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2939,120 +2290,34 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool VoiceInfo::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.VoiceInfo)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated string supported_languages = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->add_supported_languages()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-            this->supported_languages(this->supported_languages_size() - 1).data(),
-            static_cast<int>(this->supported_languages(this->supported_languages_size() - 1).length()),
-            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
-            "techmo.tribune.VoiceInfo.supported_languages"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      // .techmo.tribune.Voice voice = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
-               input, mutable_voice()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.VoiceInfo)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.VoiceInfo)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void VoiceInfo::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.VoiceInfo)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated string supported_languages = 1;
-  for (int i = 0, n = this->supported_languages_size(); i < n; i++) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->supported_languages(i).data(), static_cast<int>(this->supported_languages(i).length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tribune.VoiceInfo.supported_languages");
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteString(
-      1, this->supported_languages(i), output);
-  }
-
-  // .techmo.tribune.Voice voice = 2;
-  if (this->has_voice()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::voice(this), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.VoiceInfo)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* VoiceInfo::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* VoiceInfo::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.VoiceInfo)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated string supported_languages = 1;
-  for (int i = 0, n = this->supported_languages_size(); i < n; i++) {
+  for (int i = 0, n = this->_internal_supported_languages_size(); i < n; i++) {
+    const auto& s = this->_internal_supported_languages(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->supported_languages(i).data(), static_cast<int>(this->supported_languages(i).length()),
+      s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "techmo.tribune.VoiceInfo.supported_languages");
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      WriteStringToArray(1, this->supported_languages(i), target);
+    target = stream->WriteString(1, s, target);
   }
 
   // .techmo.tribune.Voice voice = 2;
   if (this->has_voice()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, HasBitSetters::voice(this), target);
+      InternalWriteMessage(
+        2, _Internal::voice(this), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.VoiceInfo)
   return target;
@@ -3062,21 +2327,16 @@ size_t VoiceInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.VoiceInfo)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated string supported_languages = 1;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->supported_languages_size());
-  for (int i = 0, n = this->supported_languages_size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(supported_languages_.size());
+  for (int i = 0, n = supported_languages_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      this->supported_languages(i));
+      supported_languages_.Get(i));
   }
 
   // .techmo.tribune.Voice voice = 2;
@@ -3086,6 +2346,10 @@ size_t VoiceInfo::ByteSizeLong() const {
         *voice_);
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -3115,7 +2379,7 @@ void VoiceInfo::MergeFrom(const VoiceInfo& from) {
 
   supported_languages_.MergeFrom(from.supported_languages_);
   if (from.has_voice()) {
-    mutable_voice()->::techmo::tribune::Voice::MergeFrom(from.voice());
+    _internal_mutable_voice()->::techmo::tribune::Voice::MergeFrom(from._internal_voice());
   }
 }
 
@@ -3137,14 +2401,10 @@ bool VoiceInfo::IsInitialized() const {
   return true;
 }
 
-void VoiceInfo::Swap(VoiceInfo* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void VoiceInfo::InternalSwap(VoiceInfo* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  supported_languages_.InternalSwap(CastToBase(&other->supported_languages_));
+  supported_languages_.InternalSwap(&other->supported_languages_);
   swap(voice_, other->voice_);
 }
 
@@ -3161,25 +2421,20 @@ void SynthesizeResponse::InitAsDefaultInstance() {
   ::techmo::tribune::_SynthesizeResponse_default_instance_._instance.get_mutable()->error_ = const_cast< ::techmo::tribune::Error*>(
       ::techmo::tribune::Error::internal_default_instance());
 }
-class SynthesizeResponse::HasBitSetters {
+class SynthesizeResponse::_Internal {
  public:
   static const ::techmo::tribune::AudioData& audio(const SynthesizeResponse* msg);
   static const ::techmo::tribune::Error& error(const SynthesizeResponse* msg);
 };
 
 const ::techmo::tribune::AudioData&
-SynthesizeResponse::HasBitSetters::audio(const SynthesizeResponse* msg) {
+SynthesizeResponse::_Internal::audio(const SynthesizeResponse* msg) {
   return *msg->audio_;
 }
 const ::techmo::tribune::Error&
-SynthesizeResponse::HasBitSetters::error(const SynthesizeResponse* msg) {
+SynthesizeResponse::_Internal::error(const SynthesizeResponse* msg) {
   return *msg->error_;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SynthesizeResponse::kAudioFieldNumber;
-const int SynthesizeResponse::kErrorFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
 SynthesizeResponse::SynthesizeResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
@@ -3189,12 +2444,12 @@ SynthesizeResponse::SynthesizeResponse(const SynthesizeResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_audio()) {
+  if (from._internal_has_audio()) {
     audio_ = new ::techmo::tribune::AudioData(*from.audio_);
   } else {
     audio_ = nullptr;
   }
-  if (from.has_error()) {
+  if (from._internal_has_error()) {
     error_ = new ::techmo::tribune::Error(*from.error_);
   } else {
     error_ = nullptr;
@@ -3245,7 +2500,6 @@ void SynthesizeResponse::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* SynthesizeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -3256,14 +2510,14 @@ const char* SynthesizeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // .techmo.tribune.AudioData audio = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(mutable_audio(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_audio(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // .techmo.tribune.Error error = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(mutable_error(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3286,108 +2540,32 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool SynthesizeResponse::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.SynthesizeResponse)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .techmo.tribune.AudioData audio = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
-               input, mutable_audio()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      // .techmo.tribune.Error error = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
-               input, mutable_error()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.SynthesizeResponse)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.SynthesizeResponse)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void SynthesizeResponse::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.SynthesizeResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .techmo.tribune.AudioData audio = 1;
-  if (this->has_audio()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::audio(this), output);
-  }
-
-  // .techmo.tribune.Error error = 2;
-  if (this->has_error()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::error(this), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.SynthesizeResponse)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* SynthesizeResponse::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* SynthesizeResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.SynthesizeResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .techmo.tribune.AudioData audio = 1;
   if (this->has_audio()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, HasBitSetters::audio(this), target);
+      InternalWriteMessage(
+        1, _Internal::audio(this), target, stream);
   }
 
   // .techmo.tribune.Error error = 2;
   if (this->has_error()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, HasBitSetters::error(this), target);
+      InternalWriteMessage(
+        2, _Internal::error(this), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.SynthesizeResponse)
   return target;
@@ -3397,11 +2575,6 @@ size_t SynthesizeResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.SynthesizeResponse)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3420,6 +2593,10 @@ size_t SynthesizeResponse::ByteSizeLong() const {
         *error_);
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -3448,10 +2625,10 @@ void SynthesizeResponse::MergeFrom(const SynthesizeResponse& from) {
   (void) cached_has_bits;
 
   if (from.has_audio()) {
-    mutable_audio()->::techmo::tribune::AudioData::MergeFrom(from.audio());
+    _internal_mutable_audio()->::techmo::tribune::AudioData::MergeFrom(from._internal_audio());
   }
   if (from.has_error()) {
-    mutable_error()->::techmo::tribune::Error::MergeFrom(from.error());
+    _internal_mutable_error()->::techmo::tribune::Error::MergeFrom(from._internal_error());
   }
 }
 
@@ -3473,10 +2650,6 @@ bool SynthesizeResponse::IsInitialized() const {
   return true;
 }
 
-void SynthesizeResponse::Swap(SynthesizeResponse* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SynthesizeResponse::InternalSwap(SynthesizeResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -3493,14 +2666,9 @@ void SynthesizeResponse::InternalSwap(SynthesizeResponse* other) {
 
 void AudioData::InitAsDefaultInstance() {
 }
-class AudioData::HasBitSetters {
+class AudioData::_Internal {
  public:
 };
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int AudioData::kSampleRateHertzFieldNumber;
-const int AudioData::kContentFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 AudioData::AudioData()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
@@ -3512,7 +2680,7 @@ AudioData::AudioData(const AudioData& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   content_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (from.content().size() > 0) {
+  if (!from._internal_content().empty()) {
     content_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.content_);
   }
   sample_rate_hertz_ = from.sample_rate_hertz_;
@@ -3554,7 +2722,6 @@ void AudioData::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* AudioData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -3572,7 +2739,8 @@ const char* AudioData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // bytes content = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(mutable_content(), ptr, ctx);
+          auto str = _internal_mutable_content();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3595,107 +2763,28 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool AudioData::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.AudioData)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // int32 sample_rate_hertz = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (8 & 0xFF)) {
 
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   ::PROTOBUF_NAMESPACE_ID::int32, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32>(
-                 input, &sample_rate_hertz_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // bytes content = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadBytes(
-                input, this->mutable_content()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.AudioData)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.AudioData)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void AudioData::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.AudioData)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // int32 sample_rate_hertz = 1;
-  if (this->sample_rate_hertz() != 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32(1, this->sample_rate_hertz(), output);
-  }
-
-  // bytes content = 2;
-  if (this->content().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBytesMaybeAliased(
-      2, this->content(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.AudioData)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* AudioData::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* AudioData::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.AudioData)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // int32 sample_rate_hertz = 1;
   if (this->sample_rate_hertz() != 0) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->sample_rate_hertz(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_sample_rate_hertz(), target);
   }
 
   // bytes content = 2;
   if (this->content().size() > 0) {
-    target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBytesToArray(
-        2, this->content(), target);
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_content(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.AudioData)
   return target;
@@ -3705,11 +2794,6 @@ size_t AudioData::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.AudioData)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3718,16 +2802,20 @@ size_t AudioData::ByteSizeLong() const {
   if (this->content().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->content());
+        this->_internal_content());
   }
 
   // int32 sample_rate_hertz = 1;
   if (this->sample_rate_hertz() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->sample_rate_hertz());
+        this->_internal_sample_rate_hertz());
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -3760,7 +2848,7 @@ void AudioData::MergeFrom(const AudioData& from) {
     content_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.content_);
   }
   if (from.sample_rate_hertz() != 0) {
-    set_sample_rate_hertz(from.sample_rate_hertz());
+    _internal_set_sample_rate_hertz(from._internal_sample_rate_hertz());
   }
 }
 
@@ -3782,10 +2870,6 @@ bool AudioData::IsInitialized() const {
   return true;
 }
 
-void AudioData::Swap(AudioData* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void AudioData::InternalSwap(AudioData* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -3803,14 +2887,9 @@ void AudioData::InternalSwap(AudioData* other) {
 
 void PutLexiconRequest::InitAsDefaultInstance() {
 }
-class PutLexiconRequest::HasBitSetters {
+class PutLexiconRequest::_Internal {
  public:
 };
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int PutLexiconRequest::kNameFieldNumber;
-const int PutLexiconRequest::kContentFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 PutLexiconRequest::PutLexiconRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
@@ -3822,11 +2901,11 @@ PutLexiconRequest::PutLexiconRequest(const PutLexiconRequest& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (from.name().size() > 0) {
+  if (!from._internal_name().empty()) {
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   content_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (from.content().size() > 0) {
+  if (!from._internal_content().empty()) {
     content_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.content_);
   }
   // @@protoc_insertion_point(copy_constructor:techmo.tribune.PutLexiconRequest)
@@ -3868,7 +2947,6 @@ void PutLexiconRequest::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* PutLexiconRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -3879,14 +2957,18 @@ const char* PutLexiconRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_name(), ptr, ctx, "techmo.tribune.PutLexiconRequest.name");
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tribune.PutLexiconRequest.name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // string content = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_content(), ptr, ctx, "techmo.tribune.PutLexiconRequest.content");
+          auto str = _internal_mutable_content();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tribune.PutLexiconRequest.content"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3909,103 +2991,9 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool PutLexiconRequest::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.PutLexiconRequest)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string name = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->mutable_name()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-            this->name().data(), static_cast<int>(this->name().length()),
-            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
-            "techmo.tribune.PutLexiconRequest.name"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      // string content = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->mutable_content()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-            this->content().data(), static_cast<int>(this->content().length()),
-            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
-            "techmo.tribune.PutLexiconRequest.content"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.PutLexiconRequest)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.PutLexiconRequest)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void PutLexiconRequest::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.PutLexiconRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string name = 1;
-  if (this->name().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), static_cast<int>(this->name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tribune.PutLexiconRequest.name");
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->name(), output);
-  }
-
-  // string content = 2;
-  if (this->content().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->content().data(), static_cast<int>(this->content().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tribune.PutLexiconRequest.content");
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->content(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.PutLexiconRequest)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* PutLexiconRequest::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* PutLexiconRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.PutLexiconRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
@@ -4013,28 +3001,26 @@ void PutLexiconRequest::SerializeWithCachedSizes(
   // string name = 1;
   if (this->name().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), static_cast<int>(this->name().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "techmo.tribune.PutLexiconRequest.name");
-    target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
-        1, this->name(), target);
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
   }
 
   // string content = 2;
   if (this->content().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->content().data(), static_cast<int>(this->content().length()),
+      this->_internal_content().data(), static_cast<int>(this->_internal_content().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "techmo.tribune.PutLexiconRequest.content");
-    target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
-        2, this->content(), target);
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_content(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.PutLexiconRequest)
   return target;
@@ -4044,11 +3030,6 @@ size_t PutLexiconRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.PutLexiconRequest)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4057,16 +3038,20 @@ size_t PutLexiconRequest::ByteSizeLong() const {
   if (this->name().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->name());
+        this->_internal_name());
   }
 
   // string content = 2;
   if (this->content().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->content());
+        this->_internal_content());
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -4122,10 +3107,6 @@ bool PutLexiconRequest::IsInitialized() const {
   return true;
 }
 
-void PutLexiconRequest::Swap(PutLexiconRequest* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void PutLexiconRequest::InternalSwap(PutLexiconRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -4146,19 +3127,15 @@ void PutLexiconResponse::InitAsDefaultInstance() {
   ::techmo::tribune::_PutLexiconResponse_default_instance_._instance.get_mutable()->error_ = const_cast< ::techmo::tribune::Error*>(
       ::techmo::tribune::Error::internal_default_instance());
 }
-class PutLexiconResponse::HasBitSetters {
+class PutLexiconResponse::_Internal {
  public:
   static const ::techmo::tribune::Error& error(const PutLexiconResponse* msg);
 };
 
 const ::techmo::tribune::Error&
-PutLexiconResponse::HasBitSetters::error(const PutLexiconResponse* msg) {
+PutLexiconResponse::_Internal::error(const PutLexiconResponse* msg) {
   return *msg->error_;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int PutLexiconResponse::kErrorFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
 PutLexiconResponse::PutLexiconResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
@@ -4168,7 +3145,7 @@ PutLexiconResponse::PutLexiconResponse(const PutLexiconResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_error()) {
+  if (from._internal_has_error()) {
     error_ = new ::techmo::tribune::Error(*from.error_);
   } else {
     error_ = nullptr;
@@ -4212,7 +3189,6 @@ void PutLexiconResponse::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* PutLexiconResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -4223,7 +3199,7 @@ const char* PutLexiconResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // .techmo.tribune.Error error = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(mutable_error(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4246,84 +3222,24 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool PutLexiconResponse::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.PutLexiconResponse)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .techmo.tribune.Error error = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
-               input, mutable_error()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.PutLexiconResponse)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.PutLexiconResponse)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void PutLexiconResponse::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.PutLexiconResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .techmo.tribune.Error error = 1;
-  if (this->has_error()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::error(this), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.PutLexiconResponse)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* PutLexiconResponse::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* PutLexiconResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.PutLexiconResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .techmo.tribune.Error error = 1;
   if (this->has_error()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, HasBitSetters::error(this), target);
+      InternalWriteMessage(
+        1, _Internal::error(this), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.PutLexiconResponse)
   return target;
@@ -4333,11 +3249,6 @@ size_t PutLexiconResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.PutLexiconResponse)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4349,6 +3260,10 @@ size_t PutLexiconResponse::ByteSizeLong() const {
         *error_);
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -4377,7 +3292,7 @@ void PutLexiconResponse::MergeFrom(const PutLexiconResponse& from) {
   (void) cached_has_bits;
 
   if (from.has_error()) {
-    mutable_error()->::techmo::tribune::Error::MergeFrom(from.error());
+    _internal_mutable_error()->::techmo::tribune::Error::MergeFrom(from._internal_error());
   }
 }
 
@@ -4399,10 +3314,6 @@ bool PutLexiconResponse::IsInitialized() const {
   return true;
 }
 
-void PutLexiconResponse::Swap(PutLexiconResponse* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void PutLexiconResponse::InternalSwap(PutLexiconResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -4418,13 +3329,9 @@ void PutLexiconResponse::InternalSwap(PutLexiconResponse* other) {
 
 void DeleteLexiconRequest::InitAsDefaultInstance() {
 }
-class DeleteLexiconRequest::HasBitSetters {
+class DeleteLexiconRequest::_Internal {
  public:
 };
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int DeleteLexiconRequest::kNameFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 DeleteLexiconRequest::DeleteLexiconRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
@@ -4436,7 +3343,7 @@ DeleteLexiconRequest::DeleteLexiconRequest(const DeleteLexiconRequest& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (from.name().size() > 0) {
+  if (!from._internal_name().empty()) {
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   // @@protoc_insertion_point(copy_constructor:techmo.tribune.DeleteLexiconRequest)
@@ -4475,7 +3382,6 @@ void DeleteLexiconRequest::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* DeleteLexiconRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -4486,7 +3392,9 @@ const char* DeleteLexiconRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_name(), ptr, ctx, "techmo.tribune.DeleteLexiconRequest.name");
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tribune.DeleteLexiconRequest.name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4509,78 +3417,9 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool DeleteLexiconRequest::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.DeleteLexiconRequest)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string name = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->mutable_name()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-            this->name().data(), static_cast<int>(this->name().length()),
-            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
-            "techmo.tribune.DeleteLexiconRequest.name"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.DeleteLexiconRequest)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.DeleteLexiconRequest)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void DeleteLexiconRequest::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.DeleteLexiconRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string name = 1;
-  if (this->name().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), static_cast<int>(this->name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tribune.DeleteLexiconRequest.name");
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->name(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.DeleteLexiconRequest)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* DeleteLexiconRequest::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* DeleteLexiconRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.DeleteLexiconRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
@@ -4588,17 +3427,16 @@ void DeleteLexiconRequest::SerializeWithCachedSizes(
   // string name = 1;
   if (this->name().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), static_cast<int>(this->name().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "techmo.tribune.DeleteLexiconRequest.name");
-    target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
-        1, this->name(), target);
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.DeleteLexiconRequest)
   return target;
@@ -4608,11 +3446,6 @@ size_t DeleteLexiconRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.DeleteLexiconRequest)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4621,9 +3454,13 @@ size_t DeleteLexiconRequest::ByteSizeLong() const {
   if (this->name().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->name());
+        this->_internal_name());
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -4675,10 +3512,6 @@ bool DeleteLexiconRequest::IsInitialized() const {
   return true;
 }
 
-void DeleteLexiconRequest::Swap(DeleteLexiconRequest* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void DeleteLexiconRequest::InternalSwap(DeleteLexiconRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -4697,19 +3530,15 @@ void DeleteLexiconResponse::InitAsDefaultInstance() {
   ::techmo::tribune::_DeleteLexiconResponse_default_instance_._instance.get_mutable()->error_ = const_cast< ::techmo::tribune::Error*>(
       ::techmo::tribune::Error::internal_default_instance());
 }
-class DeleteLexiconResponse::HasBitSetters {
+class DeleteLexiconResponse::_Internal {
  public:
   static const ::techmo::tribune::Error& error(const DeleteLexiconResponse* msg);
 };
 
 const ::techmo::tribune::Error&
-DeleteLexiconResponse::HasBitSetters::error(const DeleteLexiconResponse* msg) {
+DeleteLexiconResponse::_Internal::error(const DeleteLexiconResponse* msg) {
   return *msg->error_;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int DeleteLexiconResponse::kErrorFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
 DeleteLexiconResponse::DeleteLexiconResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
@@ -4719,7 +3548,7 @@ DeleteLexiconResponse::DeleteLexiconResponse(const DeleteLexiconResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_error()) {
+  if (from._internal_has_error()) {
     error_ = new ::techmo::tribune::Error(*from.error_);
   } else {
     error_ = nullptr;
@@ -4763,7 +3592,6 @@ void DeleteLexiconResponse::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* DeleteLexiconResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -4774,7 +3602,7 @@ const char* DeleteLexiconResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
       // .techmo.tribune.Error error = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(mutable_error(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4797,84 +3625,24 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool DeleteLexiconResponse::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.DeleteLexiconResponse)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .techmo.tribune.Error error = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
-               input, mutable_error()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.DeleteLexiconResponse)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.DeleteLexiconResponse)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void DeleteLexiconResponse::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.DeleteLexiconResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .techmo.tribune.Error error = 1;
-  if (this->has_error()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::error(this), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.DeleteLexiconResponse)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* DeleteLexiconResponse::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* DeleteLexiconResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.DeleteLexiconResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .techmo.tribune.Error error = 1;
   if (this->has_error()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, HasBitSetters::error(this), target);
+      InternalWriteMessage(
+        1, _Internal::error(this), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.DeleteLexiconResponse)
   return target;
@@ -4884,11 +3652,6 @@ size_t DeleteLexiconResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.DeleteLexiconResponse)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4900,6 +3663,10 @@ size_t DeleteLexiconResponse::ByteSizeLong() const {
         *error_);
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -4928,7 +3695,7 @@ void DeleteLexiconResponse::MergeFrom(const DeleteLexiconResponse& from) {
   (void) cached_has_bits;
 
   if (from.has_error()) {
-    mutable_error()->::techmo::tribune::Error::MergeFrom(from.error());
+    _internal_mutable_error()->::techmo::tribune::Error::MergeFrom(from._internal_error());
   }
 }
 
@@ -4950,10 +3717,6 @@ bool DeleteLexiconResponse::IsInitialized() const {
   return true;
 }
 
-void DeleteLexiconResponse::Swap(DeleteLexiconResponse* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void DeleteLexiconResponse::InternalSwap(DeleteLexiconResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -4969,13 +3732,9 @@ void DeleteLexiconResponse::InternalSwap(DeleteLexiconResponse* other) {
 
 void GetLexiconRequest::InitAsDefaultInstance() {
 }
-class GetLexiconRequest::HasBitSetters {
+class GetLexiconRequest::_Internal {
  public:
 };
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int GetLexiconRequest::kNameFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 GetLexiconRequest::GetLexiconRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
@@ -4987,7 +3746,7 @@ GetLexiconRequest::GetLexiconRequest(const GetLexiconRequest& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (from.name().size() > 0) {
+  if (!from._internal_name().empty()) {
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   // @@protoc_insertion_point(copy_constructor:techmo.tribune.GetLexiconRequest)
@@ -5026,7 +3785,6 @@ void GetLexiconRequest::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* GetLexiconRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -5037,7 +3795,9 @@ const char* GetLexiconRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       // string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_name(), ptr, ctx, "techmo.tribune.GetLexiconRequest.name");
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tribune.GetLexiconRequest.name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5060,78 +3820,9 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool GetLexiconRequest::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.GetLexiconRequest)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string name = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->mutable_name()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-            this->name().data(), static_cast<int>(this->name().length()),
-            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
-            "techmo.tribune.GetLexiconRequest.name"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.GetLexiconRequest)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.GetLexiconRequest)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void GetLexiconRequest::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.GetLexiconRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string name = 1;
-  if (this->name().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), static_cast<int>(this->name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tribune.GetLexiconRequest.name");
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->name(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.GetLexiconRequest)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* GetLexiconRequest::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* GetLexiconRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.GetLexiconRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
@@ -5139,17 +3830,16 @@ void GetLexiconRequest::SerializeWithCachedSizes(
   // string name = 1;
   if (this->name().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), static_cast<int>(this->name().length()),
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "techmo.tribune.GetLexiconRequest.name");
-    target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
-        1, this->name(), target);
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.GetLexiconRequest)
   return target;
@@ -5159,11 +3849,6 @@ size_t GetLexiconRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.GetLexiconRequest)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -5172,9 +3857,13 @@ size_t GetLexiconRequest::ByteSizeLong() const {
   if (this->name().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->name());
+        this->_internal_name());
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -5226,10 +3915,6 @@ bool GetLexiconRequest::IsInitialized() const {
   return true;
 }
 
-void GetLexiconRequest::Swap(GetLexiconRequest* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void GetLexiconRequest::InternalSwap(GetLexiconRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -5248,20 +3933,15 @@ void GetLexiconResponse::InitAsDefaultInstance() {
   ::techmo::tribune::_GetLexiconResponse_default_instance_._instance.get_mutable()->error_ = const_cast< ::techmo::tribune::Error*>(
       ::techmo::tribune::Error::internal_default_instance());
 }
-class GetLexiconResponse::HasBitSetters {
+class GetLexiconResponse::_Internal {
  public:
   static const ::techmo::tribune::Error& error(const GetLexiconResponse* msg);
 };
 
 const ::techmo::tribune::Error&
-GetLexiconResponse::HasBitSetters::error(const GetLexiconResponse* msg) {
+GetLexiconResponse::_Internal::error(const GetLexiconResponse* msg) {
   return *msg->error_;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int GetLexiconResponse::kContentFieldNumber;
-const int GetLexiconResponse::kErrorFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
 GetLexiconResponse::GetLexiconResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
@@ -5272,10 +3952,10 @@ GetLexiconResponse::GetLexiconResponse(const GetLexiconResponse& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   content_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (from.content().size() > 0) {
+  if (!from._internal_content().empty()) {
     content_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.content_);
   }
-  if (from.has_error()) {
+  if (from._internal_has_error()) {
     error_ = new ::techmo::tribune::Error(*from.error_);
   } else {
     error_ = nullptr;
@@ -5322,7 +4002,6 @@ void GetLexiconResponse::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* GetLexiconResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -5333,14 +4012,16 @@ const char* GetLexiconResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // string content = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_content(), ptr, ctx, "techmo.tribune.GetLexiconResponse.content");
+          auto str = _internal_mutable_content();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tribune.GetLexiconResponse.content"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // .techmo.tribune.Error error = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(mutable_error(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5363,95 +4044,9 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool GetLexiconResponse::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.GetLexiconResponse)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string content = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->mutable_content()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-            this->content().data(), static_cast<int>(this->content().length()),
-            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
-            "techmo.tribune.GetLexiconResponse.content"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      // .techmo.tribune.Error error = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
-               input, mutable_error()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.GetLexiconResponse)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.GetLexiconResponse)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void GetLexiconResponse::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.GetLexiconResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string content = 1;
-  if (this->content().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->content().data(), static_cast<int>(this->content().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tribune.GetLexiconResponse.content");
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->content(), output);
-  }
-
-  // .techmo.tribune.Error error = 2;
-  if (this->has_error()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::error(this), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.GetLexiconResponse)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* GetLexiconResponse::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* GetLexiconResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.GetLexiconResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
@@ -5459,24 +4054,24 @@ void GetLexiconResponse::SerializeWithCachedSizes(
   // string content = 1;
   if (this->content().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->content().data(), static_cast<int>(this->content().length()),
+      this->_internal_content().data(), static_cast<int>(this->_internal_content().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "techmo.tribune.GetLexiconResponse.content");
-    target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
-        1, this->content(), target);
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_content(), target);
   }
 
   // .techmo.tribune.Error error = 2;
   if (this->has_error()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, HasBitSetters::error(this), target);
+      InternalWriteMessage(
+        2, _Internal::error(this), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.GetLexiconResponse)
   return target;
@@ -5486,11 +4081,6 @@ size_t GetLexiconResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.GetLexiconResponse)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -5499,7 +4089,7 @@ size_t GetLexiconResponse::ByteSizeLong() const {
   if (this->content().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->content());
+        this->_internal_content());
   }
 
   // .techmo.tribune.Error error = 2;
@@ -5509,6 +4099,10 @@ size_t GetLexiconResponse::ByteSizeLong() const {
         *error_);
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -5541,7 +4135,7 @@ void GetLexiconResponse::MergeFrom(const GetLexiconResponse& from) {
     content_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.content_);
   }
   if (from.has_error()) {
-    mutable_error()->::techmo::tribune::Error::MergeFrom(from.error());
+    _internal_mutable_error()->::techmo::tribune::Error::MergeFrom(from._internal_error());
   }
 }
 
@@ -5563,10 +4157,6 @@ bool GetLexiconResponse::IsInitialized() const {
   return true;
 }
 
-void GetLexiconResponse::Swap(GetLexiconResponse* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void GetLexiconResponse::InternalSwap(GetLexiconResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -5584,13 +4174,9 @@ void GetLexiconResponse::InternalSwap(GetLexiconResponse* other) {
 
 void ListLexiconsRequest::InitAsDefaultInstance() {
 }
-class ListLexiconsRequest::HasBitSetters {
+class ListLexiconsRequest::_Internal {
  public:
 };
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListLexiconsRequest::kLanguageFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ListLexiconsRequest::ListLexiconsRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
@@ -5602,7 +4188,7 @@ ListLexiconsRequest::ListLexiconsRequest(const ListLexiconsRequest& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   language_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (from.language().size() > 0) {
+  if (!from._internal_language().empty()) {
     language_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.language_);
   }
   // @@protoc_insertion_point(copy_constructor:techmo.tribune.ListLexiconsRequest)
@@ -5641,7 +4227,6 @@ void ListLexiconsRequest::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* ListLexiconsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -5652,7 +4237,9 @@ const char* ListLexiconsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // string language = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_language(), ptr, ctx, "techmo.tribune.ListLexiconsRequest.language");
+          auto str = _internal_mutable_language();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tribune.ListLexiconsRequest.language"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5675,78 +4262,9 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool ListLexiconsRequest::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.ListLexiconsRequest)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string language = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->mutable_language()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-            this->language().data(), static_cast<int>(this->language().length()),
-            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
-            "techmo.tribune.ListLexiconsRequest.language"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.ListLexiconsRequest)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.ListLexiconsRequest)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void ListLexiconsRequest::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.ListLexiconsRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string language = 1;
-  if (this->language().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->language().data(), static_cast<int>(this->language().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tribune.ListLexiconsRequest.language");
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->language(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.ListLexiconsRequest)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* ListLexiconsRequest::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* ListLexiconsRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.ListLexiconsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
@@ -5754,17 +4272,16 @@ void ListLexiconsRequest::SerializeWithCachedSizes(
   // string language = 1;
   if (this->language().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->language().data(), static_cast<int>(this->language().length()),
+      this->_internal_language().data(), static_cast<int>(this->_internal_language().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "techmo.tribune.ListLexiconsRequest.language");
-    target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
-        1, this->language(), target);
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_language(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.ListLexiconsRequest)
   return target;
@@ -5774,11 +4291,6 @@ size_t ListLexiconsRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.ListLexiconsRequest)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -5787,9 +4299,13 @@ size_t ListLexiconsRequest::ByteSizeLong() const {
   if (this->language().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->language());
+        this->_internal_language());
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -5841,10 +4357,6 @@ bool ListLexiconsRequest::IsInitialized() const {
   return true;
 }
 
-void ListLexiconsRequest::Swap(ListLexiconsRequest* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void ListLexiconsRequest::InternalSwap(ListLexiconsRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -5861,13 +4373,9 @@ void ListLexiconsRequest::InternalSwap(ListLexiconsRequest* other) {
 
 void ListLexiconsResponse::InitAsDefaultInstance() {
 }
-class ListLexiconsResponse::HasBitSetters {
+class ListLexiconsResponse::_Internal {
  public:
 };
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListLexiconsResponse::kNamesFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ListLexiconsResponse::ListLexiconsResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
@@ -5913,7 +4421,6 @@ void ListLexiconsResponse::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* ListLexiconsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -5927,10 +4434,12 @@ const char* ListLexiconsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(add_names(), ptr, ctx, "techmo.tribune.ListLexiconsResponse.names");
+            auto str = _internal_add_names();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tribune.ListLexiconsResponse.names"));
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint8>(ptr) == 10);
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -5952,96 +4461,26 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool ListLexiconsResponse::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.ListLexiconsResponse)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated string names = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->add_names()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-            this->names(this->names_size() - 1).data(),
-            static_cast<int>(this->names(this->names_size() - 1).length()),
-            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
-            "techmo.tribune.ListLexiconsResponse.names"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.ListLexiconsResponse)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.ListLexiconsResponse)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void ListLexiconsResponse::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.ListLexiconsResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated string names = 1;
-  for (int i = 0, n = this->names_size(); i < n; i++) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->names(i).data(), static_cast<int>(this->names(i).length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tribune.ListLexiconsResponse.names");
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteString(
-      1, this->names(i), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.ListLexiconsResponse)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* ListLexiconsResponse::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* ListLexiconsResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.ListLexiconsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated string names = 1;
-  for (int i = 0, n = this->names_size(); i < n; i++) {
+  for (int i = 0, n = this->_internal_names_size(); i < n; i++) {
+    const auto& s = this->_internal_names(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->names(i).data(), static_cast<int>(this->names(i).length()),
+      s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "techmo.tribune.ListLexiconsResponse.names");
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      WriteStringToArray(1, this->names(i), target);
+    target = stream->WriteString(1, s, target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.ListLexiconsResponse)
   return target;
@@ -6051,23 +4490,22 @@ size_t ListLexiconsResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.ListLexiconsResponse)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated string names = 1;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->names_size());
-  for (int i = 0, n = this->names_size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(names_.size());
+  for (int i = 0, n = names_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      this->names(i));
+      names_.Get(i));
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -6116,14 +4554,10 @@ bool ListLexiconsResponse::IsInitialized() const {
   return true;
 }
 
-void ListLexiconsResponse::Swap(ListLexiconsResponse* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void ListLexiconsResponse::InternalSwap(ListLexiconsResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  names_.InternalSwap(CastToBase(&other->names_));
+  names_.InternalSwap(&other->names_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListLexiconsResponse::GetMetadata() const {
@@ -6135,14 +4569,9 @@ void ListLexiconsResponse::InternalSwap(ListLexiconsResponse* other) {
 
 void Error::InitAsDefaultInstance() {
 }
-class Error::HasBitSetters {
+class Error::_Internal {
  public:
 };
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Error::kCodeFieldNumber;
-const int Error::kDescriptionFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Error::Error()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
@@ -6154,7 +4583,7 @@ Error::Error(const Error& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (from.description().size() > 0) {
+  if (!from._internal_description().empty()) {
     description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
   code_ = from.code_;
@@ -6196,7 +4625,6 @@ void Error::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* Error::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -6209,13 +4637,15 @@ const char* Error::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          set_code(static_cast<::techmo::tribune::ErrorCode>(val));
+          _internal_set_code(static_cast<::techmo::tribune::ErrorCode>(val));
         } else goto handle_unusual;
         continue;
       // string description = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_description(), ptr, ctx, "techmo.tribune.Error.description");
+          auto str = _internal_mutable_description();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tribune.Error.description"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6238,122 +4668,33 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool Error::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:techmo.tribune.Error)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .techmo.tribune.ErrorCode code = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (8 & 0xFF)) {
-          int value = 0;
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_code(static_cast< ::techmo::tribune::ErrorCode >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      // string description = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->mutable_description()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-            this->description().data(), static_cast<int>(this->description().length()),
-            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
-            "techmo.tribune.Error.description"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:techmo.tribune.Error)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:techmo.tribune.Error)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void Error::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:techmo.tribune.Error)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .techmo.tribune.ErrorCode code = 1;
-  if (this->code() != 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnum(
-      1, this->code(), output);
-  }
-
-  // string description = 2;
-  if (this->description().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->description().data(), static_cast<int>(this->description().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tribune.Error.description");
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->description(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:techmo.tribune.Error)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* Error::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* Error::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:techmo.tribune.Error)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .techmo.tribune.ErrorCode code = 1;
   if (this->code() != 0) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      1, this->code(), target);
+      1, this->_internal_code(), target);
   }
 
   // string description = 2;
   if (this->description().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->description().data(), static_cast<int>(this->description().length()),
+      this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "techmo.tribune.Error.description");
-    target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
-        2, this->description(), target);
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_description(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:techmo.tribune.Error)
   return target;
@@ -6363,11 +4704,6 @@ size_t Error::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:techmo.tribune.Error)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -6376,15 +4712,19 @@ size_t Error::ByteSizeLong() const {
   if (this->description().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->description());
+        this->_internal_description());
   }
 
   // .techmo.tribune.ErrorCode code = 1;
   if (this->code() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->code());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_code());
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -6417,7 +4757,7 @@ void Error::MergeFrom(const Error& from) {
     description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
   if (from.code() != 0) {
-    set_code(from.code());
+    _internal_set_code(from._internal_code());
   }
 }
 
@@ -6439,10 +4779,6 @@ bool Error::IsInitialized() const {
   return true;
 }
 
-void Error::Swap(Error* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Error::InternalSwap(Error* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
