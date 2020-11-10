@@ -2,6 +2,7 @@ import tribune_tts_pb2
 import tribune_tts_pb2_grpc
 import grpc
 import os
+from audio_player import AudioPlayer
 from wave_saver import WaveSaver
 
 
@@ -16,6 +17,8 @@ def call_synthesize(args, text):
     # Synthesis request
     config = tribune_tts_pb2.SynthesizeConfig(sample_rate_hertz=int(args.sample_rate))
     request = tribune_tts_pb2.SynthesizeRequest(text=text, config=config)
+    if args.play:
+        ap = AudioPlayer(sample_rate_hertz=int(args.sample_rate))
     ws = WaveSaver()
 
     timeout=None
@@ -26,6 +29,8 @@ def call_synthesize(args, text):
         metadata = [('session_id', args.session_id)]
 
     try:
+        if args.play:
+            ap.start()
         for response in stub.Synthesize(request, timeout=timeout, metadata=metadata):
             if response.HasField('error'):
                 print("Error [" + str(response.error.code) + "]: " + response.error.description)
@@ -36,9 +41,13 @@ def call_synthesize(args, text):
                         raise RuntimeError("Sample rate does not match previously received.")
                 else:
                     ws.setFrameRate(response.audio.sample_rate_hertz)
+                if args.play:
+                    ap.append(response.audio.content)
                 ws.append(response.audio.content)
                 if response.audio.end_of_stream:
                     ws.save(wavefilename)
+                    if args.play:
+                        ap.stop()
     except grpc.RpcError as e:
         print("[Server-side error] Received following RPC error from the TTS service:", str(e))
     ws.clear()

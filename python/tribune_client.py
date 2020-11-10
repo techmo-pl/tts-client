@@ -22,7 +22,9 @@ def main():
                    help="Path to output wave file with synthesized audio content.", type=str)
     parser.add_argument("-f", "--sample_rate", dest="sample_rate", default=0,
                   help="Sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.", type=int)
-    
+    parser.add_argument("-p", "--play", dest="play", default=False, action="store_true",
+                  help="Play synthesized audio")
+
     # Parse and validate options
     args = parser.parse_args()
 
