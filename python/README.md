@@ -22,45 +22,61 @@ python tribune_client.py -s "192.168.1.1:4321" -f 44100 -t "Polski tekst do synt
 Usage:
 ```
 usage: tribune_client.py [-h] -s SERVICE [--session-id SESSION_ID]
-                         [--grpc-timeout GRPC_TIMEOUT] [-t TEXT]
-                         [-i INPUTFILE] [-o OUT_PATH] [-f SAMPLE_RATE]
+                         [--grpc-timeout GRPC_TIMEOUT] [--list-voices]
+                         [-r RESPONSE] [-t TEXT] [-i INPUTFILE] [-o OUT_PATH]
+                         [-f SAMPLE_RATE] [-ae AUDIO_ENCODING]
+                         [-sp SPEECH_PITCH] [-sr SPEECH_RANGE]
+                         [-ss SPEECH_RATE] [-sv SPEECH_VOLUME]
+                         [-vn VOICE_NAME] [-vg VOICE_GENDER] [-va VOICE_AGE]
+                         [-l LANGUAGE]
 
 optional arguments:
-  -h, --help            show this help message and exit
+  -h, --help            Shows this help message and exits.
   -s SERVICE, --service-address SERVICE
-                        IP address and port (address:port) of a service the
-                        client will connect to.
+                        An IP address and port (address:port) of a service the client connects to.
   --session-id SESSION_ID
-                        Session ID to be passed to the service. If not
-                        specified, the service will generate a default session
-                        ID itself.
+                        A session ID to be passed to the service. If not specified, the service generates a default session ID.
   --grpc-timeout GRPC_TIMEOUT
-                        Timeout in milliseconds used to set gRPC deadline -
-                        how long the client is willing to wait for a reply
-                        from the server. If not specified, the service will
-                        set the deadline to a very large number.
-  -t TEXT, --text TEXT  Text to be synthesized (in polish).
+                        A timeout in milliseconds used to set gRPC deadline - how long the client is willing to wait for a reply from the server (optional).
+  --list-voices         Lists all available voices.
+  -r RESPONSE, --response RESPONSE
+                        streaming or single, calls the streaming (default) or non-streaming version of Synthesize.
+  -t TEXT, --text TEXT  Text to be synthesized.
   -i INPUTFILE, --input_text_file INPUTFILE
-                        A file with text to be synthesized (in polish).
+                        A file with text to be synthesized.
   -o OUT_PATH, --out-path OUT_PATH
-                        Path to output wave file with synthesized audio
-                        content.
+                        A path to the output wave file with synthesized audio content.
   -f SAMPLE_RATE, --sample_rate SAMPLE_RATE
-                        Sample rate in Hz of synthesized audio. Set to 0
-                        (default) to use voice's original sample rate.
+                        A sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.
+  -ae AUDIO_ENCODING, --audio-encoding AUDIO_ENCODING
+                        An ncoding of the output audio, pcm16 (default) or ogg-vorbis.
+  -sp SPEECH_PITCH, --speech-pitch SPEECH_PITCH
+                        Allows adjusting the default pitch of the synthesized speech (optional, can be overriden by SSML).
+  -sr SPEECH_RANGE, --speech-range SPEECH_RANGE
+                        Allows adjusting the default range of the synthesized speech (optional, can be overriden by SSML).
+  -ss SPEECH_RATE, --speech-rate SPEECH_RATE
+                        Allows adjusting the default rate (speed) of the synthesized speech (optional, can be overriden by SSML).
+  -sv SPEECH_VOLUME, --speech-volume SPEECH_VOLUME
+                        Allows adjusting the default volume of the synthesized speech (optional, can be overriden by SSML).
+  -vn VOICE_NAME, --voice-name VOICE_NAME
+                        A name od the voice used to synthesize the phrase (optional, can be overriden by SSML).
+  -vg VOICE_GENDER, --voice-gender VOICE_GENDER
+                        A gender of the voice - female or male (optional, can be overriden by SSML).
+  -va VOICE_AGE, --voice-age VOICE_AGE
+                        An age of the voice - adult, child, or senile (optional, can be overriden by SSML).
+  -l LANGUAGE, --language LANGUAGE
+                        ISO 639-1 language code of the phrase to synthesize (optional, can be overriden by SSML).
 ```
 
-In input text you can use several special tags which can be interpreted. Tags have to be in from `<tag>something special</tag>` and can occur in any place in text. Currently interpreted tags are:
-
-cardinal    cardinal number     "<cardinal>7</cardinal>"    -> "siedem"
-signed      number with sign    "<signed>-15</signed>"      -> "minus piętnaście"
-ordinal     ordinal number      "<ordinal>1</ordinal>"      -> "pierwszy"
-fraction    fractional number   "<fraction>3/4</fraction>"  -> "trzy czwarte"
-postal      postal code         "<postal>30-020</postal>"   -> "trzydzieści zero dwadzieścia"
-time        time                "<time>22:00</time>"        -> "dwudziesta druga"
-date        date                "<date>12/05/2001</date>"   -> "dwunasty maja dwa tysiące jeden"
-
-Note: when interpreting tags only nominal case is supported at the moment.
+The input text can be either a plain text or SSML (https://w3.org/TR/speech-synthesis11/).
+Currently the following SSML tags are supported:
+- `<speak>` - root xml node, with optional `xml:lang` attribute,
+- `<prosody>` - supported attributes: `pitch`, `range`, `rate`, and `volume`,
+- `<break>` - supported attributes: `strength` and `time`,
+- `<emphasis>` - supported attribute: `level`,
+- `<say-as>` - supported attribute: `interpret-as` (consult Techmo TTS documentation for the complete list of all available implementations),
+- `<lang>` - supported attribute: `xml:lang`,
+- `<voice>` - supported attributes: `name`, `gender`, and `age`.
 
 Module:
 
@@ -68,9 +84,15 @@ You can use the client as a module for Python3. Install the package to your envi
 ```
 pip install -e ./python/.
 ```
-This package provides a module `call_synthesize` with a function with the same name, which runs the client. Here is an example how to use it as a module:
+This package provides modules `call_synthesize` and `call_listvoices` with functions with the same name, which run the client. Here are examples how to use them as a module:
 ```
 from call_synthesize import call_synthesize
-call_synthesize(service, text, out_path, sample_rate)
+call_synthesize(args, text)
 ```
+and
+```
+from call_listvoices import call_listvoices
+call_listvoices(args)
+```
+The `args` are a parsed command line arguments, and `text` is a request text to synthesize (either a plain text or SSML).
 Function parameters are described in usage section above.
