@@ -1,3 +1,5 @@
+from io import BytesIO
+import librosa
 import numpy as np
 import sounddevice as sd
 
@@ -27,7 +29,9 @@ class AudioPlayer:
         self.stream.start()
 
     def append(self, audio):
-        self.stream.write(np.fromstring(audio, dtype=self.encoding))
+        data, sample_rate = librosa.load(BytesIO(audio))
+        print('data:', data)
+        self.stream.write(np.array(data, dtype=self.encoding))
 
     def stop(self):
         if self.stream is not None:
