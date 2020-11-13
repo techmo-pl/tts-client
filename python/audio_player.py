@@ -1,5 +1,4 @@
 from io import BytesIO
-import librosa
 import numpy as np
 import sounddevice as sd
 
@@ -12,7 +11,7 @@ class AudioPlayer:
         if encoding == 'pcm16':
             self.encoding = np.int16
         elif encoding == 'ogg-vorbis':
-            self.encoding = np.float32
+            raise RuntimeError("OGG-Vorbis audio-encoding is not implemented.")
         else:
             raise RuntimeError("Unsupported audio-encoding: " + str(encoding))
 
@@ -29,9 +28,7 @@ class AudioPlayer:
         self.stream.start()
 
     def append(self, audio):
-        data, sample_rate = librosa.load(BytesIO(audio))
-        print('data:', data)
-        self.stream.write(np.array(data, dtype=self.encoding))
+        self.stream.write(np.fromstring(audio, dtype=np.int16))
 
     def stop(self):
         if self.stream is not None:
