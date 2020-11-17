@@ -32,28 +32,29 @@ def call_synthesize(args, text):
     if args.session_id:
         metadata = [('session_id', args.session_id)]
 
-    apl = None
+    audioPlayer = None
     if args.play:
-        apl = AudioPlayer(
+        audioPlayer = AudioPlayer(
             sample_rate_hertz=int(args.sample_rate),
             encoding=args.audio_encoding
         )
-    asv = AudioSaver()
-    asv.setEncoding(audio_encoding)
+    audioSaver = AudioSaver()
+    audioSaver.setEncoding(audio_encoding)
 
     try:
         if args.response == "streaming":
-            internal_synthesize_streaming(stub, request, timeout, metadata, asv, apl)
+            internal_synthesize_streaming(stub, request, timeout, metadata, audioSaver, audioPlayer)
         elif args.response == "single":
-            internal_synthesize(stub, request, timeout, metadata, asv, apl)
+            internal_synthesize(stub, request, timeout, metadata, audioSaver, audioPlayer)
         else:
             raise RuntimeError("Unsupported response type: " + args.response)
-        if args.play:
-            apl.stop()
-        asv.save(out_path)
+        audioSaver.save(out_path)
     except grpc.RpcError as e:
         print("[Server-side error] Received following RPC error from the TTS service:", str(e))
-    asv.clear()
+    finally:
+        if args.play:
+            audioPlayer.stop()
+    audioSaver.clear()
 
 def get_audio_encoding(args):
     if args.audio_encoding == "pcm16":
