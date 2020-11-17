@@ -54,4 +54,3 @@ cd build
 cmake -DCMAKE_BUILD_TYPE=Release -DgRPC_SSL_PROVIDER=package ..
 make -j $jobs
 
-cd "${cwd}"
