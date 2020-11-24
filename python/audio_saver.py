@@ -1,20 +1,25 @@
 import wave
 import struct
 import sys
+import tribune_tts_pb2
 
-class WaveSaver:
+class AudioSaver:
     """Wave Saver for TTS"""
     buffer = None
     _framerate = None
     _nchannels = None
     _sampwidth = None
+    _encoding = None
 
     def __init__(self, sampling_frequency = None):
         self.buffer = bytearray()
         self._framerate = sampling_frequency
         self._nchannels = 1
         self._sampwidth = 2
-      
+
+    def setEncoding(self, encoding):
+        self._encoding = encoding
+
     def setFrameRate(self, sampling_frequency):
         self._framerate = sampling_frequency
 
@@ -25,19 +30,24 @@ class WaveSaver:
         self.buffer.clear()
 
     def save(self, filename):
-        if not self._framerate:
-            raise RuntimeError("Sample rate has not been set")
-        with wave.open(filename, 'w') as w:
-            params = (self._nchannels, self._sampwidth, self._framerate, len(self.buffer), 'NONE', 'not compressed')
-            w.setparams(params)
-            w.writeframes(self.buffer)
-    
+        if self._encoding == tribune_tts_pb2.AudioEncoding.PCM16:
+            if not self._framerate:
+                raise RuntimeError("Sample rate has not been set")
+            with wave.open(filename, 'w') as w:
+                params = (self._nchannels, self._sampwidth, self._framerate, len(self.buffer), 'NONE', 'not compressed')
+                w.setparams(params)
+                w.writeframes(self.buffer)
+        else:
+            f = open(filename, 'wb')
+            f.write(self.buffer)
+            f.close()
+
     def load(self, filename):
         with wave.open(filename, 'r') as wr:
             self.buffer = wr.readframes(wr.getnframes())
-            
-    def isEqualTo(self, ws):
-        return self.buffer == ws.buffer
+
+    def isEqualTo(self, asv):
+        return self.buffer == asv.buffer
 
     def print(self):
         if len(self.buffer) > 0:
@@ -56,12 +66,11 @@ class WaveSaver:
 #         return ar
 #
 #
-# def ws_main():
-#     ws = WaveSaver()
+# def asv_main():
+#     asv = AudioSaver()
 #     audiodata = mock_bytearray()
-#     ws.append(audiodata)
-#     ws.save('output_wav.wav')
-#     ws.print()
+#     asv.append(audiodata)
+#     asv.save('output_wav.wav')
+#     asv.print()
 #
-# ws_main()
-
+# asv_main()

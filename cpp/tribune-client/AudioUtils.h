@@ -1,9 +1,7 @@
 #ifndef __WAVE_UTILS_H__
 #define __WAVE_UTILS_H__
 
-
 #include <string>
-
 
 /// WAVE file header structure
 /// Note: Header metadata are not supported.
@@ -32,10 +30,12 @@ struct WAV_DATA
 };
 
 /// Reads at given path WAVE file header into WAV_HEADER struct and audio bytes into std::string.
-WAV_DATA ReadWaveFile(const std::string & wavePath);
+WAV_DATA ReadWaveFile(const std::string& wavePath);
 
 /// Writes at given path WAVE file with given sample rate [Hz] and audio bytes as std::string.
-void WriteWaveFile(const std::string & wavePath, unsigned int sampleRate, const std::string & audioBytes);
+void WriteWaveFile(const std::string& wavePath, unsigned int sampleRate, const std::string& audioBytes);
 
+/// Writes audioBytes encoded to the specific format (e.g. Ogg/Vorbis) without appending any extra header.
+void WriteEncodedFile(const std::string& filePath, const std::string& audioBytes);
 
 #endif /* __WAVE_UTILS_H__ */
