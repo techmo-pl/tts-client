@@ -1,8 +1,6 @@
 #!/bin/bash
 # coding=utf-8
 
-set -euo pipefail
-
 jobs=32
 version="v1.24.3"
 [ $# -ge 1 ] && jobs=$1
@@ -23,24 +21,36 @@ fi
 # download and build
 cwd=`pwd`
 
-git clone https://github.com/grpc/grpc grpc_tmp
+git clone https://github.com/grpc/grpc grpc
+cd grpc
+git checkout "tags/v1.24.3"
+git submodule update --init
+cd third_party/protobuf/
+git checkout v3.11.3
+cd ../../..
 
-mv grpc_tmp "${grpc_path}"
+mv grpc "${grpc_path}"
+
 cd "${grpc_path}"
 
-git checkout "tags/${version}"
-git submodule update --init
+# cares
+cd third_party/cares/cares
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release -DCARES_STATIC=ON ../
+make -j $jobs
+
+cd "${grpc_path}"
 
 # zlib
 cd third_party/zlib
-./configure
+CFLAGS="-fPIC" ./configure 
 make -j $jobs
 cd ../..
 
 # build grpc
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release -DgRPC_SSL_PROVIDER=package ..
 make -j $jobs
-
-#ln -sf ${grpc_path} /opt/grpc
-
-cd "${cwd}"
 

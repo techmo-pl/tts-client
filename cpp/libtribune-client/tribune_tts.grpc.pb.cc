@@ -20,7 +20,13 @@ namespace techmo {
 namespace tribune {
 
 static const char* TTS_method_names[] = {
+  "/techmo.tribune.TTS/ListVoices",
+  "/techmo.tribune.TTS/SynthesizeStreaming",
   "/techmo.tribune.TTS/Synthesize",
+  "/techmo.tribune.TTS/PutLexicon",
+  "/techmo.tribune.TTS/DeleteLexicon",
+  "/techmo.tribune.TTS/GetLexicon",
+  "/techmo.tribune.TTS/ListLexicons",
 };
 
 std::unique_ptr< TTS::Stub> TTS::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -30,40 +36,286 @@ std::unique_ptr< TTS::Stub> TTS::NewStub(const std::shared_ptr< ::grpc::ChannelI
 }
 
 TTS::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_Synthesize_(TTS_method_names[0], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  : channel_(channel), rpcmethod_ListVoices_(TTS_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SynthesizeStreaming_(TTS_method_names[1], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_Synthesize_(TTS_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PutLexicon_(TTS_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteLexicon_(TTS_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetLexicon_(TTS_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListLexicons_(TTS_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::ClientReader< ::techmo::tribune::SynthesizeResponse>* TTS::Stub::SynthesizeRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::techmo::tribune::SynthesizeResponse>::Create(channel_.get(), rpcmethod_Synthesize_, context, request);
+::grpc::Status TTS::Stub::ListVoices(::grpc::ClientContext* context, const ::techmo::tribune::ListVoicesRequest& request, ::techmo::tribune::ListVoicesResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListVoices_, context, request, response);
 }
 
-void TTS::Stub::experimental_async::Synthesize(::grpc::ClientContext* context, ::techmo::tribune::SynthesizeRequest* request, ::grpc::experimental::ClientReadReactor< ::techmo::tribune::SynthesizeResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::techmo::tribune::SynthesizeResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_Synthesize_, context, request, reactor);
+void TTS::Stub::experimental_async::ListVoices(::grpc::ClientContext* context, const ::techmo::tribune::ListVoicesRequest* request, ::techmo::tribune::ListVoicesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListVoices_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncReader< ::techmo::tribune::SynthesizeResponse>* TTS::Stub::AsyncSynthesizeRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::techmo::tribune::SynthesizeResponse>::Create(channel_.get(), cq, rpcmethod_Synthesize_, context, request, true, tag);
+void TTS::Stub::experimental_async::ListVoices(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::ListVoicesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListVoices_, context, request, response, std::move(f));
 }
 
-::grpc::ClientAsyncReader< ::techmo::tribune::SynthesizeResponse>* TTS::Stub::PrepareAsyncSynthesizeRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::techmo::tribune::SynthesizeResponse>::Create(channel_.get(), cq, rpcmethod_Synthesize_, context, request, false, nullptr);
+void TTS::Stub::experimental_async::ListVoices(::grpc::ClientContext* context, const ::techmo::tribune::ListVoicesRequest* request, ::techmo::tribune::ListVoicesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListVoices_, context, request, response, reactor);
+}
+
+void TTS::Stub::experimental_async::ListVoices(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::ListVoicesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListVoices_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::techmo::tribune::ListVoicesResponse>* TTS::Stub::AsyncListVoicesRaw(::grpc::ClientContext* context, const ::techmo::tribune::ListVoicesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::techmo::tribune::ListVoicesResponse>::Create(channel_.get(), cq, rpcmethod_ListVoices_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::techmo::tribune::ListVoicesResponse>* TTS::Stub::PrepareAsyncListVoicesRaw(::grpc::ClientContext* context, const ::techmo::tribune::ListVoicesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::techmo::tribune::ListVoicesResponse>::Create(channel_.get(), cq, rpcmethod_ListVoices_, context, request, false);
+}
+
+::grpc::ClientReader< ::techmo::tribune::SynthesizeResponse>* TTS::Stub::SynthesizeStreamingRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::techmo::tribune::SynthesizeResponse>::Create(channel_.get(), rpcmethod_SynthesizeStreaming_, context, request);
+}
+
+void TTS::Stub::experimental_async::SynthesizeStreaming(::grpc::ClientContext* context, ::techmo::tribune::SynthesizeRequest* request, ::grpc::experimental::ClientReadReactor< ::techmo::tribune::SynthesizeResponse>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::techmo::tribune::SynthesizeResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_SynthesizeStreaming_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::techmo::tribune::SynthesizeResponse>* TTS::Stub::AsyncSynthesizeStreamingRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::techmo::tribune::SynthesizeResponse>::Create(channel_.get(), cq, rpcmethod_SynthesizeStreaming_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::techmo::tribune::SynthesizeResponse>* TTS::Stub::PrepareAsyncSynthesizeStreamingRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::techmo::tribune::SynthesizeResponse>::Create(channel_.get(), cq, rpcmethod_SynthesizeStreaming_, context, request, false, nullptr);
+}
+
+::grpc::Status TTS::Stub::Synthesize(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::techmo::tribune::SynthesizeResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_Synthesize_, context, request, response);
+}
+
+void TTS::Stub::experimental_async::Synthesize(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest* request, ::techmo::tribune::SynthesizeResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Synthesize_, context, request, response, std::move(f));
+}
+
+void TTS::Stub::experimental_async::Synthesize(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::SynthesizeResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Synthesize_, context, request, response, std::move(f));
+}
+
+void TTS::Stub::experimental_async::Synthesize(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest* request, ::techmo::tribune::SynthesizeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Synthesize_, context, request, response, reactor);
+}
+
+void TTS::Stub::experimental_async::Synthesize(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::SynthesizeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Synthesize_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::techmo::tribune::SynthesizeResponse>* TTS::Stub::AsyncSynthesizeRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::techmo::tribune::SynthesizeResponse>::Create(channel_.get(), cq, rpcmethod_Synthesize_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::techmo::tribune::SynthesizeResponse>* TTS::Stub::PrepareAsyncSynthesizeRaw(::grpc::ClientContext* context, const ::techmo::tribune::SynthesizeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::techmo::tribune::SynthesizeResponse>::Create(channel_.get(), cq, rpcmethod_Synthesize_, context, request, false);
+}
+
+::grpc::Status TTS::Stub::PutLexicon(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest& request, ::techmo::tribune::PutLexiconResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_PutLexicon_, context, request, response);
+}
+
+void TTS::Stub::experimental_async::PutLexicon(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest* request, ::techmo::tribune::PutLexiconResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_PutLexicon_, context, request, response, std::move(f));
+}
+
+void TTS::Stub::experimental_async::PutLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::PutLexiconResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_PutLexicon_, context, request, response, std::move(f));
+}
+
+void TTS::Stub::experimental_async::PutLexicon(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest* request, ::techmo::tribune::PutLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_PutLexicon_, context, request, response, reactor);
+}
+
+void TTS::Stub::experimental_async::PutLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::PutLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_PutLexicon_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::techmo::tribune::PutLexiconResponse>* TTS::Stub::AsyncPutLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::techmo::tribune::PutLexiconResponse>::Create(channel_.get(), cq, rpcmethod_PutLexicon_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::techmo::tribune::PutLexiconResponse>* TTS::Stub::PrepareAsyncPutLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::PutLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::techmo::tribune::PutLexiconResponse>::Create(channel_.get(), cq, rpcmethod_PutLexicon_, context, request, false);
+}
+
+::grpc::Status TTS::Stub::DeleteLexicon(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest& request, ::techmo::tribune::DeleteLexiconResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteLexicon_, context, request, response);
+}
+
+void TTS::Stub::experimental_async::DeleteLexicon(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest* request, ::techmo::tribune::DeleteLexiconResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteLexicon_, context, request, response, std::move(f));
+}
+
+void TTS::Stub::experimental_async::DeleteLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::DeleteLexiconResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteLexicon_, context, request, response, std::move(f));
+}
+
+void TTS::Stub::experimental_async::DeleteLexicon(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest* request, ::techmo::tribune::DeleteLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteLexicon_, context, request, response, reactor);
+}
+
+void TTS::Stub::experimental_async::DeleteLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::DeleteLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteLexicon_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::techmo::tribune::DeleteLexiconResponse>* TTS::Stub::AsyncDeleteLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::techmo::tribune::DeleteLexiconResponse>::Create(channel_.get(), cq, rpcmethod_DeleteLexicon_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::techmo::tribune::DeleteLexiconResponse>* TTS::Stub::PrepareAsyncDeleteLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::DeleteLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::techmo::tribune::DeleteLexiconResponse>::Create(channel_.get(), cq, rpcmethod_DeleteLexicon_, context, request, false);
+}
+
+::grpc::Status TTS::Stub::GetLexicon(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest& request, ::techmo::tribune::GetLexiconResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetLexicon_, context, request, response);
+}
+
+void TTS::Stub::experimental_async::GetLexicon(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest* request, ::techmo::tribune::GetLexiconResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetLexicon_, context, request, response, std::move(f));
+}
+
+void TTS::Stub::experimental_async::GetLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::GetLexiconResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetLexicon_, context, request, response, std::move(f));
+}
+
+void TTS::Stub::experimental_async::GetLexicon(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest* request, ::techmo::tribune::GetLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetLexicon_, context, request, response, reactor);
+}
+
+void TTS::Stub::experimental_async::GetLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::GetLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetLexicon_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::techmo::tribune::GetLexiconResponse>* TTS::Stub::AsyncGetLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::techmo::tribune::GetLexiconResponse>::Create(channel_.get(), cq, rpcmethod_GetLexicon_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::techmo::tribune::GetLexiconResponse>* TTS::Stub::PrepareAsyncGetLexiconRaw(::grpc::ClientContext* context, const ::techmo::tribune::GetLexiconRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::techmo::tribune::GetLexiconResponse>::Create(channel_.get(), cq, rpcmethod_GetLexicon_, context, request, false);
+}
+
+::grpc::Status TTS::Stub::ListLexicons(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest& request, ::techmo::tribune::ListLexiconsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListLexicons_, context, request, response);
+}
+
+void TTS::Stub::experimental_async::ListLexicons(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest* request, ::techmo::tribune::ListLexiconsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListLexicons_, context, request, response, std::move(f));
+}
+
+void TTS::Stub::experimental_async::ListLexicons(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::ListLexiconsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListLexicons_, context, request, response, std::move(f));
+}
+
+void TTS::Stub::experimental_async::ListLexicons(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest* request, ::techmo::tribune::ListLexiconsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListLexicons_, context, request, response, reactor);
+}
+
+void TTS::Stub::experimental_async::ListLexicons(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tribune::ListLexiconsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListLexicons_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::techmo::tribune::ListLexiconsResponse>* TTS::Stub::AsyncListLexiconsRaw(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::techmo::tribune::ListLexiconsResponse>::Create(channel_.get(), cq, rpcmethod_ListLexicons_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::techmo::tribune::ListLexiconsResponse>* TTS::Stub::PrepareAsyncListLexiconsRaw(::grpc::ClientContext* context, const ::techmo::tribune::ListLexiconsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::techmo::tribune::ListLexiconsResponse>::Create(channel_.get(), cq, rpcmethod_ListLexicons_, context, request, false);
 }
 
 TTS::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TTS_method_names[0],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TTS::Service, ::techmo::tribune::ListVoicesRequest, ::techmo::tribune::ListVoicesResponse>(
+          std::mem_fn(&TTS::Service::ListVoices), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TTS_method_names[1],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< TTS::Service, ::techmo::tribune::SynthesizeRequest, ::techmo::tribune::SynthesizeResponse>(
+          std::mem_fn(&TTS::Service::SynthesizeStreaming), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TTS_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TTS::Service, ::techmo::tribune::SynthesizeRequest, ::techmo::tribune::SynthesizeResponse>(
           std::mem_fn(&TTS::Service::Synthesize), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TTS_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TTS::Service, ::techmo::tribune::PutLexiconRequest, ::techmo::tribune::PutLexiconResponse>(
+          std::mem_fn(&TTS::Service::PutLexicon), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TTS_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TTS::Service, ::techmo::tribune::DeleteLexiconRequest, ::techmo::tribune::DeleteLexiconResponse>(
+          std::mem_fn(&TTS::Service::DeleteLexicon), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TTS_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TTS::Service, ::techmo::tribune::GetLexiconRequest, ::techmo::tribune::GetLexiconResponse>(
+          std::mem_fn(&TTS::Service::GetLexicon), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TTS_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TTS::Service, ::techmo::tribune::ListLexiconsRequest, ::techmo::tribune::ListLexiconsResponse>(
+          std::mem_fn(&TTS::Service::ListLexicons), this)));
 }
 
 TTS::Service::~Service() {
 }
 
-::grpc::Status TTS::Service::Synthesize(::grpc::ServerContext* context, const ::techmo::tribune::SynthesizeRequest* request, ::grpc::ServerWriter< ::techmo::tribune::SynthesizeResponse>* writer) {
+::grpc::Status TTS::Service::ListVoices(::grpc::ServerContext* context, const ::techmo::tribune::ListVoicesRequest* request, ::techmo::tribune::ListVoicesResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TTS::Service::SynthesizeStreaming(::grpc::ServerContext* context, const ::techmo::tribune::SynthesizeRequest* request, ::grpc::ServerWriter< ::techmo::tribune::SynthesizeResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TTS::Service::Synthesize(::grpc::ServerContext* context, const ::techmo::tribune::SynthesizeRequest* request, ::techmo::tribune::SynthesizeResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TTS::Service::PutLexicon(::grpc::ServerContext* context, const ::techmo::tribune::PutLexiconRequest* request, ::techmo::tribune::PutLexiconResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TTS::Service::DeleteLexicon(::grpc::ServerContext* context, const ::techmo::tribune::DeleteLexiconRequest* request, ::techmo::tribune::DeleteLexiconResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TTS::Service::GetLexicon(::grpc::ServerContext* context, const ::techmo::tribune::GetLexiconRequest* request, ::techmo::tribune::GetLexiconResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TTS::Service::ListLexicons(::grpc::ServerContext* context, const ::techmo::tribune::ListLexiconsRequest* request, ::techmo::tribune::ListLexiconsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
