@@ -171,14 +171,56 @@ int main(int argc, const char* const argv[])
 	return 0;
 }
 
+std::string to_string(const std::vector<std::string>& languages)
+{
+	std::string result;
+	std::string_view optionalComma{ "" };
+	for (const auto& language: languages)
+	{
+		result += optionalComma;
+		result += language;
+		optionalComma = ", ";
+	}
+	return result;
+}
+
+std::string_view to_string(techmo::tribune::Gender gender)
+{
+	switch (gender)
+	{
+	case techmo::tribune::Gender::FEMALE:
+		return "female";
+	case techmo::tribune::Gender::MALE:
+		return "male";
+	default:
+		return "undefined";
+	}
+}
+
+std::string_view to_string(techmo::tribune::Age age)
+{
+	switch (age)
+	{
+	case techmo::tribune::Age::ADULT:
+		return "adult";
+	case techmo::tribune::Age::CHILD:
+		return "child";
+	case techmo::tribune::Age::SENILE:
+		return "senile";
+	default:
+		return "undefined";
+	}
+}
+
 void printVoices(const std::vector<techmo::tribune::SynthesizeVoiceInfo>& voices)
 {
 	std::cout << std::endl << "Available voices:" << std::endl << std::endl;
 	for (const auto& voice: voices)
 	{
+		std::cout << "languages: [" << to_string(voice.supported_languages) << "]" << std::endl;
 		std::cout << "name: '" << voice.voice.name << "'" << std::endl;
-		std::cout << "gender: " << voice.voice.gender << std::endl;
-		std::cout << "age: " << voice.voice.age << std::endl << std::endl;
+		std::cout << "gender: " << to_string(voice.voice.gender) << std::endl;
+		std::cout << "age: " << to_string(voice.voice.age) << std::endl << std::endl;
 	}
 }
 
