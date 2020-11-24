@@ -69,7 +69,6 @@ namespace techmo::tribune
 			using code = grpc::StatusCode;
 			switch (status.error_code())
 			{
-				// Based on https://grpc.io/grpc/cpp/impl_2codegen_2status__code__enum_8h_source.html
 				case code::OK: return "OK";
 				case code::CANCELLED: return "CANCELLED";
 				case code::UNKNOWN: return "UNKNOWN";
