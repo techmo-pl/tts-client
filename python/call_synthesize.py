@@ -2,6 +2,7 @@ import tribune_tts_pb2
 import tribune_tts_pb2_grpc
 import grpc
 import os
+from audio_player import AudioPlayer
 from audio_saver import AudioSaver
 
 
@@ -31,20 +32,29 @@ def call_synthesize(args, text):
     if args.session_id:
         metadata = [('session_id', args.session_id)]
 
-    asv = AudioSaver()
-    asv.setEncoding(audio_encoding)
+    audioPlayer = None
+    if args.play:
+        audioPlayer = AudioPlayer(
+            sample_rate_hertz=int(args.sample_rate),
+            encoding=args.audio_encoding
+        )
+    audioSaver = AudioSaver()
+    audioSaver.setEncoding(audio_encoding)
 
     try:
         if args.response == "streaming":
-            internal_synthesize_streaming(stub, request, timeout, metadata, asv)
+            internal_synthesize_streaming(stub, request, timeout, metadata, audioSaver, audioPlayer)
         elif args.response == "single":
-            internal_synthesize(stub, request, timeout, metadata, asv)
+            internal_synthesize(stub, request, timeout, metadata, audioSaver, audioPlayer)
         else:
             raise RuntimeError("Unsupported response type: " + args.response)
-        asv.save(out_path)
+        audioSaver.save(out_path)
     except grpc.RpcError as e:
         print("[Server-side error] Received following RPC error from the TTS service:", str(e))
-    asv.clear()
+    finally:
+        if args.play:
+            audioPlayer.stop()
+    audioSaver.clear()
 
 def get_audio_encoding(args):
     if args.audio_encoding == "pcm16":
@@ -90,7 +100,9 @@ def create_voice(args):
     else:
         return None
 
-def internal_synthesize_streaming(stub, request, timeout, metadata, audio_saver):
+def internal_synthesize_streaming(stub, request, timeout, metadata, audio_saver, audio_player):
+    if audio_player is not None:
+        audio_player.start()
     for response in stub.SynthesizeStreaming(request, timeout=timeout, metadata=metadata):
         if response.HasField('error'):
             raise RuntimeError("Error [" + str(response.error.code) + "]: " + response.error.description)
@@ -100,12 +112,17 @@ def internal_synthesize_streaming(stub, request, timeout, metadata, audio_saver)
                     raise RuntimeError("Sample rate does not match previously received.")
             else:
                 audio_saver.setFrameRate(response.audio.sample_rate_hertz)
+            if audio_player is not None:
+                audio_player.append(response.audio.content)
             audio_saver.append(response.audio.content)
 
-def internal_synthesize(stub, request, timeout, metadata, audio_saver):
+def internal_synthesize(stub, request, timeout, metadata, audio_saver, audio_player):
     response = stub.Synthesize(request, timeout=timeout, metadata=metadata)
     if response.HasField('error'):
         raise RuntimeError("Error [" + str(response.error.code) + "]: " + response.error.description)
     else:
+        if audio_player is not None:
+            audio_player.start(sample_rate=response.audio.sample_rate_hertz)
+            audio_player.append(response.audio.content)
         audio_saver.setFrameRate(response.audio.sample_rate_hertz)
         audio_saver.append(response.audio.content)
