@@ -1,7 +1,7 @@
-# tts-client
-Techmo TTS gRPC client
+# TTS Client
+This repository contains Techmo TTS gRPC service API and client implementations.
 
-Contents:  
+Contents:
 - `proto`   Protocol Buffers API definition.  
 - `cpp`     Techmo TTS gRPC client C++ implementation.  
 - `python`  Techmo TTS gRPC client Python implementation.  
