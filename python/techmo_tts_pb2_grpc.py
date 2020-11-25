@@ -15,37 +15,37 @@ class TTSStub(object):
       channel: A grpc.Channel.
     """
     self.ListVoices = channel.unary_unary(
-        '/techmo.tts.TTS/ListVoices',
+        '/techmo.tts.grpc_api.TTS/ListVoices',
         request_serializer=techmo__tts__pb2.ListVoicesRequest.SerializeToString,
         response_deserializer=techmo__tts__pb2.ListVoicesResponse.FromString,
         )
     self.SynthesizeStreaming = channel.unary_stream(
-        '/techmo.tts.TTS/SynthesizeStreaming',
+        '/techmo.tts.grpc_api.TTS/SynthesizeStreaming',
         request_serializer=techmo__tts__pb2.SynthesizeRequest.SerializeToString,
         response_deserializer=techmo__tts__pb2.SynthesizeResponse.FromString,
         )
     self.Synthesize = channel.unary_unary(
-        '/techmo.tts.TTS/Synthesize',
+        '/techmo.tts.grpc_api.TTS/Synthesize',
         request_serializer=techmo__tts__pb2.SynthesizeRequest.SerializeToString,
         response_deserializer=techmo__tts__pb2.SynthesizeResponse.FromString,
         )
     self.PutLexicon = channel.unary_unary(
-        '/techmo.tts.TTS/PutLexicon',
+        '/techmo.tts.grpc_api.TTS/PutLexicon',
         request_serializer=techmo__tts__pb2.PutLexiconRequest.SerializeToString,
         response_deserializer=techmo__tts__pb2.PutLexiconResponse.FromString,
         )
     self.DeleteLexicon = channel.unary_unary(
-        '/techmo.tts.TTS/DeleteLexicon',
+        '/techmo.tts.grpc_api.TTS/DeleteLexicon',
         request_serializer=techmo__tts__pb2.DeleteLexiconRequest.SerializeToString,
         response_deserializer=techmo__tts__pb2.DeleteLexiconResponse.FromString,
         )
     self.GetLexicon = channel.unary_unary(
-        '/techmo.tts.TTS/GetLexicon',
+        '/techmo.tts.grpc_api.TTS/GetLexicon',
         request_serializer=techmo__tts__pb2.GetLexiconRequest.SerializeToString,
         response_deserializer=techmo__tts__pb2.GetLexiconResponse.FromString,
         )
     self.ListLexicons = channel.unary_unary(
-        '/techmo.tts.TTS/ListLexicons',
+        '/techmo.tts.grpc_api.TTS/ListLexicons',
         request_serializer=techmo__tts__pb2.ListLexiconsRequest.SerializeToString,
         response_deserializer=techmo__tts__pb2.ListLexiconsResponse.FromString,
         )
@@ -150,5 +150,5 @@ def add_TTSServicer_to_server(servicer, server):
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'techmo.tts.TTS', rpc_method_handlers)
+      'techmo.tts.grpc_api.TTS', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))
