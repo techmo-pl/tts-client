@@ -1,7 +1,7 @@
 // Techmo TTS API
 // version: 2.0.0
 // authors: Dawid Skurzok, Paweł Jaciów, Michał Radziszewski
-// date:    2020-11-04
+// date:    2020-11-25
 syntax = "proto3";
 
 package techmo.tts.grpc_api;

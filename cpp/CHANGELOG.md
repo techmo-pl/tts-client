@@ -1,4 +1,4 @@
-# Tribune TTS gRPC C++ client Changelog
+# Techmo TTS gRPC C++ client Changelog
 
 ## [2.0.0] - 2020-11-04
 ### Added
