@@ -1,12 +1,12 @@
 from argparse import ArgumentParser
 import codecs
-from VERSION import TRIBUNE_CLIENT_VERSION
+from VERSION import TTS_CLIENT_VERSION
 from call_listvoices import call_listvoices
 from call_synthesize import call_synthesize
 
 
 def main():
-    print("Tribune TTS gRPC client " + TRIBUNE_CLIENT_VERSION)
+    print("Techmo TTS gRPC client " + TTS_CLIENT_VERSION)
 
     parser = ArgumentParser()
     parser.add_argument("-s", "--service-address", dest="service", required=True,
@@ -46,7 +46,7 @@ def main():
     parser.add_argument("-l", "--language", dest="language", default="",
         help="ISO 639-1 language code of the phrase to synthesize (optional, can be overriden by SSML).", type=str)
     parser.add_argument("--play", dest="play", default=False, action="store_true",
-        help="Play synthesized audio")
+        help="Play synthesized audio.")
 
     # Parse and validate options
     args = parser.parse_args()

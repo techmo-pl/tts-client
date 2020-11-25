@@ -1,4 +1,4 @@
-Python implementation of Tribune TTS gRPC client.
+Python implementation of Techmo TTS gRPC client.
 
 To regenerate sources from `.proto`, run:
 ```
@@ -16,19 +16,19 @@ pip install -r requirements.txt
 
 Run:
 ```
-python tribune_client.py -s "192.168.1.1:4321" -f 44100 -t "Polski tekst do syntezy."
+python tts_client.py -s "192.168.1.1:4321" -f 44100 -t "Polski tekst do syntezy."
 ```
 
 Usage:
 ```
-usage: tribune_client.py [-h] -s SERVICE [--session-id SESSION_ID]
+usage: tts_client.py [-h] -s SERVICE [--session-id SESSION_ID]
                          [--grpc-timeout GRPC_TIMEOUT] [--list-voices]
                          [-r RESPONSE] [-t TEXT] [-i INPUTFILE] [-o OUT_PATH]
                          [-f SAMPLE_RATE] [-ae AUDIO_ENCODING]
                          [-sp SPEECH_PITCH] [-sr SPEECH_RANGE]
                          [-ss SPEECH_RATE] [-sv SPEECH_VOLUME]
                          [-vn VOICE_NAME] [-vg VOICE_GENDER] [-va VOICE_AGE]
-                         [-l LANGUAGE]
+                         [-l LANGUAGE] [--play]
 
 optional arguments:
   -h, --help            Shows this help message and exits.
@@ -66,6 +66,8 @@ optional arguments:
                         An age of the voice - adult, child, or senile (optional, can be overriden by SSML).
   -l LANGUAGE, --language LANGUAGE
                         ISO 639-1 language code of the phrase to synthesize (optional, can be overriden by SSML).
+  --play
+                        Play synthesized audio.
 ```
 
 The input text can be either a plain text or SSML (https://w3.org/TR/speech-synthesis11/).

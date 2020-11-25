@@ -1,10 +1,10 @@
-// Techmo Tribune TTS API
+// Techmo TTS API
 // version: 2.0.0
 // authors: Dawid Skurzok, Paweł Jaciów, Michał Radziszewski
 // date:    2020-11-04
 syntax = "proto3";
 
-package techmo.tribune;
+package techmo.tts;
 
 // Service that implements Techmo Text-To-Speech (TTS) API.
 service TTS
