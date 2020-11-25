@@ -49,7 +49,7 @@ optional arguments:
   -f SAMPLE_RATE, --sample_rate SAMPLE_RATE
                         A sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.
   -ae AUDIO_ENCODING, --audio-encoding AUDIO_ENCODING
-                        An ncoding of the output audio, pcm16 (default) or ogg-vorbis.
+                        An encoding of the output audio, pcm16 (default) or ogg-vorbis.
   -sp SPEECH_PITCH, --speech-pitch SPEECH_PITCH
                         Allows adjusting the default pitch of the synthesized speech (optional, can be overriden by SSML).
   -sr SPEECH_RANGE, --speech-range SPEECH_RANGE
@@ -67,7 +67,7 @@ optional arguments:
   -l LANGUAGE, --language LANGUAGE
                         ISO 639-1 language code of the phrase to synthesize (optional, can be overriden by SSML).
   --play
-                        Play synthesized audio.
+                        Play synthesized audio. Works only with pcm16 (default) encoding.
 ```
 
 The input text can be either a plain text or SSML (https://w3.org/TR/speech-synthesis11/).

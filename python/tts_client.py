@@ -46,7 +46,7 @@ def main():
     parser.add_argument("-l", "--language", dest="language", default="",
         help="ISO 639-1 language code of the phrase to synthesize (optional, can be overriden by SSML).", type=str)
     parser.add_argument("--play", dest="play", default=False, action="store_true",
-        help="Play synthesized audio.")
+        help="Play synthesized audio. Works only with pcm16 (default) encoding.")
 
     # Parse and validate options
     args = parser.parse_args()
