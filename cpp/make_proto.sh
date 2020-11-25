@@ -11,11 +11,11 @@ if [ ! -x ${PROTOC} ]; then
     exit 1
 fi
 
-echo "Generating tribune C++ protobuf/grpc sources..."
+echo "Generating TTS C++ protobuf/grpc sources..."
 path_i="../proto"
-path_o="libtribune-client"
+path_o="libtts-client"
 ${PROTOC}   -I${path_i} \
             ${PLUGIN} \
             --cpp_out=${path_o} \
             --grpc_out=${path_o} \
-            ${path_i}/tribune_tts.proto
+            ${path_i}/techmo_tts.proto
