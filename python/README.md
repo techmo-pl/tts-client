@@ -1,4 +1,4 @@
-Python implementation of Tribune TTS gRPC client.
+Python implementation of Techmo TTS gRPC client.
 
 To regenerate sources from `.proto`, run:
 ```
@@ -16,12 +16,12 @@ pip install -r requirements.txt
 
 Run:
 ```
-python tribune_client.py -s "192.168.1.1:4321" -f 44100 -t "Polski tekst do syntezy."
+python tts_client.py -s "192.168.1.1:4321" -f 44100 -t "Polski tekst do syntezy."
 ```
 
 Usage:
 ```
-usage: tribune_client.py [-h] -s SERVICE [--session-id SESSION_ID]
+usage: tts_client.py [-h] -s SERVICE [--session-id SESSION_ID]
                          [--grpc-timeout GRPC_TIMEOUT] [--list-voices]
                          [-r RESPONSE] [-t TEXT] [-i INPUTFILE] [-o OUT_PATH]
                          [-f SAMPLE_RATE] [-ae AUDIO_ENCODING]

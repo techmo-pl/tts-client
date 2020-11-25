@@ -1,10 +1,10 @@
 #include <grpc++/grpc++.h>
 #include <google/protobuf/text_format.h>
-#include "TribuneClient.h"
+#include "Client.h"
 
-namespace techmo::tribune
+namespace techmo::tts
 {
-	void build_context(grpc::ClientContext& context, const TribuneClientConfig& clientConfig)
+	void build_context(grpc::ClientContext& context, const ClientConfig& clientConfig)
 	{
 		if (!clientConfig.session_id.empty())
 		{
@@ -18,7 +18,7 @@ namespace techmo::tribune
 		}
 	}
 
-	SynthesizeRequest build_request(const TribuneSynthesizeConfig& input_config, std::string_view text)
+	SynthesizeRequest build_request(const ClientSynthesizeConfig& input_config, std::string_view text)
 	{
 		SynthesizeRequest request;
 		request.set_text(std::string{ text });
@@ -28,7 +28,7 @@ namespace techmo::tribune
 
 		if (input_config.audio_config)
 		{
-			const SynthesizeAudioConfig& input_audio_config = *input_config.audio_config;
+			const ClientAudioConfig& input_audio_config = *input_config.audio_config;
 			AudioConfig* grpc_audio_config = grpc_synthesize_config->mutable_audio_config();
 
 			grpc_audio_config->set_audio_encoding(input_audio_config.encoding);
@@ -41,7 +41,7 @@ namespace techmo::tribune
 
 		if (input_config.voice)
 		{
-			const SynthesizeVoice& input_voice = *input_config.voice;
+			const ClientVoice& input_voice = *input_config.voice;
 			Voice* grpc_voice = grpc_synthesize_config->mutable_voice();
 
 			grpc_voice->set_name(input_voice.name);
@@ -94,7 +94,7 @@ namespace techmo::tribune
 		return status_string + " (" + std::to_string(status.error_code()) + ") " + status.error_message();
 	}
 
-	void fillVoiceInfo(SynthesizeVoiceInfo& voiceInfo, const VoiceInfo& grpcVoiceInfo)
+	void fillVoiceInfo(ClientVoiceInfo& voiceInfo, const VoiceInfo& grpcVoiceInfo)
 	{
 		for (int i = 0; i < grpcVoiceInfo.supported_languages_size(); ++i)
 		{
@@ -105,8 +105,8 @@ namespace techmo::tribune
 		voiceInfo.voice.age = grpcVoiceInfo.voice().age();
 	}
 
-	std::vector<SynthesizeVoiceInfo> TribuneClient::ListVoices(
-		const TribuneClientConfig& clientConfig,
+	std::vector<ClientVoiceInfo> Client::ListVoices(
+		const ClientConfig& clientConfig,
 		std::string_view language) const
 	{
 		auto stub = TTS::NewStub(grpc::CreateChannel(m_serviceAddress, grpc::InsecureChannelCredentials()));
@@ -119,10 +119,10 @@ namespace techmo::tribune
 		grpc::Status status = stub->ListVoices(&context, request, &response);
 		if (status.ok())
 		{
-			std::vector<SynthesizeVoiceInfo> voices;
+			std::vector<ClientVoiceInfo> voices;
 			for (int i = 0; i < response.voices_size(); ++i)
 			{
-				SynthesizeVoiceInfo voiceInfo;
+				ClientVoiceInfo voiceInfo;
 				fillVoiceInfo(voiceInfo, response.voices(i));
 				voices.push_back(voiceInfo);
 			}
@@ -135,9 +135,9 @@ namespace techmo::tribune
 		}
 	}
 
-	TribuneAudioData TribuneClient::SynthesizeStreaming(
-		const TribuneClientConfig& clientConfig,
-		const TribuneSynthesizeConfig& synthesizeConfig,
+	ClientAudioData Client::SynthesizeStreaming(
+		const ClientConfig& clientConfig,
+		const ClientSynthesizeConfig& synthesizeConfig,
 		std::string_view text) const
 	{
 		auto stub = TTS::NewStub(grpc::CreateChannel(m_serviceAddress, grpc::InsecureChannelCredentials()));
@@ -196,12 +196,12 @@ namespace techmo::tribune
 				+ grpc_status_to_string(status) };
 		}
 
-		return TribuneAudioData{ received_sample_rate_hertz, received_audio_bytes };
+		return ClientAudioData{ received_sample_rate_hertz, received_audio_bytes };
 	}
 
-	TribuneAudioData TribuneClient::Synthesize(
-		const TribuneClientConfig& clientConfig,
-		const TribuneSynthesizeConfig& synthesizeConfig,
+	ClientAudioData Client::Synthesize(
+		const ClientConfig& clientConfig,
+		const ClientSynthesizeConfig& synthesizeConfig,
 		std::string_view text) const
 	{
 		auto stub = TTS::NewStub(grpc::CreateChannel(m_serviceAddress, grpc::InsecureChannelCredentials()));
@@ -218,8 +218,8 @@ namespace techmo::tribune
 				throw std::runtime_error{ "Received error response: ("
 					+ protobuf_message_to_string(response.error()) };
 			}
-			return response.has_audio() ? TribuneAudioData{
-				response.audio().sample_rate_hertz(), response.audio().content() } : TribuneAudioData{ };
+			return response.has_audio() ? ClientAudioData{
+				response.audio().sample_rate_hertz(), response.audio().content() } : ClientAudioData{ };
 		}
 		else
 		{
