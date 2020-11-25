@@ -28,7 +28,7 @@ namespace techmo::tts
 
 		if (input_config.audio_config)
 		{
-			const ClientAudioConfig& input_audio_config = *input_config.audio_config;
+			const AudioConfig& input_audio_config = *input_config.audio_config;
 			grpc_api::AudioConfig* grpc_audio_config = grpc_synthesize_config->mutable_audio_config();
 
 			grpc_audio_config->set_audio_encoding(input_audio_config.encoding);

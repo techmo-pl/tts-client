@@ -10,7 +10,7 @@
 namespace techmo::tts
 {
 	// Desfines the parameters of synthesized speech.
-	struct ClientAudioConfig
+	struct AudioConfig
 	{
 		// Encoding of the output data stream. Either PCM16 without any header or Ogg/Vorbis.
 		grpc_api::AudioEncoding encoding{ grpc_api::AudioEncoding::PCM16 };
@@ -62,7 +62,7 @@ namespace techmo::tts
 		std::string language;
 
 		// Parameters to configure the audio synthesis (optional).
-		std::optional<ClientAudioConfig> audio_config;
+		std::optional<AudioConfig> audio_config;
 
 		// Requested voice to be used to synthesize the text (may be overriden by SSML tags in request text).
 		std::optional<Voice> voice;
