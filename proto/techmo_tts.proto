@@ -4,7 +4,7 @@
 // date:    2020-11-25
 syntax = "proto3";
 
-package techmo.tts;
+package techmo.tts.grpc_api;
 
 // Service that implements Techmo Text-To-Speech (TTS) API.
 service TTS

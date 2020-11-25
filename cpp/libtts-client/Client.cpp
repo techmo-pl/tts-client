@@ -18,18 +18,18 @@ namespace techmo::tts
 		}
 	}
 
-	SynthesizeRequest build_request(const ClientSynthesizeConfig& input_config, std::string_view text)
+	grpc_api::SynthesizeRequest build_request(const SynthesizeConfig& input_config, std::string_view text)
 	{
-		SynthesizeRequest request;
+		grpc_api::SynthesizeRequest request;
 		request.set_text(std::string{ text });
-		SynthesizeConfig* grpc_synthesize_config = request.mutable_config();
+		grpc_api::SynthesizeConfig* grpc_synthesize_config = request.mutable_config();
 
 		grpc_synthesize_config->set_language(input_config.language);
 
 		if (input_config.audio_config)
 		{
 			const ClientAudioConfig& input_audio_config = *input_config.audio_config;
-			AudioConfig* grpc_audio_config = grpc_synthesize_config->mutable_audio_config();
+			grpc_api::AudioConfig* grpc_audio_config = grpc_synthesize_config->mutable_audio_config();
 
 			grpc_audio_config->set_audio_encoding(input_audio_config.encoding);
 			grpc_audio_config->set_sample_rate_hertz(input_audio_config.sample_rate_hertz);
@@ -41,8 +41,8 @@ namespace techmo::tts
 
 		if (input_config.voice)
 		{
-			const ClientVoice& input_voice = *input_config.voice;
-			Voice* grpc_voice = grpc_synthesize_config->mutable_voice();
+			const Voice& input_voice = *input_config.voice;
+			grpc_api::Voice* grpc_voice = grpc_synthesize_config->mutable_voice();
 
 			grpc_voice->set_name(input_voice.name);
 			grpc_voice->set_gender(input_voice.gender);
@@ -94,7 +94,7 @@ namespace techmo::tts
 		return status_string + " (" + std::to_string(status.error_code()) + ") " + status.error_message();
 	}
 
-	void fillVoiceInfo(ClientVoiceInfo& voiceInfo, const VoiceInfo& grpcVoiceInfo)
+	void fillVoiceInfo(VoiceInfo& voiceInfo, const grpc_api::VoiceInfo& grpcVoiceInfo)
 	{
 		for (int i = 0; i < grpcVoiceInfo.supported_languages_size(); ++i)
 		{
@@ -105,24 +105,24 @@ namespace techmo::tts
 		voiceInfo.voice.age = grpcVoiceInfo.voice().age();
 	}
 
-	std::vector<ClientVoiceInfo> Client::ListVoices(
+	std::vector<VoiceInfo> Client::ListVoices(
 		const ClientConfig& clientConfig,
 		std::string_view language) const
 	{
-		auto stub = TTS::NewStub(grpc::CreateChannel(m_serviceAddress, grpc::InsecureChannelCredentials()));
+		auto stub = grpc_api::TTS::NewStub(grpc::CreateChannel(m_serviceAddress, grpc::InsecureChannelCredentials()));
 		grpc::ClientContext context;
 		build_context(context, clientConfig);
 
-		ListVoicesRequest request;
+		grpc_api::ListVoicesRequest request;
 		request.set_language(std::string{ language });
-		ListVoicesResponse response;
+		grpc_api::ListVoicesResponse response;
 		grpc::Status status = stub->ListVoices(&context, request, &response);
 		if (status.ok())
 		{
-			std::vector<ClientVoiceInfo> voices;
+			std::vector<VoiceInfo> voices;
 			for (int i = 0; i < response.voices_size(); ++i)
 			{
-				ClientVoiceInfo voiceInfo;
+				VoiceInfo voiceInfo;
 				fillVoiceInfo(voiceInfo, response.voices(i));
 				voices.push_back(voiceInfo);
 			}
@@ -135,22 +135,22 @@ namespace techmo::tts
 		}
 	}
 
-	ClientAudioData Client::SynthesizeStreaming(
+	AudioData Client::SynthesizeStreaming(
 		const ClientConfig& clientConfig,
-		const ClientSynthesizeConfig& synthesizeConfig,
+		const SynthesizeConfig& synthesizeConfig,
 		std::string_view text) const
 	{
-		auto stub = TTS::NewStub(grpc::CreateChannel(m_serviceAddress, grpc::InsecureChannelCredentials()));
+		auto stub = grpc_api::TTS::NewStub(grpc::CreateChannel(m_serviceAddress, grpc::InsecureChannelCredentials()));
 		grpc::ClientContext context;
 		build_context(context, clientConfig);
 
-		const SynthesizeRequest request = build_request(synthesizeConfig, text);
+		const grpc_api::SynthesizeRequest request = build_request(synthesizeConfig, text);
 
 		auto reader = stub->SynthesizeStreaming(&context, request);
 
 		std::string received_audio_bytes;
 		int received_sample_rate_hertz{ 0 };
-		SynthesizeResponse response;
+		grpc_api::SynthesizeResponse response;
 
 		int requested_sample_rate_hertz{ 0 };
 		if (synthesizeConfig.audio_config)
@@ -196,20 +196,20 @@ namespace techmo::tts
 				+ grpc_status_to_string(status) };
 		}
 
-		return ClientAudioData{ received_sample_rate_hertz, received_audio_bytes };
+		return AudioData{ received_sample_rate_hertz, received_audio_bytes };
 	}
 
-	ClientAudioData Client::Synthesize(
+	AudioData Client::Synthesize(
 		const ClientConfig& clientConfig,
-		const ClientSynthesizeConfig& synthesizeConfig,
+		const SynthesizeConfig& synthesizeConfig,
 		std::string_view text) const
 	{
-		auto stub = TTS::NewStub(grpc::CreateChannel(m_serviceAddress, grpc::InsecureChannelCredentials()));
+		auto stub = grpc_api::TTS::NewStub(grpc::CreateChannel(m_serviceAddress, grpc::InsecureChannelCredentials()));
 		grpc::ClientContext context;
 		build_context(context, clientConfig);
 
-		const SynthesizeRequest request = build_request(synthesizeConfig, text);
-		SynthesizeResponse response;
+		const grpc_api::SynthesizeRequest request = build_request(synthesizeConfig, text);
+		grpc_api::SynthesizeResponse response;
 		grpc::Status status = stub->Synthesize(&context, request, &response);
 		if (status.ok())
 		{
@@ -218,8 +218,8 @@ namespace techmo::tts
 				throw std::runtime_error{ "Received error response: ("
 					+ protobuf_message_to_string(response.error()) };
 			}
-			return response.has_audio() ? ClientAudioData{
-				response.audio().sample_rate_hertz(), response.audio().content() } : ClientAudioData{ };
+			return response.has_audio() ? AudioData{
+				response.audio().sample_rate_hertz(), response.audio().content() } : AudioData{ };
 		}
 		else
 		{

@@ -22,6 +22,7 @@ extern PROTOBUF_INTERNAL_EXPORT_techmo_5ftts_2eproto ::PROTOBUF_NAMESPACE_ID::in
 extern PROTOBUF_INTERNAL_EXPORT_techmo_5ftts_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_VoiceInfo_techmo_5ftts_2eproto;
 namespace techmo {
 namespace tts {
+namespace grpc_api {
 class ListVoicesRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ListVoicesRequest> _instance;
@@ -94,17 +95,18 @@ class ErrorDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Error> _instance;
 } _Error_default_instance_;
+}  // namespace grpc_api
 }  // namespace tts
 }  // namespace techmo
 static void InitDefaultsscc_info_AudioConfig_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_AudioConfig_default_instance_;
-    new (ptr) ::techmo::tts::AudioConfig();
+    void* ptr = &::techmo::tts::grpc_api::_AudioConfig_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::AudioConfig();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::AudioConfig::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::AudioConfig::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AudioConfig_techmo_5ftts_2eproto =
@@ -114,11 +116,11 @@ static void InitDefaultsscc_info_AudioData_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_AudioData_default_instance_;
-    new (ptr) ::techmo::tts::AudioData();
+    void* ptr = &::techmo::tts::grpc_api::_AudioData_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::AudioData();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::AudioData::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::AudioData::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AudioData_techmo_5ftts_2eproto =
@@ -128,11 +130,11 @@ static void InitDefaultsscc_info_DeleteLexiconRequest_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_DeleteLexiconRequest_default_instance_;
-    new (ptr) ::techmo::tts::DeleteLexiconRequest();
+    void* ptr = &::techmo::tts::grpc_api::_DeleteLexiconRequest_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::DeleteLexiconRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::DeleteLexiconRequest::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::DeleteLexiconRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteLexiconRequest_techmo_5ftts_2eproto =
@@ -142,11 +144,11 @@ static void InitDefaultsscc_info_DeleteLexiconResponse_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_DeleteLexiconResponse_default_instance_;
-    new (ptr) ::techmo::tts::DeleteLexiconResponse();
+    void* ptr = &::techmo::tts::grpc_api::_DeleteLexiconResponse_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::DeleteLexiconResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::DeleteLexiconResponse::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::DeleteLexiconResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_DeleteLexiconResponse_techmo_5ftts_2eproto =
@@ -157,11 +159,11 @@ static void InitDefaultsscc_info_Error_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_Error_default_instance_;
-    new (ptr) ::techmo::tts::Error();
+    void* ptr = &::techmo::tts::grpc_api::_Error_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::Error();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::Error::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::Error::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Error_techmo_5ftts_2eproto =
@@ -171,11 +173,11 @@ static void InitDefaultsscc_info_GetLexiconRequest_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_GetLexiconRequest_default_instance_;
-    new (ptr) ::techmo::tts::GetLexiconRequest();
+    void* ptr = &::techmo::tts::grpc_api::_GetLexiconRequest_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::GetLexiconRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::GetLexiconRequest::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::GetLexiconRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetLexiconRequest_techmo_5ftts_2eproto =
@@ -185,11 +187,11 @@ static void InitDefaultsscc_info_GetLexiconResponse_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_GetLexiconResponse_default_instance_;
-    new (ptr) ::techmo::tts::GetLexiconResponse();
+    void* ptr = &::techmo::tts::grpc_api::_GetLexiconResponse_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::GetLexiconResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::GetLexiconResponse::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::GetLexiconResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetLexiconResponse_techmo_5ftts_2eproto =
@@ -200,11 +202,11 @@ static void InitDefaultsscc_info_ListLexiconsRequest_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_ListLexiconsRequest_default_instance_;
-    new (ptr) ::techmo::tts::ListLexiconsRequest();
+    void* ptr = &::techmo::tts::grpc_api::_ListLexiconsRequest_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::ListLexiconsRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::ListLexiconsRequest::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::ListLexiconsRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ListLexiconsRequest_techmo_5ftts_2eproto =
@@ -214,11 +216,11 @@ static void InitDefaultsscc_info_ListLexiconsResponse_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_ListLexiconsResponse_default_instance_;
-    new (ptr) ::techmo::tts::ListLexiconsResponse();
+    void* ptr = &::techmo::tts::grpc_api::_ListLexiconsResponse_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::ListLexiconsResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::ListLexiconsResponse::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::ListLexiconsResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ListLexiconsResponse_techmo_5ftts_2eproto =
@@ -228,11 +230,11 @@ static void InitDefaultsscc_info_ListVoicesRequest_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_ListVoicesRequest_default_instance_;
-    new (ptr) ::techmo::tts::ListVoicesRequest();
+    void* ptr = &::techmo::tts::grpc_api::_ListVoicesRequest_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::ListVoicesRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::ListVoicesRequest::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::ListVoicesRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ListVoicesRequest_techmo_5ftts_2eproto =
@@ -242,11 +244,11 @@ static void InitDefaultsscc_info_ListVoicesResponse_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_ListVoicesResponse_default_instance_;
-    new (ptr) ::techmo::tts::ListVoicesResponse();
+    void* ptr = &::techmo::tts::grpc_api::_ListVoicesResponse_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::ListVoicesResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::ListVoicesResponse::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::ListVoicesResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ListVoicesResponse_techmo_5ftts_2eproto =
@@ -257,11 +259,11 @@ static void InitDefaultsscc_info_PutLexiconRequest_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_PutLexiconRequest_default_instance_;
-    new (ptr) ::techmo::tts::PutLexiconRequest();
+    void* ptr = &::techmo::tts::grpc_api::_PutLexiconRequest_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::PutLexiconRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::PutLexiconRequest::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::PutLexiconRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PutLexiconRequest_techmo_5ftts_2eproto =
@@ -271,11 +273,11 @@ static void InitDefaultsscc_info_PutLexiconResponse_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_PutLexiconResponse_default_instance_;
-    new (ptr) ::techmo::tts::PutLexiconResponse();
+    void* ptr = &::techmo::tts::grpc_api::_PutLexiconResponse_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::PutLexiconResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::PutLexiconResponse::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::PutLexiconResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PutLexiconResponse_techmo_5ftts_2eproto =
@@ -286,11 +288,11 @@ static void InitDefaultsscc_info_SynthesizeConfig_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_SynthesizeConfig_default_instance_;
-    new (ptr) ::techmo::tts::SynthesizeConfig();
+    void* ptr = &::techmo::tts::grpc_api::_SynthesizeConfig_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::SynthesizeConfig();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::SynthesizeConfig::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::SynthesizeConfig::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_SynthesizeConfig_techmo_5ftts_2eproto =
@@ -302,11 +304,11 @@ static void InitDefaultsscc_info_SynthesizeRequest_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_SynthesizeRequest_default_instance_;
-    new (ptr) ::techmo::tts::SynthesizeRequest();
+    void* ptr = &::techmo::tts::grpc_api::_SynthesizeRequest_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::SynthesizeRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::SynthesizeRequest::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::SynthesizeRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SynthesizeRequest_techmo_5ftts_2eproto =
@@ -317,11 +319,11 @@ static void InitDefaultsscc_info_SynthesizeResponse_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_SynthesizeResponse_default_instance_;
-    new (ptr) ::techmo::tts::SynthesizeResponse();
+    void* ptr = &::techmo::tts::grpc_api::_SynthesizeResponse_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::SynthesizeResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::SynthesizeResponse::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::SynthesizeResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_SynthesizeResponse_techmo_5ftts_2eproto =
@@ -333,11 +335,11 @@ static void InitDefaultsscc_info_Voice_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_Voice_default_instance_;
-    new (ptr) ::techmo::tts::Voice();
+    void* ptr = &::techmo::tts::grpc_api::_Voice_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::Voice();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::Voice::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::Voice::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Voice_techmo_5ftts_2eproto =
@@ -347,11 +349,11 @@ static void InitDefaultsscc_info_VoiceInfo_techmo_5ftts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::techmo::tts::_VoiceInfo_default_instance_;
-    new (ptr) ::techmo::tts::VoiceInfo();
+    void* ptr = &::techmo::tts::grpc_api::_VoiceInfo_default_instance_;
+    new (ptr) ::techmo::tts::grpc_api::VoiceInfo();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::techmo::tts::VoiceInfo::InitAsDefaultInstance();
+  ::techmo::tts::grpc_api::VoiceInfo::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_VoiceInfo_techmo_5ftts_2eproto =
@@ -364,227 +366,233 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_s
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_techmo_5ftts_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::ListVoicesRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::ListVoicesRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::ListVoicesRequest, language_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::ListVoicesRequest, language_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::ListVoicesResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::ListVoicesResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::ListVoicesResponse, voices_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::ListVoicesResponse, voices_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::SynthesizeRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::SynthesizeRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::SynthesizeRequest, text_),
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::SynthesizeRequest, config_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::SynthesizeRequest, text_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::SynthesizeRequest, config_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::SynthesizeConfig, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::SynthesizeConfig, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::SynthesizeConfig, language_),
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::SynthesizeConfig, audio_config_),
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::SynthesizeConfig, voice_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::SynthesizeConfig, language_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::SynthesizeConfig, audio_config_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::SynthesizeConfig, voice_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::AudioConfig, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::AudioConfig, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::AudioConfig, audio_encoding_),
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::AudioConfig, sample_rate_hertz_),
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::AudioConfig, pitch_),
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::AudioConfig, range_),
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::AudioConfig, rate_),
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::AudioConfig, volume_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::AudioConfig, audio_encoding_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::AudioConfig, sample_rate_hertz_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::AudioConfig, pitch_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::AudioConfig, range_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::AudioConfig, rate_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::AudioConfig, volume_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::Voice, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::Voice, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::Voice, name_),
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::Voice, gender_),
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::Voice, age_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::Voice, name_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::Voice, gender_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::Voice, age_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::VoiceInfo, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::VoiceInfo, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::VoiceInfo, supported_languages_),
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::VoiceInfo, voice_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::VoiceInfo, supported_languages_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::VoiceInfo, voice_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::SynthesizeResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::SynthesizeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::SynthesizeResponse, audio_),
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::SynthesizeResponse, error_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::SynthesizeResponse, audio_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::SynthesizeResponse, error_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::AudioData, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::AudioData, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::AudioData, sample_rate_hertz_),
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::AudioData, content_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::AudioData, sample_rate_hertz_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::AudioData, content_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::PutLexiconRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::PutLexiconRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::PutLexiconRequest, name_),
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::PutLexiconRequest, content_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::PutLexiconRequest, name_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::PutLexiconRequest, content_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::PutLexiconResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::PutLexiconResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::PutLexiconResponse, error_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::PutLexiconResponse, error_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::DeleteLexiconRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::DeleteLexiconRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::DeleteLexiconRequest, name_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::DeleteLexiconRequest, name_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::DeleteLexiconResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::DeleteLexiconResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::DeleteLexiconResponse, error_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::DeleteLexiconResponse, error_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::GetLexiconRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::GetLexiconRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::GetLexiconRequest, name_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::GetLexiconRequest, name_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::GetLexiconResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::GetLexiconResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::GetLexiconResponse, content_),
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::GetLexiconResponse, error_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::GetLexiconResponse, content_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::GetLexiconResponse, error_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::ListLexiconsRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::ListLexiconsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::ListLexiconsRequest, language_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::ListLexiconsRequest, language_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::ListLexiconsResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::ListLexiconsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::ListLexiconsResponse, names_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::ListLexiconsResponse, names_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::Error, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::Error, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::Error, code_),
-  PROTOBUF_FIELD_OFFSET(::techmo::tts::Error, description_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::Error, code_),
+  PROTOBUF_FIELD_OFFSET(::techmo::tts::grpc_api::Error, description_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::techmo::tts::ListVoicesRequest)},
-  { 6, -1, sizeof(::techmo::tts::ListVoicesResponse)},
-  { 12, -1, sizeof(::techmo::tts::SynthesizeRequest)},
-  { 19, -1, sizeof(::techmo::tts::SynthesizeConfig)},
-  { 27, -1, sizeof(::techmo::tts::AudioConfig)},
-  { 38, -1, sizeof(::techmo::tts::Voice)},
-  { 46, -1, sizeof(::techmo::tts::VoiceInfo)},
-  { 53, -1, sizeof(::techmo::tts::SynthesizeResponse)},
-  { 60, -1, sizeof(::techmo::tts::AudioData)},
-  { 67, -1, sizeof(::techmo::tts::PutLexiconRequest)},
-  { 74, -1, sizeof(::techmo::tts::PutLexiconResponse)},
-  { 80, -1, sizeof(::techmo::tts::DeleteLexiconRequest)},
-  { 86, -1, sizeof(::techmo::tts::DeleteLexiconResponse)},
-  { 92, -1, sizeof(::techmo::tts::GetLexiconRequest)},
-  { 98, -1, sizeof(::techmo::tts::GetLexiconResponse)},
-  { 105, -1, sizeof(::techmo::tts::ListLexiconsRequest)},
-  { 111, -1, sizeof(::techmo::tts::ListLexiconsResponse)},
-  { 117, -1, sizeof(::techmo::tts::Error)},
+  { 0, -1, sizeof(::techmo::tts::grpc_api::ListVoicesRequest)},
+  { 6, -1, sizeof(::techmo::tts::grpc_api::ListVoicesResponse)},
+  { 12, -1, sizeof(::techmo::tts::grpc_api::SynthesizeRequest)},
+  { 19, -1, sizeof(::techmo::tts::grpc_api::SynthesizeConfig)},
+  { 27, -1, sizeof(::techmo::tts::grpc_api::AudioConfig)},
+  { 38, -1, sizeof(::techmo::tts::grpc_api::Voice)},
+  { 46, -1, sizeof(::techmo::tts::grpc_api::VoiceInfo)},
+  { 53, -1, sizeof(::techmo::tts::grpc_api::SynthesizeResponse)},
+  { 60, -1, sizeof(::techmo::tts::grpc_api::AudioData)},
+  { 67, -1, sizeof(::techmo::tts::grpc_api::PutLexiconRequest)},
+  { 74, -1, sizeof(::techmo::tts::grpc_api::PutLexiconResponse)},
+  { 80, -1, sizeof(::techmo::tts::grpc_api::DeleteLexiconRequest)},
+  { 86, -1, sizeof(::techmo::tts::grpc_api::DeleteLexiconResponse)},
+  { 92, -1, sizeof(::techmo::tts::grpc_api::GetLexiconRequest)},
+  { 98, -1, sizeof(::techmo::tts::grpc_api::GetLexiconResponse)},
+  { 105, -1, sizeof(::techmo::tts::grpc_api::ListLexiconsRequest)},
+  { 111, -1, sizeof(::techmo::tts::grpc_api::ListLexiconsResponse)},
+  { 117, -1, sizeof(::techmo::tts::grpc_api::Error)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_ListVoicesRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_ListVoicesResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_SynthesizeRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_SynthesizeConfig_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_AudioConfig_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_Voice_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_VoiceInfo_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_SynthesizeResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_AudioData_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_PutLexiconRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_PutLexiconResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_DeleteLexiconRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_DeleteLexiconResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_GetLexiconRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_GetLexiconResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_ListLexiconsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_ListLexiconsResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::_Error_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_ListVoicesRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_ListVoicesResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_SynthesizeRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_SynthesizeConfig_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_AudioConfig_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_Voice_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_VoiceInfo_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_SynthesizeResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_AudioData_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_PutLexiconRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_PutLexiconResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_DeleteLexiconRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_DeleteLexiconResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_GetLexiconRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_GetLexiconResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_ListLexiconsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_ListLexiconsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::techmo::tts::grpc_api::_Error_default_instance_),
 };
 
 const char descriptor_table_protodef_techmo_5ftts_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\020techmo_tts.proto\022\ntechmo.tts\"%\n\021ListVo"
-  "icesRequest\022\020\n\010language\030\001 \001(\t\";\n\022ListVoi"
-  "cesResponse\022%\n\006voices\030\001 \003(\0132\025.techmo.tts"
-  ".VoiceInfo\"O\n\021SynthesizeRequest\022\014\n\004text\030"
-  "\001 \001(\t\022,\n\006config\030\002 \001(\0132\034.techmo.tts.Synth"
-  "esizeConfig\"u\n\020SynthesizeConfig\022\020\n\010langu"
-  "age\030\001 \001(\t\022-\n\014audio_config\030\002 \001(\0132\027.techmo"
-  ".tts.AudioConfig\022 \n\005voice\030\003 \001(\0132\021.techmo"
-  ".tts.Voice\"\227\001\n\013AudioConfig\0221\n\016audio_enco"
-  "ding\030\001 \001(\0162\031.techmo.tts.AudioEncoding\022\031\n"
-  "\021sample_rate_hertz\030\002 \001(\005\022\r\n\005pitch\030\003 \001(\002\022"
-  "\r\n\005range\030\004 \001(\002\022\014\n\004rate\030\005 \001(\002\022\016\n\006volume\030\006"
-  " \001(\002\"W\n\005Voice\022\014\n\004name\030\001 \001(\t\022\"\n\006gender\030\002 "
-  "\001(\0162\022.techmo.tts.Gender\022\034\n\003age\030\003 \001(\0162\017.t"
-  "echmo.tts.Age\"J\n\tVoiceInfo\022\033\n\023supported_"
-  "languages\030\001 \003(\t\022 \n\005voice\030\002 \001(\0132\021.techmo."
-  "tts.Voice\"\\\n\022SynthesizeResponse\022$\n\005audio"
-  "\030\001 \001(\0132\025.techmo.tts.AudioData\022 \n\005error\030\002"
-  " \001(\0132\021.techmo.tts.Error\"7\n\tAudioData\022\031\n\021"
-  "sample_rate_hertz\030\001 \001(\005\022\017\n\007content\030\002 \001(\014"
-  "\"2\n\021PutLexiconRequest\022\014\n\004name\030\001 \001(\t\022\017\n\007c"
-  "ontent\030\002 \001(\t\"6\n\022PutLexiconResponse\022 \n\005er"
-  "ror\030\001 \001(\0132\021.techmo.tts.Error\"$\n\024DeleteLe"
-  "xiconRequest\022\014\n\004name\030\001 \001(\t\"9\n\025DeleteLexi"
-  "conResponse\022 \n\005error\030\001 \001(\0132\021.techmo.tts."
-  "Error\"!\n\021GetLexiconRequest\022\014\n\004name\030\001 \001(\t"
-  "\"G\n\022GetLexiconResponse\022\017\n\007content\030\001 \001(\t\022"
-  " \n\005error\030\002 \001(\0132\021.techmo.tts.Error\"\'\n\023Lis"
-  "tLexiconsRequest\022\020\n\010language\030\001 \001(\t\"%\n\024Li"
-  "stLexiconsResponse\022\r\n\005names\030\001 \003(\t\"A\n\005Err"
-  "or\022#\n\004code\030\001 \001(\0162\025.techmo.tts.ErrorCode\022"
-  "\023\n\013description\030\002 \001(\t**\n\rAudioEncoding\022\t\n"
-  "\005PCM16\020\000\022\016\n\nOGG_VORBIS\020\001*6\n\006Gender\022\026\n\022GE"
-  "NDER_UNSPECIFIED\020\000\022\n\n\006FEMALE\020\001\022\010\n\004MALE\020\002"
-  "*<\n\003Age\022\023\n\017AGE_UNSPECIFIED\020\000\022\t\n\005ADULT\020\001\022"
-  "\t\n\005CHILD\020\002\022\n\n\006SENILE\020\003*}\n\tErrorCode\022\013\n\007U"
-  "NKNOWN\020\000\022\013\n\007LICENCE\020\001\022\022\n\016MISSING_OBJECT\020"
-  "\002\022\010\n\004SSML\020\003\022\026\n\022TEXT_NORMALIZATION\020\004\022\021\n\rT"
-  "RANSCRIPTION\020\005\022\r\n\tSYNTHESIS\020\0062\272\004\n\003TTS\022K\n"
-  "\nListVoices\022\035.techmo.tts.ListVoicesReque"
-  "st\032\036.techmo.tts.ListVoicesResponse\022V\n\023Sy"
-  "nthesizeStreaming\022\035.techmo.tts.Synthesiz"
-  "eRequest\032\036.techmo.tts.SynthesizeResponse"
-  "0\001\022K\n\nSynthesize\022\035.techmo.tts.Synthesize"
-  "Request\032\036.techmo.tts.SynthesizeResponse\022"
-  "K\n\nPutLexicon\022\035.techmo.tts.PutLexiconReq"
-  "uest\032\036.techmo.tts.PutLexiconResponse\022T\n\r"
-  "DeleteLexicon\022 .techmo.tts.DeleteLexicon"
-  "Request\032!.techmo.tts.DeleteLexiconRespon"
-  "se\022K\n\nGetLexicon\022\035.techmo.tts.GetLexicon"
-  "Request\032\036.techmo.tts.GetLexiconResponse\022"
-  "Q\n\014ListLexicons\022\037.techmo.tts.ListLexicon"
-  "sRequest\032 .techmo.tts.ListLexiconsRespon"
-  "seb\006proto3"
+  "\n\020techmo_tts.proto\022\023techmo.tts.grpc_api\""
+  "%\n\021ListVoicesRequest\022\020\n\010language\030\001 \001(\t\"D"
+  "\n\022ListVoicesResponse\022.\n\006voices\030\001 \003(\0132\036.t"
+  "echmo.tts.grpc_api.VoiceInfo\"X\n\021Synthesi"
+  "zeRequest\022\014\n\004text\030\001 \001(\t\0225\n\006config\030\002 \001(\0132"
+  "%.techmo.tts.grpc_api.SynthesizeConfig\"\207"
+  "\001\n\020SynthesizeConfig\022\020\n\010language\030\001 \001(\t\0226\n"
+  "\014audio_config\030\002 \001(\0132 .techmo.tts.grpc_ap"
+  "i.AudioConfig\022)\n\005voice\030\003 \001(\0132\032.techmo.tt"
+  "s.grpc_api.Voice\"\240\001\n\013AudioConfig\022:\n\016audi"
+  "o_encoding\030\001 \001(\0162\".techmo.tts.grpc_api.A"
+  "udioEncoding\022\031\n\021sample_rate_hertz\030\002 \001(\005\022"
+  "\r\n\005pitch\030\003 \001(\002\022\r\n\005range\030\004 \001(\002\022\014\n\004rate\030\005 "
+  "\001(\002\022\016\n\006volume\030\006 \001(\002\"i\n\005Voice\022\014\n\004name\030\001 \001"
+  "(\t\022+\n\006gender\030\002 \001(\0162\033.techmo.tts.grpc_api"
+  ".Gender\022%\n\003age\030\003 \001(\0162\030.techmo.tts.grpc_a"
+  "pi.Age\"S\n\tVoiceInfo\022\033\n\023supported_languag"
+  "es\030\001 \003(\t\022)\n\005voice\030\002 \001(\0132\032.techmo.tts.grp"
+  "c_api.Voice\"n\n\022SynthesizeResponse\022-\n\005aud"
+  "io\030\001 \001(\0132\036.techmo.tts.grpc_api.AudioData"
+  "\022)\n\005error\030\002 \001(\0132\032.techmo.tts.grpc_api.Er"
+  "ror\"7\n\tAudioData\022\031\n\021sample_rate_hertz\030\001 "
+  "\001(\005\022\017\n\007content\030\002 \001(\014\"2\n\021PutLexiconReques"
+  "t\022\014\n\004name\030\001 \001(\t\022\017\n\007content\030\002 \001(\t\"\?\n\022PutL"
+  "exiconResponse\022)\n\005error\030\001 \001(\0132\032.techmo.t"
+  "ts.grpc_api.Error\"$\n\024DeleteLexiconReques"
+  "t\022\014\n\004name\030\001 \001(\t\"B\n\025DeleteLexiconResponse"
+  "\022)\n\005error\030\001 \001(\0132\032.techmo.tts.grpc_api.Er"
+  "ror\"!\n\021GetLexiconRequest\022\014\n\004name\030\001 \001(\t\"P"
+  "\n\022GetLexiconResponse\022\017\n\007content\030\001 \001(\t\022)\n"
+  "\005error\030\002 \001(\0132\032.techmo.tts.grpc_api.Error"
+  "\"\'\n\023ListLexiconsRequest\022\020\n\010language\030\001 \001("
+  "\t\"%\n\024ListLexiconsResponse\022\r\n\005names\030\001 \003(\t"
+  "\"J\n\005Error\022,\n\004code\030\001 \001(\0162\036.techmo.tts.grp"
+  "c_api.ErrorCode\022\023\n\013description\030\002 \001(\t**\n\r"
+  "AudioEncoding\022\t\n\005PCM16\020\000\022\016\n\nOGG_VORBIS\020\001"
+  "*6\n\006Gender\022\026\n\022GENDER_UNSPECIFIED\020\000\022\n\n\006FE"
+  "MALE\020\001\022\010\n\004MALE\020\002*<\n\003Age\022\023\n\017AGE_UNSPECIFI"
+  "ED\020\000\022\t\n\005ADULT\020\001\022\t\n\005CHILD\020\002\022\n\n\006SENILE\020\003*}"
+  "\n\tErrorCode\022\013\n\007UNKNOWN\020\000\022\013\n\007LICENCE\020\001\022\022\n"
+  "\016MISSING_OBJECT\020\002\022\010\n\004SSML\020\003\022\026\n\022TEXT_NORM"
+  "ALIZATION\020\004\022\021\n\rTRANSCRIPTION\020\005\022\r\n\tSYNTHE"
+  "SIS\020\0062\270\005\n\003TTS\022]\n\nListVoices\022&.techmo.tts"
+  ".grpc_api.ListVoicesRequest\032\'.techmo.tts"
+  ".grpc_api.ListVoicesResponse\022h\n\023Synthesi"
+  "zeStreaming\022&.techmo.tts.grpc_api.Synthe"
+  "sizeRequest\032\'.techmo.tts.grpc_api.Synthe"
+  "sizeResponse0\001\022]\n\nSynthesize\022&.techmo.tt"
+  "s.grpc_api.SynthesizeRequest\032\'.techmo.tt"
+  "s.grpc_api.SynthesizeResponse\022]\n\nPutLexi"
+  "con\022&.techmo.tts.grpc_api.PutLexiconRequ"
+  "est\032\'.techmo.tts.grpc_api.PutLexiconResp"
+  "onse\022f\n\rDeleteLexicon\022).techmo.tts.grpc_"
+  "api.DeleteLexiconRequest\032*.techmo.tts.gr"
+  "pc_api.DeleteLexiconResponse\022]\n\nGetLexic"
+  "on\022&.techmo.tts.grpc_api.GetLexiconReque"
+  "st\032\'.techmo.tts.grpc_api.GetLexiconRespo"
+  "nse\022c\n\014ListLexicons\022(.techmo.tts.grpc_ap"
+  "i.ListLexiconsRequest\032).techmo.tts.grpc_"
+  "api.ListLexiconsResponseb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_techmo_5ftts_2eproto_deps[1] = {
 };
@@ -611,7 +619,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_tec
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_techmo_5ftts_2eproto_once;
 static bool descriptor_table_techmo_5ftts_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_techmo_5ftts_2eproto = {
-  &descriptor_table_techmo_5ftts_2eproto_initialized, descriptor_table_protodef_techmo_5ftts_2eproto, "techmo_tts.proto", 2130,
+  &descriptor_table_techmo_5ftts_2eproto_initialized, descriptor_table_protodef_techmo_5ftts_2eproto, "techmo_tts.proto", 2392,
   &descriptor_table_techmo_5ftts_2eproto_once, descriptor_table_techmo_5ftts_2eproto_sccs, descriptor_table_techmo_5ftts_2eproto_deps, 18, 0,
   schemas, file_default_instances, TableStruct_techmo_5ftts_2eproto::offsets,
   file_level_metadata_techmo_5ftts_2eproto, 18, file_level_enum_descriptors_techmo_5ftts_2eproto, file_level_service_descriptors_techmo_5ftts_2eproto,
@@ -621,6 +629,7 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_techmo
 static bool dynamic_init_dummy_techmo_5ftts_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_techmo_5ftts_2eproto), true);
 namespace techmo {
 namespace tts {
+namespace grpc_api {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AudioEncoding_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_techmo_5ftts_2eproto);
   return file_level_enum_descriptors_techmo_5ftts_2eproto[0];
@@ -697,7 +706,7 @@ class ListVoicesRequest::_Internal {
 ListVoicesRequest::ListVoicesRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.ListVoicesRequest)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.ListVoicesRequest)
 }
 ListVoicesRequest::ListVoicesRequest(const ListVoicesRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -707,7 +716,7 @@ ListVoicesRequest::ListVoicesRequest(const ListVoicesRequest& from)
   if (!from._internal_language().empty()) {
     language_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.language_);
   }
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.ListVoicesRequest)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.ListVoicesRequest)
 }
 
 void ListVoicesRequest::SharedCtor() {
@@ -716,7 +725,7 @@ void ListVoicesRequest::SharedCtor() {
 }
 
 ListVoicesRequest::~ListVoicesRequest() {
-  // @@protoc_insertion_point(destructor:techmo.tts.ListVoicesRequest)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.ListVoicesRequest)
   SharedDtor();
 }
 
@@ -734,7 +743,7 @@ const ListVoicesRequest& ListVoicesRequest::default_instance() {
 
 
 void ListVoicesRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.ListVoicesRequest)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.ListVoicesRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -755,7 +764,7 @@ const char* ListVoicesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_language();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.ListVoicesRequest.language"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.grpc_api.ListVoicesRequest.language"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -781,7 +790,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* ListVoicesRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.ListVoicesRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.ListVoicesRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -790,7 +799,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_language().data(), static_cast<int>(this->_internal_language().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tts.ListVoicesRequest.language");
+      "techmo.tts.grpc_api.ListVoicesRequest.language");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_language(), target);
   }
@@ -799,12 +808,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.ListVoicesRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.ListVoicesRequest)
   return target;
 }
 
 size_t ListVoicesRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.ListVoicesRequest)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.ListVoicesRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -828,22 +837,22 @@ size_t ListVoicesRequest::ByteSizeLong() const {
 }
 
 void ListVoicesRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.ListVoicesRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.ListVoicesRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const ListVoicesRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ListVoicesRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.ListVoicesRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.ListVoicesRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.ListVoicesRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.ListVoicesRequest)
     MergeFrom(*source);
   }
 }
 
 void ListVoicesRequest::MergeFrom(const ListVoicesRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.ListVoicesRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.ListVoicesRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -856,14 +865,14 @@ void ListVoicesRequest::MergeFrom(const ListVoicesRequest& from) {
 }
 
 void ListVoicesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.ListVoicesRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.ListVoicesRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void ListVoicesRequest::CopyFrom(const ListVoicesRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.ListVoicesRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.ListVoicesRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -896,14 +905,14 @@ class ListVoicesResponse::_Internal {
 ListVoicesResponse::ListVoicesResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.ListVoicesResponse)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.ListVoicesResponse)
 }
 ListVoicesResponse::ListVoicesResponse(const ListVoicesResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr),
       voices_(from.voices_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.ListVoicesResponse)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.ListVoicesResponse)
 }
 
 void ListVoicesResponse::SharedCtor() {
@@ -911,7 +920,7 @@ void ListVoicesResponse::SharedCtor() {
 }
 
 ListVoicesResponse::~ListVoicesResponse() {
-  // @@protoc_insertion_point(destructor:techmo.tts.ListVoicesResponse)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.ListVoicesResponse)
   SharedDtor();
 }
 
@@ -928,7 +937,7 @@ const ListVoicesResponse& ListVoicesResponse::default_instance() {
 
 
 void ListVoicesResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.ListVoicesResponse)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.ListVoicesResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -944,7 +953,7 @@ const char* ListVoicesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .techmo.tts.VoiceInfo voices = 1;
+      // repeated .techmo.tts.grpc_api.VoiceInfo voices = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -978,11 +987,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* ListVoicesResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.ListVoicesResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.ListVoicesResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .techmo.tts.VoiceInfo voices = 1;
+  // repeated .techmo.tts.grpc_api.VoiceInfo voices = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_voices_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -994,19 +1003,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.ListVoicesResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.ListVoicesResponse)
   return target;
 }
 
 size_t ListVoicesResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.ListVoicesResponse)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.ListVoicesResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .techmo.tts.VoiceInfo voices = 1;
+  // repeated .techmo.tts.grpc_api.VoiceInfo voices = 1;
   total_size += 1UL * this->_internal_voices_size();
   for (const auto& msg : this->voices_) {
     total_size +=
@@ -1023,22 +1032,22 @@ size_t ListVoicesResponse::ByteSizeLong() const {
 }
 
 void ListVoicesResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.ListVoicesResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.ListVoicesResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const ListVoicesResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ListVoicesResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.ListVoicesResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.ListVoicesResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.ListVoicesResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.ListVoicesResponse)
     MergeFrom(*source);
   }
 }
 
 void ListVoicesResponse::MergeFrom(const ListVoicesResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.ListVoicesResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.ListVoicesResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1048,14 +1057,14 @@ void ListVoicesResponse::MergeFrom(const ListVoicesResponse& from) {
 }
 
 void ListVoicesResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.ListVoicesResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.ListVoicesResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void ListVoicesResponse::CopyFrom(const ListVoicesResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.ListVoicesResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.ListVoicesResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1079,22 +1088,22 @@ void ListVoicesResponse::InternalSwap(ListVoicesResponse* other) {
 // ===================================================================
 
 void SynthesizeRequest::InitAsDefaultInstance() {
-  ::techmo::tts::_SynthesizeRequest_default_instance_._instance.get_mutable()->config_ = const_cast< ::techmo::tts::SynthesizeConfig*>(
-      ::techmo::tts::SynthesizeConfig::internal_default_instance());
+  ::techmo::tts::grpc_api::_SynthesizeRequest_default_instance_._instance.get_mutable()->config_ = const_cast< ::techmo::tts::grpc_api::SynthesizeConfig*>(
+      ::techmo::tts::grpc_api::SynthesizeConfig::internal_default_instance());
 }
 class SynthesizeRequest::_Internal {
  public:
-  static const ::techmo::tts::SynthesizeConfig& config(const SynthesizeRequest* msg);
+  static const ::techmo::tts::grpc_api::SynthesizeConfig& config(const SynthesizeRequest* msg);
 };
 
-const ::techmo::tts::SynthesizeConfig&
+const ::techmo::tts::grpc_api::SynthesizeConfig&
 SynthesizeRequest::_Internal::config(const SynthesizeRequest* msg) {
   return *msg->config_;
 }
 SynthesizeRequest::SynthesizeRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.SynthesizeRequest)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.SynthesizeRequest)
 }
 SynthesizeRequest::SynthesizeRequest(const SynthesizeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -1105,11 +1114,11 @@ SynthesizeRequest::SynthesizeRequest(const SynthesizeRequest& from)
     text_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.text_);
   }
   if (from._internal_has_config()) {
-    config_ = new ::techmo::tts::SynthesizeConfig(*from.config_);
+    config_ = new ::techmo::tts::grpc_api::SynthesizeConfig(*from.config_);
   } else {
     config_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.SynthesizeRequest)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.SynthesizeRequest)
 }
 
 void SynthesizeRequest::SharedCtor() {
@@ -1119,7 +1128,7 @@ void SynthesizeRequest::SharedCtor() {
 }
 
 SynthesizeRequest::~SynthesizeRequest() {
-  // @@protoc_insertion_point(destructor:techmo.tts.SynthesizeRequest)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.SynthesizeRequest)
   SharedDtor();
 }
 
@@ -1138,7 +1147,7 @@ const SynthesizeRequest& SynthesizeRequest::default_instance() {
 
 
 void SynthesizeRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.SynthesizeRequest)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.SynthesizeRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1163,11 +1172,11 @@ const char* SynthesizeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_text();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.SynthesizeRequest.text"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.grpc_api.SynthesizeRequest.text"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .techmo.tts.SynthesizeConfig config = 2;
+      // .techmo.tts.grpc_api.SynthesizeConfig config = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_config(), ptr);
@@ -1196,7 +1205,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* SynthesizeRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.SynthesizeRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.SynthesizeRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1205,12 +1214,12 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_text().data(), static_cast<int>(this->_internal_text().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tts.SynthesizeRequest.text");
+      "techmo.tts.grpc_api.SynthesizeRequest.text");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_text(), target);
   }
 
-  // .techmo.tts.SynthesizeConfig config = 2;
+  // .techmo.tts.grpc_api.SynthesizeConfig config = 2;
   if (this->has_config()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1222,12 +1231,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.SynthesizeRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.SynthesizeRequest)
   return target;
 }
 
 size_t SynthesizeRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.SynthesizeRequest)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.SynthesizeRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1241,7 +1250,7 @@ size_t SynthesizeRequest::ByteSizeLong() const {
         this->_internal_text());
   }
 
-  // .techmo.tts.SynthesizeConfig config = 2;
+  // .techmo.tts.grpc_api.SynthesizeConfig config = 2;
   if (this->has_config()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1258,22 +1267,22 @@ size_t SynthesizeRequest::ByteSizeLong() const {
 }
 
 void SynthesizeRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.SynthesizeRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.SynthesizeRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const SynthesizeRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<SynthesizeRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.SynthesizeRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.SynthesizeRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.SynthesizeRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.SynthesizeRequest)
     MergeFrom(*source);
   }
 }
 
 void SynthesizeRequest::MergeFrom(const SynthesizeRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.SynthesizeRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.SynthesizeRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1284,19 +1293,19 @@ void SynthesizeRequest::MergeFrom(const SynthesizeRequest& from) {
     text_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.text_);
   }
   if (from.has_config()) {
-    _internal_mutable_config()->::techmo::tts::SynthesizeConfig::MergeFrom(from._internal_config());
+    _internal_mutable_config()->::techmo::tts::grpc_api::SynthesizeConfig::MergeFrom(from._internal_config());
   }
 }
 
 void SynthesizeRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.SynthesizeRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.SynthesizeRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void SynthesizeRequest::CopyFrom(const SynthesizeRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.SynthesizeRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.SynthesizeRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1322,29 +1331,29 @@ void SynthesizeRequest::InternalSwap(SynthesizeRequest* other) {
 // ===================================================================
 
 void SynthesizeConfig::InitAsDefaultInstance() {
-  ::techmo::tts::_SynthesizeConfig_default_instance_._instance.get_mutable()->audio_config_ = const_cast< ::techmo::tts::AudioConfig*>(
-      ::techmo::tts::AudioConfig::internal_default_instance());
-  ::techmo::tts::_SynthesizeConfig_default_instance_._instance.get_mutable()->voice_ = const_cast< ::techmo::tts::Voice*>(
-      ::techmo::tts::Voice::internal_default_instance());
+  ::techmo::tts::grpc_api::_SynthesizeConfig_default_instance_._instance.get_mutable()->audio_config_ = const_cast< ::techmo::tts::grpc_api::AudioConfig*>(
+      ::techmo::tts::grpc_api::AudioConfig::internal_default_instance());
+  ::techmo::tts::grpc_api::_SynthesizeConfig_default_instance_._instance.get_mutable()->voice_ = const_cast< ::techmo::tts::grpc_api::Voice*>(
+      ::techmo::tts::grpc_api::Voice::internal_default_instance());
 }
 class SynthesizeConfig::_Internal {
  public:
-  static const ::techmo::tts::AudioConfig& audio_config(const SynthesizeConfig* msg);
-  static const ::techmo::tts::Voice& voice(const SynthesizeConfig* msg);
+  static const ::techmo::tts::grpc_api::AudioConfig& audio_config(const SynthesizeConfig* msg);
+  static const ::techmo::tts::grpc_api::Voice& voice(const SynthesizeConfig* msg);
 };
 
-const ::techmo::tts::AudioConfig&
+const ::techmo::tts::grpc_api::AudioConfig&
 SynthesizeConfig::_Internal::audio_config(const SynthesizeConfig* msg) {
   return *msg->audio_config_;
 }
-const ::techmo::tts::Voice&
+const ::techmo::tts::grpc_api::Voice&
 SynthesizeConfig::_Internal::voice(const SynthesizeConfig* msg) {
   return *msg->voice_;
 }
 SynthesizeConfig::SynthesizeConfig()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.SynthesizeConfig)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.SynthesizeConfig)
 }
 SynthesizeConfig::SynthesizeConfig(const SynthesizeConfig& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -1355,16 +1364,16 @@ SynthesizeConfig::SynthesizeConfig(const SynthesizeConfig& from)
     language_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.language_);
   }
   if (from._internal_has_audio_config()) {
-    audio_config_ = new ::techmo::tts::AudioConfig(*from.audio_config_);
+    audio_config_ = new ::techmo::tts::grpc_api::AudioConfig(*from.audio_config_);
   } else {
     audio_config_ = nullptr;
   }
   if (from._internal_has_voice()) {
-    voice_ = new ::techmo::tts::Voice(*from.voice_);
+    voice_ = new ::techmo::tts::grpc_api::Voice(*from.voice_);
   } else {
     voice_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.SynthesizeConfig)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.SynthesizeConfig)
 }
 
 void SynthesizeConfig::SharedCtor() {
@@ -1376,7 +1385,7 @@ void SynthesizeConfig::SharedCtor() {
 }
 
 SynthesizeConfig::~SynthesizeConfig() {
-  // @@protoc_insertion_point(destructor:techmo.tts.SynthesizeConfig)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.SynthesizeConfig)
   SharedDtor();
 }
 
@@ -1396,7 +1405,7 @@ const SynthesizeConfig& SynthesizeConfig::default_instance() {
 
 
 void SynthesizeConfig::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.SynthesizeConfig)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.SynthesizeConfig)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1425,18 +1434,18 @@ const char* SynthesizeConfig::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_language();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.SynthesizeConfig.language"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.grpc_api.SynthesizeConfig.language"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .techmo.tts.AudioConfig audio_config = 2;
+      // .techmo.tts.grpc_api.AudioConfig audio_config = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_audio_config(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .techmo.tts.Voice voice = 3;
+      // .techmo.tts.grpc_api.Voice voice = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_voice(), ptr);
@@ -1465,7 +1474,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* SynthesizeConfig::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.SynthesizeConfig)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.SynthesizeConfig)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1474,12 +1483,12 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_language().data(), static_cast<int>(this->_internal_language().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tts.SynthesizeConfig.language");
+      "techmo.tts.grpc_api.SynthesizeConfig.language");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_language(), target);
   }
 
-  // .techmo.tts.AudioConfig audio_config = 2;
+  // .techmo.tts.grpc_api.AudioConfig audio_config = 2;
   if (this->has_audio_config()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1487,7 +1496,7 @@ failure:
         2, _Internal::audio_config(this), target, stream);
   }
 
-  // .techmo.tts.Voice voice = 3;
+  // .techmo.tts.grpc_api.Voice voice = 3;
   if (this->has_voice()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1499,12 +1508,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.SynthesizeConfig)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.SynthesizeConfig)
   return target;
 }
 
 size_t SynthesizeConfig::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.SynthesizeConfig)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.SynthesizeConfig)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1518,14 +1527,14 @@ size_t SynthesizeConfig::ByteSizeLong() const {
         this->_internal_language());
   }
 
-  // .techmo.tts.AudioConfig audio_config = 2;
+  // .techmo.tts.grpc_api.AudioConfig audio_config = 2;
   if (this->has_audio_config()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *audio_config_);
   }
 
-  // .techmo.tts.Voice voice = 3;
+  // .techmo.tts.grpc_api.Voice voice = 3;
   if (this->has_voice()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1542,22 +1551,22 @@ size_t SynthesizeConfig::ByteSizeLong() const {
 }
 
 void SynthesizeConfig::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.SynthesizeConfig)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.SynthesizeConfig)
   GOOGLE_DCHECK_NE(&from, this);
   const SynthesizeConfig* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<SynthesizeConfig>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.SynthesizeConfig)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.SynthesizeConfig)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.SynthesizeConfig)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.SynthesizeConfig)
     MergeFrom(*source);
   }
 }
 
 void SynthesizeConfig::MergeFrom(const SynthesizeConfig& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.SynthesizeConfig)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.SynthesizeConfig)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1568,22 +1577,22 @@ void SynthesizeConfig::MergeFrom(const SynthesizeConfig& from) {
     language_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.language_);
   }
   if (from.has_audio_config()) {
-    _internal_mutable_audio_config()->::techmo::tts::AudioConfig::MergeFrom(from._internal_audio_config());
+    _internal_mutable_audio_config()->::techmo::tts::grpc_api::AudioConfig::MergeFrom(from._internal_audio_config());
   }
   if (from.has_voice()) {
-    _internal_mutable_voice()->::techmo::tts::Voice::MergeFrom(from._internal_voice());
+    _internal_mutable_voice()->::techmo::tts::grpc_api::Voice::MergeFrom(from._internal_voice());
   }
 }
 
 void SynthesizeConfig::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.SynthesizeConfig)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.SynthesizeConfig)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void SynthesizeConfig::CopyFrom(const SynthesizeConfig& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.SynthesizeConfig)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.SynthesizeConfig)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1618,7 +1627,7 @@ class AudioConfig::_Internal {
 AudioConfig::AudioConfig()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.AudioConfig)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.AudioConfig)
 }
 AudioConfig::AudioConfig(const AudioConfig& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -1627,7 +1636,7 @@ AudioConfig::AudioConfig(const AudioConfig& from)
   ::memcpy(&audio_encoding_, &from.audio_encoding_,
     static_cast<size_t>(reinterpret_cast<char*>(&volume_) -
     reinterpret_cast<char*>(&audio_encoding_)) + sizeof(volume_));
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.AudioConfig)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.AudioConfig)
 }
 
 void AudioConfig::SharedCtor() {
@@ -1637,7 +1646,7 @@ void AudioConfig::SharedCtor() {
 }
 
 AudioConfig::~AudioConfig() {
-  // @@protoc_insertion_point(destructor:techmo.tts.AudioConfig)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.AudioConfig)
   SharedDtor();
 }
 
@@ -1654,7 +1663,7 @@ const AudioConfig& AudioConfig::default_instance() {
 
 
 void AudioConfig::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.AudioConfig)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.AudioConfig)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1672,12 +1681,12 @@ const char* AudioConfig::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .techmo.tts.AudioEncoding audio_encoding = 1;
+      // .techmo.tts.grpc_api.AudioEncoding audio_encoding = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          _internal_set_audio_encoding(static_cast<::techmo::tts::AudioEncoding>(val));
+          _internal_set_audio_encoding(static_cast<::techmo::tts::grpc_api::AudioEncoding>(val));
         } else goto handle_unusual;
         continue;
       // int32 sample_rate_hertz = 2;
@@ -1737,11 +1746,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* AudioConfig::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.AudioConfig)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.AudioConfig)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .techmo.tts.AudioEncoding audio_encoding = 1;
+  // .techmo.tts.grpc_api.AudioEncoding audio_encoding = 1;
   if (this->audio_encoding() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -1782,19 +1791,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.AudioConfig)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.AudioConfig)
   return target;
 }
 
 size_t AudioConfig::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.AudioConfig)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.AudioConfig)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .techmo.tts.AudioEncoding audio_encoding = 1;
+  // .techmo.tts.grpc_api.AudioEncoding audio_encoding = 1;
   if (this->audio_encoding() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_audio_encoding());
@@ -1837,22 +1846,22 @@ size_t AudioConfig::ByteSizeLong() const {
 }
 
 void AudioConfig::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.AudioConfig)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.AudioConfig)
   GOOGLE_DCHECK_NE(&from, this);
   const AudioConfig* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AudioConfig>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.AudioConfig)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.AudioConfig)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.AudioConfig)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.AudioConfig)
     MergeFrom(*source);
   }
 }
 
 void AudioConfig::MergeFrom(const AudioConfig& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.AudioConfig)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.AudioConfig)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1879,14 +1888,14 @@ void AudioConfig::MergeFrom(const AudioConfig& from) {
 }
 
 void AudioConfig::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.AudioConfig)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.AudioConfig)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void AudioConfig::CopyFrom(const AudioConfig& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.AudioConfig)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.AudioConfig)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1923,7 +1932,7 @@ class Voice::_Internal {
 Voice::Voice()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.Voice)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.Voice)
 }
 Voice::Voice(const Voice& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -1936,7 +1945,7 @@ Voice::Voice(const Voice& from)
   ::memcpy(&gender_, &from.gender_,
     static_cast<size_t>(reinterpret_cast<char*>(&age_) -
     reinterpret_cast<char*>(&gender_)) + sizeof(age_));
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.Voice)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.Voice)
 }
 
 void Voice::SharedCtor() {
@@ -1948,7 +1957,7 @@ void Voice::SharedCtor() {
 }
 
 Voice::~Voice() {
-  // @@protoc_insertion_point(destructor:techmo.tts.Voice)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.Voice)
   SharedDtor();
 }
 
@@ -1966,7 +1975,7 @@ const Voice& Voice::default_instance() {
 
 
 void Voice::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.Voice)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.Voice)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1990,24 +1999,24 @@ const char* Voice::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.Voice.name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.grpc_api.Voice.name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .techmo.tts.Gender gender = 2;
+      // .techmo.tts.grpc_api.Gender gender = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          _internal_set_gender(static_cast<::techmo::tts::Gender>(val));
+          _internal_set_gender(static_cast<::techmo::tts::grpc_api::Gender>(val));
         } else goto handle_unusual;
         continue;
-      // .techmo.tts.Age age = 3;
+      // .techmo.tts.grpc_api.Age age = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          _internal_set_age(static_cast<::techmo::tts::Age>(val));
+          _internal_set_age(static_cast<::techmo::tts::grpc_api::Age>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -2032,7 +2041,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* Voice::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.Voice)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.Voice)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2041,19 +2050,19 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tts.Voice.name");
+      "techmo.tts.grpc_api.Voice.name");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_name(), target);
   }
 
-  // .techmo.tts.Gender gender = 2;
+  // .techmo.tts.grpc_api.Gender gender = 2;
   if (this->gender() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       2, this->_internal_gender(), target);
   }
 
-  // .techmo.tts.Age age = 3;
+  // .techmo.tts.grpc_api.Age age = 3;
   if (this->age() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -2064,12 +2073,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.Voice)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.Voice)
   return target;
 }
 
 size_t Voice::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.Voice)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.Voice)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2083,13 +2092,13 @@ size_t Voice::ByteSizeLong() const {
         this->_internal_name());
   }
 
-  // .techmo.tts.Gender gender = 2;
+  // .techmo.tts.grpc_api.Gender gender = 2;
   if (this->gender() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_gender());
   }
 
-  // .techmo.tts.Age age = 3;
+  // .techmo.tts.grpc_api.Age age = 3;
   if (this->age() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_age());
@@ -2105,22 +2114,22 @@ size_t Voice::ByteSizeLong() const {
 }
 
 void Voice::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.Voice)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.Voice)
   GOOGLE_DCHECK_NE(&from, this);
   const Voice* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Voice>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.Voice)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.Voice)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.Voice)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.Voice)
     MergeFrom(*source);
   }
 }
 
 void Voice::MergeFrom(const Voice& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.Voice)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.Voice)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2139,14 +2148,14 @@ void Voice::MergeFrom(const Voice& from) {
 }
 
 void Voice::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.Voice)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.Voice)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Voice::CopyFrom(const Voice& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.Voice)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.Voice)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2173,22 +2182,22 @@ void Voice::InternalSwap(Voice* other) {
 // ===================================================================
 
 void VoiceInfo::InitAsDefaultInstance() {
-  ::techmo::tts::_VoiceInfo_default_instance_._instance.get_mutable()->voice_ = const_cast< ::techmo::tts::Voice*>(
-      ::techmo::tts::Voice::internal_default_instance());
+  ::techmo::tts::grpc_api::_VoiceInfo_default_instance_._instance.get_mutable()->voice_ = const_cast< ::techmo::tts::grpc_api::Voice*>(
+      ::techmo::tts::grpc_api::Voice::internal_default_instance());
 }
 class VoiceInfo::_Internal {
  public:
-  static const ::techmo::tts::Voice& voice(const VoiceInfo* msg);
+  static const ::techmo::tts::grpc_api::Voice& voice(const VoiceInfo* msg);
 };
 
-const ::techmo::tts::Voice&
+const ::techmo::tts::grpc_api::Voice&
 VoiceInfo::_Internal::voice(const VoiceInfo* msg) {
   return *msg->voice_;
 }
 VoiceInfo::VoiceInfo()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.VoiceInfo)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.VoiceInfo)
 }
 VoiceInfo::VoiceInfo(const VoiceInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -2196,11 +2205,11 @@ VoiceInfo::VoiceInfo(const VoiceInfo& from)
       supported_languages_(from.supported_languages_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from._internal_has_voice()) {
-    voice_ = new ::techmo::tts::Voice(*from.voice_);
+    voice_ = new ::techmo::tts::grpc_api::Voice(*from.voice_);
   } else {
     voice_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.VoiceInfo)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.VoiceInfo)
 }
 
 void VoiceInfo::SharedCtor() {
@@ -2209,7 +2218,7 @@ void VoiceInfo::SharedCtor() {
 }
 
 VoiceInfo::~VoiceInfo() {
-  // @@protoc_insertion_point(destructor:techmo.tts.VoiceInfo)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.VoiceInfo)
   SharedDtor();
 }
 
@@ -2227,7 +2236,7 @@ const VoiceInfo& VoiceInfo::default_instance() {
 
 
 void VoiceInfo::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.VoiceInfo)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.VoiceInfo)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2255,13 +2264,13 @@ const char* VoiceInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
             ptr += 1;
             auto str = _internal_add_supported_languages();
             ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.VoiceInfo.supported_languages"));
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.grpc_api.VoiceInfo.supported_languages"));
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else goto handle_unusual;
         continue;
-      // .techmo.tts.Voice voice = 2;
+      // .techmo.tts.grpc_api.Voice voice = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_voice(), ptr);
@@ -2290,7 +2299,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* VoiceInfo::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.VoiceInfo)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.VoiceInfo)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2300,11 +2309,11 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tts.VoiceInfo.supported_languages");
+      "techmo.tts.grpc_api.VoiceInfo.supported_languages");
     target = stream->WriteString(1, s, target);
   }
 
-  // .techmo.tts.Voice voice = 2;
+  // .techmo.tts.grpc_api.Voice voice = 2;
   if (this->has_voice()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -2316,12 +2325,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.VoiceInfo)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.VoiceInfo)
   return target;
 }
 
 size_t VoiceInfo::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.VoiceInfo)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.VoiceInfo)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2336,7 +2345,7 @@ size_t VoiceInfo::ByteSizeLong() const {
       supported_languages_.Get(i));
   }
 
-  // .techmo.tts.Voice voice = 2;
+  // .techmo.tts.grpc_api.Voice voice = 2;
   if (this->has_voice()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2353,22 +2362,22 @@ size_t VoiceInfo::ByteSizeLong() const {
 }
 
 void VoiceInfo::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.VoiceInfo)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.VoiceInfo)
   GOOGLE_DCHECK_NE(&from, this);
   const VoiceInfo* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VoiceInfo>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.VoiceInfo)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.VoiceInfo)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.VoiceInfo)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.VoiceInfo)
     MergeFrom(*source);
   }
 }
 
 void VoiceInfo::MergeFrom(const VoiceInfo& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.VoiceInfo)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.VoiceInfo)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2376,19 +2385,19 @@ void VoiceInfo::MergeFrom(const VoiceInfo& from) {
 
   supported_languages_.MergeFrom(from.supported_languages_);
   if (from.has_voice()) {
-    _internal_mutable_voice()->::techmo::tts::Voice::MergeFrom(from._internal_voice());
+    _internal_mutable_voice()->::techmo::tts::grpc_api::Voice::MergeFrom(from._internal_voice());
   }
 }
 
 void VoiceInfo::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.VoiceInfo)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.VoiceInfo)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void VoiceInfo::CopyFrom(const VoiceInfo& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.VoiceInfo)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.VoiceInfo)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2413,45 +2422,45 @@ void VoiceInfo::InternalSwap(VoiceInfo* other) {
 // ===================================================================
 
 void SynthesizeResponse::InitAsDefaultInstance() {
-  ::techmo::tts::_SynthesizeResponse_default_instance_._instance.get_mutable()->audio_ = const_cast< ::techmo::tts::AudioData*>(
-      ::techmo::tts::AudioData::internal_default_instance());
-  ::techmo::tts::_SynthesizeResponse_default_instance_._instance.get_mutable()->error_ = const_cast< ::techmo::tts::Error*>(
-      ::techmo::tts::Error::internal_default_instance());
+  ::techmo::tts::grpc_api::_SynthesizeResponse_default_instance_._instance.get_mutable()->audio_ = const_cast< ::techmo::tts::grpc_api::AudioData*>(
+      ::techmo::tts::grpc_api::AudioData::internal_default_instance());
+  ::techmo::tts::grpc_api::_SynthesizeResponse_default_instance_._instance.get_mutable()->error_ = const_cast< ::techmo::tts::grpc_api::Error*>(
+      ::techmo::tts::grpc_api::Error::internal_default_instance());
 }
 class SynthesizeResponse::_Internal {
  public:
-  static const ::techmo::tts::AudioData& audio(const SynthesizeResponse* msg);
-  static const ::techmo::tts::Error& error(const SynthesizeResponse* msg);
+  static const ::techmo::tts::grpc_api::AudioData& audio(const SynthesizeResponse* msg);
+  static const ::techmo::tts::grpc_api::Error& error(const SynthesizeResponse* msg);
 };
 
-const ::techmo::tts::AudioData&
+const ::techmo::tts::grpc_api::AudioData&
 SynthesizeResponse::_Internal::audio(const SynthesizeResponse* msg) {
   return *msg->audio_;
 }
-const ::techmo::tts::Error&
+const ::techmo::tts::grpc_api::Error&
 SynthesizeResponse::_Internal::error(const SynthesizeResponse* msg) {
   return *msg->error_;
 }
 SynthesizeResponse::SynthesizeResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.SynthesizeResponse)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.SynthesizeResponse)
 }
 SynthesizeResponse::SynthesizeResponse(const SynthesizeResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from._internal_has_audio()) {
-    audio_ = new ::techmo::tts::AudioData(*from.audio_);
+    audio_ = new ::techmo::tts::grpc_api::AudioData(*from.audio_);
   } else {
     audio_ = nullptr;
   }
   if (from._internal_has_error()) {
-    error_ = new ::techmo::tts::Error(*from.error_);
+    error_ = new ::techmo::tts::grpc_api::Error(*from.error_);
   } else {
     error_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.SynthesizeResponse)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.SynthesizeResponse)
 }
 
 void SynthesizeResponse::SharedCtor() {
@@ -2462,7 +2471,7 @@ void SynthesizeResponse::SharedCtor() {
 }
 
 SynthesizeResponse::~SynthesizeResponse() {
-  // @@protoc_insertion_point(destructor:techmo.tts.SynthesizeResponse)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.SynthesizeResponse)
   SharedDtor();
 }
 
@@ -2481,7 +2490,7 @@ const SynthesizeResponse& SynthesizeResponse::default_instance() {
 
 
 void SynthesizeResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.SynthesizeResponse)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.SynthesizeResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2504,14 +2513,14 @@ const char* SynthesizeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .techmo.tts.AudioData audio = 1;
+      // .techmo.tts.grpc_api.AudioData audio = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_audio(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .techmo.tts.Error error = 2;
+      // .techmo.tts.grpc_api.Error error = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
@@ -2540,11 +2549,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* SynthesizeResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.SynthesizeResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.SynthesizeResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .techmo.tts.AudioData audio = 1;
+  // .techmo.tts.grpc_api.AudioData audio = 1;
   if (this->has_audio()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -2552,7 +2561,7 @@ failure:
         1, _Internal::audio(this), target, stream);
   }
 
-  // .techmo.tts.Error error = 2;
+  // .techmo.tts.grpc_api.Error error = 2;
   if (this->has_error()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -2564,26 +2573,26 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.SynthesizeResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.SynthesizeResponse)
   return target;
 }
 
 size_t SynthesizeResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.SynthesizeResponse)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.SynthesizeResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .techmo.tts.AudioData audio = 1;
+  // .techmo.tts.grpc_api.AudioData audio = 1;
   if (this->has_audio()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *audio_);
   }
 
-  // .techmo.tts.Error error = 2;
+  // .techmo.tts.grpc_api.Error error = 2;
   if (this->has_error()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2600,44 +2609,44 @@ size_t SynthesizeResponse::ByteSizeLong() const {
 }
 
 void SynthesizeResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.SynthesizeResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.SynthesizeResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const SynthesizeResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<SynthesizeResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.SynthesizeResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.SynthesizeResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.SynthesizeResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.SynthesizeResponse)
     MergeFrom(*source);
   }
 }
 
 void SynthesizeResponse::MergeFrom(const SynthesizeResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.SynthesizeResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.SynthesizeResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_audio()) {
-    _internal_mutable_audio()->::techmo::tts::AudioData::MergeFrom(from._internal_audio());
+    _internal_mutable_audio()->::techmo::tts::grpc_api::AudioData::MergeFrom(from._internal_audio());
   }
   if (from.has_error()) {
-    _internal_mutable_error()->::techmo::tts::Error::MergeFrom(from._internal_error());
+    _internal_mutable_error()->::techmo::tts::grpc_api::Error::MergeFrom(from._internal_error());
   }
 }
 
 void SynthesizeResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.SynthesizeResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.SynthesizeResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void SynthesizeResponse::CopyFrom(const SynthesizeResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.SynthesizeResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.SynthesizeResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2670,7 +2679,7 @@ class AudioData::_Internal {
 AudioData::AudioData()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.AudioData)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.AudioData)
 }
 AudioData::AudioData(const AudioData& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -2681,7 +2690,7 @@ AudioData::AudioData(const AudioData& from)
     content_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.content_);
   }
   sample_rate_hertz_ = from.sample_rate_hertz_;
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.AudioData)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.AudioData)
 }
 
 void AudioData::SharedCtor() {
@@ -2691,7 +2700,7 @@ void AudioData::SharedCtor() {
 }
 
 AudioData::~AudioData() {
-  // @@protoc_insertion_point(destructor:techmo.tts.AudioData)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.AudioData)
   SharedDtor();
 }
 
@@ -2709,7 +2718,7 @@ const AudioData& AudioData::default_instance() {
 
 
 void AudioData::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.AudioData)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.AudioData)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2763,7 +2772,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* AudioData::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.AudioData)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.AudioData)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2783,12 +2792,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.AudioData)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.AudioData)
   return target;
 }
 
 size_t AudioData::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.AudioData)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.AudioData)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2819,22 +2828,22 @@ size_t AudioData::ByteSizeLong() const {
 }
 
 void AudioData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.AudioData)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.AudioData)
   GOOGLE_DCHECK_NE(&from, this);
   const AudioData* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AudioData>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.AudioData)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.AudioData)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.AudioData)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.AudioData)
     MergeFrom(*source);
   }
 }
 
 void AudioData::MergeFrom(const AudioData& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.AudioData)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.AudioData)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2850,14 +2859,14 @@ void AudioData::MergeFrom(const AudioData& from) {
 }
 
 void AudioData::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.AudioData)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.AudioData)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void AudioData::CopyFrom(const AudioData& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.AudioData)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.AudioData)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2891,7 +2900,7 @@ class PutLexiconRequest::_Internal {
 PutLexiconRequest::PutLexiconRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.PutLexiconRequest)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.PutLexiconRequest)
 }
 PutLexiconRequest::PutLexiconRequest(const PutLexiconRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -2905,7 +2914,7 @@ PutLexiconRequest::PutLexiconRequest(const PutLexiconRequest& from)
   if (!from._internal_content().empty()) {
     content_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.content_);
   }
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.PutLexiconRequest)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.PutLexiconRequest)
 }
 
 void PutLexiconRequest::SharedCtor() {
@@ -2915,7 +2924,7 @@ void PutLexiconRequest::SharedCtor() {
 }
 
 PutLexiconRequest::~PutLexiconRequest() {
-  // @@protoc_insertion_point(destructor:techmo.tts.PutLexiconRequest)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.PutLexiconRequest)
   SharedDtor();
 }
 
@@ -2934,7 +2943,7 @@ const PutLexiconRequest& PutLexiconRequest::default_instance() {
 
 
 void PutLexiconRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.PutLexiconRequest)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.PutLexiconRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2956,7 +2965,7 @@ const char* PutLexiconRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.PutLexiconRequest.name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.grpc_api.PutLexiconRequest.name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2965,7 +2974,7 @@ const char* PutLexiconRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_content();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.PutLexiconRequest.content"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.grpc_api.PutLexiconRequest.content"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2991,7 +3000,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* PutLexiconRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.PutLexiconRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.PutLexiconRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3000,7 +3009,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tts.PutLexiconRequest.name");
+      "techmo.tts.grpc_api.PutLexiconRequest.name");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_name(), target);
   }
@@ -3010,7 +3019,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_content().data(), static_cast<int>(this->_internal_content().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tts.PutLexiconRequest.content");
+      "techmo.tts.grpc_api.PutLexiconRequest.content");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_content(), target);
   }
@@ -3019,12 +3028,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.PutLexiconRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.PutLexiconRequest)
   return target;
 }
 
 size_t PutLexiconRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.PutLexiconRequest)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.PutLexiconRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3055,22 +3064,22 @@ size_t PutLexiconRequest::ByteSizeLong() const {
 }
 
 void PutLexiconRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.PutLexiconRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.PutLexiconRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const PutLexiconRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PutLexiconRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.PutLexiconRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.PutLexiconRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.PutLexiconRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.PutLexiconRequest)
     MergeFrom(*source);
   }
 }
 
 void PutLexiconRequest::MergeFrom(const PutLexiconRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.PutLexiconRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.PutLexiconRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3087,14 +3096,14 @@ void PutLexiconRequest::MergeFrom(const PutLexiconRequest& from) {
 }
 
 void PutLexiconRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.PutLexiconRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.PutLexiconRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PutLexiconRequest::CopyFrom(const PutLexiconRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.PutLexiconRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.PutLexiconRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3121,33 +3130,33 @@ void PutLexiconRequest::InternalSwap(PutLexiconRequest* other) {
 // ===================================================================
 
 void PutLexiconResponse::InitAsDefaultInstance() {
-  ::techmo::tts::_PutLexiconResponse_default_instance_._instance.get_mutable()->error_ = const_cast< ::techmo::tts::Error*>(
-      ::techmo::tts::Error::internal_default_instance());
+  ::techmo::tts::grpc_api::_PutLexiconResponse_default_instance_._instance.get_mutable()->error_ = const_cast< ::techmo::tts::grpc_api::Error*>(
+      ::techmo::tts::grpc_api::Error::internal_default_instance());
 }
 class PutLexiconResponse::_Internal {
  public:
-  static const ::techmo::tts::Error& error(const PutLexiconResponse* msg);
+  static const ::techmo::tts::grpc_api::Error& error(const PutLexiconResponse* msg);
 };
 
-const ::techmo::tts::Error&
+const ::techmo::tts::grpc_api::Error&
 PutLexiconResponse::_Internal::error(const PutLexiconResponse* msg) {
   return *msg->error_;
 }
 PutLexiconResponse::PutLexiconResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.PutLexiconResponse)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.PutLexiconResponse)
 }
 PutLexiconResponse::PutLexiconResponse(const PutLexiconResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from._internal_has_error()) {
-    error_ = new ::techmo::tts::Error(*from.error_);
+    error_ = new ::techmo::tts::grpc_api::Error(*from.error_);
   } else {
     error_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.PutLexiconResponse)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.PutLexiconResponse)
 }
 
 void PutLexiconResponse::SharedCtor() {
@@ -3156,7 +3165,7 @@ void PutLexiconResponse::SharedCtor() {
 }
 
 PutLexiconResponse::~PutLexiconResponse() {
-  // @@protoc_insertion_point(destructor:techmo.tts.PutLexiconResponse)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.PutLexiconResponse)
   SharedDtor();
 }
 
@@ -3174,7 +3183,7 @@ const PutLexiconResponse& PutLexiconResponse::default_instance() {
 
 
 void PutLexiconResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.PutLexiconResponse)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.PutLexiconResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3193,7 +3202,7 @@ const char* PutLexiconResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .techmo.tts.Error error = 1;
+      // .techmo.tts.grpc_api.Error error = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
@@ -3222,11 +3231,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* PutLexiconResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.PutLexiconResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.PutLexiconResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .techmo.tts.Error error = 1;
+  // .techmo.tts.grpc_api.Error error = 1;
   if (this->has_error()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -3238,19 +3247,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.PutLexiconResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.PutLexiconResponse)
   return target;
 }
 
 size_t PutLexiconResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.PutLexiconResponse)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.PutLexiconResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .techmo.tts.Error error = 1;
+  // .techmo.tts.grpc_api.Error error = 1;
   if (this->has_error()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3267,41 +3276,41 @@ size_t PutLexiconResponse::ByteSizeLong() const {
 }
 
 void PutLexiconResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.PutLexiconResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.PutLexiconResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const PutLexiconResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PutLexiconResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.PutLexiconResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.PutLexiconResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.PutLexiconResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.PutLexiconResponse)
     MergeFrom(*source);
   }
 }
 
 void PutLexiconResponse::MergeFrom(const PutLexiconResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.PutLexiconResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.PutLexiconResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_error()) {
-    _internal_mutable_error()->::techmo::tts::Error::MergeFrom(from._internal_error());
+    _internal_mutable_error()->::techmo::tts::grpc_api::Error::MergeFrom(from._internal_error());
   }
 }
 
 void PutLexiconResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.PutLexiconResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.PutLexiconResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PutLexiconResponse::CopyFrom(const PutLexiconResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.PutLexiconResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.PutLexiconResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3333,7 +3342,7 @@ class DeleteLexiconRequest::_Internal {
 DeleteLexiconRequest::DeleteLexiconRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.DeleteLexiconRequest)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.DeleteLexiconRequest)
 }
 DeleteLexiconRequest::DeleteLexiconRequest(const DeleteLexiconRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -3343,7 +3352,7 @@ DeleteLexiconRequest::DeleteLexiconRequest(const DeleteLexiconRequest& from)
   if (!from._internal_name().empty()) {
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.DeleteLexiconRequest)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.DeleteLexiconRequest)
 }
 
 void DeleteLexiconRequest::SharedCtor() {
@@ -3352,7 +3361,7 @@ void DeleteLexiconRequest::SharedCtor() {
 }
 
 DeleteLexiconRequest::~DeleteLexiconRequest() {
-  // @@protoc_insertion_point(destructor:techmo.tts.DeleteLexiconRequest)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.DeleteLexiconRequest)
   SharedDtor();
 }
 
@@ -3370,7 +3379,7 @@ const DeleteLexiconRequest& DeleteLexiconRequest::default_instance() {
 
 
 void DeleteLexiconRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.DeleteLexiconRequest)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.DeleteLexiconRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3391,7 +3400,7 @@ const char* DeleteLexiconRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.DeleteLexiconRequest.name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.grpc_api.DeleteLexiconRequest.name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3417,7 +3426,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* DeleteLexiconRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.DeleteLexiconRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.DeleteLexiconRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3426,7 +3435,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tts.DeleteLexiconRequest.name");
+      "techmo.tts.grpc_api.DeleteLexiconRequest.name");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_name(), target);
   }
@@ -3435,12 +3444,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.DeleteLexiconRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.DeleteLexiconRequest)
   return target;
 }
 
 size_t DeleteLexiconRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.DeleteLexiconRequest)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.DeleteLexiconRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3464,22 +3473,22 @@ size_t DeleteLexiconRequest::ByteSizeLong() const {
 }
 
 void DeleteLexiconRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.DeleteLexiconRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.DeleteLexiconRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const DeleteLexiconRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeleteLexiconRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.DeleteLexiconRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.DeleteLexiconRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.DeleteLexiconRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.DeleteLexiconRequest)
     MergeFrom(*source);
   }
 }
 
 void DeleteLexiconRequest::MergeFrom(const DeleteLexiconRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.DeleteLexiconRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.DeleteLexiconRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3492,14 +3501,14 @@ void DeleteLexiconRequest::MergeFrom(const DeleteLexiconRequest& from) {
 }
 
 void DeleteLexiconRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.DeleteLexiconRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.DeleteLexiconRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void DeleteLexiconRequest::CopyFrom(const DeleteLexiconRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.DeleteLexiconRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.DeleteLexiconRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3524,33 +3533,33 @@ void DeleteLexiconRequest::InternalSwap(DeleteLexiconRequest* other) {
 // ===================================================================
 
 void DeleteLexiconResponse::InitAsDefaultInstance() {
-  ::techmo::tts::_DeleteLexiconResponse_default_instance_._instance.get_mutable()->error_ = const_cast< ::techmo::tts::Error*>(
-      ::techmo::tts::Error::internal_default_instance());
+  ::techmo::tts::grpc_api::_DeleteLexiconResponse_default_instance_._instance.get_mutable()->error_ = const_cast< ::techmo::tts::grpc_api::Error*>(
+      ::techmo::tts::grpc_api::Error::internal_default_instance());
 }
 class DeleteLexiconResponse::_Internal {
  public:
-  static const ::techmo::tts::Error& error(const DeleteLexiconResponse* msg);
+  static const ::techmo::tts::grpc_api::Error& error(const DeleteLexiconResponse* msg);
 };
 
-const ::techmo::tts::Error&
+const ::techmo::tts::grpc_api::Error&
 DeleteLexiconResponse::_Internal::error(const DeleteLexiconResponse* msg) {
   return *msg->error_;
 }
 DeleteLexiconResponse::DeleteLexiconResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.DeleteLexiconResponse)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.DeleteLexiconResponse)
 }
 DeleteLexiconResponse::DeleteLexiconResponse(const DeleteLexiconResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from._internal_has_error()) {
-    error_ = new ::techmo::tts::Error(*from.error_);
+    error_ = new ::techmo::tts::grpc_api::Error(*from.error_);
   } else {
     error_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.DeleteLexiconResponse)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.DeleteLexiconResponse)
 }
 
 void DeleteLexiconResponse::SharedCtor() {
@@ -3559,7 +3568,7 @@ void DeleteLexiconResponse::SharedCtor() {
 }
 
 DeleteLexiconResponse::~DeleteLexiconResponse() {
-  // @@protoc_insertion_point(destructor:techmo.tts.DeleteLexiconResponse)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.DeleteLexiconResponse)
   SharedDtor();
 }
 
@@ -3577,7 +3586,7 @@ const DeleteLexiconResponse& DeleteLexiconResponse::default_instance() {
 
 
 void DeleteLexiconResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.DeleteLexiconResponse)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.DeleteLexiconResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3596,7 +3605,7 @@ const char* DeleteLexiconResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .techmo.tts.Error error = 1;
+      // .techmo.tts.grpc_api.Error error = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
@@ -3625,11 +3634,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* DeleteLexiconResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.DeleteLexiconResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.DeleteLexiconResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .techmo.tts.Error error = 1;
+  // .techmo.tts.grpc_api.Error error = 1;
   if (this->has_error()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -3641,19 +3650,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.DeleteLexiconResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.DeleteLexiconResponse)
   return target;
 }
 
 size_t DeleteLexiconResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.DeleteLexiconResponse)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.DeleteLexiconResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .techmo.tts.Error error = 1;
+  // .techmo.tts.grpc_api.Error error = 1;
   if (this->has_error()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3670,41 +3679,41 @@ size_t DeleteLexiconResponse::ByteSizeLong() const {
 }
 
 void DeleteLexiconResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.DeleteLexiconResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.DeleteLexiconResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const DeleteLexiconResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeleteLexiconResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.DeleteLexiconResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.DeleteLexiconResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.DeleteLexiconResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.DeleteLexiconResponse)
     MergeFrom(*source);
   }
 }
 
 void DeleteLexiconResponse::MergeFrom(const DeleteLexiconResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.DeleteLexiconResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.DeleteLexiconResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_error()) {
-    _internal_mutable_error()->::techmo::tts::Error::MergeFrom(from._internal_error());
+    _internal_mutable_error()->::techmo::tts::grpc_api::Error::MergeFrom(from._internal_error());
   }
 }
 
 void DeleteLexiconResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.DeleteLexiconResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.DeleteLexiconResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void DeleteLexiconResponse::CopyFrom(const DeleteLexiconResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.DeleteLexiconResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.DeleteLexiconResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3736,7 +3745,7 @@ class GetLexiconRequest::_Internal {
 GetLexiconRequest::GetLexiconRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.GetLexiconRequest)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.GetLexiconRequest)
 }
 GetLexiconRequest::GetLexiconRequest(const GetLexiconRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -3746,7 +3755,7 @@ GetLexiconRequest::GetLexiconRequest(const GetLexiconRequest& from)
   if (!from._internal_name().empty()) {
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.GetLexiconRequest)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.GetLexiconRequest)
 }
 
 void GetLexiconRequest::SharedCtor() {
@@ -3755,7 +3764,7 @@ void GetLexiconRequest::SharedCtor() {
 }
 
 GetLexiconRequest::~GetLexiconRequest() {
-  // @@protoc_insertion_point(destructor:techmo.tts.GetLexiconRequest)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.GetLexiconRequest)
   SharedDtor();
 }
 
@@ -3773,7 +3782,7 @@ const GetLexiconRequest& GetLexiconRequest::default_instance() {
 
 
 void GetLexiconRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.GetLexiconRequest)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.GetLexiconRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3794,7 +3803,7 @@ const char* GetLexiconRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.GetLexiconRequest.name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.grpc_api.GetLexiconRequest.name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3820,7 +3829,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetLexiconRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.GetLexiconRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.GetLexiconRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3829,7 +3838,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tts.GetLexiconRequest.name");
+      "techmo.tts.grpc_api.GetLexiconRequest.name");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_name(), target);
   }
@@ -3838,12 +3847,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.GetLexiconRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.GetLexiconRequest)
   return target;
 }
 
 size_t GetLexiconRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.GetLexiconRequest)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.GetLexiconRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3867,22 +3876,22 @@ size_t GetLexiconRequest::ByteSizeLong() const {
 }
 
 void GetLexiconRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.GetLexiconRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.GetLexiconRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const GetLexiconRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetLexiconRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.GetLexiconRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.GetLexiconRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.GetLexiconRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.GetLexiconRequest)
     MergeFrom(*source);
   }
 }
 
 void GetLexiconRequest::MergeFrom(const GetLexiconRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.GetLexiconRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.GetLexiconRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3895,14 +3904,14 @@ void GetLexiconRequest::MergeFrom(const GetLexiconRequest& from) {
 }
 
 void GetLexiconRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.GetLexiconRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.GetLexiconRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetLexiconRequest::CopyFrom(const GetLexiconRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.GetLexiconRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.GetLexiconRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3927,22 +3936,22 @@ void GetLexiconRequest::InternalSwap(GetLexiconRequest* other) {
 // ===================================================================
 
 void GetLexiconResponse::InitAsDefaultInstance() {
-  ::techmo::tts::_GetLexiconResponse_default_instance_._instance.get_mutable()->error_ = const_cast< ::techmo::tts::Error*>(
-      ::techmo::tts::Error::internal_default_instance());
+  ::techmo::tts::grpc_api::_GetLexiconResponse_default_instance_._instance.get_mutable()->error_ = const_cast< ::techmo::tts::grpc_api::Error*>(
+      ::techmo::tts::grpc_api::Error::internal_default_instance());
 }
 class GetLexiconResponse::_Internal {
  public:
-  static const ::techmo::tts::Error& error(const GetLexiconResponse* msg);
+  static const ::techmo::tts::grpc_api::Error& error(const GetLexiconResponse* msg);
 };
 
-const ::techmo::tts::Error&
+const ::techmo::tts::grpc_api::Error&
 GetLexiconResponse::_Internal::error(const GetLexiconResponse* msg) {
   return *msg->error_;
 }
 GetLexiconResponse::GetLexiconResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.GetLexiconResponse)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.GetLexiconResponse)
 }
 GetLexiconResponse::GetLexiconResponse(const GetLexiconResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -3953,11 +3962,11 @@ GetLexiconResponse::GetLexiconResponse(const GetLexiconResponse& from)
     content_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.content_);
   }
   if (from._internal_has_error()) {
-    error_ = new ::techmo::tts::Error(*from.error_);
+    error_ = new ::techmo::tts::grpc_api::Error(*from.error_);
   } else {
     error_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.GetLexiconResponse)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.GetLexiconResponse)
 }
 
 void GetLexiconResponse::SharedCtor() {
@@ -3967,7 +3976,7 @@ void GetLexiconResponse::SharedCtor() {
 }
 
 GetLexiconResponse::~GetLexiconResponse() {
-  // @@protoc_insertion_point(destructor:techmo.tts.GetLexiconResponse)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.GetLexiconResponse)
   SharedDtor();
 }
 
@@ -3986,7 +3995,7 @@ const GetLexiconResponse& GetLexiconResponse::default_instance() {
 
 
 void GetLexiconResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.GetLexiconResponse)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.GetLexiconResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4011,11 +4020,11 @@ const char* GetLexiconResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_content();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.GetLexiconResponse.content"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.grpc_api.GetLexiconResponse.content"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .techmo.tts.Error error = 2;
+      // .techmo.tts.grpc_api.Error error = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
@@ -4044,7 +4053,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetLexiconResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.GetLexiconResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.GetLexiconResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4053,12 +4062,12 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_content().data(), static_cast<int>(this->_internal_content().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tts.GetLexiconResponse.content");
+      "techmo.tts.grpc_api.GetLexiconResponse.content");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_content(), target);
   }
 
-  // .techmo.tts.Error error = 2;
+  // .techmo.tts.grpc_api.Error error = 2;
   if (this->has_error()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -4070,12 +4079,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.GetLexiconResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.GetLexiconResponse)
   return target;
 }
 
 size_t GetLexiconResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.GetLexiconResponse)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.GetLexiconResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4089,7 +4098,7 @@ size_t GetLexiconResponse::ByteSizeLong() const {
         this->_internal_content());
   }
 
-  // .techmo.tts.Error error = 2;
+  // .techmo.tts.grpc_api.Error error = 2;
   if (this->has_error()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -4106,22 +4115,22 @@ size_t GetLexiconResponse::ByteSizeLong() const {
 }
 
 void GetLexiconResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.GetLexiconResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.GetLexiconResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const GetLexiconResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetLexiconResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.GetLexiconResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.GetLexiconResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.GetLexiconResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.GetLexiconResponse)
     MergeFrom(*source);
   }
 }
 
 void GetLexiconResponse::MergeFrom(const GetLexiconResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.GetLexiconResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.GetLexiconResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4132,19 +4141,19 @@ void GetLexiconResponse::MergeFrom(const GetLexiconResponse& from) {
     content_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.content_);
   }
   if (from.has_error()) {
-    _internal_mutable_error()->::techmo::tts::Error::MergeFrom(from._internal_error());
+    _internal_mutable_error()->::techmo::tts::grpc_api::Error::MergeFrom(from._internal_error());
   }
 }
 
 void GetLexiconResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.GetLexiconResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.GetLexiconResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetLexiconResponse::CopyFrom(const GetLexiconResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.GetLexiconResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.GetLexiconResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4178,7 +4187,7 @@ class ListLexiconsRequest::_Internal {
 ListLexiconsRequest::ListLexiconsRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.ListLexiconsRequest)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.ListLexiconsRequest)
 }
 ListLexiconsRequest::ListLexiconsRequest(const ListLexiconsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -4188,7 +4197,7 @@ ListLexiconsRequest::ListLexiconsRequest(const ListLexiconsRequest& from)
   if (!from._internal_language().empty()) {
     language_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.language_);
   }
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.ListLexiconsRequest)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.ListLexiconsRequest)
 }
 
 void ListLexiconsRequest::SharedCtor() {
@@ -4197,7 +4206,7 @@ void ListLexiconsRequest::SharedCtor() {
 }
 
 ListLexiconsRequest::~ListLexiconsRequest() {
-  // @@protoc_insertion_point(destructor:techmo.tts.ListLexiconsRequest)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.ListLexiconsRequest)
   SharedDtor();
 }
 
@@ -4215,7 +4224,7 @@ const ListLexiconsRequest& ListLexiconsRequest::default_instance() {
 
 
 void ListLexiconsRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.ListLexiconsRequest)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.ListLexiconsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4236,7 +4245,7 @@ const char* ListLexiconsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_language();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.ListLexiconsRequest.language"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.grpc_api.ListLexiconsRequest.language"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4262,7 +4271,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* ListLexiconsRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.ListLexiconsRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.ListLexiconsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4271,7 +4280,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_language().data(), static_cast<int>(this->_internal_language().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tts.ListLexiconsRequest.language");
+      "techmo.tts.grpc_api.ListLexiconsRequest.language");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_language(), target);
   }
@@ -4280,12 +4289,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.ListLexiconsRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.ListLexiconsRequest)
   return target;
 }
 
 size_t ListLexiconsRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.ListLexiconsRequest)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.ListLexiconsRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4309,22 +4318,22 @@ size_t ListLexiconsRequest::ByteSizeLong() const {
 }
 
 void ListLexiconsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.ListLexiconsRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.ListLexiconsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const ListLexiconsRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ListLexiconsRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.ListLexiconsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.ListLexiconsRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.ListLexiconsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.ListLexiconsRequest)
     MergeFrom(*source);
   }
 }
 
 void ListLexiconsRequest::MergeFrom(const ListLexiconsRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.ListLexiconsRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.ListLexiconsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4337,14 +4346,14 @@ void ListLexiconsRequest::MergeFrom(const ListLexiconsRequest& from) {
 }
 
 void ListLexiconsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.ListLexiconsRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.ListLexiconsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void ListLexiconsRequest::CopyFrom(const ListLexiconsRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.ListLexiconsRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.ListLexiconsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4377,14 +4386,14 @@ class ListLexiconsResponse::_Internal {
 ListLexiconsResponse::ListLexiconsResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.ListLexiconsResponse)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.ListLexiconsResponse)
 }
 ListLexiconsResponse::ListLexiconsResponse(const ListLexiconsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr),
       names_(from.names_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.ListLexiconsResponse)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.ListLexiconsResponse)
 }
 
 void ListLexiconsResponse::SharedCtor() {
@@ -4392,7 +4401,7 @@ void ListLexiconsResponse::SharedCtor() {
 }
 
 ListLexiconsResponse::~ListLexiconsResponse() {
-  // @@protoc_insertion_point(destructor:techmo.tts.ListLexiconsResponse)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.ListLexiconsResponse)
   SharedDtor();
 }
 
@@ -4409,7 +4418,7 @@ const ListLexiconsResponse& ListLexiconsResponse::default_instance() {
 
 
 void ListLexiconsResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.ListLexiconsResponse)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.ListLexiconsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4433,7 +4442,7 @@ const char* ListLexiconsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
             ptr += 1;
             auto str = _internal_add_names();
             ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.ListLexiconsResponse.names"));
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.grpc_api.ListLexiconsResponse.names"));
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
@@ -4461,7 +4470,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* ListLexiconsResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.ListLexiconsResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.ListLexiconsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4471,7 +4480,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tts.ListLexiconsResponse.names");
+      "techmo.tts.grpc_api.ListLexiconsResponse.names");
     target = stream->WriteString(1, s, target);
   }
 
@@ -4479,12 +4488,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.ListLexiconsResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.ListLexiconsResponse)
   return target;
 }
 
 size_t ListLexiconsResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.ListLexiconsResponse)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.ListLexiconsResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4509,22 +4518,22 @@ size_t ListLexiconsResponse::ByteSizeLong() const {
 }
 
 void ListLexiconsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.ListLexiconsResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.ListLexiconsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const ListLexiconsResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ListLexiconsResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.ListLexiconsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.ListLexiconsResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.ListLexiconsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.ListLexiconsResponse)
     MergeFrom(*source);
   }
 }
 
 void ListLexiconsResponse::MergeFrom(const ListLexiconsResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.ListLexiconsResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.ListLexiconsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4534,14 +4543,14 @@ void ListLexiconsResponse::MergeFrom(const ListLexiconsResponse& from) {
 }
 
 void ListLexiconsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.ListLexiconsResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.ListLexiconsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void ListLexiconsResponse::CopyFrom(const ListLexiconsResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.ListLexiconsResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.ListLexiconsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4573,7 +4582,7 @@ class Error::_Internal {
 Error::Error()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:techmo.tts.Error)
+  // @@protoc_insertion_point(constructor:techmo.tts.grpc_api.Error)
 }
 Error::Error(const Error& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -4584,7 +4593,7 @@ Error::Error(const Error& from)
     description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
   code_ = from.code_;
-  // @@protoc_insertion_point(copy_constructor:techmo.tts.Error)
+  // @@protoc_insertion_point(copy_constructor:techmo.tts.grpc_api.Error)
 }
 
 void Error::SharedCtor() {
@@ -4594,7 +4603,7 @@ void Error::SharedCtor() {
 }
 
 Error::~Error() {
-  // @@protoc_insertion_point(destructor:techmo.tts.Error)
+  // @@protoc_insertion_point(destructor:techmo.tts.grpc_api.Error)
   SharedDtor();
 }
 
@@ -4612,7 +4621,7 @@ const Error& Error::default_instance() {
 
 
 void Error::Clear() {
-// @@protoc_insertion_point(message_clear_start:techmo.tts.Error)
+// @@protoc_insertion_point(message_clear_start:techmo.tts.grpc_api.Error)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4629,12 +4638,12 @@ const char* Error::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .techmo.tts.ErrorCode code = 1;
+      // .techmo.tts.grpc_api.ErrorCode code = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          _internal_set_code(static_cast<::techmo::tts::ErrorCode>(val));
+          _internal_set_code(static_cast<::techmo::tts::grpc_api::ErrorCode>(val));
         } else goto handle_unusual;
         continue;
       // string description = 2;
@@ -4642,7 +4651,7 @@ const char* Error::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_description();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.Error.description"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "techmo.tts.grpc_api.Error.description"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4668,11 +4677,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* Error::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.Error)
+  // @@protoc_insertion_point(serialize_to_array_start:techmo.tts.grpc_api.Error)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .techmo.tts.ErrorCode code = 1;
+  // .techmo.tts.grpc_api.ErrorCode code = 1;
   if (this->code() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -4684,7 +4693,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "techmo.tts.Error.description");
+      "techmo.tts.grpc_api.Error.description");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_description(), target);
   }
@@ -4693,12 +4702,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.Error)
+  // @@protoc_insertion_point(serialize_to_array_end:techmo.tts.grpc_api.Error)
   return target;
 }
 
 size_t Error::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:techmo.tts.Error)
+// @@protoc_insertion_point(message_byte_size_start:techmo.tts.grpc_api.Error)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4712,7 +4721,7 @@ size_t Error::ByteSizeLong() const {
         this->_internal_description());
   }
 
-  // .techmo.tts.ErrorCode code = 1;
+  // .techmo.tts.grpc_api.ErrorCode code = 1;
   if (this->code() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_code());
@@ -4728,22 +4737,22 @@ size_t Error::ByteSizeLong() const {
 }
 
 void Error::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.Error)
+// @@protoc_insertion_point(generalized_merge_from_start:techmo.tts.grpc_api.Error)
   GOOGLE_DCHECK_NE(&from, this);
   const Error* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Error>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.Error)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:techmo.tts.grpc_api.Error)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.Error)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:techmo.tts.grpc_api.Error)
     MergeFrom(*source);
   }
 }
 
 void Error::MergeFrom(const Error& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.Error)
+// @@protoc_insertion_point(class_specific_merge_from_start:techmo.tts.grpc_api.Error)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4759,14 +4768,14 @@ void Error::MergeFrom(const Error& from) {
 }
 
 void Error::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.Error)
+// @@protoc_insertion_point(generalized_copy_from_start:techmo.tts.grpc_api.Error)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Error::CopyFrom(const Error& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.Error)
+// @@protoc_insertion_point(class_specific_copy_from_start:techmo.tts.grpc_api.Error)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4790,62 +4799,63 @@ void Error::InternalSwap(Error* other) {
 
 
 // @@protoc_insertion_point(namespace_scope)
+}  // namespace grpc_api
 }  // namespace tts
 }  // namespace techmo
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::techmo::tts::ListVoicesRequest* Arena::CreateMaybeMessage< ::techmo::tts::ListVoicesRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::ListVoicesRequest >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::ListVoicesRequest* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::ListVoicesRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::ListVoicesRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::techmo::tts::ListVoicesResponse* Arena::CreateMaybeMessage< ::techmo::tts::ListVoicesResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::ListVoicesResponse >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::ListVoicesResponse* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::ListVoicesResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::ListVoicesResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::techmo::tts::SynthesizeRequest* Arena::CreateMaybeMessage< ::techmo::tts::SynthesizeRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::SynthesizeRequest >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::SynthesizeRequest* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::SynthesizeRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::SynthesizeRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::techmo::tts::SynthesizeConfig* Arena::CreateMaybeMessage< ::techmo::tts::SynthesizeConfig >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::SynthesizeConfig >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::SynthesizeConfig* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::SynthesizeConfig >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::SynthesizeConfig >(arena);
 }
-template<> PROTOBUF_NOINLINE ::techmo::tts::AudioConfig* Arena::CreateMaybeMessage< ::techmo::tts::AudioConfig >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::AudioConfig >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::AudioConfig* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::AudioConfig >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::AudioConfig >(arena);
 }
-template<> PROTOBUF_NOINLINE ::techmo::tts::Voice* Arena::CreateMaybeMessage< ::techmo::tts::Voice >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::Voice >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::Voice* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::Voice >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::Voice >(arena);
 }
-template<> PROTOBUF_NOINLINE ::techmo::tts::VoiceInfo* Arena::CreateMaybeMessage< ::techmo::tts::VoiceInfo >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::VoiceInfo >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::VoiceInfo* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::VoiceInfo >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::VoiceInfo >(arena);
 }
-template<> PROTOBUF_NOINLINE ::techmo::tts::SynthesizeResponse* Arena::CreateMaybeMessage< ::techmo::tts::SynthesizeResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::SynthesizeResponse >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::SynthesizeResponse* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::SynthesizeResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::SynthesizeResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::techmo::tts::AudioData* Arena::CreateMaybeMessage< ::techmo::tts::AudioData >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::AudioData >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::AudioData* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::AudioData >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::AudioData >(arena);
 }
-template<> PROTOBUF_NOINLINE ::techmo::tts::PutLexiconRequest* Arena::CreateMaybeMessage< ::techmo::tts::PutLexiconRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::PutLexiconRequest >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::PutLexiconRequest* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::PutLexiconRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::PutLexiconRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::techmo::tts::PutLexiconResponse* Arena::CreateMaybeMessage< ::techmo::tts::PutLexiconResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::PutLexiconResponse >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::PutLexiconResponse* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::PutLexiconResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::PutLexiconResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::techmo::tts::DeleteLexiconRequest* Arena::CreateMaybeMessage< ::techmo::tts::DeleteLexiconRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::DeleteLexiconRequest >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::DeleteLexiconRequest* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::DeleteLexiconRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::DeleteLexiconRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::techmo::tts::DeleteLexiconResponse* Arena::CreateMaybeMessage< ::techmo::tts::DeleteLexiconResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::DeleteLexiconResponse >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::DeleteLexiconResponse* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::DeleteLexiconResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::DeleteLexiconResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::techmo::tts::GetLexiconRequest* Arena::CreateMaybeMessage< ::techmo::tts::GetLexiconRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::GetLexiconRequest >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::GetLexiconRequest* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::GetLexiconRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::GetLexiconRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::techmo::tts::GetLexiconResponse* Arena::CreateMaybeMessage< ::techmo::tts::GetLexiconResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::GetLexiconResponse >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::GetLexiconResponse* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::GetLexiconResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::GetLexiconResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::techmo::tts::ListLexiconsRequest* Arena::CreateMaybeMessage< ::techmo::tts::ListLexiconsRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::ListLexiconsRequest >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::ListLexiconsRequest* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::ListLexiconsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::ListLexiconsRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::techmo::tts::ListLexiconsResponse* Arena::CreateMaybeMessage< ::techmo::tts::ListLexiconsResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::ListLexiconsResponse >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::ListLexiconsResponse* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::ListLexiconsResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::ListLexiconsResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::techmo::tts::Error* Arena::CreateMaybeMessage< ::techmo::tts::Error >(Arena* arena) {
-  return Arena::CreateInternal< ::techmo::tts::Error >(arena);
+template<> PROTOBUF_NOINLINE ::techmo::tts::grpc_api::Error* Arena::CreateMaybeMessage< ::techmo::tts::grpc_api::Error >(Arena* arena) {
+  return Arena::CreateInternal< ::techmo::tts::grpc_api::Error >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
