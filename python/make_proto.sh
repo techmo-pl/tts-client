@@ -12,6 +12,7 @@ function cleanup() {
 }
 trap cleanup EXIT
 
+
 echo "Generating TTS Python protobuf/grpc sources."
 path_i="../proto"
 path_o="."
