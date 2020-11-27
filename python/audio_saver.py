@@ -1,7 +1,7 @@
 import wave
 import struct
 import sys
-import tribune_tts_pb2
+import techmo_tts_pb2
 
 class AudioSaver:
     """Wave Saver for TTS"""
@@ -30,7 +30,7 @@ class AudioSaver:
         self.buffer.clear()
 
     def save(self, filename):
-        if self._encoding == tribune_tts_pb2.AudioEncoding.PCM16:
+        if self._encoding == techmo_tts_pb2.AudioEncoding.PCM16:
             if not self._framerate:
                 raise RuntimeError("Sample rate has not been set")
             with wave.open(filename, 'w') as w:
