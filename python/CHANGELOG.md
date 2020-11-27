@@ -1,8 +1,9 @@
-# Tribune TTS gRPC Python client Changelog
+# Techmo TTS gRPC Python client Changelog
 
-## [2.0.0] - 2020-11-04
+## [2.0.0] - 2020-11-25
 ### Added
 - The `--audio-encoding` option, with `pcm16` (default) and `ogg-vorbis`.
+- The `--play` option, with `pcm16` (default).
 - The `--speech-pitch`, `--speech-range`, `--speech-rate`, and `--speech-volume`, options for controlling speech parameters
 - The `--voice-name`, `--voice-gender`, and `--voice-age` options for controlling voice
 - The `--language` option for specifying request text language

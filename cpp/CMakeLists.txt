@@ -77,5 +77,5 @@ endif()
 # ********************************************* #
 # ***************** Projects ****************** #
 # ********************************************* #
-add_subdirectory(libtribune-client)
-add_subdirectory(tribune-client)
+add_subdirectory(libtts-client)
+add_subdirectory(tts-client)

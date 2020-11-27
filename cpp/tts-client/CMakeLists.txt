@@ -1,4 +1,4 @@
-project(tribune_client)
+project(tts_client)
 
 add_executable(${PROJECT_NAME}
         AudioUtils.cpp AudioUtils.h
@@ -9,12 +9,12 @@ add_executable(${PROJECT_NAME}
 # compiling the library, and will be added to consumers' build
 # paths.
 target_include_directories(${PROJECT_NAME} PUBLIC
-        ${CMAKE_SOURCE_DIR}/libtribune-client
+        ${CMAKE_SOURCE_DIR}/libtts-client
         )
 
 # Depend on a library that we defined in the top-level file
 target_link_libraries(${PROJECT_NAME}
-        libtribune_client
+        libtts_client
         ssl_pkg
         boost_pkg
         dl_pkg

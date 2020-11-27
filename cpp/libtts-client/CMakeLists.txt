@@ -1,11 +1,11 @@
-project(libtribune_client)
+project(libtts_client)
 
 set (CMAKE_CXX_FLAGS -fPIC)
 
 add_library(${PROJECT_NAME}
-        tribune_tts.grpc.pb.cc tribune_tts.grpc.pb.h
-        tribune_tts.pb.cc tribune_tts.pb.h
-        TribuneClient.cpp TribuneClient.h
+        techmo_tts.grpc.pb.cc techmo_tts.grpc.pb.h
+        techmo_tts.pb.cc techmo_tts.pb.h
+        Client.cpp Client.h
         VERSION.h
         )
 

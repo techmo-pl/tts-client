@@ -1,8 +1,8 @@
-C++ implementation of Tribune TTS gRPC client.
+C++ implementation of Techmo TTS gRPC client.
 
 Contents:
-- `libtribune-client`     Library implementing communication with Techmo Tribune TTS gRPC service.
-- `tribune-client`        Example of program using the library.
+- `libtts-client`     Library implementing communication with Techmo Techmo TTS gRPC service.
+- `tts-client`        Example of program using the library.
 
 This project uses cmake build.
 
@@ -29,7 +29,7 @@ mkdir build && cd build && cmake .. && make -j 4
 
 Run:
 ```
-./build/tribune_client --service-address 192.168.1.1:4321 --text "Polski tekst do syntezy."
+./build/tts_client --service-address 192.168.1.1:4321 --text "Polski tekst do syntezy."
 ```
 
 Options:

@@ -1,11 +1,11 @@
-import tribune_tts_pb2
-import tribune_tts_pb2_grpc
+import techmo_tts_pb2
+import techmo_tts_pb2_grpc
 import grpc
 import os
 
 def call_listvoices(args):
     channel = grpc.insecure_channel(args.service)
-    stub = tribune_tts_pb2_grpc.TTSStub(channel)
+    stub = techmo_tts_pb2_grpc.TTSStub(channel)
 
     timeout=None
     if args.grpc_timeout > 0:
@@ -14,7 +14,7 @@ def call_listvoices(args):
     if args.session_id:
         metadata = [('session_id', args.session_id)]
 
-    request = tribune_tts_pb2.ListVoicesRequest(language=args.language)
+    request = techmo_tts_pb2.ListVoicesRequest(language=args.language)
 
     try:
         response = stub.ListVoices(request, timeout=timeout, metadata=metadata)

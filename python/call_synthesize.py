@@ -1,5 +1,5 @@
-import tribune_tts_pb2
-import tribune_tts_pb2_grpc
+import techmo_tts_pb2
+import techmo_tts_pb2_grpc
 import grpc
 import os
 from audio_player import AudioPlayer
@@ -11,11 +11,11 @@ def call_synthesize(args, text):
     out_path = create_out_path(args, audio_encoding)
 
     channel = grpc.insecure_channel(args.service)
-    stub = tribune_tts_pb2_grpc.TTSStub(channel)
+    stub = techmo_tts_pb2_grpc.TTSStub(channel)
 
-    config = tribune_tts_pb2.SynthesizeConfig(
+    config = techmo_tts_pb2.SynthesizeConfig(
         language=args.language,
-        audio_config=tribune_tts_pb2.AudioConfig(
+        audio_config=techmo_tts_pb2.AudioConfig(
             audio_encoding=audio_encoding,
             sample_rate_hertz=int(args.sample_rate),
             pitch=args.speech_pitch,
@@ -23,7 +23,7 @@ def call_synthesize(args, text):
             rate=args.speech_rate,
             volume=args.speech_volume),
         voice=create_voice(args))
-    request = tribune_tts_pb2.SynthesizeRequest(text=text, config=config)
+    request = techmo_tts_pb2.SynthesizeRequest(text=text, config=config)
 
     timeout=None
     if args.grpc_timeout > 0:
@@ -58,16 +58,16 @@ def call_synthesize(args, text):
 
 def get_audio_encoding(args):
     if args.audio_encoding == "pcm16":
-        return tribune_tts_pb2.AudioEncoding.PCM16
+        return techmo_tts_pb2.AudioEncoding.PCM16
     elif args.audio_encoding == "ogg-vorbis":
-        return tribune_tts_pb2.AudioEncoding.OGG_VORBIS
+        return techmo_tts_pb2.AudioEncoding.OGG_VORBIS
     else:
         raise RuntimeError("Unsupported audio-encoding: " + args.audio_encoding)
 
 def create_out_path(args, audio_encoding):
     out_path = args.out_path
     if out_path == "":
-        if audio_encoding == tribune_tts_pb2.AudioEncoding.PCM16:
+        if audio_encoding == techmo_tts_pb2.AudioEncoding.PCM16:
             out_path = "TechmoTTS.wav"
         else:
             out_path = "TechmoTTS.ogg"
@@ -75,25 +75,25 @@ def create_out_path(args, audio_encoding):
 
 def create_voice(args):
     if args.voice_name != "" or args.voice_gender != "" or args.voice_age != "":
-        gender = tribune_tts_pb2.Gender.GENDER_UNSPECIFIED
+        gender = techmo_tts_pb2.Gender.GENDER_UNSPECIFIED
         if args.voice_gender == "female":
-            gender = tribune_tts_pb2.Gender.FEMALE
+            gender = techmo_tts_pb2.Gender.FEMALE
         elif args.voice_gender == "male":
-            gender = tribune_tts_pb2.Gender.MALE
+            gender = techmo_tts_pb2.Gender.MALE
         elif args.voice_gender != "":
             raise RuntimeError("Unsupported voice-gender: " + args.voice_gender)
 
-        age = tribune_tts_pb2.Age.AGE_UNSPECIFIED
+        age = techmo_tts_pb2.Age.AGE_UNSPECIFIED
         if args.voice_age == "adult":
-            age = tribune_tts_pb2.Age.ADULT
+            age = techmo_tts_pb2.Age.ADULT
         elif args.voice_age == "child":
-            age = tribune_tts_pb2.Age.CHILD
+            age = techmo_tts_pb2.Age.CHILD
         elif args.voice_age == "senile":
-            age = tribune_tts_pb2.Age.SENILE
+            age = techmo_tts_pb2.Age.SENILE
         elif args.voice_age != "":
             raise RuntimeError("Unsupported voice-age: " + args.voice_age)
 
-        return tribune_tts_pb2.Voice(
+        return techmo_tts_pb2.Voice(
             name=args.voice_name,
             gender=gender,
             age=age)

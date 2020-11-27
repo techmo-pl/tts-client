@@ -3,63 +3,84 @@
 
 ### Table of Contents
 
-- [tribune_tts.proto](#tribune_tts.proto)
-    - [TTS](#techmo.tribune.TTS)
-    - [AudioData](#techmo.tribune.AudioData)
-    - [Error](#techmo.tribune.Error)
-    - [SynthesizeConfig](#techmo.tribune.SynthesizeConfig)
-    - [SynthesizeRequest](#techmo.tribune.SynthesizeRequest)
-    - [SynthesizeResponse](#techmo.tribune.SynthesizeResponse)
-    - [ErrorCode](#techmo.tribune.ErrorCode)
+- [techmo_tts.proto](#techmo_tts.proto)
+    - [TTS](#techmo.tts.grpc_api.TTS)
+    - [AudioConfig](#techmo.tts.grpc_api.AudioConfig)
+    - [AudioData](#techmo.tts.grpc_api.AudioData)
+    - [DeleteLexiconRequest](#techmo.tts.grpc_api.DeleteLexiconRequest)
+    - [DeleteLexiconResponse](#techmo.tts.grpc_api.DeleteLexiconResponse)
+    - [Error](#techmo.tts.grpc_api.Error)
+    - [GetLexiconRequest](#techmo.tts.grpc_api.GetLexiconRequest)
+    - [GetLexiconResponse](#techmo.tts.grpc_api.GetLexiconResponse)
+    - [ListLexiconsRequest](#techmo.tts.grpc_api.ListLexiconsRequest)
+    - [ListLexiconsResponse](#techmo.tts.grpc_api.ListLexiconsResponse)
+    - [ListVoicesRequest](#techmo.tts.grpc_api.ListVoicesRequest)
+    - [ListVoicesResponse](#techmo.tts.grpc_api.ListVoicesResponse)
+    - [PutLexiconRequest](#techmo.tts.grpc_api.PutLexiconRequest)
+    - [PutLexiconResponse](#techmo.tts.grpc_api.PutLexiconResponse)
+    - [SynthesizeConfig](#techmo.tts.grpc_api.SynthesizeConfig)
+    - [SynthesizeRequest](#techmo.tts.grpc_api.SynthesizeRequest)
+    - [SynthesizeResponse](#techmo.tts.grpc_api.SynthesizeResponse)
+    - [Voice](#techmo.tts.grpc_api.Voice)
+    - [VoiceInfo](#techmo.tts.grpc_api.VoiceInfo)
+    - [Age](#techmo.tts.grpc_api.Age)
+    - [AudioEncoding](#techmo.tts.grpc_api.AudioEncoding)
+    - [ErrorCode](#techmo.tts.grpc_api.ErrorCode)
+    - [Gender](#techmo.tts.grpc_api.Gender)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="tribune_tts.proto"/>
+<a name="techmo_tts.proto"/>
 <p align="right"><a href="#top">Top</a></p>
 
-## tribune_tts.proto
-Techmo Tribune TTS API
-version: 1.1.0
-authors: Dawid Skurzok, Paweł Jaciów
-date:    2018-01-25
+## techmo_tts.proto
+Techmo TTS API
+version: 2.0.0
+authors: Dawid Skurzok, Paweł Jaciów, Michał Radziszewski
+date:    2020-11-25
 
 
-<a name="techmo.tribune.TTS"/>
+<a name="techmo.tts.grpc_api.TTS"/>
 
 ### TTS
 Service that implements Techmo Text-To-Speech (TTS) API.
 
-Service's `Synthesize` method accepts `SynthesizeRequest` object which contains whole phrase to be synthesized.
-You have to put the phrase as a string in `text` field of `SynthesizeRequest`. The string has to be in orthographic form. In that string you can use several special tags which can be interpreted. Tags have to be in from `<tag>something special</tag>` and can occur in any place in text. Currently interpreted tags are:
-
-| Tag | Description | Example (input) | Example (output) |
-| --- | ----------- | --------------- | ---------------- |
-| **cardinal** | *cardinal number* | `<cardinal>7</cardinal>` | *siedem* |
-| **signed** | *number with sign* | `<signed>-15</signed>` | *minus piętnaście* |
-| **ordinal** | *ordinal number* | `<ordinal>1</ordinal>` | *pierwszy* |
-| **fraction** | *fractional number* | `<fraction>3/4</fraction>` | *trzy czwarte* |
-| **postal** | *postal code* | `<postal>30-020</postal>` | *trzydzieści zero dwadzieścia* |
-| **time** | *time* | `<time>22:00</time>` | *dwudziesta druga* |
-| **date** | *date* | `<date>12/05/2001</date>` | *dwunasty maja dwa tysiące jeden* |
-
-Note: when interpreting tags only nominal case is supported at the moment.
-
-You can set `SynthesizeConfig`'s fields to specify parameters of synthesis. Currently supported option is only `sample_rate_hertz`, which is desired sampling frequency (in hertz) of synthesized audio.
-
-`SynthesizeRequest` can be sent to the service via gRPC insecure channel (that does not require authentication).
-
-`Synthesize` returns synthesized audio in `SynthesizeResponse` as a stream. When reading from the stream you have to check if `SynthesizeResponse` contains `error` field. If it does you can print its `code` and `description`. No `error` field in `SynthesizeResponse` means everything worked fine and its `audio` contains byte `content` that can be appended to received audio samples with `sample_rate_hertz` sampling frequency in hertz. When receiving `SynthesizeResponse` with `audio` you have to check if its `end_of_stream` flag is set to true. When it is set to true it means service has fnished synthesis and you can save your wave file with received synthesized audio content.
-
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Synthesize | [SynthesizeRequest](#techmo.tribune.SynthesizeRequest) | [SynthesizeResponse](#techmo.tribune.SynthesizeRequest) | Returns audio signal with synthesized speech, given text and optional configuration. |
+| ListVoices | [ListVoicesRequest](#techmo.tts.grpc_api.ListVoicesRequest) | [ListVoicesResponse](#techmo.tts.grpc_api.ListVoicesRequest) | Lists all available voices which can be used to synthesize speech. |
+| SynthesizeStreaming | [SynthesizeRequest](#techmo.tts.grpc_api.SynthesizeRequest) | [SynthesizeResponse](#techmo.tts.grpc_api.SynthesizeRequest) | Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration. Returns audio signal with synthesized speech (streaming version, one or more response packets) or `error`. |
+| Synthesize | [SynthesizeRequest](#techmo.tts.grpc_api.SynthesizeRequest) | [SynthesizeResponse](#techmo.tts.grpc_api.SynthesizeRequest) | Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration. Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet) or `error`. |
+| PutLexicon | [PutLexiconRequest](#techmo.tts.grpc_api.PutLexiconRequest) | [PutLexiconResponse](#techmo.tts.grpc_api.PutLexiconRequest) | Adds a new lexicon with the requested name or overwrites the existing one if there is already a lexicon with such name. Returns status information - Success or Error. |
+| DeleteLexicon | [DeleteLexiconRequest](#techmo.tts.grpc_api.DeleteLexiconRequest) | [DeleteLexiconResponse](#techmo.tts.grpc_api.DeleteLexiconRequest) | Removes the lexicon with the requested name. Returns status information - Success or Error. |
+| GetLexicon | [GetLexiconRequest](#techmo.tts.grpc_api.GetLexiconRequest) | [GetLexiconResponse](#techmo.tts.grpc_api.GetLexiconRequest) | Sends back the content of the lexicon with the requested name. Returns the lexicon content and status information - Success or Error. |
+| ListLexicons | [ListLexiconsRequest](#techmo.tts.grpc_api.ListLexiconsRequest) | [ListLexiconsResponse](#techmo.tts.grpc_api.ListLexiconsRequest) | Lists all client-defined lexicons which can be referred by `<lexicon>` tag in synthesize requests. Returns the list of names of lexicons. |
 
  <!-- end services -->
 
 
-<a name="techmo.tribune.AudioData"/>
+<a name="techmo.tts.grpc_api.AudioConfig"/>
+
+### AudioConfig
+Desfines the parameters of synthesized speech.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| audio_encoding | [AudioEncoding](#techmo.tts.grpc_api.AudioEncoding) | Requested format of the output audio stream. |
+| sample_rate_hertz | [int32](#int32) | Desired sampling frequency in hertz of synthesized audio. The value 0 means use the default Synthesizer sampling rate. |
+| pitch | [float](#float) | The average speech pitch scaling factor. The value 1.0 is a neutral value. |
+| range | [float](#float) | The speech range scaling factor. The value 1.0 is a neutral value. |
+| rate | [float](#float) | The speech rate (speed) scaling factor. The value 1.0 is a neutral value. |
+| volume | [float](#float) | The speech volume scaling factor. The value 1.0 is a neutral value. |
+
+
+
+
+
+
+<a name="techmo.tts.grpc_api.AudioData"/>
 
 ### AudioData
 Audio data corresponding to a portion of the text
@@ -69,15 +90,44 @@ that is currently being processed.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | sample_rate_hertz | [int32](#int32) | Sampling frequency in hertz. |
-| content | [bytes](#bytes) | Audio data bytes encoded by default as Linear PCM (uncompressed 16-bit signed little-endian samples). |
-| end_of_stream | [bool](#bool) | Last message flag. If set to true, no more data will be sent. |
+| content | [bytes](#bytes) | Audio data bytes encoded by default as Linear PCM (uncompressed 16-bit signed little-endian samples). Using `output_format` in request it can be changed to Ogg/Vorbis encoded stream. |
 
 
 
 
 
 
-<a name="techmo.tribune.Error"/>
+<a name="techmo.tts.grpc_api.DeleteLexiconRequest"/>
+
+### DeleteLexiconRequest
+The top-level message sent by the client to delete the requested pronounciation lexicon.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| name | [string](#string) | Name of the lexicon to delete. |
+
+
+
+
+
+
+<a name="techmo.tts.grpc_api.DeleteLexiconResponse"/>
+
+### DeleteLexiconResponse
+Status of the DeleteLexicon call.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| error | [Error](#techmo.tts.grpc_api.Error) | If set, specifies the error for the operation. Otherwise, the operation has been succesful. |
+
+
+
+
+
+
+<a name="techmo.tts.grpc_api.Error"/>
 
 ### Error
 Received error details.
@@ -85,7 +135,7 @@ Received error details.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| code | [ErrorCode](#techmo.tribune.ErrorCode) | Error code. |
+| code | [ErrorCode](#techmo.tts.grpc_api.ErrorCode) | Error code. |
 | description | [string](#string) | Error description. |
 
 
@@ -93,7 +143,129 @@ Received error details.
 
 
 
-<a name="techmo.tribune.SynthesizeConfig"/>
+<a name="techmo.tts.grpc_api.GetLexiconRequest"/>
+
+### GetLexiconRequest
+The top-level message sent by the client to get the content the requested pronounciation lexicon.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| name | [string](#string) | Name of the lexicon to list its content. |
+
+
+
+
+
+
+<a name="techmo.tts.grpc_api.GetLexiconResponse"/>
+
+### GetLexiconResponse
+Result of the GetLexicon call.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| content | [string](#string) | If successful, contains the content of the lexicon, in SSML/XML format. |
+| error | [Error](#techmo.tts.grpc_api.Error) | If set, specifies the error for the operation. Otherwise, the operation has been succesful. |
+
+
+
+
+
+
+<a name="techmo.tts.grpc_api.ListLexiconsRequest"/>
+
+### ListLexiconsRequest
+The top-level message sent by the client to obtain the list of all available lexicons.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| language | [string](#string) | ISO 639-1 language code. Optional. When defined, limits the listed lexicons to the lexicons supprting the requested language. |
+
+
+
+
+
+
+<a name="techmo.tts.grpc_api.ListLexiconsResponse"/>
+
+### ListLexiconsResponse
+Result of the ListLexicons call.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| names | [string](#string) | The list of names of all available lexicons. |
+
+
+
+
+
+
+<a name="techmo.tts.grpc_api.ListVoicesRequest"/>
+
+### ListVoicesRequest
+The top-level message sent by the client to request listing of available voices.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| language | [string](#string) | ISO 639-1 language code. Optional. When defined, limits the listed voices to the voices supprting the requested language. |
+
+
+
+
+
+
+<a name="techmo.tts.grpc_api.ListVoicesResponse"/>
+
+### ListVoicesResponse
+The listing of available voices returned by a `ListVoices` call.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| voices | [VoiceInfo](#techmo.tts.grpc_api.VoiceInfo) | The list of all available voices or voices supproting the requested laguage. |
+
+
+
+
+
+
+<a name="techmo.tts.grpc_api.PutLexiconRequest"/>
+
+### PutLexiconRequest
+The top-level message sent by the client to put the new pronounciation lexicon.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| name | [string](#string) | Name of the lexicon, used as `uri` attributes of `<lexicon>` tags in synthesize requests. |
+| content | [string](#string) | Content of the lexicon, shall comply to https://www.w3.org/TR/pronunciation-lexicon/. |
+
+
+
+
+
+
+<a name="techmo.tts.grpc_api.PutLexiconResponse"/>
+
+### PutLexiconResponse
+Status of the PutLexicon call.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| error | [Error](#techmo.tts.grpc_api.Error) | If set, specifies the error for the operation. Otherwise, the operation has been succesful. |
+
+
+
+
+
+
+<a name="techmo.tts.grpc_api.SynthesizeConfig"/>
 
 ### SynthesizeConfig
 Provides information to the synthesizer that specifies how to process the request.
@@ -101,42 +273,92 @@ Provides information to the synthesizer that specifies how to process the reques
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| sample_rate_hertz | [int32](#int32) | Desired sampling frequency in hertz of synthesized audio. |
+| language | [string](#string) | ISO 639-1 code of the language of text to be synthesized (may be overriden by SSML tags in request text). |
+| audio_config | [AudioConfig](#techmo.tts.grpc_api.AudioConfig) | Optional. Overrides the default synthesized speech parameters |
+| voice | [Voice](#techmo.tts.grpc_api.Voice) | Requested voice to be used to synthesize the text (may be overriden by SSML tags in request text). If there is no voice satisfying all the required criteria, the voice is selected according to name (if defined) first, gender (if defined) second, and age (if defined) third. |
 
 
 
 
 
 
-<a name="techmo.tribune.SynthesizeRequest"/>
+<a name="techmo.tts.grpc_api.SynthesizeRequest"/>
 
 ### SynthesizeRequest
-`SynthesizeRequest` is the top-level message sent by the client for
-the `Synthesize` method. It contains a text to be synthesized and a configuration.
+The top-level message sent by the client for `Synthesize` and `SynthesizeStreaming` methods.
+It contains a text to be synthesized and a configuration.
+The phrase to synthesize is put as a string in `text` field. The string has to be in orthographic form.
+The string can be either a plain text or SSML (https://w3.org/TR/speech-synthesis11/).
+Currently the following SSML tags are supported:
+`<speak>` - root xml node, with optional `xml:lang` attribute,
+`<prosody>` - supported attributes: `pitch`, `range`, `rate`, and `volume`,
+`<break>` - supported attributes: `strength` and `time`,
+`<emphasis>` - supported attribute: `level`,
+`<say-as>` - supported attribute: `interpret-as` (consult Techmo TTS documentation for the complete list of all available implementations),
+`<lang>` - supported attribute: `xml:lang`,
+`<voice>` - supported attributes: `name`, `gender`, and `age`.
+`SynthesizeConfig`'s fields can be set to specify parameters of synthesis (sampling rate, language, and voice) and a format of the output (PCM16 or Ogg/Vorbis compression).
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | text | [string](#string) | Text to be synthesized. |
-| config | [SynthesizeConfig](#techmo.tribune.SynthesizeConfig) | Configuration. |
+| config | [SynthesizeConfig](#techmo.tts.grpc_api.SynthesizeConfig) | Configuration. |
 
 
 
 
 
 
-<a name="techmo.tribune.SynthesizeResponse"/>
+<a name="techmo.tts.grpc_api.SynthesizeResponse"/>
 
 ### SynthesizeResponse
-`SynthesizeResponse` is the only message returned to the client by
-`Synthesize`. A series of one or more `SynthesizeResponse`
-messages are streamed back to the client.
+`SynthesizeResponse` is the only message returned to the client by `SynthesizeStreaming` and `Synthesize`.
+During `SynthesizeStreaming`, a series of one or more `SynthesizeResponse` messages are streamed back to the client.
+During `Synthesize` always one message is generated.
+If `SynthesizeResponse` contains `error` field, its `code` and `description` can be printed.
+Otherwise, the synthesized `audio` is available to use.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| audio | [AudioData](#techmo.tribune.AudioData) | Audio data corresponding to a portion of the text that is currently being processed. |
-| error | [Error](#techmo.tribune.Error) | If set, specifies the error for the operation. |
+| audio | [AudioData](#techmo.tts.grpc_api.AudioData) | Audio data corresponding to a portion of the text that is currently being processed. |
+| error | [Error](#techmo.tts.grpc_api.Error) | If set, specifies the error for the operation. |
+
+
+
+
+
+
+<a name="techmo.tts.grpc_api.Voice"/>
+
+### Voice
+Voice definition used to describe requested voice in SynthesizeConfig,
+and voice parameters in ListVoices (as a part of VoiceInfo).
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| name | [string](#string) | The name of the voice. |
+| gender | [Gender](#techmo.tts.grpc_api.Gender) | Gender of the voice. |
+| age | [Age](#techmo.tts.grpc_api.Age) | Age of the voice. |
+
+
+
+
+
+
+<a name="techmo.tts.grpc_api.VoiceInfo"/>
+
+### VoiceInfo
+Information about a voice, returned by ListVoices call.
+Both the supported_languages and voice are always defined, i.e. non-empy.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| supported_languages | [string](#string) | The list of ISO 639-1 codes of laguages supported by the voice. |
+| voice | [Voice](#techmo.tts.grpc_api.Voice) | The voice parameters. |
 
 
 
@@ -145,7 +367,33 @@ messages are streamed back to the client.
  <!-- end messages -->
 
 
-<a name="techmo.tribune.ErrorCode"/>
+<a name="techmo.tts.grpc_api.Age"/>
+
+### Age
+Age of the voice.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| AGE_UNSPECIFIED | 0 |  |
+| ADULT | 1 |  |
+| CHILD | 2 |  |
+| SENILE | 3 |  |
+
+
+
+<a name="techmo.tts.grpc_api.AudioEncoding"/>
+
+### AudioEncoding
+The requested format of the response audio data.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PCM16 | 0 | Uncompressed 16-bit signed integer samples, without any header. |
+| OGG_VORBIS | 1 | Ogg/Vorbis endoded data stream. |
+
+
+
+<a name="techmo.tts.grpc_api.ErrorCode"/>
 
 ### ErrorCode
 Indicates the type of the error for the operation.
@@ -154,9 +402,24 @@ Indicates the type of the error for the operation.
 | ---- | ------ | ----------- |
 | UNKNOWN | 0 | Unknown error. |
 | LICENCE | 1 | Licence related error. |
-| TEXT_NORMALIZATION | 2 | Error during text normalization. |
-| TRANSCRIPTION | 3 | Error during orthographic to phonetic transcription. |
-| SYNTHESIS | 4 | Error during speech synthesis. |
+| MISSING_OBJECT | 2 | An object referred by the given name does not exist. |
+| SSML | 3 | SSML parser error. |
+| TEXT_NORMALIZATION | 4 | Error during text normalization. |
+| TRANSCRIPTION | 5 | Error during orthographic to phonetic transcription. |
+| SYNTHESIS | 6 | Error during speech synthesis. |
+
+
+
+<a name="techmo.tts.grpc_api.Gender"/>
+
+### Gender
+Gender of the voice.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| GENDER_UNSPECIFIED | 0 |  |
+| FEMALE | 1 |  |
+| MALE | 2 |  |
 
 
  <!-- end enums -->

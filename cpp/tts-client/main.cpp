@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <boost/program_options.hpp>
-#include <TribuneClient.h>
+#include <Client.h>
 #include "AudioUtils.h"
 #include "VERSION.h"
 
@@ -9,7 +9,7 @@ namespace po = boost::program_options;
 
 po::options_description CreateOptionsDescription(void)
 {
-	po::options_description optionsDescription("Tribune TTS gRPC client options:");
+	po::options_description optionsDescription("Techmo TTS gRPC client options:");
 	optionsDescription.add_options()
 		("help", "Prints help message.")
 		("service-address", po::value<std::string>()->required(),
@@ -49,10 +49,10 @@ po::options_description CreateOptionsDescription(void)
 	return optionsDescription;
 }
 
-void printVoices(const std::vector<techmo::tribune::SynthesizeVoiceInfo>& voices);
-techmo::tribune::AudioEncoding encodingFromString(std::string_view encodingString);
-techmo::tribune::Gender genderFromString(std::string_view genderString);
-techmo::tribune::Age ageFromString(std::string_view ageString);
+void printVoices(const std::vector<techmo::tts::VoiceInfo>& voices);
+techmo::tts::grpc_api::AudioEncoding encodingFromString(std::string_view encodingString);
+techmo::tts::grpc_api::Gender genderFromString(std::string_view genderString);
+techmo::tts::grpc_api::Age ageFromString(std::string_view ageString);
 
 int main(int argc, const char* const argv[])
 {
@@ -62,7 +62,7 @@ int main(int argc, const char* const argv[])
 	{
 		po::store(po::command_line_parser(argc, argv).options(optionsDescription).run(), userOptions);
 
-		std::cout << "Tribune TTS gRPC client " << LIBTRIBUNE_CLIENT_VERSION << std::endl;
+		std::cout << "Techmo TTS gRPC client " << LIBTTS_CLIENT_VERSION << std::endl;
 
 		if (userOptions.empty() || userOptions.count("help"))
 		{
@@ -81,23 +81,23 @@ int main(int argc, const char* const argv[])
 
 	try
 	{
-		techmo::tribune::TribuneClient tribuneClient{ userOptions["service-address"].as<std::string>() };
+		techmo::tts::Client ttsClient{ userOptions["service-address"].as<std::string>() };
 
-		techmo::tribune::TribuneClientConfig clientConfig;
+		techmo::tts::ClientConfig clientConfig;
 		clientConfig.session_id = userOptions["session-id"].as<std::string>();
 		clientConfig.grpc_timeout = userOptions["grpc-timeout"].as<int>();
 
 		if (userOptions.count("list-voices"))
 		{
-			printVoices(tribuneClient.ListVoices(
+			printVoices(ttsClient.ListVoices(
 				clientConfig, userOptions["language"].as<std::string>()));
 			return 0;
 		}
 
-		techmo::tribune::AudioEncoding encoding{
+		techmo::tts::grpc_api::AudioEncoding encoding{
 			encodingFromString(userOptions["audio-encoding"].as<std::string>()) };
 
-		techmo::tribune::TribuneSynthesizeConfig synthesizeConfig;
+		techmo::tts::SynthesizeConfig synthesizeConfig;
 		synthesizeConfig.language = userOptions["language"].as<std::string>();
 		synthesizeConfig.audio_config.emplace();
 		synthesizeConfig.audio_config->encoding = encoding;
@@ -121,11 +121,11 @@ int main(int argc, const char* const argv[])
 		std::string outputPath = userOptions["out-path"].as<std::string>();
 		if (outputPath.empty())
 		{
-			if (encoding == techmo::tribune::AudioEncoding::PCM16)
+			if (encoding == techmo::tts::grpc_api::AudioEncoding::PCM16)
 			{
 				outputPath = "TechmoTTS.wav";
 			}
-			else if (encoding == techmo::tribune::AudioEncoding::OGG_VORBIS)
+			else if (encoding == techmo::tts::grpc_api::AudioEncoding::OGG_VORBIS)
 			{
 				outputPath = "TechmoTTS.ogg";
 			}
@@ -150,10 +150,10 @@ int main(int argc, const char* const argv[])
 
 		std::string requestText = userOptions["text"].as<std::string>();
 		const auto audio_data = (useStreaming ?
-			tribuneClient.SynthesizeStreaming(clientConfig, synthesizeConfig, requestText) :
-			tribuneClient.Synthesize(clientConfig, synthesizeConfig, requestText));
+			ttsClient.SynthesizeStreaming(clientConfig, synthesizeConfig, requestText) :
+			ttsClient.Synthesize(clientConfig, synthesizeConfig, requestText));
 
-		if (encoding == techmo::tribune::AudioEncoding::PCM16)
+		if (encoding == techmo::tts::grpc_api::AudioEncoding::PCM16)
 		{
 			WriteWaveFile(outputPath, audio_data.sample_rate_hertz, audio_data.audio_bytes);
 		}
@@ -184,35 +184,35 @@ std::string to_string(const std::vector<std::string>& languages)
 	return result;
 }
 
-std::string_view to_string(techmo::tribune::Gender gender)
+std::string_view to_string(techmo::tts::grpc_api::Gender gender)
 {
 	switch (gender)
 	{
-	case techmo::tribune::Gender::FEMALE:
+	case techmo::tts::grpc_api::Gender::FEMALE:
 		return "female";
-	case techmo::tribune::Gender::MALE:
+	case techmo::tts::grpc_api::Gender::MALE:
 		return "male";
 	default:
 		return "undefined";
 	}
 }
 
-std::string_view to_string(techmo::tribune::Age age)
+std::string_view to_string(techmo::tts::grpc_api::Age age)
 {
 	switch (age)
 	{
-	case techmo::tribune::Age::ADULT:
+	case techmo::tts::grpc_api::Age::ADULT:
 		return "adult";
-	case techmo::tribune::Age::CHILD:
+	case techmo::tts::grpc_api::Age::CHILD:
 		return "child";
-	case techmo::tribune::Age::SENILE:
+	case techmo::tts::grpc_api::Age::SENILE:
 		return "senile";
 	default:
 		return "undefined";
 	}
 }
 
-void printVoices(const std::vector<techmo::tribune::SynthesizeVoiceInfo>& voices)
+void printVoices(const std::vector<techmo::tts::VoiceInfo>& voices)
 {
 	std::cout << std::endl << "Available voices:" << std::endl << std::endl;
 	for (const auto& voice: voices)
@@ -224,15 +224,15 @@ void printVoices(const std::vector<techmo::tribune::SynthesizeVoiceInfo>& voices
 	}
 }
 
-techmo::tribune::AudioEncoding encodingFromString(std::string_view encodingString)
+techmo::tts::grpc_api::AudioEncoding encodingFromString(std::string_view encodingString)
 {
 	if (encodingString.empty() || encodingString == "pcm16")
 	{
-		return techmo::tribune::AudioEncoding::PCM16;
+		return techmo::tts::grpc_api::AudioEncoding::PCM16;
 	}
 	if (encodingString == "ogg-vorbis")
 	{
-		return techmo::tribune::AudioEncoding::OGG_VORBIS;
+		return techmo::tts::grpc_api::AudioEncoding::OGG_VORBIS;
 	}
 
 	std::string message{ "Unsupported audio-encoding: " };
@@ -241,19 +241,19 @@ techmo::tribune::AudioEncoding encodingFromString(std::string_view encodingStrin
 	throw std::runtime_error{ message };
 }
 
-techmo::tribune::Gender genderFromString(std::string_view genderString)
+techmo::tts::grpc_api::Gender genderFromString(std::string_view genderString)
 {
 	if (genderString == "female")
 	{
-		return techmo::tribune::Gender::FEMALE;
+		return techmo::tts::grpc_api::Gender::FEMALE;
 	}
 	else if (genderString == "male")
 	{
-		return techmo::tribune::Gender::MALE;
+		return techmo::tts::grpc_api::Gender::MALE;
 	}
 	else if (genderString.empty())
 	{
-		return techmo::tribune::Gender::GENDER_UNSPECIFIED;
+		return techmo::tts::grpc_api::Gender::GENDER_UNSPECIFIED;
 	}
 
 	std::string message{ "Unsupported voice-gender: " };
@@ -262,23 +262,23 @@ techmo::tribune::Gender genderFromString(std::string_view genderString)
 	throw std::runtime_error{ message };
 }
 
-techmo::tribune::Age ageFromString(std::string_view ageString)
+techmo::tts::grpc_api::Age ageFromString(std::string_view ageString)
 {
 	if (ageString == "adult")
 	{
-		return techmo::tribune::Age::ADULT;
+		return techmo::tts::grpc_api::Age::ADULT;
 	}
 	else if (ageString == "child")
 	{
-		return techmo::tribune::Age::CHILD;
+		return techmo::tts::grpc_api::Age::CHILD;
 	}
 	else if (ageString == "senile")
 	{
-		return techmo::tribune::Age::SENILE;
+		return techmo::tts::grpc_api::Age::SENILE;
 	}
 	else if (ageString.empty())
 	{
-		return techmo::tribune::Age::AGE_UNSPECIFIED;
+		return techmo::tts::grpc_api::Age::AGE_UNSPECIFIED;
 	}
 
 	std::string message{ "Unsupported voice-age: " };
