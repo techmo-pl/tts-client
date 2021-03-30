@@ -1,4 +1,42 @@
-Python implementation of Techmo TTS gRPC client.
+# Python implementation of Techmo TTS gRPC client.
+
+
+## Docker usage
+
+#### Build docker image
+
+To prepare docker image with Python implementation of tts client, open project's main directory and run:
+
+```
+docker build -f Dockerfile-python -t tts-client-python:2.0.0 . 
+```
+The build process will take several minutes.
+When the build process is complete, you will receive a message:
+```
+Successfully tagged tts-client-python:2.0.0
+```
+
+#### Run tts client
+
+To use tts client on a Docker container, go to `tts-client/python/docker` directory and run `run_tts_cilent_python.sh` script.
+
+To send simple request to the TTS service, use:
+```
+./run_tts_cilent_python.sh --service-address IP_ADDRESS:PORT --text "Sample text to be synthesised"
+```
+
+To print list of available options, use:
+```
+./run_tts_cilent_python.sh --help
+```
+Output audio files will be created inside `tts-client/python/docker/wav` directory.
+Source text files should be placed inside `tts-client/python/docker/txt` directory, if used.
+
+**NOTE:** Unlike a local tts-client instance, the `run_tts_cilent_python.sh` script not allows to set custom paths to input/output files. Instead it uses predefined directories (`wav` and `txt`). When using options: `--input-text-file (-i)` and `--output-file (-o)`, user should provide only filenames.
+
+
+
+## Local instance usage
 
 To regenerate sources from `.proto`, run:
 ```
@@ -6,7 +44,9 @@ To regenerate sources from `.proto`, run:
 ```
 This might be required when using other gRPC or Protocol Buffers version.
 
-To run:
+
+### Before run:
+
  - Use Python 3 with virtual environment and install required packages:
 ```
 virtualenv -p python3 venv
@@ -14,7 +54,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Run:
+### Run:
 ```
 python tts_client.py -s "192.168.1.1:4321" -f 44100 -t "Polski tekst do syntezy."
 ```
