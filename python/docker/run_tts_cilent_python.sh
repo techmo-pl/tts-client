@@ -130,31 +130,6 @@ while [[ "$#" -gt 0 ]]; do
     shift
 done               
 
-# echo "
-# service_address=${service_address}
-# session_id=${session_id}
-# grpc_timeout=${grpc_timeout}
-# list_voices=${list_voices}
-# response=${response}
-# text=${text}
-# input_text_file=${input_text_file}
-# output_file=${output_file}
-# sample_rate=${sample_rate}
-# audio_encoding=${audio_encoding}
-# speech_pitch=${speech_pitch}
-# speech_range=${speech_range}
-# speech_rate=${speech_rate}
-# speech_volume=${speech_volume}
-# voice_name=${voice_name}
-# voice_gender=${voice_gender}
-# voice_age=${voice_age}
-# language=${language}
-# play=${play}
-# "
-# echo
-# echo "------------------------------------------------"
-
-
 if [[ "${service_address}" = "UNSPECIFIED" ]]; then
     echo "Service addres not specified! Use option '-s | --service-address ADDRESS:PORT' to specify service address"
     exit 0
@@ -223,28 +198,6 @@ fi
 if [[ "${play}" != "UNSPECIFIED" ]]; then
     play_option="--play"
 fi
-
-# echo " 
-# service_address_option=${service_address_option}
-# session_id_option=${session_id_option}
-# grpc_timeout_option=${grpc_timeout_option}
-# list_voices_option=${list_voices_option}
-# response_option=${response_option}
-# text_option=${text_option}
-# input_text_file_option=${input_text_file_option}
-# output_file_option=${output_file_option}
-# sample_rate_option=${sample_rate_option}
-# audio_encoding_option=${audio_encoding_option}
-# speech_pitch_option=${speech_pitch_option}
-# speech_range_option=${speech_range_option}
-# speech_rate_option=${speech_rate_option}
-# speech_volume_option=${speech_volume_option}
-# voice_name_option=${voice_name_option}
-# voice_gender_option=${voice_gender_option}
-# voice_age_option=${voice_age_option}
-# language_option=${language_option}
-# play_option=${play_option}
-# "
 
 IFS=$'\x20'
 
