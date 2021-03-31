@@ -33,3 +33,9 @@
 
 # Cache
 __pycache__/
+
+# ignore files in directory `wav`
+cpp/docker/wav/*
+
+# but keep the directories with .gitkeep file
+!/**/.gitkeep
