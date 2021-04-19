@@ -25,7 +25,6 @@ fi
 
 # check required packages
 
-
 if [ $(dpkg-query -W -f='${Status}' sudo 2>/dev/null | grep -c "ok installed") -eq 0 ];
 then
     #sudo not installed (eg. docker container)
@@ -35,6 +34,16 @@ then
             read -p "The required package 'python3-dev' is not installed. Do you want to install it now? [y/n]" yn
             case $yn in
                 [Yy]*) apt-get update && apt-get install -y python3-dev; break ;;
+                [Nn]*) exit 0 ;;
+            esac
+        done
+    fi
+    if [ $(dpkg-query -W -f='${Status}' libportaudio2 2>/dev/null | grep -c "ok installed") -eq 0 ];
+    then
+        while true; do
+            read -p "The required package 'libportaudio2' is not installed. Do you want to install it now? [y/n]" yn
+            case $yn in
+                [Yy]*) apt-get update && apt-get install -y libportaudio2; break ;;
                 [Nn]*) exit 0 ;;
             esac
         done
@@ -67,6 +76,16 @@ else
             read -p "The required package 'python3-dev' is not installed. Do you want to install it now? [y/n]" yn
             case $yn in
                 [Yy]*) sudo apt-get update && sudo apt-get install -y python3-dev; break ;;
+                [Nn]*) exit 0 ;;
+            esac
+        done
+    fi
+    if [ $(dpkg-query -W -f='${Status}' libportaudio2 2>/dev/null | grep -c "ok installed") -eq 0 ];
+    then
+        while true; do
+            read -p "The required package 'libportaudio2' is not installed. Do you want to install it now? [y/n]" yn
+            case $yn in
+                [Yy]*) sudo apt-get update && sudo apt-get install -y libportaudio2; break ;;
                 [Nn]*) exit 0 ;;
             esac
         done
