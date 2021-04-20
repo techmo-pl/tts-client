@@ -1,7 +1,6 @@
 # Python implementation of Techmo TTS gRPC client.
 
 
-
 ## Basic Usage
 
 TTS Client includes scripts for automatic environment configuration and launching on systems from the Debian Linux family. For launching TTS Client on other Linux-based OS or Windows, check out "Manual Usage" section.
@@ -44,7 +43,8 @@ Then install the required dependencies inside the virtual environment (this step
 
 - On Linux:
 
-Use Python 3 with virtual environment and install required packages (supported Python versions are: 3.5, 3.6, 3.7, 3.8, 3.9):
+Use Python 3 with virtual environment and install required packages (supported Python versions are: 3.5, 3.6, 3.7, 3.8, 3.9). 
+Inside "tts_client/python" run following commands:
 
 ```
 virtualenv -p python3 .env
@@ -63,7 +63,8 @@ Set-ExecutionPolicy RemoteSigned
 ```
 then confirm your choice.
 
-Use Python 3 with virtual environment and install required packages (supported Python versions are: 3.5, 3.6, 3.7, 3.8, 3.9):
+Use Python 3 with virtual environment and install required packages (supported Python versions are: 3.5, 3.6, 3.7, 3.8, 3.9).
+Navigate to "tts_client/python" directory and run following commands:
 
 ```
 virtualenv -p python3.6 .env
