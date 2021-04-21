@@ -1,7 +1,7 @@
 // Techmo TTS API
-// version: 2.0.0
+// version: 2.1.0
 // authors: Dawid Skurzok, Paweł Jaciów, Michał Radziszewski
-// date:    2020-11-25
+// date:    2021-04-21
 syntax = "proto3";
 
 package techmo.tts.grpc_api;
@@ -13,23 +13,21 @@ service TTS
     rpc ListVoices(ListVoicesRequest) returns (ListVoicesResponse);
 
     // Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
-    // Returns audio signal with synthesized speech (streaming version, one or more response packets) or `error`.
+    // Returns audio signal with synthesized speech (streaming version, one or more response packets).
     rpc SynthesizeStreaming(SynthesizeRequest) returns (stream SynthesizeResponse);
 
     // Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
-    // Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet) or `error`.
+    // Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet).
     rpc Synthesize(SynthesizeRequest) returns (SynthesizeResponse);
 
     // Adds a new lexicon with the requested name or overwrites the existing one if there is already a lexicon with such name.
-    // Returns status information - Success or Error.
     rpc PutLexicon(PutLexiconRequest) returns (PutLexiconResponse);
 
     // Removes the lexicon with the requested name.
-    // Returns status information - Success or Error.
     rpc DeleteLexicon(DeleteLexiconRequest) returns (DeleteLexiconResponse);
 
     // Sends back the content of the lexicon with the requested name.
-    // Returns the lexicon content and status information - Success or Error.
+    // Returns the lexicon content.
     rpc GetLexicon(GetLexiconRequest) returns (GetLexiconResponse);
 
     // Lists all client-defined lexicons which can be referred by `<lexicon>` tag in synthesize requests.
@@ -163,16 +161,11 @@ enum Age
 // `SynthesizeResponse` is the only message returned to the client by `SynthesizeStreaming` and `Synthesize`.
 // During `SynthesizeStreaming`, a series of one or more `SynthesizeResponse` messages are streamed back to the client.
 // During `Synthesize` always one message is generated.
-// If `SynthesizeResponse` contains `error` field, its `code` and `description` can be printed.
-// Otherwise, the synthesized `audio` is available to use.
 message SynthesizeResponse
 {
     // Audio data corresponding to a portion of the text
     // that is currently being processed.
     AudioData audio = 1;
-
-    // If set, specifies the error for the operation.
-    Error error = 2;
 }
 
 // Audio data corresponding to a portion of the text
@@ -200,8 +193,7 @@ message PutLexiconRequest
 // Status of the PutLexicon call.
 message PutLexiconResponse
 {
-    // If set, specifies the error for the operation. Otherwise, the operation has been succesful.
-    Error error = 1;
+    // Empty, just verify returned GRPC status.
 }
 
 // The top-level message sent by the client to delete the requested pronounciation lexicon.
@@ -214,8 +206,7 @@ message DeleteLexiconRequest
 // Status of the DeleteLexicon call.
 message DeleteLexiconResponse
 {
-    // If set, specifies the error for the operation. Otherwise, the operation has been succesful.
-    Error error = 1;
+    // Empty, just verify returned GRPC status.
 }
 
 // The top-level message sent by the client to get the content the requested pronounciation lexicon.
@@ -230,9 +221,6 @@ message GetLexiconResponse
 {
     // If successful, contains the content of the lexicon, in SSML/XML format.
     string content = 1;
-
-    // If set, specifies the error for the operation. Otherwise, the operation has been succesful.
-    Error error = 2;
 }
 
 // The top-level message sent by the client to obtain the list of all available lexicons.
@@ -248,26 +236,3 @@ message ListLexiconsResponse
     // The list of names of all available lexicons.
     repeated string names = 1;
 }
-
-// Indicates the type of the error for the operation.
-enum ErrorCode
-{
-    UNKNOWN = 0;            // Unknown error.
-    LICENCE = 1;            // Licence related error.
-    MISSING_OBJECT = 2;     // An object referred by the given name does not exist.
-    SSML = 3;               // SSML parser error.
-    TEXT_NORMALIZATION = 4; // Error during text normalization.
-    TRANSCRIPTION = 5;      // Error during orthographic to phonetic transcription.
-    SYNTHESIS = 6;          // Error during speech synthesis.
-}
-
-// Received error details.
-message Error
-{
-    // Error code.
-    ErrorCode code = 1;
-
-    // Error description.
-    string description = 2;
-}
-

@@ -64,7 +64,7 @@ class TTSServicer(object):
 
   def SynthesizeStreaming(self, request, context):
     """Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
-    Returns audio signal with synthesized speech (streaming version, one or more response packets) or `error`.
+    Returns audio signal with synthesized speech (streaming version, one or more response packets).
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -72,7 +72,7 @@ class TTSServicer(object):
 
   def Synthesize(self, request, context):
     """Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
-    Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet) or `error`.
+    Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet).
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -80,7 +80,6 @@ class TTSServicer(object):
 
   def PutLexicon(self, request, context):
     """Adds a new lexicon with the requested name or overwrites the existing one if there is already a lexicon with such name.
-    Returns status information - Success or Error.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -88,7 +87,6 @@ class TTSServicer(object):
 
   def DeleteLexicon(self, request, context):
     """Removes the lexicon with the requested name.
-    Returns status information - Success or Error.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -96,7 +94,7 @@ class TTSServicer(object):
 
   def GetLexicon(self, request, context):
     """Sends back the content of the lexicon with the requested name.
-    Returns the lexicon content and status information - Success or Error.
+    Returns the lexicon content.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
