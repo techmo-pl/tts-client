@@ -1,6 +1,5 @@
 # Python implementation of Techmo TTS gRPC client.
 
-
 ## Docker usage
 
 #### Build docker image
