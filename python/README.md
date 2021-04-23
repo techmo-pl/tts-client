@@ -1,25 +1,114 @@
-Python implementation of Techmo TTS gRPC client.
+# Python implementation of Techmo TTS gRPC client.
 
-To regenerate sources from `.proto`, run:
+
+## Basic Usage
+
+TTS Client includes scripts for automatic environment configuration and launching on systems from the Debian Linux family. For launching TTS Client on other Linux-based OS or Windows, check out "Manual Usage" section.
+
+
+### Before run
+
+To check required dependencies and prepare virtual environment, run:
+```
+./setup.sh
+```
+
+### Run
+
+To run TTS Client, use `run.sh` script, e.g.:
+```
+./run --service-address IP_ADDRESS:PORT --text 'Some text to be synthesized'
+```
+To print usage description, use:
+```
+./run --help
+```
+
+
+## Manual Usage
+
+### Before run
+
+#### Dependencies
+
+If you don't have virtualenv yet, install it first (https://virtualenv.pypa.io/en/stable/installation.html)
+To install virtualenv on Ubuntu is enough to use command:
+
+```
+sudo apt-get install virtualenv
+```
+
+Then install the required dependencies inside the virtual environment (this step only needs to be done the first time, for the further usage it is enough to use the existing virtual environment).
+
+
+- On Linux:
+
+Use Python 3 with virtual environment and install required packages (supported Python versions are: 3.5, 3.6, 3.7, 3.8, 3.9). 
+Inside "tts_client/python" run following commands:
+
+```
+virtualenv -p python3 .env
+source .env/bin/activate
+pip install -r requirements.txt
+```
+For Python 3.5 instead of `requirements.txt` use `requirements_python_3.5.txt`.
+
+
+- On Windows 10:
+
+Temporarily change the PowerShell execution policy to allow scripting. Start PowerShell with `Run as Administrator` and use command:
+
+```
+Set-ExecutionPolicy RemoteSigned
+```
+then confirm your choice.
+
+Use Python 3 with virtual environment and install required packages (supported Python versions are: 3.5, 3.6, 3.7, 3.8, 3.9).
+Navigate to "tts_client/python" directory and run following commands:
+
+```
+virtualenv -p python3.6 .env
+.\.env\Scripts\activate
+pip install -r requirements.txt
+```
+For Python 3.5 instead of `requirements.txt` use `requirements_python_3.5.txt`.
+
+To switch back PowerShell execution policy to the default, use command:
+
+```
+Set-ExecutionPolicy Restricted
+```
+
+#### Proto sources
+
+[Optional] To regenerate sources from `.proto`, run:
 ```
 ./make_proto.sh
 ```
 This might be required when using other gRPC or Protocol Buffers version.
 
-To run:
- - Use Python 3 with virtual environment and install required packages:
-```
-virtualenv -p python3 venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
+ 
 
-Run:
+### Run
+
+To run TTS Client, activate virtual environment first:
+- On Linux:
+```
+source .env/bin/activate
+```
+- On Windows:
+```
+.\.env\Scripts\activate
+```
+Then run TTS Client. Sample use:
+
 ```
 python tts_client.py -s "192.168.1.1:4321" -f 44100 -t "Polski tekst do syntezy."
 ```
 
-Usage:
+
+### Usage:
+
 ```
 usage: tts_client.py [-h] -s SERVICE [--session-id SESSION_ID]
                          [--grpc-timeout GRPC_TIMEOUT] [--list-voices]
