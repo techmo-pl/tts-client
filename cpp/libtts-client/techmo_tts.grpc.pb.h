@@ -3,9 +3,9 @@
 // source: techmo_tts.proto
 // Original file comments:
 // Techmo TTS API
-// version: 2.0.0
+// version: 2.1.0
 // authors: Dawid Skurzok, Paweł Jaciów, Michał Radziszewski
-// date:    2020-11-25
+// date:    2021-04-21
 #ifndef GRPC_techmo_5ftts_2eproto__INCLUDED
 #define GRPC_techmo_5ftts_2eproto__INCLUDED
 
@@ -63,7 +63,7 @@ class TTS final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tts::grpc_api::ListVoicesResponse>>(PrepareAsyncListVoicesRaw(context, request, cq));
     }
     // Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
-    // Returns audio signal with synthesized speech (streaming version, one or more response packets) or `error`.
+    // Returns audio signal with synthesized speech (streaming version, one or more response packets).
     std::unique_ptr< ::grpc::ClientReaderInterface< ::techmo::tts::grpc_api::SynthesizeResponse>> SynthesizeStreaming(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::SynthesizeRequest& request) {
       return std::unique_ptr< ::grpc::ClientReaderInterface< ::techmo::tts::grpc_api::SynthesizeResponse>>(SynthesizeStreamingRaw(context, request));
     }
@@ -74,7 +74,7 @@ class TTS final {
       return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::techmo::tts::grpc_api::SynthesizeResponse>>(PrepareAsyncSynthesizeStreamingRaw(context, request, cq));
     }
     // Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
-    // Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet) or `error`.
+    // Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet).
     virtual ::grpc::Status Synthesize(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::SynthesizeRequest& request, ::techmo::tts::grpc_api::SynthesizeResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tts::grpc_api::SynthesizeResponse>> AsyncSynthesize(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::SynthesizeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tts::grpc_api::SynthesizeResponse>>(AsyncSynthesizeRaw(context, request, cq));
@@ -83,7 +83,6 @@ class TTS final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tts::grpc_api::SynthesizeResponse>>(PrepareAsyncSynthesizeRaw(context, request, cq));
     }
     // Adds a new lexicon with the requested name or overwrites the existing one if there is already a lexicon with such name.
-    // Returns status information - Success or Error.
     virtual ::grpc::Status PutLexicon(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::PutLexiconRequest& request, ::techmo::tts::grpc_api::PutLexiconResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tts::grpc_api::PutLexiconResponse>> AsyncPutLexicon(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::PutLexiconRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tts::grpc_api::PutLexiconResponse>>(AsyncPutLexiconRaw(context, request, cq));
@@ -92,7 +91,6 @@ class TTS final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tts::grpc_api::PutLexiconResponse>>(PrepareAsyncPutLexiconRaw(context, request, cq));
     }
     // Removes the lexicon with the requested name.
-    // Returns status information - Success or Error.
     virtual ::grpc::Status DeleteLexicon(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::DeleteLexiconRequest& request, ::techmo::tts::grpc_api::DeleteLexiconResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tts::grpc_api::DeleteLexiconResponse>> AsyncDeleteLexicon(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::DeleteLexiconRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tts::grpc_api::DeleteLexiconResponse>>(AsyncDeleteLexiconRaw(context, request, cq));
@@ -101,7 +99,7 @@ class TTS final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tts::grpc_api::DeleteLexiconResponse>>(PrepareAsyncDeleteLexiconRaw(context, request, cq));
     }
     // Sends back the content of the lexicon with the requested name.
-    // Returns the lexicon content and status information - Success or Error.
+    // Returns the lexicon content.
     virtual ::grpc::Status GetLexicon(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::GetLexiconRequest& request, ::techmo::tts::grpc_api::GetLexiconResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tts::grpc_api::GetLexiconResponse>> AsyncGetLexicon(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::GetLexiconRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::techmo::tts::grpc_api::GetLexiconResponse>>(AsyncGetLexiconRaw(context, request, cq));
@@ -127,28 +125,26 @@ class TTS final {
       virtual void ListVoices(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::ListVoicesRequest* request, ::techmo::tts::grpc_api::ListVoicesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void ListVoices(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tts::grpc_api::ListVoicesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       // Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
-      // Returns audio signal with synthesized speech (streaming version, one or more response packets) or `error`.
+      // Returns audio signal with synthesized speech (streaming version, one or more response packets).
       virtual void SynthesizeStreaming(::grpc::ClientContext* context, ::techmo::tts::grpc_api::SynthesizeRequest* request, ::grpc::experimental::ClientReadReactor< ::techmo::tts::grpc_api::SynthesizeResponse>* reactor) = 0;
       // Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
-      // Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet) or `error`.
+      // Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet).
       virtual void Synthesize(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::SynthesizeRequest* request, ::techmo::tts::grpc_api::SynthesizeResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void Synthesize(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tts::grpc_api::SynthesizeResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void Synthesize(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::SynthesizeRequest* request, ::techmo::tts::grpc_api::SynthesizeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void Synthesize(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tts::grpc_api::SynthesizeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       // Adds a new lexicon with the requested name or overwrites the existing one if there is already a lexicon with such name.
-      // Returns status information - Success or Error.
       virtual void PutLexicon(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::PutLexiconRequest* request, ::techmo::tts::grpc_api::PutLexiconResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void PutLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tts::grpc_api::PutLexiconResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void PutLexicon(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::PutLexiconRequest* request, ::techmo::tts::grpc_api::PutLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void PutLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tts::grpc_api::PutLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       // Removes the lexicon with the requested name.
-      // Returns status information - Success or Error.
       virtual void DeleteLexicon(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::DeleteLexiconRequest* request, ::techmo::tts::grpc_api::DeleteLexiconResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tts::grpc_api::DeleteLexiconResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteLexicon(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::DeleteLexiconRequest* request, ::techmo::tts::grpc_api::DeleteLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void DeleteLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tts::grpc_api::DeleteLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       // Sends back the content of the lexicon with the requested name.
-      // Returns the lexicon content and status information - Success or Error.
+      // Returns the lexicon content.
       virtual void GetLexicon(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::GetLexiconRequest* request, ::techmo::tts::grpc_api::GetLexiconResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetLexicon(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::techmo::tts::grpc_api::GetLexiconResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetLexicon(::grpc::ClientContext* context, const ::techmo::tts::grpc_api::GetLexiconRequest* request, ::techmo::tts::grpc_api::GetLexiconResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
@@ -303,19 +299,17 @@ class TTS final {
     // Lists all available voices which can be used to synthesize speech.
     virtual ::grpc::Status ListVoices(::grpc::ServerContext* context, const ::techmo::tts::grpc_api::ListVoicesRequest* request, ::techmo::tts::grpc_api::ListVoicesResponse* response);
     // Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
-    // Returns audio signal with synthesized speech (streaming version, one or more response packets) or `error`.
+    // Returns audio signal with synthesized speech (streaming version, one or more response packets).
     virtual ::grpc::Status SynthesizeStreaming(::grpc::ServerContext* context, const ::techmo::tts::grpc_api::SynthesizeRequest* request, ::grpc::ServerWriter< ::techmo::tts::grpc_api::SynthesizeResponse>* writer);
     // Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration.
-    // Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet) or `error`.
+    // Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet).
     virtual ::grpc::Status Synthesize(::grpc::ServerContext* context, const ::techmo::tts::grpc_api::SynthesizeRequest* request, ::techmo::tts::grpc_api::SynthesizeResponse* response);
     // Adds a new lexicon with the requested name or overwrites the existing one if there is already a lexicon with such name.
-    // Returns status information - Success or Error.
     virtual ::grpc::Status PutLexicon(::grpc::ServerContext* context, const ::techmo::tts::grpc_api::PutLexiconRequest* request, ::techmo::tts::grpc_api::PutLexiconResponse* response);
     // Removes the lexicon with the requested name.
-    // Returns status information - Success or Error.
     virtual ::grpc::Status DeleteLexicon(::grpc::ServerContext* context, const ::techmo::tts::grpc_api::DeleteLexiconRequest* request, ::techmo::tts::grpc_api::DeleteLexiconResponse* response);
     // Sends back the content of the lexicon with the requested name.
-    // Returns the lexicon content and status information - Success or Error.
+    // Returns the lexicon content.
     virtual ::grpc::Status GetLexicon(::grpc::ServerContext* context, const ::techmo::tts::grpc_api::GetLexiconRequest* request, ::techmo::tts::grpc_api::GetLexiconResponse* response);
     // Lists all client-defined lexicons which can be referred by `<lexicon>` tag in synthesize requests.
     // Returns the list of names of lexicons.
