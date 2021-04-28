@@ -9,7 +9,6 @@
     - [AudioData](#techmo.tts.grpc_api.AudioData)
     - [DeleteLexiconRequest](#techmo.tts.grpc_api.DeleteLexiconRequest)
     - [DeleteLexiconResponse](#techmo.tts.grpc_api.DeleteLexiconResponse)
-    - [Error](#techmo.tts.grpc_api.Error)
     - [GetLexiconRequest](#techmo.tts.grpc_api.GetLexiconRequest)
     - [GetLexiconResponse](#techmo.tts.grpc_api.GetLexiconResponse)
     - [ListLexiconsRequest](#techmo.tts.grpc_api.ListLexiconsRequest)
@@ -25,7 +24,6 @@
     - [VoiceInfo](#techmo.tts.grpc_api.VoiceInfo)
     - [Age](#techmo.tts.grpc_api.Age)
     - [AudioEncoding](#techmo.tts.grpc_api.AudioEncoding)
-    - [ErrorCode](#techmo.tts.grpc_api.ErrorCode)
     - [Gender](#techmo.tts.grpc_api.Gender)
   
 - [Scalar Value Types](#scalar-value-types)
@@ -37,9 +35,9 @@
 
 ## techmo_tts.proto
 Techmo TTS API
-version: 2.0.0
+version: 2.1.0
 authors: Dawid Skurzok, Paweł Jaciów, Michał Radziszewski
-date:    2020-11-25
+date:    2021-04-21
 
 
 <a name="techmo.tts.grpc_api.TTS"/>
@@ -50,11 +48,11 @@ Service that implements Techmo Text-To-Speech (TTS) API.
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | ListVoices | [ListVoicesRequest](#techmo.tts.grpc_api.ListVoicesRequest) | [ListVoicesResponse](#techmo.tts.grpc_api.ListVoicesRequest) | Lists all available voices which can be used to synthesize speech. |
-| SynthesizeStreaming | [SynthesizeRequest](#techmo.tts.grpc_api.SynthesizeRequest) | [SynthesizeResponse](#techmo.tts.grpc_api.SynthesizeRequest) | Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration. Returns audio signal with synthesized speech (streaming version, one or more response packets) or `error`. |
-| Synthesize | [SynthesizeRequest](#techmo.tts.grpc_api.SynthesizeRequest) | [SynthesizeResponse](#techmo.tts.grpc_api.SynthesizeRequest) | Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration. Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet) or `error`. |
-| PutLexicon | [PutLexiconRequest](#techmo.tts.grpc_api.PutLexiconRequest) | [PutLexiconResponse](#techmo.tts.grpc_api.PutLexiconRequest) | Adds a new lexicon with the requested name or overwrites the existing one if there is already a lexicon with such name. Returns status information - Success or Error. |
-| DeleteLexicon | [DeleteLexiconRequest](#techmo.tts.grpc_api.DeleteLexiconRequest) | [DeleteLexiconResponse](#techmo.tts.grpc_api.DeleteLexiconRequest) | Removes the lexicon with the requested name. Returns status information - Success or Error. |
-| GetLexicon | [GetLexiconRequest](#techmo.tts.grpc_api.GetLexiconRequest) | [GetLexiconResponse](#techmo.tts.grpc_api.GetLexiconRequest) | Sends back the content of the lexicon with the requested name. Returns the lexicon content and status information - Success or Error. |
+| SynthesizeStreaming | [SynthesizeRequest](#techmo.tts.grpc_api.SynthesizeRequest) | [SynthesizeResponse](#techmo.tts.grpc_api.SynthesizeRequest) | Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration. Returns audio signal with synthesized speech (streaming version, one or more response packets). |
+| Synthesize | [SynthesizeRequest](#techmo.tts.grpc_api.SynthesizeRequest) | [SynthesizeResponse](#techmo.tts.grpc_api.SynthesizeRequest) | Synthesizes the speech (audio signal) based on the requested phrase and the optional configuration. Returns audio signal with synthesized speech (non-streaming version, always one repsonse packet). |
+| PutLexicon | [PutLexiconRequest](#techmo.tts.grpc_api.PutLexiconRequest) | [PutLexiconResponse](#techmo.tts.grpc_api.PutLexiconRequest) | Adds a new lexicon with the requested name or overwrites the existing one if there is already a lexicon with such name. |
+| DeleteLexicon | [DeleteLexiconRequest](#techmo.tts.grpc_api.DeleteLexiconRequest) | [DeleteLexiconResponse](#techmo.tts.grpc_api.DeleteLexiconRequest) | Removes the lexicon with the requested name. |
+| GetLexicon | [GetLexiconRequest](#techmo.tts.grpc_api.GetLexiconRequest) | [GetLexiconResponse](#techmo.tts.grpc_api.GetLexiconRequest) | Sends back the content of the lexicon with the requested name. Returns the lexicon content. |
 | ListLexicons | [ListLexiconsRequest](#techmo.tts.grpc_api.ListLexiconsRequest) | [ListLexiconsResponse](#techmo.tts.grpc_api.ListLexiconsRequest) | Lists all client-defined lexicons which can be referred by `<lexicon>` tag in synthesize requests. Returns the list of names of lexicons. |
 
  <!-- end services -->
@@ -117,26 +115,7 @@ The top-level message sent by the client to delete the requested pronounciation 
 ### DeleteLexiconResponse
 Status of the DeleteLexicon call.
 
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| error | [Error](#techmo.tts.grpc_api.Error) | If set, specifies the error for the operation. Otherwise, the operation has been succesful. |
-
-
-
-
-
-
-<a name="techmo.tts.grpc_api.Error"/>
-
-### Error
-Received error details.
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| code | [ErrorCode](#techmo.tts.grpc_api.ErrorCode) | Error code. |
-| description | [string](#string) | Error description. |
+Empty, just verify returned GRPC status.
 
 
 
@@ -167,7 +146,6 @@ Result of the GetLexicon call.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | content | [string](#string) | If successful, contains the content of the lexicon, in SSML/XML format. |
-| error | [Error](#techmo.tts.grpc_api.Error) | If set, specifies the error for the operation. Otherwise, the operation has been succesful. |
 
 
 
@@ -255,10 +233,7 @@ The top-level message sent by the client to put the new pronounciation lexicon.
 ### PutLexiconResponse
 Status of the PutLexicon call.
 
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| error | [Error](#techmo.tts.grpc_api.Error) | If set, specifies the error for the operation. Otherwise, the operation has been succesful. |
+Empty, just verify returned GRPC status.
 
 
 
@@ -316,14 +291,11 @@ Currently the following SSML tags are supported:
 `SynthesizeResponse` is the only message returned to the client by `SynthesizeStreaming` and `Synthesize`.
 During `SynthesizeStreaming`, a series of one or more `SynthesizeResponse` messages are streamed back to the client.
 During `Synthesize` always one message is generated.
-If `SynthesizeResponse` contains `error` field, its `code` and `description` can be printed.
-Otherwise, the synthesized `audio` is available to use.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | audio | [AudioData](#techmo.tts.grpc_api.AudioData) | Audio data corresponding to a portion of the text that is currently being processed. |
-| error | [Error](#techmo.tts.grpc_api.Error) | If set, specifies the error for the operation. |
 
 
 
@@ -390,23 +362,6 @@ The requested format of the response audio data.
 | ---- | ------ | ----------- |
 | PCM16 | 0 | Uncompressed 16-bit signed integer samples, without any header. |
 | OGG_VORBIS | 1 | Ogg/Vorbis endoded data stream. |
-
-
-
-<a name="techmo.tts.grpc_api.ErrorCode"/>
-
-### ErrorCode
-Indicates the type of the error for the operation.
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| UNKNOWN | 0 | Unknown error. |
-| LICENCE | 1 | Licence related error. |
-| MISSING_OBJECT | 2 | An object referred by the given name does not exist. |
-| SSML | 3 | SSML parser error. |
-| TEXT_NORMALIZATION | 4 | Error during text normalization. |
-| TRANSCRIPTION | 5 | Error during orthographic to phonetic transcription. |
-| SYNTHESIS | 6 | Error during speech synthesis. |
 
 
 

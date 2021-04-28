@@ -29,7 +29,8 @@ The `SynthesizeConfig` can be used to specify parameters of synthesis, like samp
 
 `SynthesizeRequest` can be sent to the service via gRPC insecure channel (that does not require authentication).
 
-`SynthesizeStreaming` returns synthesized audio in `SynthesizeResponse` as a stream and `Synthesize` returns the single response. When reading from the stream or single response one have to check if `SynthesizeResponse` contains `error` field. If it does, its `code` and `description` can be printed. No `error` field in `SynthesizeResponse` means everything worked fine and its `audio` contains byte `content` that can be appended to received audio samples with `sample_rate_hertz` sampling frequency in hertz.
+`SynthesizeStreaming` returns synthesized audio in `SynthesizeResponse` as a stream and `Synthesize` returns the single response.
+If the call has been successful, the response `audio` contains byte `content` that can be appended to received audio samples with `sample_rate_hertz` sampling frequency in hertz.
 
 We provide sample TTS Client written in:
 - C++ in `cpp` (accepts text to be synthesized as a command line string),  
