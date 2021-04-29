@@ -18,20 +18,20 @@ Successfully tagged tts-client-cpp:2.0.0
 
 #### Run tts client
 
-To use tts client on a Docker container, go to `tts-client/cpp/docker` directory and run `run_tts_cilent_cpp.sh` script.
+To use tts client on a Docker container, go to `tts-client/cpp/docker` directory and run `run_tts_client_cpp.sh` script.
 
 To send simple request to the TTS service, use:
 ```
-./run_tts_cilent_cpp.sh --service-address IP_ADDRESS:PORT --text "Sample text to be synthesised"
+./run_tts_client_cpp.sh --service-address IP_ADDRESS:PORT --text "Sample text to be synthesised"
 ```
 
 To print list of available options, use:
 ```
-./run_tts_cilent_cpp.sh --help
+./run_tts_client_cpp.sh --help
 ```
 Output audio files will be created inside `tts-client/cpp/docker/wav` directory.
 
-**NOTE:** Unlike a local tts-client instance, the `run_tts_cilent_cpp.sh` script not allows to set custom paths to output files. Instead it uses predefined directory (`wav`). When using option: `--output-file (-o)`, user should provide only filename.
+**NOTE:** Unlike a local tts-client instance, the `run_tts_client_cpp.sh` script not allows to set custom paths to output files. Instead it uses predefined directory (`wav`). When using option: `--output-file (-o)`, user should provide only filename.
 
 
 

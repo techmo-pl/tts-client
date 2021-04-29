@@ -147,7 +147,7 @@ fi
 if [[ "${output_file}" != "UNSPECIFIED" ]]; then
     output_file_option="--out-path /volumen/wav/${output_file##*/}"
 else
-    output_file_option="--out-path /volumen/wav/TehmoTTS.wav"
+    output_file_option="--out-path /volumen/wav/TechmoTTS.wav"
 fi
 if [[ "${sample_rate}" != "UNSPECIFIED" ]]; then
     sample_rate_option="--sample-rate-hertz ${sample_rate}"
