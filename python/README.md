@@ -17,21 +17,21 @@ Successfully tagged tts-client-python:2.0.0
 
 #### Run tts client
 
-To use tts client on a Docker container, go to `tts-client/python/docker` directory and run `run_tts_cilent_python.sh` script.
+To use tts client on a Docker container, go to `tts-client/python/docker` directory and run `run_tts_client_python.sh` script.
 
 To send simple request to the TTS service, use:
 ```
-./run_tts_cilent_python.sh --service-address IP_ADDRESS:PORT --text "Sample text to be synthesised"
+./run_tts_client_python.sh --service-address IP_ADDRESS:PORT --text "Sample text to be synthesised"
 ```
 
 To print list of available options, use:
 ```
-./run_tts_cilent_python.sh --help
+./run_tts_client_python.sh --help
 ```
 Output audio files will be created inside `tts-client/python/docker/wav` directory.
 Source text files should be placed inside `tts-client/python/docker/txt` directory, if used.
 
-**NOTE:** Unlike a local tts-client instance, the `run_tts_cilent_python.sh` script not allows to set custom paths to input/output files. Instead it uses predefined directories (`wav` and `txt`). When using options: `--input-text-file (-i)` and `--output-file (-o)`, user should provide only filenames.
+**NOTE:** Unlike a local tts-client instance, the `run_tts_client_python.sh` script not allows to set custom paths to input/output files. Instead it uses predefined directories (`wav` and `txt`). When using options: `--input-text-file (-i)` and `--output-file (-o)`, user should provide only filenames.
 
 
 
