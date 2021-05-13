@@ -108,7 +108,7 @@ def internal_synthesize_streaming(stub, request, timeout, metadata, audio_saver,
             if audio_saver._framerate != response.audio.sample_rate_hertz:
                 raise RuntimeError("Sample rate does not match previously received.")
         else:
-                audio_saver.setFrameRate(response.audio.sample_rate_hertz)
+            audio_saver.setFrameRate(response.audio.sample_rate_hertz)
             if audio_player is not None:
                 audio_player.append(response.audio.content)
             audio_saver.append(response.audio.content)
