@@ -25,7 +25,7 @@ def main():
         help="A file with text to be synthesized.", type=str)
     parser.add_argument("-o", "--out-path", dest="out_path", default="",
         help="A path to the output wave file with synthesized audio content.", type=str)
-    parser.add_argument("-f", "--sample_rate", dest="sample_rate", default=0,
+    parser.add_argument("-f", "--sample-rate", dest="sample_rate", default=0,
         help="A sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.", type=int)
     parser.add_argument("-ae", "--audio-encoding", dest="audio_encoding", default="pcm16",
         help="An encoding of the output audio, pcm16 (default) or ogg-vorbis.", type=str)
