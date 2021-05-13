@@ -19,7 +19,7 @@ def main():
         help="Lists all available voices.")
     parser.add_argument("-r", "--response", dest="response", default="streaming",
         help="streaming or single, calls the streaming (default) or non-streaming version of Synthesize.", type=str)
-    parser.add_argument("-t", "--text", dest="text", default="Techmo Trybun: Syntezator mowy.",
+    parser.add_argument("-t", "--text", dest="text", default="Polski tekst do syntezy",
         help="A text to be synthesized.", type=str)
     parser.add_argument("-i", "--input_text_file", dest="inputfile", default="",
         help="A file with text to be synthesized.", type=str)
