@@ -31,7 +31,7 @@ To print the list of available options, use:
 Output audio files will be created inside `tts-client/python/docker/wav` directory.
 Source text files should be placed inside `tts-client/python/docker/txt` directory, if used.
 
-**NOTE:** Unlike a local TTS Client instance, the `run_tts_client_python.sh` script not allows to set custom paths to the input/output files. Instead it uses predefined directories (`wav` and `txt`). When using options: `--input-text-file (-i)` and `--output-file (-o)`, user should provide only filenames.
+**NOTE:** Unlike a local TTS Client instance, the `run_tts_client_python.sh` script doesn't allow to set custom paths to the input/output files. Instead it uses predefined directories (`wav` and `txt`). When using options: `--input-text-file (-i)` and `--output-file (-o)`, user should only provide filenames.
 
 
 
