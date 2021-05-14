@@ -33,3 +33,15 @@
 
 # Cache
 __pycache__/
+
+#python virtual environment
+.env/
+
+# ignore files in directory `wav`
+python/docker/wav/*
+
+# ignore files in directory `txt`
+python/docker/txt/*
+
+# but keep the directories with .gitkeep file
+!/**/.gitkeep
