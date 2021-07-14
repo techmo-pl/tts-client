@@ -38,6 +38,9 @@ __pycache__/
 .env/
 
 # ignore files in directory `wav`
+cpp/docker/wav/*
+
+# ignore files in directory `wav`
 python/docker/wav/*
 
 # ignore files in directory `txt`

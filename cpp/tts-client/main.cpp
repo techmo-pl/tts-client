@@ -16,7 +16,7 @@ po::options_description CreateOptionsDescription(void)
 			"An IP address and a port (address:port) of a service the client will connect to.")
 		("out-path", po::value<std::string>()->default_value(""),
 			"A path to output wave file with synthesized audio content.")
-		("text", po::value<std::string>()->default_value("Techmo Trybun: Syntezator mowy."),
+		("text", po::value<std::string>()->default_value("Polski tekst do syntezy."),
 			"A text to be synthesized.")
 		("session-id", po::value<std::string>()->default_value(""),
 			"A session ID to be passed to the service. If not specified, the service will generate a default session ID itself.")
