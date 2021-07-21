@@ -1,5 +1,9 @@
 # Techmo TTS gRPC Python client Changelog
 
+## [2.0.1] - 2021-07-21
+### Changed
+ - Switch GRPC version to 1.38.1
+
 ## [2.0.0] - 2020-11-25
 ### Added
 - The `--audio-encoding` option, with `pcm16` (default) and `ogg-vorbis`.

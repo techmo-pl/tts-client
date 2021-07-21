@@ -7,12 +7,12 @@
 To prepare a docker image with Python implementation of the TTS Client, open the project's main directory and run following command:
 
 ```
-docker build -f Dockerfile-python -t tts-client-python:2.0.0 . 
+docker build -f Dockerfile-python -t tts-client-python:2.0.1 . 
 ```
 The build process will take several minutes.
 When the build process is complete, you will receive a message:
 ```
-Successfully tagged tts-client-python:2.0.0
+Successfully tagged tts-client-python:2.0.1
 ```
 
 ### Run TTS Client
