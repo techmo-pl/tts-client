@@ -1,0 +1,19 @@
+FROM python:3.6-slim
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+ADD ./python /tts_client
+
+WORKDIR /tts_client
+
+RUN apt-get update \
+    && apt-get dist-upgrade -y \
+    && apt-get install -y --no-install-recommends \
+        build-essential \
+        libportaudio2 \
+        python3-pip \
+        python3-dev \
+    && apt-get clean \
+	&& rm -fr /var/lib/apt/lists/* \
+	&& rm -fr /var/cache/apt/* \
+    && pip3 install -r requirements.txt 
