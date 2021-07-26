@@ -2,21 +2,23 @@
 # coding=utf-8
 
 # This script sends request to dictation service using tts client inside docker container
-# Requires "tts-client-python:2.1.0" docker image loaded locally
+# Requires "tts-client-python:$IMAGE_VERSION" docker image loaded locally
 
 set -euo pipefail
 IFS=$'\n\t'
 
+IMAGE_VERSION=2.1.1
+
 SCRIPT=$(realpath "$0")
 SCRIPTPATH=$(dirname "${SCRIPT}")
-docker_image="tts-client-python:2.1.0"
+docker_image="tts-client-python:${IMAGE_VERSION}"
 
 output_path="/volumen/wav/TechmoTTS.wav"
 
 usage() {
 
 echo "
-Techmo TTS gRPC client 2.1.0
+Techmo TTS gRPC client ${IMAGE_VERSION}
 
   -h, --help            show this help message and exit
   -s=SERVICE, --service-address=SERVICE

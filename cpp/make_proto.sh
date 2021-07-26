@@ -1,7 +1,7 @@
 #!/bin/bash
 # coding=utf-8
 
-grpc_root="/opt/grpc_v1.24.3"
+grpc_root="/opt/grpc_v1.38.1"
 
 PROTOC="$grpc_root/build/third_party/protobuf/protoc"
 PLUGIN="--plugin=protoc-gen-grpc=$grpc_root/build/grpc_cpp_plugin"
