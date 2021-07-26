@@ -48,7 +48,7 @@ struct TableStruct_techmo_5ftts_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[17]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -70,9 +70,6 @@ extern DeleteLexiconRequestDefaultTypeInternal _DeleteLexiconRequest_default_ins
 class DeleteLexiconResponse;
 class DeleteLexiconResponseDefaultTypeInternal;
 extern DeleteLexiconResponseDefaultTypeInternal _DeleteLexiconResponse_default_instance_;
-class Error;
-class ErrorDefaultTypeInternal;
-extern ErrorDefaultTypeInternal _Error_default_instance_;
 class GetLexiconRequest;
 class GetLexiconRequestDefaultTypeInternal;
 extern GetLexiconRequestDefaultTypeInternal _GetLexiconRequest_default_instance_;
@@ -120,7 +117,6 @@ template<> ::techmo::tts::grpc_api::AudioConfig* Arena::CreateMaybeMessage<::tec
 template<> ::techmo::tts::grpc_api::AudioData* Arena::CreateMaybeMessage<::techmo::tts::grpc_api::AudioData>(Arena*);
 template<> ::techmo::tts::grpc_api::DeleteLexiconRequest* Arena::CreateMaybeMessage<::techmo::tts::grpc_api::DeleteLexiconRequest>(Arena*);
 template<> ::techmo::tts::grpc_api::DeleteLexiconResponse* Arena::CreateMaybeMessage<::techmo::tts::grpc_api::DeleteLexiconResponse>(Arena*);
-template<> ::techmo::tts::grpc_api::Error* Arena::CreateMaybeMessage<::techmo::tts::grpc_api::Error>(Arena*);
 template<> ::techmo::tts::grpc_api::GetLexiconRequest* Arena::CreateMaybeMessage<::techmo::tts::grpc_api::GetLexiconRequest>(Arena*);
 template<> ::techmo::tts::grpc_api::GetLexiconResponse* Arena::CreateMaybeMessage<::techmo::tts::grpc_api::GetLexiconResponse>(Arena*);
 template<> ::techmo::tts::grpc_api::ListLexiconsRequest* Arena::CreateMaybeMessage<::techmo::tts::grpc_api::ListLexiconsRequest>(Arena*);
@@ -216,36 +212,6 @@ inline bool Age_Parse(
     const std::string& name, Age* value) {
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Age>(
     Age_descriptor(), name, value);
-}
-enum ErrorCode : int {
-  UNKNOWN = 0,
-  LICENCE = 1,
-  MISSING_OBJECT = 2,
-  SSML = 3,
-  TEXT_NORMALIZATION = 4,
-  TRANSCRIPTION = 5,
-  SYNTHESIS = 6,
-  ErrorCode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  ErrorCode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
-};
-bool ErrorCode_IsValid(int value);
-constexpr ErrorCode ErrorCode_MIN = UNKNOWN;
-constexpr ErrorCode ErrorCode_MAX = SYNTHESIS;
-constexpr int ErrorCode_ARRAYSIZE = ErrorCode_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ErrorCode_descriptor();
-template<typename T>
-inline const std::string& ErrorCode_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, ErrorCode>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function ErrorCode_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    ErrorCode_descriptor(), enum_t_value);
-}
-inline bool ErrorCode_Parse(
-    const std::string& name, ErrorCode* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<ErrorCode>(
-    ErrorCode_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -1449,7 +1415,6 @@ class SynthesizeResponse :
 
   enum : int {
     kAudioFieldNumber = 1,
-    kErrorFieldNumber = 2,
   };
   // .techmo.tts.grpc_api.AudioData audio = 1;
   bool has_audio() const;
@@ -1466,28 +1431,12 @@ class SynthesizeResponse :
   ::techmo::tts::grpc_api::AudioData* _internal_mutable_audio();
   public:
 
-  // .techmo.tts.grpc_api.Error error = 2;
-  bool has_error() const;
-  private:
-  bool _internal_has_error() const;
-  public:
-  void clear_error();
-  const ::techmo::tts::grpc_api::Error& error() const;
-  ::techmo::tts::grpc_api::Error* release_error();
-  ::techmo::tts::grpc_api::Error* mutable_error();
-  void set_allocated_error(::techmo::tts::grpc_api::Error* error);
-  private:
-  const ::techmo::tts::grpc_api::Error& _internal_error() const;
-  ::techmo::tts::grpc_api::Error* _internal_mutable_error();
-  public:
-
   // @@protoc_insertion_point(class_scope:techmo.tts.grpc_api.SynthesizeResponse)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::techmo::tts::grpc_api::AudioData* audio_;
-  ::techmo::tts::grpc_api::Error* error_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_techmo_5ftts_2eproto;
 };
@@ -1897,30 +1846,11 @@ class PutLexiconResponse :
 
   // accessors -------------------------------------------------------
 
-  enum : int {
-    kErrorFieldNumber = 1,
-  };
-  // .techmo.tts.grpc_api.Error error = 1;
-  bool has_error() const;
-  private:
-  bool _internal_has_error() const;
-  public:
-  void clear_error();
-  const ::techmo::tts::grpc_api::Error& error() const;
-  ::techmo::tts::grpc_api::Error* release_error();
-  ::techmo::tts::grpc_api::Error* mutable_error();
-  void set_allocated_error(::techmo::tts::grpc_api::Error* error);
-  private:
-  const ::techmo::tts::grpc_api::Error& _internal_error() const;
-  ::techmo::tts::grpc_api::Error* _internal_mutable_error();
-  public:
-
   // @@protoc_insertion_point(class_scope:techmo.tts.grpc_api.PutLexiconResponse)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::techmo::tts::grpc_api::Error* error_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_techmo_5ftts_2eproto;
 };
@@ -2166,30 +2096,11 @@ class DeleteLexiconResponse :
 
   // accessors -------------------------------------------------------
 
-  enum : int {
-    kErrorFieldNumber = 1,
-  };
-  // .techmo.tts.grpc_api.Error error = 1;
-  bool has_error() const;
-  private:
-  bool _internal_has_error() const;
-  public:
-  void clear_error();
-  const ::techmo::tts::grpc_api::Error& error() const;
-  ::techmo::tts::grpc_api::Error* release_error();
-  ::techmo::tts::grpc_api::Error* mutable_error();
-  void set_allocated_error(::techmo::tts::grpc_api::Error* error);
-  private:
-  const ::techmo::tts::grpc_api::Error& _internal_error() const;
-  ::techmo::tts::grpc_api::Error* _internal_mutable_error();
-  public:
-
   // @@protoc_insertion_point(class_scope:techmo.tts.grpc_api.DeleteLexiconResponse)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::techmo::tts::grpc_api::Error* error_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_techmo_5ftts_2eproto;
 };
@@ -2437,7 +2348,6 @@ class GetLexiconResponse :
 
   enum : int {
     kContentFieldNumber = 1,
-    kErrorFieldNumber = 2,
   };
   // string content = 1;
   void clear_content();
@@ -2455,28 +2365,12 @@ class GetLexiconResponse :
   std::string* _internal_mutable_content();
   public:
 
-  // .techmo.tts.grpc_api.Error error = 2;
-  bool has_error() const;
-  private:
-  bool _internal_has_error() const;
-  public:
-  void clear_error();
-  const ::techmo::tts::grpc_api::Error& error() const;
-  ::techmo::tts::grpc_api::Error* release_error();
-  ::techmo::tts::grpc_api::Error* mutable_error();
-  void set_allocated_error(::techmo::tts::grpc_api::Error* error);
-  private:
-  const ::techmo::tts::grpc_api::Error& _internal_error() const;
-  ::techmo::tts::grpc_api::Error* _internal_mutable_error();
-  public:
-
   // @@protoc_insertion_point(class_scope:techmo.tts.grpc_api.GetLexiconResponse)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr content_;
-  ::techmo::tts::grpc_api::Error* error_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_techmo_5ftts_2eproto;
 };
@@ -2755,152 +2649,6 @@ class ListLexiconsResponse :
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> names_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_techmo_5ftts_2eproto;
-};
-// -------------------------------------------------------------------
-
-class Error :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:techmo.tts.grpc_api.Error) */ {
- public:
-  Error();
-  virtual ~Error();
-
-  Error(const Error& from);
-  Error(Error&& from) noexcept
-    : Error() {
-    *this = ::std::move(from);
-  }
-
-  inline Error& operator=(const Error& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline Error& operator=(Error&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const Error& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Error* internal_default_instance() {
-    return reinterpret_cast<const Error*>(
-               &_Error_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    17;
-
-  friend void swap(Error& a, Error& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(Error* other) {
-    if (other == this) return;
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Error* New() const final {
-    return CreateMaybeMessage<Error>(nullptr);
-  }
-
-  Error* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<Error>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const Error& from);
-  void MergeFrom(const Error& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Error* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "techmo.tts.grpc_api.Error";
-  }
-  private:
-  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_techmo_5ftts_2eproto);
-    return ::descriptor_table_techmo_5ftts_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kDescriptionFieldNumber = 2,
-    kCodeFieldNumber = 1,
-  };
-  // string description = 2;
-  void clear_description();
-  const std::string& description() const;
-  void set_description(const std::string& value);
-  void set_description(std::string&& value);
-  void set_description(const char* value);
-  void set_description(const char* value, size_t size);
-  std::string* mutable_description();
-  std::string* release_description();
-  void set_allocated_description(std::string* description);
-  private:
-  const std::string& _internal_description() const;
-  void _internal_set_description(const std::string& value);
-  std::string* _internal_mutable_description();
-  public:
-
-  // .techmo.tts.grpc_api.ErrorCode code = 1;
-  void clear_code();
-  ::techmo::tts::grpc_api::ErrorCode code() const;
-  void set_code(::techmo::tts::grpc_api::ErrorCode value);
-  private:
-  ::techmo::tts::grpc_api::ErrorCode _internal_code() const;
-  void _internal_set_code(::techmo::tts::grpc_api::ErrorCode value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:techmo.tts.grpc_api.Error)
- private:
-  class _Internal;
-
-  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
-  int code_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_techmo_5ftts_2eproto;
 };
@@ -3756,66 +3504,6 @@ inline void SynthesizeResponse::set_allocated_audio(::techmo::tts::grpc_api::Aud
   // @@protoc_insertion_point(field_set_allocated:techmo.tts.grpc_api.SynthesizeResponse.audio)
 }
 
-// .techmo.tts.grpc_api.Error error = 2;
-inline bool SynthesizeResponse::_internal_has_error() const {
-  return this != internal_default_instance() && error_ != nullptr;
-}
-inline bool SynthesizeResponse::has_error() const {
-  return _internal_has_error();
-}
-inline void SynthesizeResponse::clear_error() {
-  if (GetArenaNoVirtual() == nullptr && error_ != nullptr) {
-    delete error_;
-  }
-  error_ = nullptr;
-}
-inline const ::techmo::tts::grpc_api::Error& SynthesizeResponse::_internal_error() const {
-  const ::techmo::tts::grpc_api::Error* p = error_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::techmo::tts::grpc_api::Error*>(
-      &::techmo::tts::grpc_api::_Error_default_instance_);
-}
-inline const ::techmo::tts::grpc_api::Error& SynthesizeResponse::error() const {
-  // @@protoc_insertion_point(field_get:techmo.tts.grpc_api.SynthesizeResponse.error)
-  return _internal_error();
-}
-inline ::techmo::tts::grpc_api::Error* SynthesizeResponse::release_error() {
-  // @@protoc_insertion_point(field_release:techmo.tts.grpc_api.SynthesizeResponse.error)
-  
-  ::techmo::tts::grpc_api::Error* temp = error_;
-  error_ = nullptr;
-  return temp;
-}
-inline ::techmo::tts::grpc_api::Error* SynthesizeResponse::_internal_mutable_error() {
-  
-  if (error_ == nullptr) {
-    auto* p = CreateMaybeMessage<::techmo::tts::grpc_api::Error>(GetArenaNoVirtual());
-    error_ = p;
-  }
-  return error_;
-}
-inline ::techmo::tts::grpc_api::Error* SynthesizeResponse::mutable_error() {
-  // @@protoc_insertion_point(field_mutable:techmo.tts.grpc_api.SynthesizeResponse.error)
-  return _internal_mutable_error();
-}
-inline void SynthesizeResponse::set_allocated_error(::techmo::tts::grpc_api::Error* error) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete error_;
-  }
-  if (error) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, error, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  error_ = error;
-  // @@protoc_insertion_point(field_set_allocated:techmo.tts.grpc_api.SynthesizeResponse.error)
-}
-
 // -------------------------------------------------------------------
 
 // AudioData
@@ -4028,66 +3716,6 @@ inline void PutLexiconRequest::set_allocated_content(std::string* content) {
 
 // PutLexiconResponse
 
-// .techmo.tts.grpc_api.Error error = 1;
-inline bool PutLexiconResponse::_internal_has_error() const {
-  return this != internal_default_instance() && error_ != nullptr;
-}
-inline bool PutLexiconResponse::has_error() const {
-  return _internal_has_error();
-}
-inline void PutLexiconResponse::clear_error() {
-  if (GetArenaNoVirtual() == nullptr && error_ != nullptr) {
-    delete error_;
-  }
-  error_ = nullptr;
-}
-inline const ::techmo::tts::grpc_api::Error& PutLexiconResponse::_internal_error() const {
-  const ::techmo::tts::grpc_api::Error* p = error_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::techmo::tts::grpc_api::Error*>(
-      &::techmo::tts::grpc_api::_Error_default_instance_);
-}
-inline const ::techmo::tts::grpc_api::Error& PutLexiconResponse::error() const {
-  // @@protoc_insertion_point(field_get:techmo.tts.grpc_api.PutLexiconResponse.error)
-  return _internal_error();
-}
-inline ::techmo::tts::grpc_api::Error* PutLexiconResponse::release_error() {
-  // @@protoc_insertion_point(field_release:techmo.tts.grpc_api.PutLexiconResponse.error)
-  
-  ::techmo::tts::grpc_api::Error* temp = error_;
-  error_ = nullptr;
-  return temp;
-}
-inline ::techmo::tts::grpc_api::Error* PutLexiconResponse::_internal_mutable_error() {
-  
-  if (error_ == nullptr) {
-    auto* p = CreateMaybeMessage<::techmo::tts::grpc_api::Error>(GetArenaNoVirtual());
-    error_ = p;
-  }
-  return error_;
-}
-inline ::techmo::tts::grpc_api::Error* PutLexiconResponse::mutable_error() {
-  // @@protoc_insertion_point(field_mutable:techmo.tts.grpc_api.PutLexiconResponse.error)
-  return _internal_mutable_error();
-}
-inline void PutLexiconResponse::set_allocated_error(::techmo::tts::grpc_api::Error* error) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete error_;
-  }
-  if (error) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, error, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  error_ = error;
-  // @@protoc_insertion_point(field_set_allocated:techmo.tts.grpc_api.PutLexiconResponse.error)
-}
-
 // -------------------------------------------------------------------
 
 // DeleteLexiconRequest
@@ -4155,66 +3783,6 @@ inline void DeleteLexiconRequest::set_allocated_name(std::string* name) {
 // -------------------------------------------------------------------
 
 // DeleteLexiconResponse
-
-// .techmo.tts.grpc_api.Error error = 1;
-inline bool DeleteLexiconResponse::_internal_has_error() const {
-  return this != internal_default_instance() && error_ != nullptr;
-}
-inline bool DeleteLexiconResponse::has_error() const {
-  return _internal_has_error();
-}
-inline void DeleteLexiconResponse::clear_error() {
-  if (GetArenaNoVirtual() == nullptr && error_ != nullptr) {
-    delete error_;
-  }
-  error_ = nullptr;
-}
-inline const ::techmo::tts::grpc_api::Error& DeleteLexiconResponse::_internal_error() const {
-  const ::techmo::tts::grpc_api::Error* p = error_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::techmo::tts::grpc_api::Error*>(
-      &::techmo::tts::grpc_api::_Error_default_instance_);
-}
-inline const ::techmo::tts::grpc_api::Error& DeleteLexiconResponse::error() const {
-  // @@protoc_insertion_point(field_get:techmo.tts.grpc_api.DeleteLexiconResponse.error)
-  return _internal_error();
-}
-inline ::techmo::tts::grpc_api::Error* DeleteLexiconResponse::release_error() {
-  // @@protoc_insertion_point(field_release:techmo.tts.grpc_api.DeleteLexiconResponse.error)
-  
-  ::techmo::tts::grpc_api::Error* temp = error_;
-  error_ = nullptr;
-  return temp;
-}
-inline ::techmo::tts::grpc_api::Error* DeleteLexiconResponse::_internal_mutable_error() {
-  
-  if (error_ == nullptr) {
-    auto* p = CreateMaybeMessage<::techmo::tts::grpc_api::Error>(GetArenaNoVirtual());
-    error_ = p;
-  }
-  return error_;
-}
-inline ::techmo::tts::grpc_api::Error* DeleteLexiconResponse::mutable_error() {
-  // @@protoc_insertion_point(field_mutable:techmo.tts.grpc_api.DeleteLexiconResponse.error)
-  return _internal_mutable_error();
-}
-inline void DeleteLexiconResponse::set_allocated_error(::techmo::tts::grpc_api::Error* error) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete error_;
-  }
-  if (error) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, error, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  error_ = error;
-  // @@protoc_insertion_point(field_set_allocated:techmo.tts.grpc_api.DeleteLexiconResponse.error)
-}
 
 // -------------------------------------------------------------------
 
@@ -4342,66 +3910,6 @@ inline void GetLexiconResponse::set_allocated_content(std::string* content) {
   }
   content_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), content);
   // @@protoc_insertion_point(field_set_allocated:techmo.tts.grpc_api.GetLexiconResponse.content)
-}
-
-// .techmo.tts.grpc_api.Error error = 2;
-inline bool GetLexiconResponse::_internal_has_error() const {
-  return this != internal_default_instance() && error_ != nullptr;
-}
-inline bool GetLexiconResponse::has_error() const {
-  return _internal_has_error();
-}
-inline void GetLexiconResponse::clear_error() {
-  if (GetArenaNoVirtual() == nullptr && error_ != nullptr) {
-    delete error_;
-  }
-  error_ = nullptr;
-}
-inline const ::techmo::tts::grpc_api::Error& GetLexiconResponse::_internal_error() const {
-  const ::techmo::tts::grpc_api::Error* p = error_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::techmo::tts::grpc_api::Error*>(
-      &::techmo::tts::grpc_api::_Error_default_instance_);
-}
-inline const ::techmo::tts::grpc_api::Error& GetLexiconResponse::error() const {
-  // @@protoc_insertion_point(field_get:techmo.tts.grpc_api.GetLexiconResponse.error)
-  return _internal_error();
-}
-inline ::techmo::tts::grpc_api::Error* GetLexiconResponse::release_error() {
-  // @@protoc_insertion_point(field_release:techmo.tts.grpc_api.GetLexiconResponse.error)
-  
-  ::techmo::tts::grpc_api::Error* temp = error_;
-  error_ = nullptr;
-  return temp;
-}
-inline ::techmo::tts::grpc_api::Error* GetLexiconResponse::_internal_mutable_error() {
-  
-  if (error_ == nullptr) {
-    auto* p = CreateMaybeMessage<::techmo::tts::grpc_api::Error>(GetArenaNoVirtual());
-    error_ = p;
-  }
-  return error_;
-}
-inline ::techmo::tts::grpc_api::Error* GetLexiconResponse::mutable_error() {
-  // @@protoc_insertion_point(field_mutable:techmo.tts.grpc_api.GetLexiconResponse.error)
-  return _internal_mutable_error();
-}
-inline void GetLexiconResponse::set_allocated_error(::techmo::tts::grpc_api::Error* error) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete error_;
-  }
-  if (error) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, error, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  error_ = error;
-  // @@protoc_insertion_point(field_set_allocated:techmo.tts.grpc_api.GetLexiconResponse.error)
 }
 
 // -------------------------------------------------------------------
@@ -4546,95 +4054,9 @@ ListLexiconsResponse::mutable_names() {
   return &names_;
 }
 
-// -------------------------------------------------------------------
-
-// Error
-
-// .techmo.tts.grpc_api.ErrorCode code = 1;
-inline void Error::clear_code() {
-  code_ = 0;
-}
-inline ::techmo::tts::grpc_api::ErrorCode Error::_internal_code() const {
-  return static_cast< ::techmo::tts::grpc_api::ErrorCode >(code_);
-}
-inline ::techmo::tts::grpc_api::ErrorCode Error::code() const {
-  // @@protoc_insertion_point(field_get:techmo.tts.grpc_api.Error.code)
-  return _internal_code();
-}
-inline void Error::_internal_set_code(::techmo::tts::grpc_api::ErrorCode value) {
-  
-  code_ = value;
-}
-inline void Error::set_code(::techmo::tts::grpc_api::ErrorCode value) {
-  _internal_set_code(value);
-  // @@protoc_insertion_point(field_set:techmo.tts.grpc_api.Error.code)
-}
-
-// string description = 2;
-inline void Error::clear_description() {
-  description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline const std::string& Error::description() const {
-  // @@protoc_insertion_point(field_get:techmo.tts.grpc_api.Error.description)
-  return _internal_description();
-}
-inline void Error::set_description(const std::string& value) {
-  _internal_set_description(value);
-  // @@protoc_insertion_point(field_set:techmo.tts.grpc_api.Error.description)
-}
-inline std::string* Error::mutable_description() {
-  // @@protoc_insertion_point(field_mutable:techmo.tts.grpc_api.Error.description)
-  return _internal_mutable_description();
-}
-inline const std::string& Error::_internal_description() const {
-  return description_.GetNoArena();
-}
-inline void Error::_internal_set_description(const std::string& value) {
-  
-  description_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
-}
-inline void Error::set_description(std::string&& value) {
-  
-  description_.SetNoArena(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:techmo.tts.grpc_api.Error.description)
-}
-inline void Error::set_description(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  description_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:techmo.tts.grpc_api.Error.description)
-}
-inline void Error::set_description(const char* value, size_t size) {
-  
-  description_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:techmo.tts.grpc_api.Error.description)
-}
-inline std::string* Error::_internal_mutable_description() {
-  
-  return description_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline std::string* Error::release_description() {
-  // @@protoc_insertion_point(field_release:techmo.tts.grpc_api.Error.description)
-  
-  return description_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline void Error::set_allocated_description(std::string* description) {
-  if (description != nullptr) {
-    
-  } else {
-    
-  }
-  description_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), description);
-  // @@protoc_insertion_point(field_set_allocated:techmo.tts.grpc_api.Error.description)
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -4690,11 +4112,6 @@ template <> struct is_proto_enum< ::techmo::tts::grpc_api::Age> : ::std::true_ty
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::techmo::tts::grpc_api::Age>() {
   return ::techmo::tts::grpc_api::Age_descriptor();
-}
-template <> struct is_proto_enum< ::techmo::tts::grpc_api::ErrorCode> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::techmo::tts::grpc_api::ErrorCode>() {
-  return ::techmo::tts::grpc_api::ErrorCode_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

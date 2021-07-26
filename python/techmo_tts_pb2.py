@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='techmo.tts.grpc_api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x10techmo_tts.proto\x12\x13techmo.tts.grpc_api\"%\n\x11ListVoicesRequest\x12\x10\n\x08language\x18\x01 \x01(\t\"D\n\x12ListVoicesResponse\x12.\n\x06voices\x18\x01 \x03(\x0b\x32\x1e.techmo.tts.grpc_api.VoiceInfo\"X\n\x11SynthesizeRequest\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x35\n\x06\x63onfig\x18\x02 \x01(\x0b\x32%.techmo.tts.grpc_api.SynthesizeConfig\"\x87\x01\n\x10SynthesizeConfig\x12\x10\n\x08language\x18\x01 \x01(\t\x12\x36\n\x0c\x61udio_config\x18\x02 \x01(\x0b\x32 .techmo.tts.grpc_api.AudioConfig\x12)\n\x05voice\x18\x03 \x01(\x0b\x32\x1a.techmo.tts.grpc_api.Voice\"\xa0\x01\n\x0b\x41udioConfig\x12:\n\x0e\x61udio_encoding\x18\x01 \x01(\x0e\x32\".techmo.tts.grpc_api.AudioEncoding\x12\x19\n\x11sample_rate_hertz\x18\x02 \x01(\x05\x12\r\n\x05pitch\x18\x03 \x01(\x02\x12\r\n\x05range\x18\x04 \x01(\x02\x12\x0c\n\x04rate\x18\x05 \x01(\x02\x12\x0e\n\x06volume\x18\x06 \x01(\x02\"i\n\x05Voice\x12\x0c\n\x04name\x18\x01 \x01(\t\x12+\n\x06gender\x18\x02 \x01(\x0e\x32\x1b.techmo.tts.grpc_api.Gender\x12%\n\x03\x61ge\x18\x03 \x01(\x0e\x32\x18.techmo.tts.grpc_api.Age\"S\n\tVoiceInfo\x12\x1b\n\x13supported_languages\x18\x01 \x03(\t\x12)\n\x05voice\x18\x02 \x01(\x0b\x32\x1a.techmo.tts.grpc_api.Voice\"n\n\x12SynthesizeResponse\x12-\n\x05\x61udio\x18\x01 \x01(\x0b\x32\x1e.techmo.tts.grpc_api.AudioData\x12)\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1a.techmo.tts.grpc_api.Error\"7\n\tAudioData\x12\x19\n\x11sample_rate_hertz\x18\x01 \x01(\x05\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\"2\n\x11PutLexiconRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\"?\n\x12PutLexiconResponse\x12)\n\x05\x65rror\x18\x01 \x01(\x0b\x32\x1a.techmo.tts.grpc_api.Error\"$\n\x14\x44\x65leteLexiconRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"B\n\x15\x44\x65leteLexiconResponse\x12)\n\x05\x65rror\x18\x01 \x01(\x0b\x32\x1a.techmo.tts.grpc_api.Error\"!\n\x11GetLexiconRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"P\n\x12GetLexiconResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12)\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1a.techmo.tts.grpc_api.Error\"\'\n\x13ListLexiconsRequest\x12\x10\n\x08language\x18\x01 \x01(\t\"%\n\x14ListLexiconsResponse\x12\r\n\x05names\x18\x01 \x03(\t\"J\n\x05\x45rror\x12,\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1e.techmo.tts.grpc_api.ErrorCode\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t**\n\rAudioEncoding\x12\t\n\x05PCM16\x10\x00\x12\x0e\n\nOGG_VORBIS\x10\x01*6\n\x06Gender\x12\x16\n\x12GENDER_UNSPECIFIED\x10\x00\x12\n\n\x06\x46\x45MALE\x10\x01\x12\x08\n\x04MALE\x10\x02*<\n\x03\x41ge\x12\x13\n\x0f\x41GE_UNSPECIFIED\x10\x00\x12\t\n\x05\x41\x44ULT\x10\x01\x12\t\n\x05\x43HILD\x10\x02\x12\n\n\x06SENILE\x10\x03*}\n\tErrorCode\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07LICENCE\x10\x01\x12\x12\n\x0eMISSING_OBJECT\x10\x02\x12\x08\n\x04SSML\x10\x03\x12\x16\n\x12TEXT_NORMALIZATION\x10\x04\x12\x11\n\rTRANSCRIPTION\x10\x05\x12\r\n\tSYNTHESIS\x10\x06\x32\xb8\x05\n\x03TTS\x12]\n\nListVoices\x12&.techmo.tts.grpc_api.ListVoicesRequest\x1a\'.techmo.tts.grpc_api.ListVoicesResponse\x12h\n\x13SynthesizeStreaming\x12&.techmo.tts.grpc_api.SynthesizeRequest\x1a\'.techmo.tts.grpc_api.SynthesizeResponse0\x01\x12]\n\nSynthesize\x12&.techmo.tts.grpc_api.SynthesizeRequest\x1a\'.techmo.tts.grpc_api.SynthesizeResponse\x12]\n\nPutLexicon\x12&.techmo.tts.grpc_api.PutLexiconRequest\x1a\'.techmo.tts.grpc_api.PutLexiconResponse\x12\x66\n\rDeleteLexicon\x12).techmo.tts.grpc_api.DeleteLexiconRequest\x1a*.techmo.tts.grpc_api.DeleteLexiconResponse\x12]\n\nGetLexicon\x12&.techmo.tts.grpc_api.GetLexiconRequest\x1a\'.techmo.tts.grpc_api.GetLexiconResponse\x12\x63\n\x0cListLexicons\x12(.techmo.tts.grpc_api.ListLexiconsRequest\x1a).techmo.tts.grpc_api.ListLexiconsResponseb\x06proto3')
+  serialized_pb=_b('\n\x10techmo_tts.proto\x12\x13techmo.tts.grpc_api\"%\n\x11ListVoicesRequest\x12\x10\n\x08language\x18\x01 \x01(\t\"D\n\x12ListVoicesResponse\x12.\n\x06voices\x18\x01 \x03(\x0b\x32\x1e.techmo.tts.grpc_api.VoiceInfo\"X\n\x11SynthesizeRequest\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x35\n\x06\x63onfig\x18\x02 \x01(\x0b\x32%.techmo.tts.grpc_api.SynthesizeConfig\"\x87\x01\n\x10SynthesizeConfig\x12\x10\n\x08language\x18\x01 \x01(\t\x12\x36\n\x0c\x61udio_config\x18\x02 \x01(\x0b\x32 .techmo.tts.grpc_api.AudioConfig\x12)\n\x05voice\x18\x03 \x01(\x0b\x32\x1a.techmo.tts.grpc_api.Voice\"\xa0\x01\n\x0b\x41udioConfig\x12:\n\x0e\x61udio_encoding\x18\x01 \x01(\x0e\x32\".techmo.tts.grpc_api.AudioEncoding\x12\x19\n\x11sample_rate_hertz\x18\x02 \x01(\x05\x12\r\n\x05pitch\x18\x03 \x01(\x02\x12\r\n\x05range\x18\x04 \x01(\x02\x12\x0c\n\x04rate\x18\x05 \x01(\x02\x12\x0e\n\x06volume\x18\x06 \x01(\x02\"i\n\x05Voice\x12\x0c\n\x04name\x18\x01 \x01(\t\x12+\n\x06gender\x18\x02 \x01(\x0e\x32\x1b.techmo.tts.grpc_api.Gender\x12%\n\x03\x61ge\x18\x03 \x01(\x0e\x32\x18.techmo.tts.grpc_api.Age\"S\n\tVoiceInfo\x12\x1b\n\x13supported_languages\x18\x01 \x03(\t\x12)\n\x05voice\x18\x02 \x01(\x0b\x32\x1a.techmo.tts.grpc_api.Voice\"C\n\x12SynthesizeResponse\x12-\n\x05\x61udio\x18\x01 \x01(\x0b\x32\x1e.techmo.tts.grpc_api.AudioData\"7\n\tAudioData\x12\x19\n\x11sample_rate_hertz\x18\x01 \x01(\x05\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\"2\n\x11PutLexiconRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\"\x14\n\x12PutLexiconResponse\"$\n\x14\x44\x65leteLexiconRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x17\n\x15\x44\x65leteLexiconResponse\"!\n\x11GetLexiconRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"%\n\x12GetLexiconResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\"\'\n\x13ListLexiconsRequest\x12\x10\n\x08language\x18\x01 \x01(\t\"%\n\x14ListLexiconsResponse\x12\r\n\x05names\x18\x01 \x03(\t**\n\rAudioEncoding\x12\t\n\x05PCM16\x10\x00\x12\x0e\n\nOGG_VORBIS\x10\x01*6\n\x06Gender\x12\x16\n\x12GENDER_UNSPECIFIED\x10\x00\x12\n\n\x06\x46\x45MALE\x10\x01\x12\x08\n\x04MALE\x10\x02*<\n\x03\x41ge\x12\x13\n\x0f\x41GE_UNSPECIFIED\x10\x00\x12\t\n\x05\x41\x44ULT\x10\x01\x12\t\n\x05\x43HILD\x10\x02\x12\n\n\x06SENILE\x10\x03\x32\xb8\x05\n\x03TTS\x12]\n\nListVoices\x12&.techmo.tts.grpc_api.ListVoicesRequest\x1a\'.techmo.tts.grpc_api.ListVoicesResponse\x12h\n\x13SynthesizeStreaming\x12&.techmo.tts.grpc_api.SynthesizeRequest\x1a\'.techmo.tts.grpc_api.SynthesizeResponse0\x01\x12]\n\nSynthesize\x12&.techmo.tts.grpc_api.SynthesizeRequest\x1a\'.techmo.tts.grpc_api.SynthesizeResponse\x12]\n\nPutLexicon\x12&.techmo.tts.grpc_api.PutLexiconRequest\x1a\'.techmo.tts.grpc_api.PutLexiconResponse\x12\x66\n\rDeleteLexicon\x12).techmo.tts.grpc_api.DeleteLexiconRequest\x1a*.techmo.tts.grpc_api.DeleteLexiconResponse\x12]\n\nGetLexicon\x12&.techmo.tts.grpc_api.GetLexiconRequest\x1a\'.techmo.tts.grpc_api.GetLexiconResponse\x12\x63\n\x0cListLexicons\x12(.techmo.tts.grpc_api.ListLexiconsRequest\x1a).techmo.tts.grpc_api.ListLexiconsResponseb\x06proto3')
 )
 
 _AUDIOENCODING = _descriptor.EnumDescriptor(
@@ -41,8 +41,8 @@ _AUDIOENCODING = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1398,
-  serialized_end=1440,
+  serialized_start=1150,
+  serialized_end=1192,
 )
 _sym_db.RegisterEnumDescriptor(_AUDIOENCODING)
 
@@ -68,8 +68,8 @@ _GENDER = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1442,
-  serialized_end=1496,
+  serialized_start=1194,
+  serialized_end=1248,
 )
 _sym_db.RegisterEnumDescriptor(_GENDER)
 
@@ -99,55 +99,12 @@ _AGE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1498,
-  serialized_end=1558,
+  serialized_start=1250,
+  serialized_end=1310,
 )
 _sym_db.RegisterEnumDescriptor(_AGE)
 
 Age = enum_type_wrapper.EnumTypeWrapper(_AGE)
-_ERRORCODE = _descriptor.EnumDescriptor(
-  name='ErrorCode',
-  full_name='techmo.tts.grpc_api.ErrorCode',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='UNKNOWN', index=0, number=0,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='LICENCE', index=1, number=1,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='MISSING_OBJECT', index=2, number=2,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SSML', index=3, number=3,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TEXT_NORMALIZATION', index=4, number=4,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TRANSCRIPTION', index=5, number=5,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SYNTHESIS', index=6, number=6,
-      serialized_options=None,
-      type=None),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=1560,
-  serialized_end=1685,
-)
-_sym_db.RegisterEnumDescriptor(_ERRORCODE)
-
-ErrorCode = enum_type_wrapper.EnumTypeWrapper(_ERRORCODE)
 PCM16 = 0
 OGG_VORBIS = 1
 GENDER_UNSPECIFIED = 0
@@ -157,13 +114,6 @@ AGE_UNSPECIFIED = 0
 ADULT = 1
 CHILD = 2
 SENILE = 3
-UNKNOWN = 0
-LICENCE = 1
-MISSING_OBJECT = 2
-SSML = 3
-TEXT_NORMALIZATION = 4
-TRANSCRIPTION = 5
-SYNTHESIS = 6
 
 
 
@@ -475,13 +425,6 @@ _SYNTHESIZERESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='error', full_name='techmo.tts.grpc_api.SynthesizeResponse.error', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -495,7 +438,7 @@ _SYNTHESIZERESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=733,
-  serialized_end=843,
+  serialized_end=800,
 )
 
 
@@ -532,8 +475,8 @@ _AUDIODATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=845,
-  serialized_end=900,
+  serialized_start=802,
+  serialized_end=857,
 )
 
 
@@ -570,8 +513,8 @@ _PUTLEXICONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=902,
-  serialized_end=952,
+  serialized_start=859,
+  serialized_end=909,
 )
 
 
@@ -582,13 +525,6 @@ _PUTLEXICONRESPONSE = _descriptor.Descriptor(
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
-    _descriptor.FieldDescriptor(
-      name='error', full_name='techmo.tts.grpc_api.PutLexiconResponse.error', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -601,8 +537,8 @@ _PUTLEXICONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=954,
-  serialized_end=1017,
+  serialized_start=911,
+  serialized_end=931,
 )
 
 
@@ -632,8 +568,8 @@ _DELETELEXICONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1019,
-  serialized_end=1055,
+  serialized_start=933,
+  serialized_end=969,
 )
 
 
@@ -644,13 +580,6 @@ _DELETELEXICONRESPONSE = _descriptor.Descriptor(
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
-    _descriptor.FieldDescriptor(
-      name='error', full_name='techmo.tts.grpc_api.DeleteLexiconResponse.error', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -663,8 +592,8 @@ _DELETELEXICONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1057,
-  serialized_end=1123,
+  serialized_start=971,
+  serialized_end=994,
 )
 
 
@@ -694,8 +623,8 @@ _GETLEXICONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1125,
-  serialized_end=1158,
+  serialized_start=996,
+  serialized_end=1029,
 )
 
 
@@ -713,13 +642,6 @@ _GETLEXICONRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='error', full_name='techmo.tts.grpc_api.GetLexiconResponse.error', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -732,8 +654,8 @@ _GETLEXICONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1160,
-  serialized_end=1240,
+  serialized_start=1031,
+  serialized_end=1068,
 )
 
 
@@ -763,8 +685,8 @@ _LISTLEXICONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1242,
-  serialized_end=1281,
+  serialized_start=1070,
+  serialized_end=1109,
 )
 
 
@@ -794,46 +716,8 @@ _LISTLEXICONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1283,
-  serialized_end=1320,
-)
-
-
-_ERROR = _descriptor.Descriptor(
-  name='Error',
-  full_name='techmo.tts.grpc_api.Error',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='code', full_name='techmo.tts.grpc_api.Error.code', index=0,
-      number=1, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='techmo.tts.grpc_api.Error.description', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1322,
-  serialized_end=1396,
+  serialized_start=1111,
+  serialized_end=1148,
 )
 
 _LISTVOICESRESPONSE.fields_by_name['voices'].message_type = _VOICEINFO
@@ -845,11 +729,6 @@ _VOICE.fields_by_name['gender'].enum_type = _GENDER
 _VOICE.fields_by_name['age'].enum_type = _AGE
 _VOICEINFO.fields_by_name['voice'].message_type = _VOICE
 _SYNTHESIZERESPONSE.fields_by_name['audio'].message_type = _AUDIODATA
-_SYNTHESIZERESPONSE.fields_by_name['error'].message_type = _ERROR
-_PUTLEXICONRESPONSE.fields_by_name['error'].message_type = _ERROR
-_DELETELEXICONRESPONSE.fields_by_name['error'].message_type = _ERROR
-_GETLEXICONRESPONSE.fields_by_name['error'].message_type = _ERROR
-_ERROR.fields_by_name['code'].enum_type = _ERRORCODE
 DESCRIPTOR.message_types_by_name['ListVoicesRequest'] = _LISTVOICESREQUEST
 DESCRIPTOR.message_types_by_name['ListVoicesResponse'] = _LISTVOICESRESPONSE
 DESCRIPTOR.message_types_by_name['SynthesizeRequest'] = _SYNTHESIZEREQUEST
@@ -867,11 +746,9 @@ DESCRIPTOR.message_types_by_name['GetLexiconRequest'] = _GETLEXICONREQUEST
 DESCRIPTOR.message_types_by_name['GetLexiconResponse'] = _GETLEXICONRESPONSE
 DESCRIPTOR.message_types_by_name['ListLexiconsRequest'] = _LISTLEXICONSREQUEST
 DESCRIPTOR.message_types_by_name['ListLexiconsResponse'] = _LISTLEXICONSRESPONSE
-DESCRIPTOR.message_types_by_name['Error'] = _ERROR
 DESCRIPTOR.enum_types_by_name['AudioEncoding'] = _AUDIOENCODING
 DESCRIPTOR.enum_types_by_name['Gender'] = _GENDER
 DESCRIPTOR.enum_types_by_name['Age'] = _AGE
-DESCRIPTOR.enum_types_by_name['ErrorCode'] = _ERRORCODE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListVoicesRequest = _reflection.GeneratedProtocolMessageType('ListVoicesRequest', (_message.Message,), {
@@ -993,13 +870,6 @@ ListLexiconsResponse = _reflection.GeneratedProtocolMessageType('ListLexiconsRes
   })
 _sym_db.RegisterMessage(ListLexiconsResponse)
 
-Error = _reflection.GeneratedProtocolMessageType('Error', (_message.Message,), {
-  'DESCRIPTOR' : _ERROR,
-  '__module__' : 'techmo_tts_pb2'
-  # @@protoc_insertion_point(class_scope:techmo.tts.grpc_api.Error)
-  })
-_sym_db.RegisterMessage(Error)
-
 
 
 _TTS = _descriptor.ServiceDescriptor(
@@ -1008,8 +878,8 @@ _TTS = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1688,
-  serialized_end=2384,
+  serialized_start=1313,
+  serialized_end=2009,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListVoices',

@@ -52,13 +52,6 @@ namespace techmo::tts
 		return request;
 	}
 
-	std::string protobuf_message_to_string(const google::protobuf::Message& message)
-	{
-		grpc::string out_str;
-		google::protobuf::TextFormat::PrintToString(message, &out_str);
-		return out_str;
-	}
-
 	std::string grpc_status_to_string(const grpc::Status& status)
 	{
 		// Status codes and their use in gRPC explanation can be found here:
@@ -160,12 +153,6 @@ namespace techmo::tts
 
 		while (reader->Read(&response))
 		{
-			if (response.has_error())
-			{
-				throw std::runtime_error{ "Received error response: ("
-					+ protobuf_message_to_string(response.error()) };
-			}
-
 			const auto& audio = response.audio();
 			if (received_sample_rate_hertz == 0)
 			{
@@ -213,11 +200,6 @@ namespace techmo::tts
 		grpc::Status status = stub->Synthesize(&context, request, &response);
 		if (status.ok())
 		{
-			if (response.has_error())
-			{
-				throw std::runtime_error{ "Received error response: ("
-					+ protobuf_message_to_string(response.error()) };
-			}
 			return response.has_audio() ? AudioData{
 				response.audio().sample_rate_hertz(), response.audio().content() } : AudioData{ };
 		}
