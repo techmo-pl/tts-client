@@ -7,11 +7,12 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-IMAGE_VERSION=2.0.1
+IMAGE_VERSION=2.1.1
 
 SCRIPT=$(realpath "$0")
 SCRIPTPATH=$(dirname "${SCRIPT}")
 docker_image="tts-client-cpp:${IMAGE_VERSION}"
+
 
 output_path="/volumen/wav/TechmoTTS.wav"
 
