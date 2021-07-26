@@ -104,25 +104,19 @@ def internal_synthesize_streaming(stub, request, timeout, metadata, audio_saver,
     if audio_player is not None:
         audio_player.start()
     for response in stub.SynthesizeStreaming(request, timeout=timeout, metadata=metadata):
-        if response.HasField('error'):
-            raise RuntimeError("Error [" + str(response.error.code) + "]: " + response.error.description)
+        if audio_saver._framerate:
+            if audio_saver._framerate != response.audio.sample_rate_hertz:
+                raise RuntimeError("Sample rate does not match previously received.")
         else:
-            if audio_saver._framerate:
-                if audio_saver._framerate != response.audio.sample_rate_hertz:
-                    raise RuntimeError("Sample rate does not match previously received.")
-            else:
-                audio_saver.setFrameRate(response.audio.sample_rate_hertz)
-            if audio_player is not None:
-                audio_player.append(response.audio.content)
-            audio_saver.append(response.audio.content)
+            audio_saver.setFrameRate(response.audio.sample_rate_hertz)
+        if audio_player is not None:
+            audio_player.append(response.audio.content)
+        audio_saver.append(response.audio.content)
 
 def internal_synthesize(stub, request, timeout, metadata, audio_saver, audio_player):
     response = stub.Synthesize(request, timeout=timeout, metadata=metadata)
-    if response.HasField('error'):
-        raise RuntimeError("Error [" + str(response.error.code) + "]: " + response.error.description)
-    else:
-        if audio_player is not None:
-            audio_player.start(sample_rate=response.audio.sample_rate_hertz)
-            audio_player.append(response.audio.content)
-        audio_saver.setFrameRate(response.audio.sample_rate_hertz)
-        audio_saver.append(response.audio.content)
+    if audio_player is not None:
+        audio_player.start(sample_rate=response.audio.sample_rate_hertz)
+        audio_player.append(response.audio.content)
+    audio_saver.setFrameRate(response.audio.sample_rate_hertz)
+    audio_saver.append(response.audio.content)
