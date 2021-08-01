@@ -47,7 +47,7 @@ This project uses cmake build.
 ### Dependencies:  
 
 - Boost     provided as `boost_pkg`  
-    Default location: `/opt/boost_1.60.0`  
+    Default location: `/opt/boost_1_74_0`  
     If not installed, from parent directory run `sudo ./tools/install_boost.sh`  
 - gRPC      provided as `grpc_pkg`  
     Default location: `/opt/grpc_v1.24.3`  
