@@ -1,5 +1,8 @@
 # Techmo TTS gRPC C++ client Changelog
 
+## [2.1.2] - 2021-08-01
+### Changed
+ - Upgraded boost to 1.74.0
 
 ## [2.1.1] - 2021-07-21
 ### Changed
