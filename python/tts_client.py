@@ -47,6 +47,8 @@ def main():
         help="ISO 639-1 language code of the phrase to synthesize (optional, can be overriden by SSML).", type=str)
     parser.add_argument("--play", dest="play", default=False, action="store_true",
         help="Play synthesized audio. Works only with pcm16 (default) encoding.")
+    parser.add_argument("--ssl-dir", dest="ssl_directory", default="",
+        help="If set to a path with ssl credential files (client.crt, client.key, ca.crt), use ssl authentication. Otherwise use insecure channel (default).", type=str)
 
     # Parse and validate options
     args = parser.parse_args()

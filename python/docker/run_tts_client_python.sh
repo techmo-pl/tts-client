@@ -7,13 +7,13 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-IMAGE_VERSION=2.1.1
+IMAGE_VERSION=2.2.0
 
 SCRIPT=$(realpath "$0")
 SCRIPTPATH=$(dirname "${SCRIPT}")
 docker_image="tts-client-python:${IMAGE_VERSION}"
 
-output_path="/volumen/wav/TechmoTTS.wav"
+output_path="/volume/wav/TechmoTTS.wav"
 
 usage() {
 
@@ -37,6 +37,7 @@ Techmo TTS gRPC client ${IMAGE_VERSION}
   -o=OUTPUT_FILE, --output-file=OUTPUT_FILE
                         A custom name for output wave file with synthesized audio content (default: 'TechmoTTS.wav'). 
                         File will be generated inside 'wav' directory.
+  --tls                 Use ssl authentication. The credential files (client.crt, client.key, ca.crt) should be placed inside 'tls' directory.
   -f=SAMPLE_RATE, --sample-rate=SAMPLE_RATE
                         A sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.
   --ae=AUDIO_ENCODING, --audio-encoding=AUDIO_ENCODING
@@ -70,14 +71,17 @@ while getopts "${optspec}" optchar; do
                     ;;
                 input-text-file)  
                     val=${OPTARG#*=}
-                    opts+=( "--input-text-file" "/volumen/txt/${val##*/}" )
+                    opts+=( "--input-text-file" "/volume/txt/${val##*/}" )
                     ;;
                 output-file)  
                     val=${OPTARG#*=}
-                    output_path="/volumen/wav/${val##*/}"
+                    output_path="/volume/wav/${val##*/}"
                     ;;
                 list-voices)  
                     opts+=( "--list-voices" )
+                    ;;
+                tls)
+                    opts+=( "--ssl-dir" "/volume/tls")   
                     ;;
                 *=*)
                     val=${OPTARG#*=}
@@ -96,11 +100,11 @@ while getopts "${optspec}" optchar; do
             ;;
         i)                      
             val=${OPTARG#*=}
-            opts+=( "--input-text-file" "/volumen/txt/${val##*/}" )
+            opts+=( "--input-text-file" "/volume/txt/${val##*/}" )
             ;;
         o)                      
             val=${OPTARG#*=}
-            output_path="/volumen/wav/${val##*/}"
+            output_path="/volume/wav/${val##*/}"
             ;;
         *)
             if [[ "$OPTARG" == \=* ]]; then
@@ -118,5 +122,5 @@ done
 
 opts+=( "--out-path" "${output_path}" )
 
-docker run --rm -it -v "${SCRIPTPATH}:/volumen" --network host "${docker_image}" \
+docker run --rm -it -v "${SCRIPTPATH}:/volume" --network host "${docker_image}" \
 python3 /tts_client/tts_client.py "${opts[@]}"

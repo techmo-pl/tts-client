@@ -2,9 +2,10 @@ import techmo_tts_pb2
 import techmo_tts_pb2_grpc
 import grpc
 import os
+from create_channel import create_channel
 
 def call_listvoices(args):
-    channel = grpc.insecure_channel(args.service)
+    channel = create_channel(args.service, args.ssl_directory)
     stub = techmo_tts_pb2_grpc.TTSStub(channel)
 
     timeout=None

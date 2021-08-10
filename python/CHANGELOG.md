@@ -1,5 +1,9 @@
 # Techmo TTS gRPC Python client Changelog
 
+## [2.2.0] - 2021-08-10
+### Added
+- The`--ssl-dir` option [bool], for enabling ssl communication
+
 ## [2.1.1] - 2021-07-21
 ### Changed
  - Switch GRPC version to 1.38.1
