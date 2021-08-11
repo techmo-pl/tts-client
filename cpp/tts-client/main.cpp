@@ -14,6 +14,8 @@ po::options_description CreateOptionsDescription(void)
 		("help", "Prints help message.")
 		("service-address", po::value<std::string>()->required(),
 			"An IP address and a port (address:port) of a service the client will connect to.")
+		("ssl-dir", po::value<std::string>()->default_value(""),
+             "If set to a path with ssl credential files (client.crt, client.key, ca.crt), use ssl authentication. Otherwise use insecure channel (default).")
 		("out-path", po::value<std::string>()->default_value(""),
 			"A path to output wave file with synthesized audio content.")
 		("text", po::value<std::string>()->default_value("Polski tekst do syntezy."),
@@ -81,7 +83,10 @@ int main(int argc, const char* const argv[])
 
 	try
 	{
-		techmo::tts::Client ttsClient{ userOptions["service-address"].as<std::string>() };
+        techmo::tts::Client ttsClient{
+            userOptions["service-address"].as<std::string>(),
+            userOptions["ssl-dir"].as<std::string>(),
+        };
 
 		techmo::tts::ClientConfig clientConfig;
 		clientConfig.session_id = userOptions["session-id"].as<std::string>();

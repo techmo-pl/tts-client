@@ -91,10 +91,11 @@ namespace techmo::tts
 	class Client
 	{
 	public:
-		Client(std::string_view serviceAddress):
-			m_serviceAddress{ serviceAddress }
-		{
-		}
+    	Client(std::string_view serviceAddress, const std::string& ssl_directory)
+        : m_serviceAddress{ serviceAddress }
+        , ssl_directory_{ ssl_directory }
+    	{
+    	}
 
 		std::vector<VoiceInfo> ListVoices(
 			const ClientConfig& clientConfig,
@@ -112,6 +113,7 @@ namespace techmo::tts
 
 	private:
 		const std::string m_serviceAddress;
+		const std::string ssl_directory_;
 	};
 
 }

@@ -1,5 +1,9 @@
 # Techmo TTS gRPC C++ client Changelog
 
+## [2.2.0] - 2021-08-10
+### Added
+- The`--ssl-dir` option [bool], for enabling ssl communication
+
 ## [2.1.2] - 2021-08-01
 ### Changed
  - Upgraded boost to 1.74.0

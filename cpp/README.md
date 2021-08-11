@@ -8,12 +8,12 @@
 To prepare docker image with c++ implementation of tts client, open project's main directory and run:
 
 ```
-docker build -f Dockerfile-cpp -t tts-client-cpp:2.1.1 . 
+docker build -f Dockerfile-cpp -t tts-client-cpp:2.2.0 . 
 ```
 **Note:** the build process may take several dozen minutes. If you don't want to wait so long, use Python implementation instead.
 When the build process is complete, you will receive a message:
 ```
-Successfully tagged tts-client-cpp:2.1.1
+Successfully tagged tts-client-cpp:2.2.0
 ```
 
 #### Run tts client
