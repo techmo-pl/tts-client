@@ -133,7 +133,7 @@ namespace techmo::tts
 		const ClientConfig& clientConfig,
 		std::string_view language) const
 	{
-		auto stub = grpc_api::TTS::NewStub(grpc::CreateChannel(service_address_, create_channel_credentials(ssl_directory_)));
+		auto stub = grpc_api::TTS::NewStub(grpc::CreateChannel(m_serviceAddress, create_channel_credentials(ssl_directory_)));
 		grpc::ClientContext context;
 		build_context(context, clientConfig);
 
@@ -164,7 +164,7 @@ namespace techmo::tts
 		const SynthesizeConfig& synthesizeConfig,
 		std::string_view text) const
 	{
-		auto stub = grpc_api::TTS::NewStub(grpc::CreateChannel(service_address_, create_channel_credentials(ssl_directory_)));
+		auto stub = grpc_api::TTS::NewStub(grpc::CreateChannel(m_serviceAddress, create_channel_credentials(ssl_directory_)));
 		grpc::ClientContext context;
 		build_context(context, clientConfig);
 
@@ -222,7 +222,7 @@ namespace techmo::tts
 		const SynthesizeConfig& synthesizeConfig,
 		std::string_view text) const
 	{
-		auto stub = grpc_api::TTS::NewStub(grpc::CreateChannel(service_address_, create_channel_credentials(ssl_directory_)));
+		auto stub = grpc_api::TTS::NewStub(grpc::CreateChannel(m_serviceAddress, create_channel_credentials(ssl_directory_)));
 		grpc::ClientContext context;
 		build_context(context, clientConfig);
 
