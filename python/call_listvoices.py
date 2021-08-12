@@ -5,7 +5,7 @@ import os
 from create_channel import create_channel
 
 def call_listvoices(args):
-    channel = create_channel(args.service, args.ssl_directory)
+    channel = create_channel(args.service, args.tls_directory)
     stub = techmo_tts_pb2_grpc.TTSStub(channel)
 
     timeout=None

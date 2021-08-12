@@ -91,9 +91,9 @@ namespace techmo::tts
 	class Client
 	{
 	public:
-    	Client(std::string_view serviceAddress, const std::string& ssl_directory)
+    	Client(std::string_view serviceAddress, const std::string& tls_directory)
         : m_serviceAddress{ serviceAddress }
-        , ssl_directory_{ ssl_directory }
+        , tls_directory_{ tls_directory }
     	{
     	}
 
@@ -113,7 +113,7 @@ namespace techmo::tts
 
 	private:
 		const std::string m_serviceAddress;
-		const std::string ssl_directory_;
+		const std::string tls_directory_;
 	};
 
 }

@@ -18,15 +18,15 @@ namespace {
     }
 
 
-    std::shared_ptr<grpc::ChannelCredentials> create_channel_credentials(const std::string& ssl_directory) {
-        if (ssl_directory.empty())
+    std::shared_ptr<grpc::ChannelCredentials> create_channel_credentials(const std::string& tls_directory) {
+        if (tls_directory.empty())
         {
             return grpc::InsecureChannelCredentials();
         }
 
-        std::string cert = read_file(ssl_directory + "/client.crt");
-        std::string key = read_file(ssl_directory + "/client.key");
-        std::string root = read_file(ssl_directory + "/ca.crt");
+        std::string cert = read_file(tls_directory + "/client.crt");
+        std::string key = read_file(tls_directory + "/client.key");
+        std::string root = read_file(tls_directory + "/ca.crt");
         grpc::SslCredentialsOptions opts = {root, key, cert};
 
         return SslCredentials(opts);
@@ -133,7 +133,7 @@ namespace techmo::tts
 		const ClientConfig& clientConfig,
 		std::string_view language) const
 	{
-		auto stub = grpc_api::TTS::NewStub(grpc::CreateChannel(m_serviceAddress, create_channel_credentials(ssl_directory_)));
+		auto stub = grpc_api::TTS::NewStub(grpc::CreateChannel(m_serviceAddress, create_channel_credentials(tls_directory_)));
 		grpc::ClientContext context;
 		build_context(context, clientConfig);
 
@@ -164,7 +164,7 @@ namespace techmo::tts
 		const SynthesizeConfig& synthesizeConfig,
 		std::string_view text) const
 	{
-		auto stub = grpc_api::TTS::NewStub(grpc::CreateChannel(m_serviceAddress, create_channel_credentials(ssl_directory_)));
+		auto stub = grpc_api::TTS::NewStub(grpc::CreateChannel(m_serviceAddress, create_channel_credentials(tls_directory_)));
 		grpc::ClientContext context;
 		build_context(context, clientConfig);
 
@@ -222,7 +222,7 @@ namespace techmo::tts
 		const SynthesizeConfig& synthesizeConfig,
 		std::string_view text) const
 	{
-		auto stub = grpc_api::TTS::NewStub(grpc::CreateChannel(m_serviceAddress, create_channel_credentials(ssl_directory_)));
+		auto stub = grpc_api::TTS::NewStub(grpc::CreateChannel(m_serviceAddress, create_channel_credentials(tls_directory_)));
 		grpc::ClientContext context;
 		build_context(context, clientConfig);
 

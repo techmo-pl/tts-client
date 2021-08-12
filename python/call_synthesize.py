@@ -11,7 +11,7 @@ def call_synthesize(args, text):
     audio_encoding = get_audio_encoding(args)
     out_path = create_out_path(args, audio_encoding)
 
-    channel = create_channel(args.service, args.ssl_directory)
+    channel = create_channel(args.service, args.tls_directory)
     stub = techmo_tts_pb2_grpc.TTSStub(channel)
 
     config = techmo_tts_pb2.SynthesizeConfig(

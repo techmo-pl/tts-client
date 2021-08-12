@@ -37,7 +37,7 @@ Techmo TTS gRPC client ${IMAGE_VERSION}
   -o=OUTPUT_FILE, --output-file=OUTPUT_FILE
                         A custom name for output wave file with synthesized audio content (default: 'TechmoTTS.wav'). 
                         File will be generated inside 'wav' directory.
-  --tls                 Use ssl authentication. The credential files (client.crt, client.key, ca.crt) should be placed inside 'tls' directory.
+  --tls                 Use SSL/TLS authentication. The credential files (client.crt, client.key, ca.crt) should be placed inside 'tls' directory.
   -f=SAMPLE_RATE, --sample-rate=SAMPLE_RATE
                         A sample rate in Hz of synthesized audio. Set to 0 (default) to use voice's original sample rate.
   --ae=AUDIO_ENCODING, --audio-encoding=AUDIO_ENCODING
@@ -81,7 +81,7 @@ while getopts "${optspec}" optchar; do
                     opts+=( "--list-voices" )
                     ;;
                 tls)
-                    opts+=( "--ssl-dir" "/volume/tls")   
+                    opts+=( "--tls-dir" "/volume/tls")   
                     ;;
                 *=*)
                     val=${OPTARG#*=}

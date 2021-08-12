@@ -2,7 +2,7 @@
 
 ## [2.2.0] - 2021-08-10
 ### Added
-- The`--ssl-dir` option [bool], for enabling ssl communication
+- The`--tls-dir` option [bool], for enabling SSL/TLS communication
 
 ## [2.1.2] - 2021-08-01
 ### Changed
