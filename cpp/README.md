@@ -50,7 +50,7 @@ This project uses cmake build.
     Default location: `/opt/boost_1_74_0`  
     If not installed, from parent directory run `sudo ./tools/install_boost.sh`  
 - gRPC      provided as `grpc_pkg`  
-    Default location: `/opt/grpc_v1.24.3`  
+    Default location: `/opt/grpc_v1.38.1`  
     If not installed, from parent directory run `sudo ./tools/install_grpc.sh`  
 - OpenSSL   provided as `ssl_pkg`  
 - DL        provided as `dl_pkg`  
