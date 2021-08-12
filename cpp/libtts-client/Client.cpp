@@ -27,7 +27,7 @@ namespace {
         std::string cert = read_file(tls_directory + "/client.crt");
         std::string key = read_file(tls_directory + "/client.key");
         std::string root = read_file(tls_directory + "/ca.crt");
-        grpc::SslCredentialsOptions opts = {root, key, cert};
+        grpc::SslCredentialsOptions opts{root, key, cert};
 
         return SslCredentials(opts);
     }
