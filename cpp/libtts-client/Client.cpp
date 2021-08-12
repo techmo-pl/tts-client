@@ -5,16 +5,16 @@
 
 namespace {
     std::string read_file(const std::string& path) {
-        std::ifstream stream(path);
+        std::ifstream stream{path};
 
         if (!stream.is_open() || !stream.good())
         {
-            throw std::runtime_error("Cannot read file: " + path + ".");
+            throw std::runtime_error{"Cannot read file: " + path + "."};
         }
 
         return {(
-            std::istreambuf_iterator<char>(stream)),
-            std::istreambuf_iterator<char>()};
+            std::istreambuf_iterator<char>{stream}),
+            std::istreambuf_iterator<char>{}};
     }
 
 
