@@ -15,3 +15,4 @@ def create_channel(address, tls_directory):
         read_file(os.path.join(tls_directory, 'client.key')),
         read_file(os.path.join(tls_directory, 'client.crt')),
     ))
+    
