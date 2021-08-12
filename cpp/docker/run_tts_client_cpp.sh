@@ -32,8 +32,6 @@ Techmo TTS gRPC client ${IMAGE_VERSION}
   -r=RESPONSE, --response=RESPONSE
                         streaming or single, calls the streaming (default) or non-streaming version of Synthesize.
   -t=TEXT, --text=TEXT  A text to be synthesized.
-  -i=INPUTFILE, --input-text-file=INPUTFILE
-                        A name of the plaintext file with text to be synthesized. File should be placed inside 'txt' directory.
   -o=OUTPUT_FILE, --output-file=OUTPUT_FILE
                         A custom name for output wave file with synthesized audio content (default: 'TechmoTTS.wav'). 
                         File will be generated inside 'wav' directory.
@@ -74,10 +72,6 @@ while getopts "${optspec}" optchar; do
             case "${opt}" in
                 help)   
                     usage; exit 0 
-                    ;;
-                input-text-file)  
-                    val=${OPTARG#*=}
-                    opts+=( "--input-text-file" "/volume/txt/${val##*/}" )
                     ;;
                 output-file)  
                     output_path="/volume/wav/${val##*/}"
@@ -130,10 +124,6 @@ while getopts "${optspec}" optchar; do
         l)                      
             val=${OPTARG#*=}
             opts+=( "--language" "${val}" )
-            ;;
-        i)                      
-            val=${OPTARG#*=}
-            opts+=( "--input-text-file" "/volume/txt/${val##*/}" )
             ;;
         o)                      
             val=${OPTARG#*=}
