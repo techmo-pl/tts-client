@@ -123,4 +123,4 @@ done
 opts+=( "--out-path" "${output_path}" )
 
 docker run --rm -it -v "${SCRIPTPATH}:/volume" --network host "${docker_image}" \
-python3 /tts_client/tts_client.py "${opts[@]}"
+python3 /tts_client/python/tts_client.py "${opts[@]}"

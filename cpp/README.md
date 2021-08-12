@@ -55,11 +55,13 @@ This project uses cmake build.
 - OpenSSL   provided as `ssl_pkg`  
 - DL        provided as `dl_pkg`  
 
-To regenerate sources from `.proto`, run:
+
+### Proto sources
+
+To build the sources from `.proto`, run:
 ```
 ./make_proto.sh
 ```
-This might be required when using other gRPC or Protocol Buffers version.
 
 ### Build:
 ```

@@ -110,13 +110,11 @@ Set-ExecutionPolicy Restricted
 
 ##### Proto sources
 
-[Optional] To regenerate the sources from `.proto`, run:
+To build the sources from `.proto`, run:
 ```
 ./make_proto.sh
 ```
-This might be required when using other gRPC or Protocol Buffers version.
 
- 
 
 #### Run
 
