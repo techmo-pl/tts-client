@@ -7,12 +7,12 @@
 To prepare a docker image with Python implementation of the TTS Client, open the project's main directory and run following command:
 
 ```
-docker build -f Dockerfile-python -t tts-client-python:2.1.1 . 
+docker build -f Dockerfile-python -t tts-client-python:2.2.0 . 
 ```
 The build process will take several minutes.
 When the build process is complete, you will receive a message:
 ```
-Successfully tagged tts-client-python:2.1.1
+Successfully tagged tts-client-python:2.2.0
 ```
 
 ### Run TTS Client
@@ -110,13 +110,11 @@ Set-ExecutionPolicy Restricted
 
 ##### Proto sources
 
-[Optional] To regenerate the sources from `.proto`, run:
+To build the sources from `.proto`, run:
 ```
 ./make_proto.sh
 ```
-This might be required when using other gRPC or Protocol Buffers version.
 
- 
 
 #### Run
 

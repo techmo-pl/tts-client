@@ -2,9 +2,12 @@ FROM python:3.6-slim
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-ADD ./python /tts_client
+ADD ./python /tts_client/python
+ADD ./proto /tts_client/proto
 
-WORKDIR /tts_client
+WORKDIR /tts_client/python
+
+RUN ./make_proto.sh
 
 RUN apt-get update \
     && apt-get dist-upgrade -y \

@@ -4,13 +4,14 @@ import grpc
 import os
 from audio_player import AudioPlayer
 from audio_saver import AudioSaver
+from create_channel import create_channel
 
 
 def call_synthesize(args, text):
     audio_encoding = get_audio_encoding(args)
     out_path = create_out_path(args, audio_encoding)
 
-    channel = grpc.insecure_channel(args.service)
+    channel = create_channel(args.service, args.tls_directory)
     stub = techmo_tts_pb2_grpc.TTSStub(channel)
 
     config = techmo_tts_pb2.SynthesizeConfig(
