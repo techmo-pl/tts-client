@@ -1,1 +1,1 @@
-static constexpr auto LIBTTS_CLIENT_VERSION = "2.1.2";
+static constexpr auto LIBTTS_CLIENT_VERSION = "2.2.0";

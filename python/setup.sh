@@ -100,6 +100,9 @@ else
     fi
 fi
 
+# build proto sources
+./make_proto.sh
+
 virtualenv -p python3 .env
 source .env/bin/activate
 

@@ -8,6 +8,8 @@ ADD ./proto /tts-client/proto
 
 WORKDIR /tts-client
 
+RUN rm -rf /tts-client/cpp/build
+
 RUN apt-get update \
     && apt-get dist-upgrade -y \
     && apt-get install -y --no-install-recommends \
