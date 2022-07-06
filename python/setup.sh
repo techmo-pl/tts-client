@@ -60,51 +60,14 @@ install_package "python3-dev" "${sudo_str}"
 install_package "libportaudio2" "${sudo_str}"
 install_package "python3-pip" "${sudo_str}"
 
-# check if virtualenv >= 16.2 is installed
-
-set +e
-virtualenv_version=$(virtualenv --version) 2>&1 > /dev/null
-virtualenv_is_installed=$?
-set -e
-if [ "$virtualenv_is_installed" -ne 0 ];
-then
-    while true; do
-        read -p "The required package virtualenv is not installed. Do you want to install it now? [y/n]" yn
-        case $yn in
-            [Yy]*)
-                pip3 install virtualenv==16.2;
-                break ;;
-            [Nn]*)
-                echo "Permission to install the required package has not been granted. Exiting...";
-                exit 0 ;;
-        esac
-    done
-else
-    # check virtualenv version
-    version=$(echo $virtualenv_version | cut -f1 -d.)
-    subversion=$(echo $virtualenv_version | cut -f2 -d.)
-
-    if [[ "$version" -lt 16 || "$version" -eq 16 && "$subversion" -lt 2 ]];
-    then
-        while true; do
-            read -p "Installed version of virtualenv package ($virtualenv_version) is too old. Do you want to install newer version now? [y/n]" yn
-            case $yn in
-                [Yy]*)
-                    pip3 install virtualenv==16.2;
-                    break ;;
-                [Nn]*)
-                    echo "Permission to install the required package has not been granted. Exiting...";
-                    exit 0 ;;
-            esac
-        done
-    fi
-fi
 
 # build proto sources
 ./make_proto.sh
 
-virtualenv -p python3 .env
+python3 -m venv .env
 source .env/bin/activate
+pip3 install --upgrade pip
+pip3 install wheel
 
 if [[ ! "$python_version" == 3.5 ]]; then
     pip install -r requirements_python_3.5.txt

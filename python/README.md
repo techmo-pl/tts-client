@@ -67,8 +67,6 @@ To print usage description, use:
 
 ##### Dependencies
 
-If you don't have virtualenv yet, install it first (https://virtualenv.pypa.io/en/stable/installation.html)
-On Debian/Ubuntu OS this package (as well as other dependencies) can be installed by using `setup.sh` script.
 
 Then install the required dependencies inside the virtual environment (this step only needs to be done the first time, for the further usage it is enough to use the existing virtual environment).
 
@@ -78,7 +76,7 @@ Then install the required dependencies inside the virtual environment (this step
 Use Python 3 with the virtual environment and install required packages (supported Python versions are: 3.5, 3.6, 3.7, 3.8, 3.9):
 
 ```
-virtualenv -p python3 .env
+python3 -m venv .env
 source .env/bin/activate
 pip install -r requirements.txt
 ```
@@ -96,7 +94,7 @@ then confirm your choice.
 Use Python 3 with virtual environment and install required packages (supported Python versions are: 3.5, 3.6, 3.7, 3.8, 3.9):
 
 ```
-virtualenv -p python3 .env
+python3 -m venv .env
 .\.env\Scripts\activate
 pip install -r requirements.txt
 ```

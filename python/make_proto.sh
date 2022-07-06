@@ -1,7 +1,7 @@
 #!/bin/bash
 # coding=utf-8
 
-virtualenv -p python3 proto_env
+python3 -m venv proto_env
 # shellcheck disable=SC1091
 source proto_env/bin/activate
 pip install grpcio-tools==1.38.1
