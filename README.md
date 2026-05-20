@@ -1,3 +1,7 @@
+> [!WARNING]
+> **This repository is deprecated and no longer maintained.**
+> Please use the current client library instead: https://github.com/techmo-pl/tts-client-python
+
 # TTS Client
 This repository contains Techmo TTS gRPC service API and client implementations.
 
